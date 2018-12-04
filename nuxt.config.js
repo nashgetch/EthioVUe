@@ -128,7 +128,7 @@ module.exports = {
     duration: 2000
   },
   axios: {
-    baseURL: 'http://10.11.152.34:8000/'
+    baseURL: 'http://localhost:8000/'
   },
   auth: {
     strategies: {
