@@ -17,7 +17,7 @@
 
 <script>
 import axios from "axios";
-const base_url = "//locahost:8000";
+const base_url = "https://locahost:8000";
 export default {
   props: {
     vid: {

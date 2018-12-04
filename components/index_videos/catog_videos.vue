@@ -63,7 +63,7 @@
 <script>
 import axios from "axios";
 import ViewCatogs from "@/components/views_catogs";
-const base_url = "//locahost:8000";
+const base_url = "https://locahost:8000";
 export default {
   components: {
     ViewCatogs
