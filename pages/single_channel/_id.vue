@@ -83,7 +83,7 @@ import Vods from '@/components/single_channel/vods';
 import Ivods from '@/components/single_channel/ivod';
 
 import axios from 'axios';
-const base_url="http://10.11.152.34:8000";
+const base_url = "http://locahost:8000";
 export default {
   components: {
     Live,

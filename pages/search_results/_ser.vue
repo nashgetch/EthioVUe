@@ -43,7 +43,7 @@
 import axios from 'axios';
 export default {
   asyncData(context) {
-    return axios.post("http://10.11.152.34:8000/translate/" + context.params.ser).then(res => {
+    return axios.post("http://localhost:8000/translate/" + context.params.ser).then(res => {
       return { search_results: [...res.data] };
     });
   }
