@@ -281,7 +281,7 @@ import Wideads from "@/components/adsComponents/wide_ads";
 import Tallads from "@/components/adsComponents/tall_ads";
 import axios from "axios";
 
-const base_url = "https://locahost:8000";
+const base_url = "https://localhost:8000";
 export default {
   components: {
     ViewCatogs,

@@ -66,7 +66,7 @@
 
 <script>
 import axios from "axios";
-const base_url = "https://locahost:8000";
+const base_url = "https://localhost:8000";
 export default {
   asyncData() {
     return axios.post(base_url + "/live_channel").then(resp => {
