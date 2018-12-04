@@ -74,7 +74,7 @@
 import LatestVods from "@/components/index_videos/latest_vods";
 import CatogVods from "@/components/index_videos/catog_videos"
 import axios from "axios";
-const base_url = "http://10.11.152.34:8000";
+const base_url = "//locahost:8000";
 export default {
   components: {
     LatestVods,
