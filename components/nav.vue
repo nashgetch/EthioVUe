@@ -3,15 +3,15 @@
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="d-inline-flex">
         <div class="float-left ml-md-auto ml-lg-auto d-block d-sm-none">
-          <a ng-click="bar()" class="text-gray-dark" style="font-size: 1.4rem;" id="menu-toggler">
+          <a @click.prevent="toggle_side_menu" class="text-gray-dark" style="font-size: 1.4rem;" id="menu-toggler">
             <i class="fa fa-bars"></i>
           </a>
         </div>
-        <div id="m_search_menu" class="d-none d-lg-none mobile_search_menu">
+        <div id="m_search_menu" class="d-none d-lg-none mobile_search_menu" :class="mobile_search">
           <div class="d-flex flex-row flex-wrap">
             <div class="input-group">
               <img
-                ng-click="closesearch()"
+                @click="close_search"
                 id="mobile_search_toggler"
                 class="close_icon mt-3 mr-2"
                 src="/img/cancel.png"
@@ -76,7 +76,7 @@
         </div>
         <div class="d-block d-lg-none d-md-none mr-2 mt-1">
           <i
-            ng-click="search()"
+            @click="open_search"
             id="mobile_menu_toggler"
             style="margin-top: 10px; font-size: 1.3rem;"
             class="fa fa-search"
@@ -122,7 +122,7 @@
             <a
               style="text-decoration: none; color: black;"
               href="javascript:void(0)"
-              class="dropdown-toggle"
+              class="dropdown-toggle"mobile_search
               data-toggle="dropdown"
               role="button"
               aria-haspopup="true"
@@ -153,10 +153,10 @@
         </ul>-->
       </div>
     </nav>
-    <div id="sidenav" class="d-lg-none">
+    <div id="sidenav" class="d-lg-none" :class="hidden_side_nav">
       <div class="container-fluid">
         <div class="row">
-          <a ng-click="sidetoggle()" class="mt-3 ml-3 mobile_menu_close" id="menu-toggler-side"></a>
+          <a @click.prevent="sidetoggle" class="mt-3 ml-3 mobile_menu_close" id="menu-toggler-side"></a>
           <nuxt-link to="/">
             <div class="text-center ethiov_logo">
               <img src="/img/EthioV_LOGO_Black.png" alt>
@@ -168,11 +168,11 @@
       <div class="content-wrapper back">
         <div class="fikir-vids">
           <nuxt-link to="/" class="descr bol d-block">
-            <i class="fa fa-mobile"></i> Home
+            <div @click="sidetoggle"><i class="fa fa-mobile"></i> Home</div>
           </nuxt-link>
           <hr>
           <nuxt-link to="/live_channels" class="descr bol d-block">
-            <i class="fa fa-mobile"></i> - Live TVs!
+            <div @click="sidetoggle"><i class="fa fa-mobile"></i> - Live TVs!</div>
           </nuxt-link>
           <hr>
           <!-- <div ng-controller="videoController">
@@ -205,7 +205,10 @@
   data(){
        return {
            search1: "",
-           $search_results: []
+           $search_results: [],
+           mobile_search:"",
+           hidden_side_nav:""
+
        }
    },
     methods:{
@@ -219,6 +222,18 @@
         });
 
         },
+        toggle_side_menu(){
+          this.hidden_side_nav="d-block";
+        },
+        close_search(){
+          this.mobile_search="";
+        },
+        open_search(){
+          this.mobile_search="d-block";
+        },
+        sidetoggle(){
+          this.hidden_side_nav="";
+        }
     }
   }
 </script>
