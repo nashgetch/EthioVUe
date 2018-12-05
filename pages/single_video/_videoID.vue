@@ -47,7 +47,55 @@
                 <div class="sv-views-progress-bar"></div>
               </div>
               <div class="sv-views-stats">
-                <span class="percent">95%</span>
+
+                  <div class="dropdown">
+                    <a
+                      style="text-decoration: none; color: black;"
+                      class="dropdown-toggle"
+                      data-toggle="dropdown"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <i class="fa fa-share-alt"
+                      style="color: #fbe631; padding-left: 5px; margin-top: 10px;"></i> Share
+
+                      <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu poll">
+                      <social-sharing
+                        :url="'https://ethiov.com/single_video/' + single.v_id"
+                        :title="'EthioV - ' +single.title"
+                        :description="'EthioV - ' + single.description"
+                        :quote="'EthioV - ' + single.description"
+                        :hashtags="'#EthioV, ' + single.tags"
+                        inline-template
+                      >
+                        <div>
+                          <network class="dropdown-item" network="facebook">
+                            <i
+                              class="fa fa-fw fa-facebook"
+                              style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
+                            ></i>- Facebook
+                          </network>
+
+                          <network network="twitter" class="dropdown-item">
+                            <i
+                              class="fa fa-fw fa-twitter"
+                              style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
+                            ></i>- Twitter
+                          </network>
+                          <network network="telegram" class="dropdown-item">
+                            <i
+                              class="fa fa-telegram"
+                              style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
+                            ></i>- Telegram
+                          </network>
+                        </div>
+                      </social-sharing>
+                    </ul>
+                  </div>
+
                 <span class="green">
                   <span class="circle"></span>
                 </span>
@@ -277,77 +325,80 @@ import axios from "axios";
 
 const base_url = "https://ethiov.com/api";
 export default {
-   head() {
+  head() {
     return {
       title: this.single.title,
       meta: [
         {
-          hid: 'description',
-          name: 'description',
-          content: 'EthioV - ' + this.single.description + ". " + this.single.tags
-        },{
-          hid: 'keywords',
-          name: 'keywords',
-          keywords: 'Video, ' + this.single.title + ', ' + this.single.tags
+          hid: "description",
+          name: "description",
+          content:
+            "EthioV - " + this.single.description + ". " + this.single.tags
         },
         {
-          hid: 'og:title',
-          property: 'og:title',
+          hid: "keywords",
+          name: "keywords",
+          keywords: "Video, " + this.single.title + ", " + this.single.tags
+        },
+        {
+          hid: "og:title",
+          property: "og:title",
           content: this.single.title
         },
         {
-          hid: 'og:url',
-          property: 'og:url',
-          content: 'https://ethiov.com/single_video/' + this.single.v_id
+          hid: "og:url",
+          property: "og:url",
+          content: "https://ethiov.com/single_video/" + this.single.v_id
         },
         {
-          hid: 'og:image',
-          property: 'og:image',
-          content: 'https://video2.vixtream.net/' + this.single.filename
+          hid: "og:image",
+          property: "og:image",
+          content: "https://video2.vixtream.net/" + this.single.filename
         },
         {
-          hid: 'og:type',
-          property: 'og:type',
-          content: 'video.movie'
+          hid: "og:type",
+          property: "og:type",
+          content: "video.movie"
         },
         {
-          hid: 'og:description',
-          property: 'og:description',
-          content: 'EthioV - ' + this.single.description + ". " + this.single.tags
+          hid: "og:description",
+          property: "og:description",
+          content:
+            "EthioV - " + this.single.description + ". " + this.single.tags
         },
         {
-          hid: 'twitter:title',
-          property: 'twitter:title',
+          hid: "twitter:title",
+          property: "twitter:title",
           content: this.single.title
         },
         {
-          hid: 'twitter:url',
-          property: 'twiiter:url',
-          content: 'https://ethiov.com/single_video/' + this.single.v_id
+          hid: "twitter:url",
+          property: "twiiter:url",
+          content: "https://ethiov.com/single_video/" + this.single.v_id
         },
         {
-          hid: 'twitter:image',
-          property: 'twitter:image',
-          content: 'https://video2.vixtream.net/' + this.single.filename
+          hid: "twitter:image",
+          property: "twitter:image",
+          content: "https://video2.vixtream.net/" + this.single.filename
         },
         {
-          hid: 'twitter:type',
-          property: 'twitter:type',
-          content: 'video.movie'
+          hid: "twitter:type",
+          property: "twitter:type",
+          content: "video.movie"
         },
         {
-          hid: 'twitter:card',
-          property: 'twitter:card',
-          content: 'summary_large_image'
+          hid: "twitter:card",
+          property: "twitter:card",
+          content: "summary_large_image"
         },
         {
-          hid: 'twitter:description',
-          property: 'twitter:description',
-          content: 'EthioV - ' + this.single.description + ". " + this.single.tags
+          hid: "twitter:description",
+          property: "twitter:description",
+          content:
+            "EthioV - " + this.single.description + ". " + this.single.tags
         }
-
       ]
-    }
+    };
   },
   components: {
     ViewCatogs,
@@ -380,7 +431,7 @@ export default {
     };
   },
   mounted: function() {
-    let mydata=[]
+    let mydata = [];
     axios
       .post(
         base_url +
@@ -391,17 +442,17 @@ export default {
       )
       .then(resp => {
         loop(resp.data).then(data => {
-         this.owned=data;
+          this.owned = data;
         });
       });
-    axios.post(base_url+"/video_owner/"+ this.single.publisher_id)
-    .then(res=>{
-      this.owner=res.data;
-      axios.post(base_url+"/countSub/"+this.owner.id).then(res=>{
-        this.owner.subs=res.data;
-      })
-    })
-
+    axios
+      .post(base_url + "/video_owner/" + this.single.publisher_id)
+      .then(res => {
+        this.owner = res.data;
+        axios.post(base_url + "/countSub/" + this.owner.id).then(res => {
+          this.owner.subs = res.data;
+        });
+      });
   }
 };
 async function loop(params) {
