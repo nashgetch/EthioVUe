@@ -7,6 +7,17 @@
     diata-adsbygoogle-status="done"
   ></ins>
 </template>
+<script>
+export default {
+  mounted:function(){
+    this.$nextTick(()=>{
+       (window.adsbygoogle= window.adsbygoogle || []).push({});
+    });
+    // (adsbygoogle= window.adsbygoogle || []).push({});
+  }
+}
+</script>
+
 
 <style scoped>
 .nashians {
