@@ -36,7 +36,7 @@
                 </div>
                 <div class="c-sub" ng-click="subscribe(user.id, owner[0].id)">
                   <div class="c-f">Subscribe</div>
-                  <div class="c-s"></div>
+                  <div class="c-s">{{owner.subs}}</div>
                   <div class="clearfix"></div>
                 </div>
               </div>
@@ -313,7 +313,7 @@ export default {
       .post(
         base_url +
           "/byOwner/" +
-          this.single.publisher_id +
+          this.single.publisher_id + 
           "/" +
           this.single.v_id
       )
@@ -322,6 +322,14 @@ export default {
          this.owned=data;
         });
       });
+    axios.post(base_url+"/video_owner/"+ this.single.publisher_id)
+    .then(res=>{
+      this.owner=res.data;
+      axios.post(base_url+"/countSub/"+this.owner.id).then(res=>{
+        this.owner.subs=res.data;
+      })
+    })
+    
   }
 };
 async function loop(params) {
@@ -357,7 +365,7 @@ async function getViews(v_id) {
   /* padding-bottom: 56.25%; */
   padding-top: 56.25%;
 
-  overflow: hidden;
+  overflow: hidden;   
 }
 
 .video-container iframe {
