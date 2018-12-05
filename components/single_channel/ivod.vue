@@ -164,14 +164,14 @@ export default {
   data() {
     return {
       time: "1",
-      icUrl: "http://video2.vixtream.net/dvr/" + this.channel.chn + "/" + "1",
+      icUrl: "https://video2.vixtream.net/dvr/" + this.channel.chn + "/" + "1",
       tvs: [],
-      url: "http://video2.vixtream.net/"
+      url: "https://video2.vixtream.net/"
     };
   },
   methods: {
     instant(chn, time) {
-      this.icUrl = "http://video2.vixtream.net/dvr/" + chn + "/" + time;
+      this.icUrl = "https://video2.vixtream.net/dvr/" + chn + "/" + time;
     },
     marginTop(id) {
       if (id === 12 || id === 14) {

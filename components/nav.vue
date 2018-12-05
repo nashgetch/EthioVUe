@@ -17,18 +17,18 @@
                 src="/img/cancel.png"
                 alt
               >
-              <form style="width: 100%; height: 50px;">
-                <div class="input-group mt-1 mb-3" ng-controller="searchController">
+              <form style="width: 100%; height: 50px;" @submit.prevent ="search(search1)">
+                <div class="input-group mt-1 mb-3">
                   <input
                     type="text"
                     class="nav-search"
                     name="search1"
-                    ng-model="search1"
+                    v-model="search1"
                     placeholder="Search Videos"
                     aria-label="Recipient's username"
                     aria-describedby="basic-addon2"
                   >
-                  <button ng-click="gotoS(search1)" class="input-group-addon btn">
+                  <button type="submit" class="input-group-addon btn">
                     <i class="fa fa-search"></i>
                   </button>
                 </div>
@@ -55,18 +55,18 @@
             </div>
 
             <div class="col-9 col-md-5 col-lg-5 d-none d-md-block">
-              <form>
-                <div class="input-group mt-1 mb-3" ng-controller="searchController">
+             <form @submit.prevent ="search(search1)">
+                <div class="input-group mt-1 mb-3">
                   <input
                     type="text"
                     class="form-control"
                     name="search1"
-                    ng-model="search1"
+                    v-model="search1"
                     placeholder="Search Videos"
-                    aria-label="Recipient's username"
+                    aria-label="Search Videos"
                     aria-describedby="basic-addon2"
                   >
-                  <button ng-click="gotoS(search1)" class="input-group-addon btn">
+                  <button type="submit" class="input-group-addon btn">
                     <i class="fa fa-search"></i>
                   </button>
                 </div>
@@ -86,7 +86,7 @@
           <li class="dropdown">
             <a
               style="text-decoration: none; color: black;"
-              
+
               class="dropdown-toggle"
               data-toggle="dropdown"
               role="button"
@@ -201,7 +201,7 @@
 </template>
 <script>
   export default{
-  
+
   data(){
        return {
            search1: "",
@@ -217,7 +217,7 @@
           this.$router.push({
               path: '/search_results/' + k,
         });
-          
+
         },
     }
   }
