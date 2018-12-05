@@ -20,7 +20,7 @@
           <!-- Ads block -->
           <div class="adblock2">
             <div class="img">
-              <div data-ads></div>
+              <Wideads/>
             </div>
           </div>
           <div class="content-wrapper">
@@ -46,11 +46,11 @@
                               :src="'https://video2.vixtream.net/'+video.filename"
                               :alt="video.title"
                             >
-                          <div ng-click="viewVideo(video.v_id)" class="play">
-                            <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
-                          </div>
-                          <div class="time">{{video.duration}}</div>
-                           </nuxt-link>
+                            <div ng-click="viewVideo(video.v_id)" class="play">
+                              <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
+                            </div>
+                            <div class="time">{{video.duration}}</div>
+                          </nuxt-link>
                         </div>
                       </div>
                       <div class="col-sm-12 col-xs-6">
@@ -61,7 +61,7 @@
                             :title="video.title"
                           >{{video.title}}</a>
                         </div>
-                        <ViewCatogs :vid="video.v_id" :cat_id="video.category_id" />
+                        <ViewCatogs :vid="video.v_id" :cat_id="video.category_id"/>
                       </div>
                     </div>
                   </div>
@@ -74,14 +74,12 @@
           <!-- up next -->
           <div class>
             <div class="caption">
+              <Tallads/>
               <div class="left">
                 <a>
                   <h5 style="font-size: 22px;font-weight: 300;">Other Channels</h5>
                 </a>
               </div>
-              <!-- Ads Section -->
-              <div data-ads2></div>
-
               <div class="clearfix"></div>
             </div>
             <div class="list">
@@ -116,11 +114,15 @@
 <script>
 import axios from "axios";
 import ViewCatogs from "@/components/views_catogs";
+import Wideads from "@/components/adsComponents/wide_ads";
+import Tallads from "@/components/adsComponents/tall_ads";
 
 const base_url = "https://ethiov.com/api";
 export default {
   components: {
-    ViewCatogs
+    ViewCatogs,
+    Wideads,
+    Tallads
   },
   props: {
     videos: {
@@ -150,9 +152,11 @@ export default {
   },
   mounted: function() {
     axios.post(base_url + "/live_channel").then(res => {
-      return (this.tvs = [...res.data.filter((res=>{
-        return res.tv_name != "test"
-      }))]);
+      return (this.tvs = [
+        ...res.data.filter(res => {
+          return res.tv_name != "test";
+        })
+      ]);
     });
   }
 };

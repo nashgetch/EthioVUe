@@ -63,45 +63,39 @@
               <p>{{single.description}}</p>
             </div>
           </div>
-          <no-ssr placeholder="Loading...">
-            <div class="fikir-vids">
-              <div class="row">
-                <div
-                  class="col-lg-3 col-sm-6 col-xs-12"
-                  v-for="(pub,$index) in owned"
-                  :key="$index"
-                >
-                  <div class="nash-vids row">
-                    <div class="col-sm-12 col-xs-6">
-                      <div class="Vimg itemContainer" style="background-color: black;">
-                        <img class="imgur" :src="pos_url +'/'+ pub.filename" :alt="pub.title">
-                        <nuxt-link :to="'/single_video/'+pub.v_id">
-                          <div ng-click="viewVideo(pub.v_id)" class="play">
-                            <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
-                          </div>
-                        </nuxt-link>
-                        <div class="time">{{pub.duration}}</div>
-                      </div>
+          <div class="fikir-vids">
+            <div class="row">
+              <div class="col-lg-3 col-sm-6 col-xs-12" v-for="(pub,$index) in owned" :key="$index">
+                <div class="nash-vids row">
+                  <div class="col-sm-12 col-xs-6">
+                    <div class="Vimg itemContainer" style="background-color: black;">
+                      <img class="imgur" :src="pos_url+'/'+pub.filename" :alt="pub.title">
+                      <nuxt-link :to="'/single_video/'+pub.v_id">
+                        <div ng-click="viewVideo(pub.v_id)" class="play">
+                          <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
+                        </div>
+                      </nuxt-link>
+                      <div class="time">{{pub.duration}}</div>
                     </div>
-                    <div class="col-sm-12 col-xs-6" ng-click="viewVideo(pub.v_id)">
-                      <div class="descr">
-                        <a
-                          class="hideOverflow"
-                          :aria-label="pub.title"
-                          :title="pub.title"
-                        >{{pub.title}}</a>
-                      </div>
-                      <div class="views">{{pub.views}} views</div>
-                      <div class="percent">
-                        <span class="circle"></span>
-                        {{pub.cat_name}}
-                      </div>
+                  </div>
+                  <div class="col-sm-12 col-xs-6" ng-click="viewVideo(pub.v_id)">
+                    <div class="descr">
+                      <a
+                        class="hideOverflow"
+                        :aria-label="pub.title"
+                        :title="pub.title"
+                      >{{pub.title}}</a>
+                    </div>
+                    <div class="views">{{pub.views}} views</div>
+                    <div class="percent">
+                      <span class="circle"></span>
+                      {{pub.cat_name}}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </no-ssr>
+          </div>
           <!-- <div class="comments" ng-controller="navController">
             <div class="reply-comment" ng-controller="videoController" ng-show="checkCookie()">
               <div class="rc-header">
@@ -314,7 +308,7 @@ export default {
     };
   },
   mounted: function() {
-    let mydata = [];
+    let mydata=[]
     axios
       .post(
         base_url +
@@ -325,14 +319,12 @@ export default {
       )
       .then(resp => {
         loop(resp.data).then(data => {
-          mydata = [...data];
-          return (this.owned = [...mydata]);
+         this.owned=data;
         });
       });
   }
 };
 async function loop(params) {
-  console;
   let main_array = [];
   var i = 0;
   for (i = 0; i < params.length; i++) {
