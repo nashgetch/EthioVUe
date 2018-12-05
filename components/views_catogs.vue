@@ -17,7 +17,7 @@
 
 <script>
 import axios from "axios";
-const base_url = "https://localhost:8000";
+const base_url = "https://ethiov.com/api";
 export default {
   props: {
     vid: {
@@ -40,10 +40,10 @@ export default {
     };
   },
   mounted: function() {
-    axios.post(base_url + "/return_view/" + this.vid).then(res => {
+    axios.post(base_url+"/return_view/" + this.vid).then(res => {
       return (this.views = res.data);
     });
-    axios.post(base_url + "/return_cat/" + this.cat_id).then(res=>{
+    axios.post(base_url+"/return_cat/" + this.cat_id).then(res=>{
         return this.catName =res.data[0].category_name;
     })
   }

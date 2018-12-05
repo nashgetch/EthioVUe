@@ -63,7 +63,7 @@
 <script>
 import axios from "axios";
 import ViewCatogs from "@/components/views_catogs";
-const base_url = "https://locahost:8000";
+const base_url = "https://ethiov.com/api";
 export default {
   components: {
     ViewCatogs
@@ -79,15 +79,15 @@ export default {
   },
   mounted: function() {
     axios
-      .post(base_url + "/fetch_catogs")
+      .post(base_url+"/fetch_catogs")
       .then(res => {
         return (this.options = [...res.data]);
       })
       .catch(err => {
         console.log(err);
       });
-    axios
-      .post(base_url + "/cat_load", {
+     axios
+      .post(base_url+"/cat_load", {
         page: this.page,
         cat: this.cat_id,
         headers: {
@@ -105,7 +105,7 @@ export default {
     catogHandler($state) {
       this.page += 1;
       axios
-        .post(base_url + "/cat_load", {
+        .post(base_url+"/cat_load", {
           page: this.page,
           cat: this.cat_id,
           headers: {
@@ -127,7 +127,7 @@ export default {
         this.cat_id = parseInt(searctext.category_id);
         this.videos = [];
         axios
-          .post(base_url + "/cat_load", {
+          .post(base_url+"/cat_load", {
             page: this.page,
             cat: this.cat_id
           })
@@ -139,7 +139,7 @@ export default {
         this.cat_id = 1;
         this.videos = [];
         axios
-          .post(base_url + "/cat_load", {
+          .post(base_url+"/cat_load", {
             page: this.page,
             cat: this.cat_id
           })

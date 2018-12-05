@@ -74,7 +74,7 @@
 import LatestVods from "@/components/index_videos/latest_vods";
 import CatogVods from "@/components/index_videos/catog_videos"
 import axios from "axios";
-const base_url = "https://localhost:8000";
+const base_url = "https://ethiov.com/api";
 export default {
   components: {
     LatestVods,

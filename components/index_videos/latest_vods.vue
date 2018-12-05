@@ -52,7 +52,7 @@
 <script>
 import ViewCatogs from "@/components/views_catogs";
 import axios from "axios";
-const base_url = "https://locahost:8000";
+const base_url = "https://ethiov.com/api";
 export default {
   components: {
     ViewCatogs

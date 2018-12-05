@@ -41,9 +41,10 @@
 </template>
 <script>
 import axios from 'axios';
+const base_url = "https://ethiov.com/api";
 export default {
   asyncData(context) {
-    return axios.post("https://localhost:8000/translate/" + context.params.ser).then(res => {
+    return axios.post(base_url+"/translate/" + context.params.ser).then(res => {
       return { search_results: [...res.data] };
     });
   }

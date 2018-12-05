@@ -78,7 +78,7 @@ module.exports = {
    */
   loading: {
     color: 'green',
-    height:'5px'
+    height:'3px'
   },
 
   /*
@@ -128,7 +128,7 @@ module.exports = {
     duration: 2000
   },
   axios: {
-    baseURL: 'https://localhost:8000/'
+    baseURL: 'https://ethiov.com/api'
   },
   auth: {
     strategies: {
