@@ -30,6 +30,7 @@ module.exports = {
       {src:"/js/jquery.min.js"},
       {src:"/js/tether.min.js"},
       {src:"/js/bootstrap.min.js"},
+      {src:"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}
     ],
     link: [
     {
@@ -115,10 +116,6 @@ module.exports = {
     '@nuxtjs/auth',
     '@nuxtjs/toast',
     '@nuxtjs/axios',
-    ['@nuxtjs/google-adsense', {
-      id: 'ca-pub-5001725934888164'
-    }]
-
   ],
   /*
    ** Axios module configuration
