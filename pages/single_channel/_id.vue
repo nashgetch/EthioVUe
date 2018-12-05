@@ -8,44 +8,33 @@
         <img :src="'https://video2.vixtream.net'+channel.poster_image" alt>
       </div>
       <div class="ch-social-links d-inline-flex flex-row">
-        <!-- <div class="social-icons-container mt-2 ml-4 d-flex">
+        <div class="social-icons-container mt-2 ml-4 d-flex">
           <span class="mt-3" style="color:white; font-size:1rem;">Social</span>
-          <a
-            socialshare
-            socialshare-provider="twitter"
-            socialshare-text="{{myModel.Name}}"
-            socialshare-hashtags="{{channel.tv_name}}"
-            socialshare-url="{{myModel.Url}}"
-          >
-            <i
-              class="fa fa-twitter-square fa-2x"
-              style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
-            ></i>
-          </a>
-          <a
-            socialshare
-            socialshare-provider="facebook"
-            socialshare-hashtags="{{channel.tv_name}}"
-            socialshare-via="673096096418081"
-            socialshare-url="{{myModel.Url}}"
-          >
-            <i
-              class="fa fa-facebook-square fa-2x"
-              style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
-            ></i>
-          </a>
-          <a
-            socialshare
-            socialshare-provider="telegram"
-            socialshare-text="{{myModel.Url + ' | ' + myModel.Name}}"
-            socialshare-url="{{myModel.Url}}"
-          >
-            <i
-              class="fa fa-telegram fa-2x"
-              style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
-            ></i>
-          </a>
-        </div>-->
+          <social-sharing :url="'https://ethiov.com/single_channel/' + channel.id"
+                          :title="'EthioV Live Stream ' + channel.tv_name"
+                      :description="'EthioV - ' + channel.description"
+                      :quote="'EthioV - ' + channel.description"
+                      :hashtags="'#EthioV, ' + channel.tags"
+                      inline-template>
+            <div>
+              <network network="facebook">
+                <i class="fa fa-fw fa-facebook fa-2x"
+                style="color: #fbe631; padding-left: 5px; margin-top: 10px;"></i>
+              </network>
+
+              <network network="twitter">
+                <i class="fa fa-fw fa-twitter fa-2x"
+                style="color: #fbe631; padding-left: 5px; margin-top: 10px;" ></i>
+              </network>
+              <network network="telegram">
+                  <i class="fa fa-telegram fa-2x"
+                  style="color: #fbe631; padding-left: 5px; margin-top: 10px;" ></i>
+              </network>
+
+
+            </div>
+          </social-sharing>
+        </div>
       </div>
     </div>
     <div class="container-fluid mt-3 top-margin-bn-sm-md">
@@ -85,6 +74,59 @@ import Ivods from '@/components/single_channel/ivod';
 import axios from 'axios';
 const base_url = "https://ethiov.com/api";
 export default {
+   head() {
+    return {
+      title: this.channel.tv_name,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "EthioV - Live Stream of " +
+            this.channel.description +
+            "." +
+            " You can catch up to your favorite programs of " +
+            this.channel.tv_name +
+            " here."
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          keywords:
+            "Live Stream, " +
+            this.channel.tv_name +
+            ", " +
+            this.channel.description
+        },
+        {
+          hid: "og:title",
+          property: "og:title",
+          content: this.channel.tv_name
+        },
+        {
+          hid: "og:url",
+          property: "og:url",
+          content: "https://ethiov.com/single_channel/" + this.channel.id
+        },
+        {
+          hid: "og:image",
+          property: "og:image",
+          content: "https://video2.vixtream.net" + this.channel.poster_image
+        },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content:
+            "EthioV - Live Stream of " +
+            this.channel.description +
+            "." +
+            " You can catch up to your favorite programs of " +
+            this.channel.tv_name +
+            " here."
+        }
+      ]
+    };
+  },
   components: {
     Live,
     Vods,

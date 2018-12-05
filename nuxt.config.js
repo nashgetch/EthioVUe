@@ -10,9 +10,9 @@ module.exports = {
     port: 3000, // default: 3000
     host: '127.0.0.1', // default: localhost
   },
-  
+
   head: {
-    title: pkg.name,
+
     meta: [{
         charset: 'utf-8'
       },
@@ -20,11 +20,6 @@ module.exports = {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1'
       },
-      {
-        hid: 'description',
-        name: 'description',
-        content: pkg.description
-      }
     ],
     script:[
       {src:"/js/jquery.min.js"},
@@ -86,7 +81,7 @@ module.exports = {
    ** Global CSS
    */
   css: [
-    
+
   ],
 
   /*
@@ -104,7 +99,11 @@ module.exports = {
       src:'~plugins/vue-select',
       ssr:false
     },
-    '~plugins/mixins/user.js'
+    '~plugins/mixins/user.js',
+    {
+      src: '~plugins/vue-social-share',
+      ssr: false
+    }
   ],
 
   /*
@@ -112,7 +111,7 @@ module.exports = {
    */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    
+
     '@nuxtjs/auth',
     '@nuxtjs/toast',
     '@nuxtjs/axios',

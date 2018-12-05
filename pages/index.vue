@@ -76,6 +76,43 @@ import CatogVods from "@/components/index_videos/catog_videos"
 import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
+   head() {
+    return {
+      title: 'EthioV - Live and Videos on Demand',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: "EthioV - All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here."
+        },{
+          hid: 'keywords',
+          name: 'keywords',
+          keywords: 'Fana TV, Walta, EBC, Bethel TV, Ethiopian TV Channels, Ethiopian Videos, Elroi, Amhara TV, Tigrai TV,'
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'EthioV - Ethiopian Live Channels and Videos on Demand'
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: 'https://ethiov.com'
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: '/img/EthioV_LOGO_Black.png'
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: "EthioV - All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here."
+        }
+
+      ]
+    }
+  },
   components: {
     LatestVods,
     CatogVods

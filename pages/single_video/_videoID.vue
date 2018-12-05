@@ -141,7 +141,7 @@
                   </ul>
                 </div>
               </div>
-              
+
               <div class="cl-comment" ng-repeat="comment in comments">
                 <div class="cl-avatar">
                   <a class="i-circle">{{comment.cat_name.charAt(0)}}</a>
@@ -277,6 +277,43 @@ import axios from "axios";
 
 const base_url = "https://ethiov.com/api";
 export default {
+   head() {
+    return {
+      title: this.single.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'EthioV - ' + this.single.description + ". " + this.single.tags
+        },{
+          hid: 'keywords',
+          name: 'keywords',
+          keywords: 'Video, ' + this.single.title + ', ' + this.single.tags
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.single.title
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: 'https://ethiov.com/single_video/' + this.single.v_id
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: 'https://video2.vixtream.net/' + this.single.filename
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: 'EthioV - ' + this.single.description + ". " + this.single.tags
+        }
+
+      ]
+    }
+  },
   components: {
     ViewCatogs,
     Wideads,
@@ -313,7 +350,7 @@ export default {
       .post(
         base_url +
           "/byOwner/" +
-          this.single.publisher_id + 
+          this.single.publisher_id +
           "/" +
           this.single.v_id
       )
@@ -329,7 +366,7 @@ export default {
         this.owner.subs=res.data;
       })
     })
-    
+
   }
 };
 async function loop(params) {
@@ -365,7 +402,7 @@ async function getViews(v_id) {
   /* padding-bottom: 56.25%; */
   padding-top: 56.25%;
 
-  overflow: hidden;   
+  overflow: hidden;
 }
 
 .video-container iframe {

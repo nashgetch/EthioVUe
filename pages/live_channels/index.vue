@@ -68,6 +68,43 @@
 import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
+  head() {
+    return {
+      title: 'EthioV Live Ethiopian TV Channels',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'EthioV - All Ethiopian Live Channels at one place.'
+        },{
+          hid: 'keywords',
+          name: 'keywords',
+          keywords: 'Fana TV, Walta, EBC, Bethel TV, Ethiopian TV Channels'
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'EthioV - Ethiopian Live Channels'
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: 'https://ethiov.com/live_channels'
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: '/img/EthioV_LOGO_Black.png'
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: 'EthioV - All Ethiopian Live Channels at one place.'
+        }
+
+      ]
+    }
+  },
   asyncData() {
     return axios.post(base_url + "/live_channel").then(resp => {
       return {
