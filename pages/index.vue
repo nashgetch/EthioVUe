@@ -108,7 +108,33 @@ export default {
           hid: 'og:description',
           property: 'og:description',
           content: "EthioV - All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here."
+        },
+        {
+          hid: 'twitter:title',
+          property: 'twitter:title',
+          content: 'EthioV - Ethiopian Live Channels and Videos on Demand'
+        },
+        {
+          hid: 'twitter:url',
+          property: 'twitter:url',
+          content: 'https://ethiov.com'
+        },
+        {
+          hid: 'twitter:image',
+          property: 'twitter:image',
+          content: '/img/EthioV_LOGO_Black.png'
+        },
+        {
+          hid: 'twitter:card',
+          property: 'twitter:card',
+          content: 'summary_large_image'
+        },
+        {
+          hid: 'twitter:description',
+          property: 'twitter:description',
+          content: "EthioV - All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here."
         }
+
 
       ]
     }

@@ -100,7 +100,33 @@ export default {
           hid: 'og:description',
           property: 'og:description',
           content: 'EthioV - All Ethiopian Live Channels at one place.'
-        }
+        },
+        {
+          hid: 'twitter:title',
+          property: 'twitter:title',
+          content: 'EthioV - All Ethiopian Live Channels at one place.'
+        },
+        {
+          hid: 'twitter:title',
+          property: 'twitter:title',
+          content: 'EthioV - Ethiopian Live Channels'
+        },
+        {
+          hid: 'twitter:description',
+          property: 'twitter:description',
+          content: 'EthioV - All Ethiopian Live Channels at one place.'
+        },
+        {
+          hid: 'twitter:card',
+          property: 'twitter:card',
+          content: 'summary_large_image'
+        },
+        {
+          hid: 'twitter:image',
+          property: 'twitter:image',
+          content: '/img/EthioV_LOGO_Black.png'
+        },
+
 
       ]
     }

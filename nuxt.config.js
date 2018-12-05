@@ -21,6 +21,9 @@ module.exports = {
         content: 'width=device-width, initial-scale=1'
       },
     ],
+    htmlAttrs: {
+      prefix: "og: http://ogp.me/ns#"
+    },
     script:[
       {src:"/js/jquery.min.js"},
       {src:"/js/tether.min.js"},

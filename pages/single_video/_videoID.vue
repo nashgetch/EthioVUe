@@ -306,8 +306,43 @@ export default {
           content: 'https://video2.vixtream.net/' + this.single.filename
         },
         {
+          hid: 'og:type',
+          property: 'og:type',
+          content: 'video.movie'
+        },
+        {
           hid: 'og:description',
           property: 'og:description',
+          content: 'EthioV - ' + this.single.description + ". " + this.single.tags
+        },
+        {
+          hid: 'twitter:title',
+          property: 'twitter:title',
+          content: this.single.title
+        },
+        {
+          hid: 'twitter:url',
+          property: 'twiiter:url',
+          content: 'https://ethiov.com/single_video/' + this.single.v_id
+        },
+        {
+          hid: 'twitter:image',
+          property: 'twitter:image',
+          content: 'https://video2.vixtream.net/' + this.single.filename
+        },
+        {
+          hid: 'twitter:type',
+          property: 'twitter:type',
+          content: 'video.movie'
+        },
+        {
+          hid: 'twitter:card',
+          property: 'twitter:card',
+          content: 'summary_large_image'
+        },
+        {
+          hid: 'twitter:description',
+          property: 'twitter:description',
           content: 'EthioV - ' + this.single.description + ". " + this.single.tags
         }
 

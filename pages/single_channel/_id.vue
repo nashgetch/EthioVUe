@@ -114,8 +114,49 @@ export default {
           content: "https://video2.vixtream.net" + this.channel.poster_image
         },
         {
+          hid: 'og:type',
+          property: 'og:type',
+          content: 'video.movie'
+        },
+        {
           hid: "og:description",
           property: "og:description",
+          content:
+            "EthioV - Live Stream of " +
+            this.channel.description +
+            "." +
+            " You can catch up to your favorite programs of " +
+            this.channel.tv_name +
+            " here."
+        },
+        {
+          hid: "twitter:title",
+          property: "twitter:title",
+          content: this.channel.tv_name
+        },
+        {
+          hid: "twitter:url",
+          property: "twitter:url",
+          content: "https://ethiov.com/single_channel/" + this.channel.id
+        },
+        {
+          hid: "twitter:image",
+          property: "twitter:image",
+          content: "https://video2.vixtream.net" + this.channel.poster_image
+        },
+        {
+          hid: 'twitter:type',
+          property: 'twitter:type',
+          content: 'video.movie'
+        },
+        {
+          hid: 'twitter:card',
+          property: 'twitter:card',
+          content: 'summary_large_image'
+        },
+        {
+          hid: "twitter:description",
+          property: "twitter:description",
           content:
             "EthioV - Live Stream of " +
             this.channel.description +
