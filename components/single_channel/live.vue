@@ -43,7 +43,7 @@
                           <nuxt-link :to="'/single_video/'+video.v_id">
                             <img
                               class="imgur1"
-                              :src="'https://video2.vixtream.net/'+video.filename"
+                              :src="'https://video2.vixtream.net/'+video.filename2"
                               :alt="video.title"
                             >
                             <div ng-click="viewVideo(video.v_id)" class="play">

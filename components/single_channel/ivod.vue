@@ -73,7 +73,7 @@
                         <div class="col-sm-12 col-xs-6">
                           <div class="Vimg" style="background-color: black;">
                             <nuxt-link :to="'/single_video/'+video.v_id">
-                              <img class="imgur1" :src="url + video.filename" :alt="video.title">
+                              <img class="imgur1" :src="url + video.filename2" :alt="video.title">
                               <div class="time">{{video.duration}}</div>
                             </nuxt-link>
                           </div>
