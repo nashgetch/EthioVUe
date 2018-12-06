@@ -24,52 +24,44 @@ module.exports = {
     htmlAttrs: {
       prefix: "og: http://ogp.me/ns#"
     },
-    script:[
-      {src:"/js/jquery.min.js"},
-      {src:"/js/tether.min.js"},
-      {src:"/js/bootstrap.min.js"},
-      {src:"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",async:true}
+    script: [{
+        src: "/js/jquery.min.js"
+      },
+      {
+        src: "/js/bootstrap.min.js"
+      },
+      {
+        src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+        async: true
+      }
     ],
-    link: [
-    {
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: '/favicon.ico'
-    },
-    {
-      rel:'stylesheet',
-      href:'/styles.css'
-    },
-    {
-      rel:'stylesheet',
-      href:'/font-awesome.min.css'
-    },
-    {
-      rel:'stylesheet',
-      href:'/normalize.css'
-    },
-    {
-      rel:'stylesheet',
-      href:'/bootstrap.css'
-    },
-    {
-      rel:'stylesheet',
-      href:'/slick.css'
-    },
-    {
-      rel:'stylesheet',
-      href:'/slick-theme.css'
-    },
-    {
-      rel:'stylesheet',
-      href:'/main.css'
-    },
-    {
-      rel:'stylesheet',
-      href:'/sidebar.css'
-    }
+    link: [{
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/ethio_log.png'
+      },
+      {
+        rel:'stylesheet',
+        href:'/styles.css'
+      },
+      {
+        rel:'stylesheet',
+        href:'/font-awesome.min.css'
+      },
+      {
+        rel:'stylesheet',
+        href:'/bootstrap.css'
+      },
+      {
+        rel:'stylesheet',
+        href:'/main.css'
+      },
+      {
+        rel:'stylesheet',
+        href:'/sidebar.css'
+      }
 
-  ]
+    ]
   },
 
   /*
@@ -77,7 +69,7 @@ module.exports = {
    */
   loading: {
     color: 'green',
-    height:'3px'
+    height: '3px'
   },
 
   /*
@@ -95,12 +87,12 @@ module.exports = {
       ssr: false
     },
     {
-      src:'~plugins/vue-slick',
-      ssr:false
+      src: '~plugins/vue-slick',
+      ssr: false
     },
     {
-      src:'~plugins/vue-select',
-      ssr:false
+      src: '~plugins/vue-select',
+      ssr: false
     },
     '~plugins/mixins/user.js',
     {
@@ -108,8 +100,8 @@ module.exports = {
       ssr: false
     },
     {
-      src:'~plugins/vue-lazyload',
-      ssr:false
+      src: '~plugins/vue-lazyload',
+      ssr: false
     }
   ],
 
@@ -137,9 +129,20 @@ module.exports = {
     strategies: {
       local: {
         endpoints: {
-          login: { url: 'login', method: 'post', propertyName: 'meta.token' },
-          user: { url: 'user', method: 'get', propertyName: 'data' },
-          logout: { url: 'logout', method: 'post' }
+          login: {
+            url: 'login',
+            method: 'post',
+            propertyName: 'meta.token'
+          },
+          user: {
+            url: 'user',
+            method: 'get',
+            propertyName: 'data'
+          },
+          logout: {
+            url: 'logout',
+            method: 'post'
+          }
         }
       }
     }
