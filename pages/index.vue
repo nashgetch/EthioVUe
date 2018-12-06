@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div style="padding-top: 6rem;background-color: #DEDEDE;">
+    <!-- <div style="padding-top: 6rem;background-color: #DEDEDE;">
       <div class="container mb-3 live_container">
         <div class="row">
           <h3 class="krishna">
@@ -43,9 +43,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="container-fluid mt-3 top-margin-bn-sm-md">
+    <div class="container-fluid mt-3 top-margin-bn-sm-md" style="padding-top: 6rem;">
       <div class="row">
         <div class="col-lg-10 offset-lg-2">
           <div class="row">
@@ -190,7 +190,7 @@ export default {
     };
   },
   async asyncData() {
-    let tvse = await axios.post(base_url + "/live_channel");
+    // let tvse = await axios.post(base_url + "/live_channel");
     let { data } = await axios.post(base_url + "/loadmore", {
       page: 1,
       headers: {
