@@ -463,10 +463,11 @@ async function loop(params) {
     temp = params[i];
     let cat = await getCatname(temp.category_id);
     temp.cat_name = cat.category_name;
-    getViews(temp.v_id).then(resp => {
-      temp.views = resp;
-      main_array.push(temp);
-    });
+    // getViews(temp.v_id).then(resp => {
+    //   temp.views = resp;
+    //   main_array.push(temp);
+    // });
+    main_array.push(temp);
   }
   return main_array;
 }
