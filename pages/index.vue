@@ -198,7 +198,6 @@ export default {
       }
     });
     return {
-      tvs: tvse.data,
       videos: [...data.data],
       tab: 1,
       page: 1,
