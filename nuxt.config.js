@@ -106,6 +106,10 @@ module.exports = {
     {
       src: '~plugins/vue-social-share',
       ssr: false
+    },
+    {
+      src:'~plugins/vue-lazyload',
+      ssr:false
     }
   ],
 

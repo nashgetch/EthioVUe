@@ -11,7 +11,15 @@
             <div class="kaleb-vids">
               <div class="Vimg itemContainer" style="background-color: black;">
                 <nuxt-link :to="'/single_video/'+video.v_id">
-                  <img class :src="'//video2.vixtream.net/'+video.filename2" alt="thumbnail">
+                  <clazy-load :src="'//video2.vixtream.net/'+video.filename2">
+                    <!-- The image slot renders after the image loads. -->
+                    <div slot="placeholder" class="bg-inverse" style="background-color: black; height:135px;">
+                      <!-- You can put any component you want in here. -->
+                    </div>
+                    <img :src="'//video2.vixtream.net/'+video.filename2">
+                    <!-- The placeholder slot displays while the image is loading. -->
+                    
+                  </clazy-load>
                   <div ng-click="viewVideo(video.v_id)" class="play">
                     <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                   </div>
@@ -61,12 +69,12 @@ export default {
     videos: {
       type: Array,
       required: true
-    },
-  },
-  data(){
-    return{
-      page:1
     }
+  },
+  data() {
+    return {
+      page: 1
+    };
   },
   methods: {
     infiniteHandler($state) {
