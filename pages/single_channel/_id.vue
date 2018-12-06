@@ -191,12 +191,7 @@ export default {
       this.tab = tab;
     },
     checkTab(tab) {
-      if (this.tab === 1) {
-        return this.tab === tab;
-      } else {
-        this.tab1Style={};
-        return this.tab === tab;
-      }
+     return this.tab === tab;
     }
   }
 };

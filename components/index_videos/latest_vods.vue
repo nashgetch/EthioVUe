@@ -62,9 +62,10 @@ export default {
       type: Array,
       required: true
     },
-    page: {
-      type: Number,
-      required: true
+  },
+  data(){
+    return{
+      page:1
     }
   },
   methods: {

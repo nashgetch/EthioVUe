@@ -3,10 +3,8 @@
     <div class="col-12 col-sm-7 offset-sm-2">
       <v-select
         :options="options"
-        v-model="objectItem"
         label="category_name"
         placeholder="Select Category"
-        :clearSearchOnSelect="true"
         :onChange="Selecthandler"
       ></v-select>
     </div>
@@ -73,7 +71,6 @@ export default {
       page: 1,
       options: [],
       videos: [],
-      objectItem: {},
       cat_id: 1
     };
   },

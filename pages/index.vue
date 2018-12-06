@@ -65,82 +65,86 @@
         </div>
       </div>
     </div>
-    <LatestVods :videos="videos" :page="1" v-if="checkTab(1)"/>
-    <CatogVods v-else/>
+    <LatestVod :videos="videos" v-if="checkTab(1)"/>
+    <CatogVods v-if="checkTab(2)"/>
   </section>
 </template>
 
 <script>
-import LatestVods from "@/components/index_videos/latest_vods";
-import CatogVods from "@/components/index_videos/catog_videos"
+import LatestVod from "@/components/index_videos/latest_vods";
+import ViewCatogs from "@/components/views_catogs";
+import CatogVods from "@/components/index_videos/catog_videos";
 import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
-   head() {
+  head() {
     return {
-      title: 'EthioV - Live and Videos on Demand',
+      title: "EthioV - Live and Videos on Demand",
       meta: [
         {
-          hid: 'description',
-          name: 'description',
-          content: "EthioV - All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here."
-        },{
-          hid: 'keywords',
-          name: 'keywords',
-          keywords: 'Fana TV, Walta, EBC, Bethel TV, Ethiopian TV Channels, Ethiopian Videos, Elroi, Amhara TV, Tigrai TV,'
+          hid: "description",
+          name: "description",
+          content:
+            "EthioV - All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here."
         },
         {
-          hid: 'og:title',
-          property: 'og:title',
-          content: 'EthioV - Ethiopian Live Channels and Videos on Demand'
+          hid: "keywords",
+          name: "keywords",
+          keywords:
+            "Fana TV, Walta, EBC, Bethel TV, Ethiopian TV Channels, Ethiopian Videos, Elroi, Amhara TV, Tigrai TV,"
         },
         {
-          hid: 'og:url',
-          property: 'og:url',
-          content: 'https://ethiov.com'
+          hid: "og:title",
+          property: "og:title",
+          content: "EthioV - Ethiopian Live Channels and Videos on Demand"
         },
         {
-          hid: 'og:image',
-          property: 'og:image',
-          content: '/img/EthioV_LOGO_Black.png'
+          hid: "og:url",
+          property: "og:url",
+          content: "https://ethiov.com"
         },
         {
-          hid: 'og:description',
-          property: 'og:description',
-          content: "EthioV - All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here."
+          hid: "og:image",
+          property: "og:image",
+          content: "/img/EthioV_LOGO_Black.png"
         },
         {
-          hid: 'twitter:title',
-          property: 'twitter:title',
-          content: 'EthioV - Ethiopian Live Channels and Videos on Demand'
+          hid: "og:description",
+          property: "og:description",
+          content:
+            "EthioV - All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here."
         },
         {
-          hid: 'twitter:url',
-          property: 'twitter:url',
-          content: 'https://ethiov.com'
+          hid: "twitter:title",
+          property: "twitter:title",
+          content: "EthioV - Ethiopian Live Channels and Videos on Demand"
         },
         {
-          hid: 'twitter:image',
-          property: 'twitter:image',
-          content: '/img/EthioV_LOGO_Black.png'
+          hid: "twitter:url",
+          property: "twitter:url",
+          content: "https://ethiov.com"
         },
         {
-          hid: 'twitter:card',
-          property: 'twitter:card',
-          content: 'summary_large_image'
+          hid: "twitter:image",
+          property: "twitter:image",
+          content: "/img/EthioV_LOGO_Black.png"
         },
         {
-          hid: 'twitter:description',
-          property: 'twitter:description',
-          content: "EthioV - All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here."
+          hid: "twitter:card",
+          property: "twitter:card",
+          content: "summary_large_image"
+        },
+        {
+          hid: "twitter:description",
+          property: "twitter:description",
+          content:
+            "EthioV - All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here."
         }
-
-
       ]
-    }
+    };
   },
   components: {
-    LatestVods,
+    LatestVod,
     CatogVods
   },
   data() {
@@ -197,9 +201,10 @@ export default {
       tvs: tvse.data,
       videos: [...data.data],
       tab: 1,
+      page: 1,
       tab1Style: {
         active: true,
-        show:true
+        show: true
       }
     };
   },
@@ -209,12 +214,37 @@ export default {
       this.tab = tab;
     },
     checkTab(tab) {
-      if (this.tab === 1) {
-        return this.tab === tab;
-      } else {
-        this.tab1Style={};
-        return this.tab === tab;
-      }
+      return this.tab===tab;
+    },
+    infiniteHandler($state) {
+      axios
+        .post(base_url + "/loadmore", {
+          page: this.page,
+          headers: {
+            "Content-type": "application/x-www-form-urlencoded"
+          }
+        })
+        .then(({ data }) => {
+          console.log(data.data);
+          this.page += 1;
+          if (data.data.length) {
+            data.data.forEach(element => {
+              let temp = {};
+              temp = element;
+              this.videos.push(temp);
+            });
+            $state.loaded();
+          } else {
+            $state.complete();
+          }
+        });
+    },
+    add_to_watchlist(user_id, v_id) {
+      axios
+        .post(base_url + "/add_to_watchlist/" + user_id + "/" + v_id)
+        .then(res => {
+          this.$toast.success("The Video is added to Watch Later");
+        });
     }
   }
 };
