@@ -164,13 +164,13 @@
           <a @click.prevent="sidetoggle" class="mt-3 ml-3 mobile_menu_close" id="menu-toggler-side"></a>
           <nuxt-link to="/">
             <div class="text-center ethiov_logo">
-              <img src="/img/EthioV_LOGO_Black2.png" alt>
+              <img src="/img/EthioV_LOGO_Black2.png" alt="EthioV Logo">
             </div>
           </nuxt-link>
         </div>
       </div>
       <hr>
-      <div class="content-wrapper back">
+      <div class="content-wrapper back ml-2">
         <div class="fikir-vids">
           <nuxt-link to="/" class="descr bol d-block">
             <div @click="sidetoggle">

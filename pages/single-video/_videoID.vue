@@ -15,7 +15,7 @@
           ></iframe>
         </div>
         <div class="content-wrapper" style="margin: 0 !important;">
-          <h1 style="font-size: 25px !important; padding-top: 7px;">{{ single.title }}</h1>
+          <h1 style="font-size: 15px !important; padding-top: 7px;">{{ single.title }}</h1>
         </div>
         <div class="adblock2" style>
           <div class="img">
