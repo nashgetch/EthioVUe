@@ -38,7 +38,7 @@ module.exports = {
     link: [{
         rel: 'icon',
         type: 'image/x-icon',
-        href: '/ethio_log.png'
+        href: '/img/ethio_log.png'
       },
       {
         rel:'stylesheet',
