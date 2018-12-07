@@ -78,7 +78,7 @@ export default {
   },
   data() {
     return {
-      page: 1,
+      page: 2,
       vid: ""
     };
   },
