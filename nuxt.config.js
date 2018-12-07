@@ -24,8 +24,12 @@ module.exports = {
     htmlAttrs: {
       prefix: "og: http://ogp.me/ns#"
     },
-    script: [{
+    script: [
+      {
         src: "/js/jquery.min.js"
+      },
+      {
+        src:"js/tether.min.js"
       },
       {
         src: "/js/bootstrap.min.js"
