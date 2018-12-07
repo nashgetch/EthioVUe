@@ -31,15 +31,15 @@ module.exports = {
       },
       {
         src:"/js/tether.min.js",
-        async:true
+        defer:true
       },
       {
         src: "/js/bootstrap.min.js",
-        async: true
+        defer: true
       },
       {
         src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
-        async: true
+        defer: true
       }
     ],
     link: [
@@ -59,6 +59,10 @@ module.exports = {
       {
         rel:'stylesheet',
         href:'/main.css'
+      },
+      {
+        rel:'stylesheet',
+        href:'/styles.css'
       }
 
     ]
