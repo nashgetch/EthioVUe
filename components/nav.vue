@@ -3,7 +3,12 @@
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="d-inline-flex">
         <div class="float-left ml-md-auto ml-lg-auto d-block d-sm-none">
-          <a @click.prevent="toggle_side_menu" class="text-gray-dark" style="font-size: 1.4rem;" id="menu-toggler">
+          <a
+            @click.prevent="toggle_side_menu"
+            class="text-gray-dark"
+            style="font-size: 1.4rem;"
+            id="menu-toggler"
+          >
             <i class="fa fa-bars"></i>
           </a>
         </div>
@@ -17,7 +22,7 @@
                 src="/img/cancel.png"
                 alt
               >
-              <form style="width: 100%; height: 50px;" @submit.prevent ="search(search1)">
+              <form style="width: 100%; height: 50px;" @submit.prevent="search(search1)">
                 <div class="input-group mt-1 mb-3">
                   <input
                     type="text"
@@ -40,22 +45,23 @@
           <div class="row">
             <nuxt-link to="/">
               <div class="text-center ethiov_logo">
-                <img src="/img/EthioV_LOGO_Black.png" alt>
+                <img src="/img/EthioV_LOGO_Black2.png" alt>
               </div>
             </nuxt-link>
             <div class="navbar-nav flex-row mr-auto ml-5 mt-1 d-none d-md-flex d-lg-flex">
-              <nuxt-link to="/" class="nav-item nav-link" style="font-weight: bold;">Home
+              <nuxt-link to="/" class="nav-item nav-link" style="font-weight: bold;">
+                Home
                 <span class="sr-only">(current)</span>
               </nuxt-link>
               <nuxt-link
                 class="nav-item nav-link"
                 style="font-weight: bold;"
-                to="/live_channels"
+                to="/live-channels"
               >Channels</nuxt-link>
             </div>
 
-            <div class="col-9 col-md-5 col-lg-5 d-none d-md-block">
-             <form @submit.prevent ="search(search1)">
+            <div class="col-9 col-lg-5 d-none d-lg-block">
+              <form @submit.prevent="search(search1)">
                 <div class="input-group mt-1 mb-3">
                   <input
                     type="text"
@@ -74,7 +80,7 @@
             </div>
           </div>
         </div>
-        <div class="d-block d-lg-none d-md-none mr-2 mt-1">
+        <div class="d-block d-lg-none mr-2 mt-1">
           <i
             @click="open_search"
             id="mobile_menu_toggler"
@@ -86,7 +92,6 @@
           <li class="dropdown">
             <a
               style="text-decoration: none; color: black;"
-
               class="dropdown-toggle"
               data-toggle="dropdown"
               role="button"
@@ -159,7 +164,7 @@
           <a @click.prevent="sidetoggle" class="mt-3 ml-3 mobile_menu_close" id="menu-toggler-side"></a>
           <nuxt-link to="/">
             <div class="text-center ethiov_logo">
-              <img src="/img/EthioV_LOGO_Black.png" alt>
+              <img src="/img/EthioV_LOGO_Black2.png" alt>
             </div>
           </nuxt-link>
         </div>
@@ -168,74 +173,57 @@
       <div class="content-wrapper back">
         <div class="fikir-vids">
           <nuxt-link to="/" class="descr bol d-block">
-            <div @click="sidetoggle"><i class="fa fa-mobile"></i> Home</div>
+            <div @click="sidetoggle">
+              <i class="fa fa-mobile"></i> Home
+            </div>
           </nuxt-link>
           <hr>
-          <nuxt-link to="/live_channels" class="descr bol d-block">
-            <div @click="sidetoggle"><i class="fa fa-mobile"></i> - Live TVs!</div>
+          <nuxt-link to="/live-channels" class="descr bol d-block">
+            <div @click="sidetoggle">
+              <i class="fa fa-mobile"></i> - Live TVs!
+            </div>
           </nuxt-link>
           <hr>
-          <!-- <div ng-controller="videoController">
-            <a ng-show="checkCookie()" ng-click="setTabs(4)" class="descr bol d-block">
-              <i class="fa fa-mobile"></i> - Subscription
-            </a>
-          </div>-->
-          <!-- <hr>
-            <div class="collapse" id="subscriptions" ng-show="checkCookie()">
-                <a class="descr bol d-block" ng-repeat="su in sub">
-                    <i class="fa fa-angellist"></i> - {{su.tv_name}}
-                </a>
-          </div>-->
-          <!-- <a href="#/live_channels" class="descr bol d-block">
-                <i class="fa fa-paper-plane"> </i>- Channels
-            </a>
 
-          <hr>-->
-          <!-- <a class="descr bol d-block nash">
-            <i class="fa fa-address-card"></i>- Account
-          </a> -->
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-  export default{
-
-  data(){
-       return {
-           search1: "",
-           $search_results: [],
-           mobile_search:"",
-           hidden_side_nav:""
-
-       }
-   },
-    methods:{
-       logout() {
-            this.$auth.logout();
-        },
-        search(search1){
-          let k = this.search1.split(' ').join('+');
-          this.$router.push({
-              path: '/search_results/' + k,
-        });
-
-        },
-        toggle_side_menu(){
-          this.hidden_side_nav="d-block";
-        },
-        close_search(){
-          this.mobile_search="";
-        },
-        open_search(){
-          this.mobile_search="d-block";
-        },
-        sidetoggle(){
-          this.hidden_side_nav="";
-        }
+export default {
+  data() {
+    return {
+      search1: "",
+      $search_results: [],
+      mobile_search: "",
+      hidden_side_nav: ""
+    };
+  },
+  methods: {
+    logout() {
+      this.$auth.logout();
+    },
+    search(search1) {
+      let k = this.search1.split(" ").join("+");
+      this.$router.push({
+        path: "/search-results/" + k
+      });
+    },
+    toggle_side_menu() {
+      this.hidden_side_nav = "d-block";
+    },
+    close_search() {
+      this.mobile_search = "";
+    },
+    open_search() {
+      this.mobile_search = "d-block";
+    },
+    sidetoggle() {
+      this.hidden_side_nav = "";
     }
   }
+};
 </script>
 <style scoped>
 .content-wrapper.back {

@@ -9,8 +9,8 @@
         >
           <div class="kaleb-vids">
             <div class="Vimg itemContainer">
-              <nuxt-link :to="'/single_video/'+video.v_id">
-                <img :src="'https://video2.vixtream.net/'+video.filename2" :alt="video.title">
+              <nuxt-link :to="'/single-video/'+video.v_id">
+                <video :poster="'https://video2.vixtream.net/'+video.filename2" :alt="video.title"></video>
                 <div ng-click="viewVideo(video.v_id)" class="play">
                   <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                 </div>
@@ -18,11 +18,12 @@
               <div class="time">{{video.duration}}</div>
             </div>
             <div class="descr" ng-click="viewVideo(video.v_id)">
+              <h1 style="font-size: 14px !important;">
               <a
                 class="hideOverflow"
                 :aria-label="video.title"
                 :title="video.title"
-              >{{video.title}}</a>
+              >{{video.title}}</a></h1>
             </div>
             <div class="views small">
               <ViewCatogs :vid="video.v_id" :cat_id="video.category_id" :isIndex="true"/>

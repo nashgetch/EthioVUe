@@ -79,24 +79,23 @@ const base_url = "https://ethiov.com/api";
 export default {
   head() {
     return {
-      title: "EthioV - Live and Videos on Demand",
+      title: "EthioV - Live and Videos on Demand. Ethiopia's Reliable TVs and Videos Archive. All Your Favorite TV Channels",
       meta: [
         {
           hid: "description",
           name: "description",
-          content:
-            "EthioV - All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here."
+          content: "All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
         },
         {
           hid: "keywords",
           name: "keywords",
           keywords:
-            "Fana TV, Walta, EBC, Bethel TV, Ethiopian TV Channels, Ethiopian Videos, Elroi, Amhara TV, Tigrai TV,"
+            "ጠ/ሚ ዶ/ር አብይ ዐህመድ, ዜና, Fana TV, Walta, EBC, Bethel TV, Ethiopian TV Channels, Ethiopian Videos, Elroi, Amhara TV, Tigrai TV, Ethiopian News, Ethiopian Comedy, Abiy"
         },
         {
           hid: "og:title",
           property: "og:title",
-          content: "EthioV - Ethiopian Live Channels and Videos on Demand"
+          content: "EthioV - Ethiopian Live Channels and Videos on Demand. Ethiopia's Reliable TVs and Videos Archive. All Your Favorite TV Channels"
         },
         {
           hid: "og:url",
@@ -112,7 +111,7 @@ export default {
           hid: "og:description",
           property: "og:description",
           content:
-            "EthioV - All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here."
+            "All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
         },
         {
           hid: "twitter:title",

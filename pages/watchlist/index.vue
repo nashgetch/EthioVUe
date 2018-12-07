@@ -9,21 +9,24 @@
         </h5>
 
         <div class="row display-flex">
-           
+
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 videoitem" v-for="(video,$index) in my_watch"  :key="$index">
                 <div class="kaleb-vids">
                     <div class="Vimg itemContainer" style="opacity: 1" >
-                        <nuxt-link :to="'/single_video/' + video.v_id"><img :src="'//video2.vixtream.net/' + video.filename"
-                         alt="thumbnail">
+                        <nuxt-link :to="'/single-video/' + video.v_id">
+                        <video :poster="'//video2.vixtream.net/' + video.filename"
+                         :alt="video.title"></video>
                          <div class="play">
                             <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                          </div>
                          </nuxt-link>
                         <div class="time">{{video.duration}}</div>
-                        
+
                     </div>
                     <div class="descr">
-                        <a class="hideOverflow" :href="'single_video/' + video.v_id">{{video.title}}</a>
+                       <h1 style="font-size: 14px !important;">
+                         <a class="hideOverflow" :href="'single-video/' + video.v_id">{{video.title}}
+                        </a></h1>
                     </div>
                     <div class="views">
                         {{video.view_count}} views. <span class="percent"><span class="circle"></span> {{video.created_at}}
@@ -33,9 +36,9 @@
 
             </div>
             <div></div>
-            
+
         </div>
-    </div> 
+    </div>
 </div>
 </div>
 </template>
@@ -51,10 +54,10 @@ export default {
                     .then(res => {
                     return this.my_watch = [...res.data];
     });
-       
+
    },
    methods: {
-   
+
    }
 }
 </script>

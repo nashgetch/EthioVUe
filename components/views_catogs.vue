@@ -1,9 +1,13 @@
 <template>
   <div>
     <div v-if="isIndex">
-     <no-ssr placeholder="Loading ....">
-       | {{ catName }}
-     </no-ssr>
+      <i class="fa fa-language" @click="show_en=!show_en">
+
+      </i> <h1 v-show="show_en" style="font-size: 14px !important;"><a
+                  class="hideOverflow"
+                  :aria-label="title_en"
+                  :title="title_en"
+                >{{title_en}}</a></h1> | {{ catName }}
     </div>
     <no-ssr placeholder="Loading ..." v-else>
       <div class="views">views</div>
@@ -31,11 +35,18 @@ export default {
     isIndex:{
       type:Boolean,
       default:false
+    },
+    title_en:{
+      type:String
+    },
+    title_am:{
+      type:String
     }
   },
   data:function() {
     return {
-      catName:"Loading.."
+      catName:"Loading..",
+      show_en:false
     };
   },
   mounted: function() {

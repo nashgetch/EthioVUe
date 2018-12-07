@@ -22,7 +22,7 @@
           </h1>
           <div class="adblock2">
             <div class="img">
-              <div data-ads></div>
+              <Wideads/>
             </div>
           </div>
 
@@ -72,21 +72,22 @@
                       <div class="nash-vids row">
                         <div class="col-sm-12 col-xs-6">
                           <div class="Vimg" style="background-color: black;">
-                            <nuxt-link :to="'/single_video/'+video.v_id">
-                              <img class="imgur1" :src="url + video.filename2" :alt="video.title">
+                            <nuxt-link :to="'/single-video/'+video.v_id">
+                              <video class="imgur1" :poster="url + video.filename2" :alt="video.title"></video>
                               <div class="time">{{video.duration}}</div>
                             </nuxt-link>
                           </div>
                         </div>
                         <div class="col-sm-12 col-xs-6">
                           <div class="descr">
+                            <h1 style="font-size: 14px !important;">
                             <a
                               class="hideOverflow"
                               :aria-label="video.title"
                               :title="video.title"
                               tooltip
                               data-animation="false"
-                            >{{video.title}}</a>
+                            >{{video.title}}</a></h1>
                           </div>
                           <div class="views">
                             <ViewCatogs
@@ -108,6 +109,7 @@
         <div class="col-lg-4 col-xs-12 col-sm-12 hidden-xs mt-3">
           <!-- up next -->
           <div class>
+            <Tallads/>
             <div class="caption">
               <div class="left">
                 <a>
@@ -123,7 +125,7 @@
               <div class="thumb row" v-for="(tv,$index) in tvs.slice(0,6)" :key="$index">
                 <div class="col-lg-6 col-sm-6" ng-click="viewTV(tv.id)">
                   <div class="Vimg" style="background-color: black;">
-                    <nuxt-link :to="'/single_channel/'+tv.id">
+                    <nuxt-link :to="'/single-channel/'+tv.id">
                       <img class="imgur" :src="'https://video2.vixtream.net'+tv.poster_image" alt>
                     </nuxt-link>
                   </div>
@@ -146,6 +148,8 @@
 <script>
 import ViewCatogs from "@/components/views_catogs";
 import axios from "axios";
+import Wideads from "@/components/adsComponents/wide_ads";
+import Tallads from "@/components/adsComponents/tall_ads";
 const base_url = "https://ethiov.com/api";
 export default {
   props: {
@@ -159,7 +163,9 @@ export default {
     }
   },
   components: {
-    ViewCatogs
+    ViewCatogs,
+    Wideads,
+    Tallads
   },
   data() {
     return {
@@ -269,6 +275,9 @@ export default {
 @media (max-width: 500px) {
   .nashitiwa {
     margin-top: 0% !important;
+  }
+  h1 {
+    font-size: 18px;
   }
 }
 

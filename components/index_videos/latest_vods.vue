@@ -2,7 +2,7 @@
   <div>
     <div class="container parentDiv">
       <div class="container parentDiv">
-        <div class="row display-flex" ng-controller="navController">
+        <div class="row display-flex">
           <div
             class="col-12 col-sm-6 col-md-4 col-lg-3 videoitem"
             v-for="(video,$index) in videos"
@@ -10,15 +10,15 @@
           >
             <div class="kaleb-vids">
               <div class="Vimg itemContainer" style="background-color: black;">
-                <nuxt-link :to="'/single_video/'+video.v_id">
+                <nuxt-link :to="'/single-video/'+video.v_id">
                   <clazy-load :src="'//video2.vixtream.net/'+video.filename2">
                     <!-- The image slot renders after the image loads. -->
                     <div slot="placeholder" class="bg-inverse" style="background-color: black; height:135px;">
                       <!-- You can put any component you want in here. -->
                     </div>
-                    <img :src="'//video2.vixtream.net/'+video.filename2">
+                    <video :poster="'//video2.vixtream.net/'+video.filename2" :alt="video.title"></video>
                     <!-- The placeholder slot displays while the image is loading. -->
-                    
+
                   </clazy-load>
                   <div ng-click="viewVideo(video.v_id)" class="play">
                     <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
@@ -35,14 +35,19 @@
                 </div>
               </div>
               <div class="descr" ng-click="viewVideo(video.v_id)">
-                <a
+                <h1 style="font-size: 14px !important;"><a
                   class="hideOverflow"
                   :aria-label="video.title"
                   :title="video.title"
-                >{{video.title}}</a>
+                >{{video.title}}</a></h1>
+                <!-- <h1 v-show="engshow(video.v_id)" style="font-size: 14px !important;"><a
+                  class="hideOverflow"
+                  :aria-label="video.title"
+                  :title="video.title_en"
+                >{{video.title_en}}</a></h1> -->
               </div>
               <div class="views text-center">
-                <ViewCatogs :vid="video.v_id" :cat_id="video.category_id" :isIndex="true"/>
+                <ViewCatogs :vid="video.v_id" :cat_id="video.category_id" :isIndex="true" :title_en="video.title_en"/>
                 <span class="percent">
                   <span class="circle"></span>
                   {{video.created_at}}
@@ -73,7 +78,8 @@ export default {
   },
   data() {
     return {
-      page: 1
+      page: 1,
+      vid: ""
     };
   },
   methods: {

@@ -26,27 +26,27 @@ module.exports = {
     },
     script: [
       {
-        src: "/js/jquery.min.js"
+        src: "/js/jquery.min.js",
+        async: true
       },
       {
-        src:"js/tether.min.js"
+        src:"/js/tether.min.js",
+        async:true
       },
       {
-        src: "/js/bootstrap.min.js"
+        src: "/js/bootstrap.min.js",
+        async: true
       },
       {
         src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
         async: true
       }
     ],
-    link: [{
+    link: [
+      {
         rel: 'icon',
         type: 'image/x-icon',
         href: '/img/ethio_log.png'
-      },
-      {
-        rel:'stylesheet',
-        href:'/styles.css'
       },
       {
         rel:'stylesheet',
@@ -59,10 +59,6 @@ module.exports = {
       {
         rel:'stylesheet',
         href:'/main.css'
-      },
-      {
-        rel:'stylesheet',
-        href:'/sidebar.css'
       }
 
     ]
