@@ -13,7 +13,7 @@
                 <nuxt-link :to="'/single-video/'+video.v_id">
                   <clazy-load :src="'//video2.vixtream.net/'+video.filename2">
                     <!-- The image slot renders after the image loads. -->
-                    <div slot="placeholder" class="bg-inverse" style="background-color: black; height:135px;">
+                    <div slot="placeholder" class="bg-inverse" style="background-color: black; height:200px;">
                       <!-- You can put any component you want in here. -->
                     </div>
                     <video :poster="'//video2.vixtream.net/'+video.filename2" :alt="video.title"></video>

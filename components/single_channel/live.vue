@@ -41,11 +41,10 @@
                       <div class="col-sm-12 col-xs-6">
                         <div class="Vimg itemContainer" style="background-color: black;">
                           <nuxt-link :to="'/single-video/'+video.v_id">
-                            <img
+                            <video
                               class="imgur1"
-                              :src="'https://video2.vixtream.net/'+video.filename2"
-                              :alt="video.title"
-                            >
+                              :poster="'https://video2.vixtream.net/'+video.filename2"
+                            ></video>
                             <div ng-click="viewVideo(video.v_id)" class="play">
                               <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                             </div>
@@ -97,7 +96,9 @@
                 </div>
                 <div class="col-lg-6 col-sm-6">
                   <div class="descr" style="padding-left:4px;">
-                   <h1 style="font-size: 14px !important;"><a>{{tv.tv_name}}</a></h1>
+                    <h1 style="font-size: 14px !important;">
+                      <a>{{tv.tv_name}}</a>
+                    </h1>
                   </div>
                   <div class="views" style="padding-left:4px;">{{tv.tags}}</div>
                 </div>
