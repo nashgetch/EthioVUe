@@ -42,7 +42,7 @@
               <div class="similar-v single-video video-mobile-02">
                 <div class="row">
                   <div class="col-lg-4 col-md-4 col-sm-6 col-6 form mb-2">
-                    <input type="text" v-model="time" name="time" class="form-control">
+                    <input type="number" v-model="time" name="time" class="form-control">
                   </div>
                   <div class="col-lg-4 col-md-4 col-sm-6 col-6 mt-2" style="margin-left:'-45px'">
                     <small>Hours Ago!</small>
