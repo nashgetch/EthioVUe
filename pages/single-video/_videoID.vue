@@ -117,7 +117,7 @@
                 <div class="nash-vids row">
                   <div class="col-sm-12 col-xs-6">
                     <div class="Vimg itemContainer" style="background-color: black;">
-                      <video class="imgur" :poster="pos_url+'/'+pub.filename2" :alt="pub.title"></video>
+                      <video class="imgur" :poster="pos_url+'/'+pub.filename" :alt="pub.title"></video>
                       <nuxt-link :to="'/single-video/'+pub.v_id">
                         <div ng-click="viewVideo(pub.v_id)" class="play">
                           <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
@@ -295,7 +295,7 @@
             <div class="thumb row" v-for="(re,$index) in recommended" :key="$index">
               <div class="col-lg-6 col-sm-6" ng-click="viewVideo(re.v_id)">
                 <div class="Vimg itemContainer" style="background-color: #0c0c0c">
-                  <video class="imgur" height="400" width="400" :poster="pos_url + '/'+re.filename2" :alt="re.title"></video>
+                  <video class="imgur" height="400" width="400" :poster="pos_url + '/'+re.filename" :alt="re.title"></video>
                   <nuxt-link :to="'/single-video/'+re.v_id">
                     <div ng-click="viewVideo(re.v_id)" class="play">
                       <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
@@ -357,7 +357,7 @@ export default {
         {
           hid: "og:image",
           property: "og:image",
-          content: "https://video2.vixtream.net/" + this.single.filename2
+          content: "https://video2.vixtream.net/" + this.single.filename
         },
         {
           hid: "og:type",
@@ -383,7 +383,7 @@ export default {
         {
           hid: "twitter:image",
           property: "twitter:image",
-          content: "https://video2.vixtream.net/" + this.single.filename2
+          content: "https://video2.vixtream.net/" + this.single.filename
         },
         {
           hid: "twitter:type",

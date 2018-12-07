@@ -15,7 +15,7 @@
           <div class="kaleb-vids">
             <div class="Vimg itemContainer">
               <nuxt-link :to="'/single-video/' + video.v_id">
-                <video :poster="'//video2.vixtream.net/' + video.filename2" :alt="video.title"></video>
+                <video :poster="'//video2.vixtream.net/' + video.filename" :alt="video.title"></video>
                 <div class="play">
                   <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                 </div>
