@@ -64,7 +64,7 @@
                     </a>
                     <ul class="dropdown-menu poll">
                       <social-sharing
-                        :url="'https://ethiov.com/single_video/' + single.v_id"
+                        :url="'https://ethiov.com/single-video/' + single.v_id"
                         :title="'EthioV - ' +single.title"
                         :description="'EthioV - ' + single.description"
                         :quote="'EthioV - ' + single.description"
@@ -352,7 +352,7 @@ export default {
         {
           hid: "og:url",
           property: "og:url",
-          content: "https://ethiov.com/single_video/" + this.single.v_id
+          content: "https://ethiov.com/single-video/" + this.single.v_id
         },
         {
           hid: "og:image",
@@ -378,7 +378,7 @@ export default {
         {
           hid: "twitter:url",
           property: "twiiter:url",
-          content: "https://ethiov.com/single_video/" + this.single.v_id
+          content: "https://ethiov.com/single-video/" + this.single.v_id
         },
         {
           hid: "twitter:image",
