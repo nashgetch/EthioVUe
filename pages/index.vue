@@ -78,7 +78,7 @@ const base_url = "https://ethiov.com/api";
 export default {
   head() {
     return {
-      title: "EthioV - Live and Videos on Demand. Ethiopia's Reliable TVs and Videos Archive. All Your Favorite TV Channels",
+      title: "EthioV - Live and Videos on Demand. Ethiopia's Reliable TVs and Videos Archive.",
       meta: [
         {
           hid: "description",
