@@ -9,60 +9,60 @@
             :key="$index"
           >
             <div class="kaleb-vids">
-              <div class="Vimg itemContainer" style="background-color: black;">
-                <nuxt-link :to="'/single-video/'+video.v_id">
-                  <clazy-load :src="'//video2.vixtream.net/'+video.filename">
-                    <!-- The image slot renders after the image loads. -->
-                    <div
-                      slot="placeholder"
-                      class="bg-inverse"
-                      style="background-color: black; height:200px;"
-                    >
-                      <!-- You can put any component you want in here. -->
-                    </div>
+              <clazy-load :src="'//video2.vixtream.net/'+video.filename">
+                <!-- The image slot renders after the image loads. -->
+                <div
+                  slot="placeholder"
+                  class="bg-inverse"
+                  style="background-color: black; height:200px;"
+                >
+                  <!-- You can put any component you want in here. -->
+                </div>
+                <div class="Vimg itemContainer" style="background-color: black;">
+                  <nuxt-link :to="'/single-video/'+video.v_id">
                     <video :poster="'//video2.vixtream.net/'+video.filename" :alt="video.title"></video>
                     <!-- The placeholder slot displays while the image is loading. -->
-                  </clazy-load>
-                  <div ng-click="viewVideo(video.v_id)" class="play">
-                    <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
+                    <div ng-click="viewVideo(video.v_id)" class="play">
+                      <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
+                    </div>
+                  </nuxt-link>
+                  <div class="time">{{video.duration}}</div>
+                  <div
+                    ng-style="hiddenPlus"
+                    v-if="loggedIn"
+                    class="nashh"
+                    @click="add_to_watchlist(user.id, video.v_id)"
+                  >
+                    <i class="fa fa-plus"></i>
                   </div>
-                </nuxt-link>
-                <div class="time">{{video.duration}}</div>
-                <div
-                  ng-style="hiddenPlus"
-                  v-if="loggedIn"
-                  class="nashh"
-                  @click="add_to_watchlist(user.id, video.v_id)"
-                >
-                  <i class="fa fa-plus"></i>
                 </div>
-              </div>
-              <div class="descr" ng-click="viewVideo(video.v_id)">
-                <h1 style="font-size: 14px !important;">
-                  <a
-                    class="hideOverflow"
-                    :aria-label="video.title"
-                    :title="video.title"
-                  >{{video.title}}</a>
-                </h1>
-                <!-- <h1 v-show="engshow(video.v_id)" style="font-size: 14px !important;"><a
+                <div class="descr" ng-click="viewVideo(video.v_id)">
+                  <h1 style="font-size: 14px !important;">
+                    <a
+                      class="hideOverflow"
+                      :aria-label="video.title"
+                      :title="video.title"
+                    >{{video.title}}</a>
+                  </h1>
+                  <!-- <h1 v-show="engshow(video.v_id)" style="font-size: 14px !important;"><a
                   class="hideOverflow"
                   :aria-label="video.title"
                   :title="video.title_en"
-                >{{video.title_en}}</a></h1>-->
-              </div>
-              <div class="views text-center">
-                <ViewCatogs
-                  :vid="video.v_id"
-                  :cat_id="video.category_id"
-                  :isIndex="true"
-                  :title_en="video.title_en"
-                />
-                <span class="percent">
-                  <span class="circle"></span>
-                  {{video.created_at}}
-                </span>
-              </div>
+                  >{{video.title_en}}</a></h1>-->
+                </div>
+                <div class="views text-center">
+                  <ViewCatogs
+                    :vid="video.v_id"
+                    :cat_id="video.category_id"
+                    :isIndex="true"
+                    :title_en="video.title_en"
+                  />
+                  <span class="percent">
+                    <span class="circle"></span>
+                    {{video.created_at}}
+                  </span>
+                </div>
+              </clazy-load>
             </div>
           </div>
         </div>
