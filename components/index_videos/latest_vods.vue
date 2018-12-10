@@ -13,12 +13,15 @@
                 <nuxt-link :to="'/single-video/'+video.v_id">
                   <clazy-load :src="'//video2.vixtream.net/'+video.filename">
                     <!-- The image slot renders after the image loads. -->
-                    <div slot="placeholder" class="bg-inverse" style="background-color: black; height:200px;">
+                    <div
+                      slot="placeholder"
+                      class="bg-inverse"
+                      style="background-color: black; height:200px;"
+                    >
                       <!-- You can put any component you want in here. -->
                     </div>
                     <video :poster="'//video2.vixtream.net/'+video.filename" :alt="video.title"></video>
                     <!-- The placeholder slot displays while the image is loading. -->
-
                   </clazy-load>
                   <div ng-click="viewVideo(video.v_id)" class="play">
                     <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
@@ -35,19 +38,26 @@
                 </div>
               </div>
               <div class="descr" ng-click="viewVideo(video.v_id)">
-                <h1 style="font-size: 14px !important;"><a
-                  class="hideOverflow"
-                  :aria-label="video.title"
-                  :title="video.title"
-                >{{video.title}}</a></h1>
+                <h1 style="font-size: 14px !important;">
+                  <a
+                    class="hideOverflow"
+                    :aria-label="video.title"
+                    :title="video.title"
+                  >{{video.title}}</a>
+                </h1>
                 <!-- <h1 v-show="engshow(video.v_id)" style="font-size: 14px !important;"><a
                   class="hideOverflow"
                   :aria-label="video.title"
                   :title="video.title_en"
-                >{{video.title_en}}</a></h1> -->
+                >{{video.title_en}}</a></h1>-->
               </div>
               <div class="views text-center">
-                <ViewCatogs :vid="video.v_id" :cat_id="video.category_id" :isIndex="true" :title_en="video.title_en"/>
+                <ViewCatogs
+                  :vid="video.v_id"
+                  :cat_id="video.category_id"
+                  :isIndex="true"
+                  :title_en="video.title_en"
+                />
                 <span class="percent">
                   <span class="circle"></span>
                   {{video.created_at}}

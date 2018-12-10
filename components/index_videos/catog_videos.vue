@@ -20,7 +20,18 @@
               <div class="kaleb-vids">
                 <div class="Vimg itemContainer" style="background-color: black;">
                   <nuxt-link :to="'/single-video/'+video.v_id">
-                    <video class :poster="'//video2.vixtream.net/'+video.filename" :alt="video.title"></video>
+                    <clazy-load :src="'//video2.vixtream.net/'+video.filename">
+                      <!-- The image slot renders after the image loads. -->
+                      <div
+                        slot="placeholder"
+                        class="bg-inverse"
+                        style="background-color: black; height:200px;"
+                      >
+                        <!-- You can put any component you want in here. -->
+                      </div>
+                      <video :poster="'//video2.vixtream.net/'+video.filename" :alt="video.title"></video>
+                      <!-- The placeholder slot displays while the image is loading. -->
+                    </clazy-load>
                     <div ng-click="viewVideo(video.v_id)" class="play">
                       <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                     </div>
@@ -36,11 +47,13 @@
                   </div>
                 </div>
                 <div class="descr" ng-click="viewVideo(video.v_id)">
-                 <h1 style="font-size: 14px !important;"> <a
-                    class="hideOverflow"
-                    :aria-label="video.title"
-                    :title="video.title"
-                  >{{video.title}}</a></h1>
+                  <h1 style="font-size: 14px !important;">
+                    <a
+                      class="hideOverflow"
+                      :aria-label="video.title"
+                      :title="video.title"
+                    >{{video.title}}</a>
+                  </h1>
                 </div>
                 <div class="views text-center">
                   <ViewCatogs :vid="video.v_id" :cat_id="video.category_id" :isIndex="true"/>
@@ -76,15 +89,15 @@ export default {
   },
   mounted: function() {
     axios
-      .post(base_url+"/fetch_catogs")
+      .post(base_url + "/fetch_catogs")
       .then(res => {
         return (this.options = [...res.data]);
       })
       .catch(err => {
         console.log(err);
       });
-     axios
-      .post(base_url+"/cat_load", {
+    axios
+      .post(base_url + "/cat_load", {
         page: this.page,
         cat: this.cat_id,
         headers: {
@@ -102,7 +115,7 @@ export default {
     catogHandler($state) {
       this.page += 1;
       axios
-        .post(base_url+"/cat_load", {
+        .post(base_url + "/cat_load", {
           page: this.page,
           cat: this.cat_id,
           headers: {
@@ -131,7 +144,7 @@ export default {
         this.cat_id = parseInt(searctext.category_id);
         this.videos = [];
         axios
-          .post(base_url+"/cat_load", {
+          .post(base_url + "/cat_load", {
             page: this.page,
             cat: this.cat_id
           })
@@ -143,7 +156,7 @@ export default {
         this.cat_id = 1;
         this.videos = [];
         axios
-          .post(base_url+"/cat_load", {
+          .post(base_url + "/cat_load", {
             page: this.page,
             cat: this.cat_id
           })
@@ -157,7 +170,7 @@ export default {
 </script>
 
 <style scoped>
-.v-select pol{
+.v-select pol {
   margin-left: 0px !important;
 }
 </style>

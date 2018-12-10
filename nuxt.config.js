@@ -91,10 +91,6 @@ module.exports = {
       ssr: false
     },
     {
-      src: '~plugins/vue-slick',
-      ssr: false
-    },
-    {
       src: '~plugins/vue-select',
       ssr: false
     },
@@ -104,8 +100,12 @@ module.exports = {
       ssr: false
     },
     {
+      src:'~plugins/vue-lazyload-component',
+      ssr:false
+    },
+    {
       src: '~plugins/vue-lazyload',
-      ssr: false
+     
     }
   ],
 

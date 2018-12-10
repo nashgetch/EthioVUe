@@ -43,7 +43,7 @@
           </div>
         </div>
       </div>
-    </div> -->
+    </div>-->
     <div class="container-fluid mt-3 top-margin-bn-sm-md" style="padding-top: 6rem;">
       <div class="row">
         <div class="col-lg-10 offset-lg-2">
@@ -78,12 +78,14 @@ const base_url = "https://ethiov.com/api";
 export default {
   head() {
     return {
-      title: "EthioV - Live and Videos on Demand. Ethiopia's Reliable TVs and Videos Archive. All Your Favorite TV Channels",
+      title:
+        "EthioV - Live and Videos on Demand. Ethiopia's Reliable TVs and Videos Archive. All Your Favorite TV Channels",
       meta: [
         {
           hid: "description",
           name: "description",
-          content: "All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
+          content:
+            "All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
         },
         {
           hid: "keywords",
@@ -94,7 +96,8 @@ export default {
         {
           hid: "og:title",
           property: "og:title",
-          content: "EthioV - Ethiopian Live Channels and Videos on Demand. Ethiopia's Reliable TVs and Videos Archive. All Your Favorite TV Channels"
+          content:
+            "EthioV - Ethiopian Live Channels and Videos on Demand. Ethiopia's Reliable TVs and Videos Archive. All Your Favorite TV Channels"
         },
         {
           hid: "og:url",
@@ -211,7 +214,7 @@ export default {
       this.tab = tab;
     },
     checkTab(tab) {
-      return this.tab===tab;
+      return this.tab === tab;
     },
     infiniteHandler($state) {
       axios

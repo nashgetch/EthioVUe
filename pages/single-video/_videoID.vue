@@ -27,7 +27,18 @@
           <div class="author">
             <div class="author-head" ng-controller="navController">
               <nuxt-link :to="'/single-channel/'+owner.id">
-                <video :poster="pos_url+owner.poster_image" :alt="owner.tv_name" class="sv-avatar"></video>
+                <clazy-load :src="pos_url+owner.poster_image">
+                  <div
+                    slot="placeholder"
+                    class="bg-inverse"
+                    style="background-color: black; height:200px;"
+                  ></div>
+                  <video
+                    :poster="pos_url+owner.poster_image"
+                    :alt="owner.tv_name"
+                    class="sv-avatar"
+                  ></video>
+                </clazy-load>
               </nuxt-link>
               <div class="sv-name">
                 <div>
@@ -47,54 +58,55 @@
                 <div class="sv-views-progress-bar"></div>
               </div>
               <div class="sv-views-stats">
-
-                  <div class="dropdown">
-                    <a
-                      style="text-decoration: none; color: black;"
-                      class="dropdown-toggle"
-                      data-toggle="dropdown"
-                      role="button"
-                      aria-haspopup="true"
-                      aria-expanded="false"
+                <div class="dropdown">
+                  <a
+                    style="text-decoration: none; color: black;"
+                    class="dropdown-toggle"
+                    data-toggle="dropdown"
+                    role="button"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <i
+                      class="fa fa-share-alt"
+                      style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
+                    ></i>
+                    Share
+                    <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu poll">
+                    <social-sharing
+                      :url="'https://ethiov.com/single_video/' + single.v_id"
+                      :title="'EthioV - ' +single.title"
+                      :description="'EthioV - ' + single.description"
+                      :quote="'EthioV - ' + single.description"
+                      :hashtags="'#EthioV, ' + single.tags"
+                      inline-template
                     >
-                      <i class="fa fa-share-alt"
-                      style="color: #fbe631; padding-left: 5px; margin-top: 10px;"></i> Share
+                      <div>
+                        <network class="dropdown-item" network="facebook">
+                          <i
+                            class="fa fa-fw fa-facebook"
+                            style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
+                          ></i>- Facebook
+                        </network>
 
-                      <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu poll">
-                      <social-sharing
-                        :url="'https://ethiov.com/single_video/' + single.v_id"
-                        :title="'EthioV - ' +single.title"
-                        :description="'EthioV - ' + single.description"
-                        :quote="'EthioV - ' + single.description"
-                        :hashtags="'#EthioV, ' + single.tags"
-                        inline-template
-                      >
-                        <div>
-                          <network class="dropdown-item" network="facebook">
-                            <i
-                              class="fa fa-fw fa-facebook"
-                              style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
-                            ></i>- Facebook
-                          </network>
-
-                          <network network="twitter" class="dropdown-item">
-                            <i
-                              class="fa fa-fw fa-twitter"
-                              style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
-                            ></i>- Twitter
-                          </network>
-                          <network network="telegram" class="dropdown-item">
-                            <i
-                              class="fa fa-telegram"
-                              style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
-                            ></i>- Telegram
-                          </network>
-                        </div>
-                      </social-sharing>
-                    </ul>
-                  </div>
+                        <network network="twitter" class="dropdown-item">
+                          <i
+                            class="fa fa-fw fa-twitter"
+                            style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
+                          ></i>- Twitter
+                        </network>
+                        <network network="telegram" class="dropdown-item">
+                          <i
+                            class="fa fa-telegram"
+                            style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
+                          ></i>- Telegram
+                        </network>
+                      </div>
+                    </social-sharing>
+                  </ul>
+                </div>
 
                 <span class="green">
                   <span class="circle"></span>
@@ -117,7 +129,14 @@
                 <div class="nash-vids row">
                   <div class="col-sm-12 col-xs-6">
                     <div class="Vimg itemContainer" style="background-color: black;">
-                      <video class="imgur" :poster="pos_url+'/'+pub.filename" :alt="pub.title"></video>
+                      <clazy-load :src="pos_url+'/'+pub.filename">
+                        <div
+                          slot="placeholder"
+                          class="bg-inverse"
+                          style="background-color: black; height:200px;"
+                        ></div>
+                        <video class="imgur" :poster="pos_url+'/'+pub.filename" :alt="pub.title"></video>
+                      </clazy-load>
                       <nuxt-link :to="'/single-video/'+pub.v_id">
                         <div ng-click="viewVideo(pub.v_id)" class="play">
                           <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
@@ -128,13 +147,13 @@
                   </div>
                   <div class="col-sm-12 col-xs-6" ng-click="viewVideo(pub.v_id)">
                     <div class="descr">
-                    <h1 style="font-size: 14px !important;">
-                      <a
-                        class="hideOverflow"
-                        :aria-label="pub.title"
-                        :title="pub.title"
-                      >{{pub.title}}</a>
-                    </h1>
+                      <h1 style="font-size: 14px !important;">
+                        <a
+                          class="hideOverflow"
+                          :aria-label="pub.title"
+                          :title="pub.title"
+                        >{{pub.title}}</a>
+                      </h1>
                     </div>
                     <div class="views">{{pub.views}} views</div>
                     <div class="percent">
@@ -295,7 +314,13 @@
             <div class="thumb row" v-for="(re,$index) in recommended" :key="$index">
               <div class="col-lg-6 col-sm-6" ng-click="viewVideo(re.v_id)">
                 <div class="Vimg itemContainer" style="background-color: #0c0c0c">
-                  <video class="imgur" height="400" width="400" :poster="pos_url + '/'+re.filename" :alt="re.title"></video>
+                  <video
+                    class="imgur"
+                    height="400"
+                    width="400"
+                    :poster="pos_url + '/'+re.filename"
+                    :alt="re.title"
+                  ></video>
                   <nuxt-link :to="'/single-video/'+re.v_id">
                     <div ng-click="viewVideo(re.v_id)" class="play">
                       <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
@@ -306,8 +331,8 @@
               </div>
               <div class="col-lg-6 col-sm-6" ng-click="viewVideo(re.v_id)">
                 <div class="descr">
-                 <h1 style="font-size: 14px !important;">
-                 <a class="hideOverflow" :aria-label="re.title" :title="re.title">{{re.title}}</a>
+                  <h1 style="font-size: 14px !important;">
+                    <a class="hideOverflow" :aria-label="re.title" :title="re.title">{{re.title}}</a>
                   </h1>
                 </div>
                 <ViewCatogs :vid="re.v_id" :cat_id="re.category_id"/>
