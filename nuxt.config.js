@@ -46,10 +46,7 @@ module.exports = {
         type: 'image/x-icon',
         href: '/img/ethio_log.png'
       },
-      {
-        rel:'stylesheet',
-        href:'/styles.css'
-      },
+
       {
         rel:'stylesheet',
         href:'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
@@ -61,10 +58,6 @@ module.exports = {
       {
         rel:'stylesheet',
         href:'/main.css'
-      },
-      {
-        rel:'stylesheet',
-        href:'/sidebar.css'
       }
 
     ]
