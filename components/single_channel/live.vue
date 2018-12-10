@@ -69,7 +69,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-xs-12 col-sm-12 hidden-xs mt-3">
+        <div class="col-lg-4 d-none d-sm-block mt-3">
           <!-- up next -->
           <div class>
             <div class="caption">
