@@ -10,7 +10,7 @@
       <div class="ch-social-links d-inline-flex flex-row">
         <div class="social-icons-container mt-2 ml-4 d-flex">
           <span class="mt-3" style="color:white; font-size:1rem;">Social</span>
-          <social-sharing :url="'https://ethiov.com/single_channel/' + channel.id"
+          <social-sharing :url="'https://ethiov.com/single-channel/' + channel.id"
                           :title="'EthioV Live Stream ' + channel.tv_name"
                       :description="'EthioV - ' + channel.description"
                       :quote="'EthioV - ' + channel.description"
@@ -106,7 +106,7 @@ export default {
         {
           hid: "og:url",
           property: "og:url",
-          content: "https://ethiov.com/single_channel/" + this.channel.id
+          content: "https://ethiov.com/single-channel/" + this.channel.id
         },
         {
           hid: "og:image",
@@ -137,7 +137,7 @@ export default {
         {
           hid: "twitter:url",
           property: "twitter:url",
-          content: "https://ethiov.com/single_channel/" + this.channel.id
+          content: "https://ethiov.com/single-channel/" + this.channel.id
         },
         {
           hid: "twitter:image",

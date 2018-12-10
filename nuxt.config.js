@@ -26,13 +26,15 @@ module.exports = {
     },
     script: [
       {
-        src: "/js/jquery.min.js"
+        src: "https://code.jquery.com/jquery-3.2.1.slim.min.js",
+
       },
       {
-        src:"js/tether.min.js"
+        src:"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       },
       {
-        src: "/js/bootstrap.min.js"
+        src: "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js",
+
       },
       {
         src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
@@ -44,25 +46,18 @@ module.exports = {
         type: 'image/x-icon',
         href: '/img/ethio_log.png'
       },
+
       {
         rel:'stylesheet',
-        href:'/styles.css'
+        href:'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
       },
       {
         rel:'stylesheet',
-        href:'/font-awesome.min.css'
-      },
-      {
-        rel:'stylesheet',
-        href:'/bootstrap.css'
+        href:'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'
       },
       {
         rel:'stylesheet',
         href:'/main.css'
-      },
-      {
-        rel:'stylesheet',
-        href:'/sidebar.css'
       }
 
     ]

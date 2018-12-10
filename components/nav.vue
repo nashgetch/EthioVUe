@@ -48,7 +48,7 @@
                 <img src="/img/EthioV_LOGO_Black2.png" alt>
               </div>
             </nuxt-link>
-            <div class="navbar-nav flex-row mr-auto ml-5 mt-1 d-none d-md-flex d-lg-flex">
+            <div class="navbar-nav flex-row mr-auto  mt-1 d-none d-md-flex d-lg-flex">
               <nuxt-link to="/" class="nav-item nav-link" style="font-weight: bold;">
                 Home
                 <span class="sr-only">(current)</span>
@@ -60,7 +60,7 @@
               >Channels</nuxt-link>
             </div>
 
-            <div class="col-9 col-lg-5 d-none d-lg-block">
+            <div class="col-9 col-lg-8 d-none d-lg-block">
               <form @submit.prevent="search(search1)">
                 <div class="input-group mt-1 mb-3">
                   <input
@@ -71,6 +71,7 @@
                     placeholder="Search Videos"
                     aria-label="Search Videos"
                     aria-describedby="basic-addon2"
+                    style="margin-top:0px !important;"
                   >
                   <button type="submit" class="input-group-addon btn">
                     <i class="fa fa-search"></i>

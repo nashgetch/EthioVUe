@@ -377,7 +377,7 @@ export default {
         {
           hid: "og:url",
           property: "og:url",
-          content: "https://ethiov.com/single_video/" + this.single.v_id
+          content: "https://ethiov.com/single-video/" + this.single.v_id
         },
         {
           hid: "og:image",
@@ -403,7 +403,7 @@ export default {
         {
           hid: "twitter:url",
           property: "twiiter:url",
-          content: "https://ethiov.com/single_video/" + this.single.v_id
+          content: "https://ethiov.com/single-video/" + this.single.v_id
         },
         {
           hid: "twitter:image",
