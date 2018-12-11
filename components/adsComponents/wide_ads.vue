@@ -10,7 +10,7 @@
 export default {
   mounted: function() {
     this.$nextTick(()=>{
-       (adsbygoogle= window.adsbygoogle || []).push({});
+       (window.adsbygoogle= window.adsbygoogle || []).push({});
     });
   }
 };
