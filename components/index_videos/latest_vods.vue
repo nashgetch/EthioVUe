@@ -38,9 +38,7 @@
                 </div>
                 <div class="descr p-0 mb-2">
                   <h1 style="font-size: 14px !important;">
-                    <a
-                      class="hideOverflow"
-                    >Our Live Channels</a>
+                    <a class="hideOverflow">Our Live Channels</a>
                   </h1>
                   <!-- <h1 v-show="engshow(video.v_id)" style="font-size: 14px !important;"><a
                   class="hideOverflow"
@@ -170,3 +168,5 @@ export default {
   }
 };
 </script>
+
+

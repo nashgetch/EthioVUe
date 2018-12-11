@@ -1,14 +1,22 @@
 <template>
   <section style="padding-top:6rem;">
     <div class="adblock2">
-      <Wideads/>
+      <ins
+        class="adsbygoogle nashians"
+        style="display:inline-block;"
+        data-ad-client="ca-pub-5001725934888164"
+        data-ad-slot="5950915078"
+        diata-adsbygoogle-status="done"
+      ></ins>
     </div>
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: 6rem;">
       <div class="row">
         <div class="col-lg-10 offset-lg-2">
           <div class="row">
             <div class="col-md-2 col-sm-12 mt-2 channel-name d-none d-sm-block">
-              <a href="/">Videos </a> | <a href="/live-channels">Live TVs</a></div>
+              <a href="/">Videos</a> |
+              <a href="/live-channels">Live TVs</a>
+            </div>
 
             <div class="col-md-8 col-sm-12">
               <ul class="nav nav-pills">
@@ -26,6 +34,9 @@
     </div>
     <LatestVod :videos="videos" v-if="checkTab(1)"/>
     <CatogVods v-if="checkTab(2)"/>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
   </section>
 </template>
 
@@ -33,7 +44,6 @@
 import LatestVod from "@/components/index_videos/latest_vods";
 import ViewCatogs from "@/components/views_catogs";
 import CatogVods from "@/components/index_videos/catog_videos";
-import Wideads from "@/components/adsComponents/wide_ads";
 import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
@@ -107,8 +117,7 @@ export default {
   },
   components: {
     LatestVod,
-    CatogVods,
-    Wideads
+    CatogVods
   },
   data() {
     return {
@@ -211,4 +220,23 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.nashians {
+  width: 320px !important;
+  height: 100px !important;
+}
+@media (min-width: 500px) {
+  .nashians {
+    width: 468px !important;
+    height: 60px !important;
+  }
+}
+@media (min-width: 800px) {
+  .nashians {
+    width: 728px !important;
+    height: 90px !important;
+  }
+}
+</style>
 

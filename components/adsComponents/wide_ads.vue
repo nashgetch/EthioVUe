@@ -9,11 +9,11 @@
 </template>
 <script>
 export default {
-  created: function() {
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    // this.$nextTick(()=>{
-    //    (adsbygoogle= window.adsbygoogle || []).push({});
-    // });
+  mounted: function() {
+    // (adsbygoogle = window.adsbygoogle || []).push({});
+    this.$nextTick(()=>{
+       (adsbygoogle= window.adsbygoogle || []).push({});
+    });
   }
 };
 </script>
