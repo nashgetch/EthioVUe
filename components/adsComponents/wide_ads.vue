@@ -9,12 +9,13 @@
 </template>
 <script>
 export default {
-  mounted:function(){
-    this.$nextTick(()=>{
-       (window.adsbygoogle= window.adsbygoogle || []).push({});
-    });
+  mounted: function() {
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
+    // this.$nextTick(()=>{
+    //    (window.adsbygoogle= window.adsbygoogle || []).push({});
+    // });
   }
-}
+};
 </script>
 
 
