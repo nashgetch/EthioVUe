@@ -10,10 +10,10 @@
 <script>
 export default {
   mounted: function() {
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    // this.$nextTick(()=>{
-    //    (window.adsbygoogle= window.adsbygoogle || []).push({});
-    // });
+    // (adsbygoogle = window.adsbygoogle || []).push({});
+    this.$nextTick(()=>{
+       (adsbygoogle= window.adsbygoogle || []).push({});
+    });
   }
 };
 </script>
