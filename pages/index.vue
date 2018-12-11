@@ -25,12 +25,7 @@
     </div>
     <LatestVod :videos="videos" v-if="checkTab(1)"/>
     <CatogVods v-if="checkTab(2)"/>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-5001725934888164",
-        enable_page_level_ads: true
-      });
-    </script>
+    
   </section>
 </template>
 

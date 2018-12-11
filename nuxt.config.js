@@ -39,7 +39,8 @@ module.exports = {
       {
         src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
         async: true
-      }
+      },
+      { innerHTML: '(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-5001725934888164",enable_page_level_ads: true});', type: 'text/javascript', charset: 'utf-8'}
     ],
     link: [{
         rel: 'icon',
