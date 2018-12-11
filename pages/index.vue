@@ -1,13 +1,7 @@
 <template>
   <section style="padding-top:6rem;">
     <div class="adblock2">
-      <ins
-        class="adsbygoogle nashians"
-        style="display:block;"
-        data-ad-client="ca-pub-5001725934888164"
-        data-ad-slot="5950915078"
-        data-ad-format="auto"
-      ></ins>
+      <Wideads/>
     </div>
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: 6rem;">
       <div class="row">
@@ -44,6 +38,7 @@
 import LatestVod from "@/components/index_videos/latest_vods";
 import ViewCatogs from "@/components/views_catogs";
 import CatogVods from "@/components/index_videos/catog_videos";
+import Wideads from "/components/adsComponents/wide_ads";
 import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
@@ -117,7 +112,8 @@ export default {
   },
   components: {
     LatestVod,
-    CatogVods
+    CatogVods,
+    Wideads
   },
   data() {
     return {
