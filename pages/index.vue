@@ -34,9 +34,9 @@
     </div>
     <LatestVod :videos="videos" v-if="checkTab(1)"/>
     <CatogVods v-if="checkTab(2)"/>
-    <script2>
+    <script>
       (adsbygoogle = window.adsbygoogle || []).push({});
-    </script2>
+    </script>
   </section>
 </template>
 
