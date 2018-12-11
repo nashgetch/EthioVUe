@@ -41,7 +41,7 @@ module.exports = {
         async: true
       },
       {
-        src:'~/plugins/ads.js',
+        src:'/js/ads.js',
       }
       // { innerHTML: "'(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: 'ca-pub-5001725934888164',enable_page_level_ads: true});'", type: 'text/javascript', charset: 'utf-8'}
     ],
