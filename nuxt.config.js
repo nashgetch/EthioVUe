@@ -24,13 +24,12 @@ module.exports = {
     htmlAttrs: {
       prefix: "og: http://ogp.me/ns#"
     },
-    script: [
-      {
+    script: [{
         src: "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js",
 
       },
       {
-        src:"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        src: "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       },
       {
         src: "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js",
@@ -40,11 +39,13 @@ module.exports = {
         src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
         async: true
       },
-      {
-        src:'/js/ads.js',
-      },
 
-      { innerHTML: `(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-5001725934888164"});`, type: 'text/javascript', charset: 'utf-8'}
+
+      {
+        innerHTML: `(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-5001725934888164",enable_page_level_ads: true});`,
+        type: 'text/javascript',
+        charset: 'utf-8'
+      }
     ],
     __dangerouslyDisableSanitizers: ['script'],
     link: [{
@@ -54,16 +55,16 @@ module.exports = {
       },
 
       {
-        rel:'stylesheet',
-        href:'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
+        rel: 'stylesheet',
+        href: 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
       },
       {
-        rel:'stylesheet',
-        href:'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'
+        rel: 'stylesheet',
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'
       },
       {
-        rel:'stylesheet',
-        href:'/main.css'
+        rel: 'stylesheet',
+        href: '/main.css'
       }
 
     ]
@@ -103,7 +104,7 @@ module.exports = {
     {
       src: '~plugins/vue-lazyload',
     },
-    
+
   ],
 
   /*
