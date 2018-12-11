@@ -37,7 +37,7 @@ export default {
   head() {
     return {
       title:
-        "EthioV - Live and Videos on Demand. Ethiopia's Reliable TVs and Videos Archive. All Your Favorite TV Channels",
+        "Ethiov",
       meta: [
         {
           hid: "description",
