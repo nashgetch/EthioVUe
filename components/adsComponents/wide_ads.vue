@@ -1,7 +1,7 @@
 <template>
   <ins
     class="adsbygoogle nashians"
-    style="display:block;"
+    style="display:inline-block;"
     data-ad-client="ca-pub-5001725934888164"
     data-ad-slot="5950915078"
   ></ins>
