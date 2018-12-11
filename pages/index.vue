@@ -38,7 +38,7 @@
 import LatestVod from "@/components/index_videos/latest_vods";
 import ViewCatogs from "@/components/views_catogs";
 import CatogVods from "@/components/index_videos/catog_videos";
-import Wideads from "/components/adsComponents/wide_ads";
+import Wideads from "@/components/adsComponents/wide_ads";
 import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
