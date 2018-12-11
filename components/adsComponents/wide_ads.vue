@@ -1,10 +1,9 @@
 <template>
   <ins
     class="adsbygoogle nashians"
-    style="display:inline-block;"
+    style="display:block;"
     data-ad-client="ca-pub-5001725934888164"
     data-ad-slot="5950915078"
-    data-adsbygoogle-status="done"
   ></ins>
 </template>
 <script>

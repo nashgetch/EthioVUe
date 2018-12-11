@@ -3,10 +3,10 @@
     <div class="adblock2">
       <ins
         class="adsbygoogle nashians"
-        style="display:inline-block;"
+        style="display:block;"
         data-ad-client="ca-pub-5001725934888164"
         data-ad-slot="5950915078"
-        diata-adsbygoogle-status="done"
+        data-ad-format="auto"
       ></ins>
     </div>
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: 6rem;">
@@ -34,9 +34,9 @@
     </div>
     <LatestVod :videos="videos" v-if="checkTab(1)"/>
     <CatogVods v-if="checkTab(2)"/>
-    <script>
+    <script2>
       (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+    </script2>
   </section>
 </template>
 

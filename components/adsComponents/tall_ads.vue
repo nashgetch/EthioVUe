@@ -2,10 +2,9 @@
   <div>
     <ins
       class="adsbygoogle nashian"
-      style="display:inline-block;"
+      style="display:block;"
       data-ad-client="ca-pub-5001725934888164"
       data-ad-slot="5950915078"
-      diata-adsbygoogle-status="done"
     ></ins>
   </div>
 </template>
