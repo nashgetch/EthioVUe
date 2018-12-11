@@ -25,7 +25,6 @@
     </div>
     <LatestVod :videos="videos" v-if="checkTab(1)"/>
     <CatogVods v-if="checkTab(2)"/>
-    
   </section>
 </template>
 
@@ -206,6 +205,12 @@ export default {
           this.$toast.success("The Video is added to Watch Later");
         });
     }
+  },
+  mounted: function() {
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-5001725934888164",
+      enable_page_level_ads: true
+    });
   }
 };
 </script>
