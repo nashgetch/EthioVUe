@@ -97,6 +97,10 @@ module.exports = {
     },
     {
       src: '~plugins/vue-lazyload',
+    },
+    {
+      src:'~/plugins/ads.js',
+      ssr:false
     }
   ],
 

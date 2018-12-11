@@ -27,7 +27,6 @@
     <CatogVods v-if="checkTab(2)"/>
   </section>
 </template>
-
 <script>
 import LatestVod from "@/components/index_videos/latest_vods";
 import ViewCatogs from "@/components/views_catogs";
@@ -207,13 +206,11 @@ export default {
     }
   },
   mounted: function() {
-    (window.adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "ca-pub-5001725934888164",
-      enable_page_level_ads: true
-    });
+    
   }
 };
 </script>
+
 
 <style scoped>
 .nashians {
