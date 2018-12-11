@@ -8,9 +8,16 @@
           :key="$index"
         >
           <div class="kaleb-vids">
-            <div class="Vimg itemContainer">
+            <div class="Vimg itemContainer bg-inverse">
               <nuxt-link :to="'/single-video/'+video.v_id">
-                <video :poster="'https://video2.vixtream.net/'+video.filename" :alt="video.title"></video>
+                <clazy-load :src="'//video2.vixtream.net/'+video.filename">
+                  <div
+                    slot="placeholder"
+                    class="bg-inverse"
+                    style="background-color: black; height:200px;"
+                  ></div>
+                  <video :poster="'https://video2.vixtream.net/'+video.filename" :alt="video.title"></video>
+                </clazy-load>
                 <div ng-click="viewVideo(video.v_id)" class="play">
                   <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                 </div>
@@ -19,11 +26,12 @@
             </div>
             <div class="descr" ng-click="viewVideo(video.v_id)">
               <h1 style="font-size: 14px !important;">
-              <a
-                class="hideOverflow"
-                :aria-label="video.title"
-                :title="video.title"
-              >{{video.title}}</a></h1>
+                <a
+                  class="hideOverflow"
+                  :aria-label="video.title"
+                  :title="video.title"
+                >{{video.title}}</a>
+              </h1>
             </div>
             <div class="views small">
               <ViewCatogs :vid="video.v_id" :cat_id="video.category_id" :isIndex="true"/>
@@ -50,8 +58,7 @@ export default {
       type: Array,
       required: true
     }
-  },
-
+  }
 };
 </script>
 

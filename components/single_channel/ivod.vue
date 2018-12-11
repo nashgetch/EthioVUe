@@ -73,7 +73,18 @@
                         <div class="col-sm-12 col-xs-6">
                           <div class="Vimg" style="background-color: black;">
                             <nuxt-link :to="'/single-video/'+video.v_id">
-                              <video class="imgur1" :poster="url + video.filename" :alt="video.title"></video>
+                              <clazy-load :src="url + video.filename">
+                                <div
+                                  slot="placeholder"
+                                  class="bg-inverse"
+                                  style="background-color: black; height:115px;"
+                                ></div>
+                                <video
+                                  class="imgur1"
+                                  :poster="url + video.filename"
+                                  :alt="video.title"
+                                ></video>
+                              </clazy-load>
                               <div class="time">{{video.duration}}</div>
                             </nuxt-link>
                           </div>
@@ -81,13 +92,14 @@
                         <div class="col-sm-12 col-xs-6">
                           <div class="descr">
                             <h1 style="font-size: 14px !important;">
-                            <a
-                              class="hideOverflow"
-                              :aria-label="video.title"
-                              :title="video.title"
-                              tooltip
-                              data-animation="false"
-                            >{{video.title}}</a></h1>
+                              <a
+                                class="hideOverflow"
+                                :aria-label="video.title"
+                                :title="video.title"
+                                tooltip
+                                data-animation="false"
+                              >{{video.title}}</a>
+                            </h1>
                           </div>
                           <div class="views">
                             <ViewCatogs

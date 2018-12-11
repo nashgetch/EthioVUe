@@ -13,9 +13,16 @@
           :key="$index"
         >
           <div class="kaleb-vids">
-            <div class="Vimg itemContainer">
+            <div class="Vimg itemContainer bg-inverse">
               <nuxt-link :to="'/single-video/' + video.v_id">
-                <video :poster="'//video2.vixtream.net/' + video.filename" :alt="video.title"></video>
+                <clazy-load :src="'//video2.vixtream.net/'+video.filename">
+                  <div
+                    slot="placeholder"
+                    class="bg-inverse"
+                    style="background-color: black; height:200px;"
+                  ></div>
+                  <video :poster="'//video2.vixtream.net/'+video.filename" :alt="video.title"></video>
+                </clazy-load>
                 <div class="play">
                   <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                 </div>
@@ -40,13 +47,15 @@
   </div>
 </template>
 <script>
-import axios from 'axios';
+import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
   asyncData(context) {
-    return axios.post(base_url+"/translate/" + context.params.ser).then(res => {
-      return { search_results: [...res.data] };
-    });
+    return axios
+      .post(base_url + "/translate/" + context.params.ser)
+      .then(res => {
+        return { search_results: [...res.data] };
+      });
   }
 };
 </script>

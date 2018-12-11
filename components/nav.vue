@@ -45,7 +45,7 @@
           <div class="row">
             <nuxt-link to="/">
               <div class="text-center ethiov_logo">
-                <img src="/img/EthioV_LOGO_Black2.png" alt>
+                <img src="/img/EthioV_LOGO_Black3.png" alt>
               </div>
             </nuxt-link>
             <div class="navbar-nav flex-row mr-auto  mt-1 d-none d-md-flex d-lg-flex">
@@ -162,10 +162,10 @@
     <div id="sidenav" class="d-lg-none" :class="hidden_side_nav">
       <div class="container-fluid">
         <div class="row">
-          <a @click.prevent="sidetoggle" class="mt-3 ml-3 mobile_menu_close" id="menu-toggler-side"></a>
+          <a @click.prevent="sidetoggle" class="ml-3 mobile_menu_close" style="margin-top:33px; margin-right:4px;" id="menu-toggler-side"></a>
           <nuxt-link to="/">
-            <div class="text-center ethiov_logo">
-              <img src="/img/EthioV_LOGO_Black2.png" alt="EthioV Logo">
+            <div class="text-center ethiov_logo mt-3">
+              <img src="/img/EthioV_LOGO_Black3.png" alt="EthioV Logo">
             </div>
           </nuxt-link>
         </div>

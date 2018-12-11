@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid" style="padding-top: 6rem; padding-left: 30px;">
+  <div class="container-fluid pl-0 pl-sm-5 pr-0" style="padding-top: 6rem;">
     <div class="row rowDiv">
       <div class="col-lg-8 col-xs-12 col-sm-12">
         <div id="iframe1" class="video-container">
@@ -15,7 +15,16 @@
           ></iframe>
         </div>
         <div class="content-wrapper" style="margin: 0 !important;">
-          <h1 style="font-size: 15px !important; padding-top: 7px;">{{ single.title }}</h1>
+          <h1 style="font-size: 15px !important; padding-top: 7px;">
+            {{ single.title }}
+            <ViewCatogs
+              :isSingle="true"
+              :vid="single.v_id"
+              :cat_id="single.category_id"
+              :title_en="single.title_en"
+              :title_am_ph="single.am_en_ph"
+            />
+          </h1>
         </div>
         <div class="adblock2" style>
           <div class="img">
@@ -27,18 +36,11 @@
           <div class="author">
             <div class="author-head" ng-controller="navController">
               <nuxt-link :to="'/single-channel/'+owner.id">
-                <clazy-load :src="pos_url+owner.poster_image">
-                  <div
-                    slot="placeholder"
-                    class="bg-inverse"
-                    style="background-color: black; height:200px;"
-                  ></div>
-                  <video
-                    :poster="pos_url+owner.poster_image"
-                    :alt="owner.tv_name"
-                    class="sv-avatar"
-                  ></video>
-                </clazy-load>
+                <img
+                  :src="'//video2.vixtream.net'+owner.poster_image"
+                  :alt="owner.tv_name"
+                  class="sv-avatar"
+                >
               </nuxt-link>
               <div class="sv-name">
                 <div>

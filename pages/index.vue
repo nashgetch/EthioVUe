@@ -1,54 +1,12 @@
 <template>
   <section>
-    <!-- <div style="padding-top: 6rem;background-color: #DEDEDE;">
-      <div class="container mb-3 live_container">
-        <div class="row">
-          <h3 class="krishna">
-            LIVE -
-            <small class="krishna2">Channels</small>
-          </h3>
-          <div class="col-lg-12 col-12 m-0">
-            <div class="live-channels">
-              <div class="prev-btn">
-                <a id="prev_btn">
-                  <i class="fa fa-chevron-left fa-2x"></i>
-                </a>
-              </div>
-              <div class="next-btn">
-                <a id="next_btn">
-                  <i class="fa fa-chevron-right fa-2x"></i>
-                </a>
-              </div>
-
-              <div class="text-center">
-                <div class="live-slider responsive" id="sl">
-                  <slick ref="slick" :options="slickOptions">
-                    <div class="slider_elem" v-for="(tv,$index) in tvs" :key="$index">
-                      <div class="live_chan_img_container">
-                        <nuxt-link :to="'/single_channel/'+tv.id">
-                          <img
-                            class="imgur"
-                            :aria-label="tv.tv_name"
-                            style="opacity: 1; overflow: hidden;"
-                            :src="turl + tv.poster_image"
-                            :alt="tv.tv_name"
-                          >
-                        </nuxt-link>
-                      </div>
-                    </div>
-                  </slick>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>-->
+    <Wideads/>
     <div class="container-fluid mt-3 top-margin-bn-sm-md" style="padding-top: 6rem;">
       <div class="row">
         <div class="col-lg-10 offset-lg-2">
           <div class="row">
-            <div class="col-md-2 col-sm-12 mt-2 channel-name d-none d-sm-block">VoD | Live!</div>
+            <div class="col-md-2 col-sm-12 mt-2 channel-name d-none d-sm-block">
+              <a href="/">Videos </a> | <a href="/live-channels">Live TVs</a></div>
 
             <div class="col-md-8 col-sm-12">
               <ul class="nav nav-pills">
@@ -73,6 +31,7 @@
 import LatestVod from "@/components/index_videos/latest_vods";
 import ViewCatogs from "@/components/views_catogs";
 import CatogVods from "@/components/index_videos/catog_videos";
+import Wideads from "@/components/adsComponents/wide_ads";
 import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
@@ -146,7 +105,8 @@ export default {
   },
   components: {
     LatestVod,
-    CatogVods
+    CatogVods,
+    Wideads
   },
   data() {
     return {
