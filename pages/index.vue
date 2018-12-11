@@ -1,8 +1,5 @@
 <template>
   <section style="padding-top:6rem;">
-    <div class="adblock2">
-      <Wideads/>
-    </div>
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: 6rem;">
       <div class="row">
         <div class="col-lg-10 offset-lg-2">
@@ -28,6 +25,12 @@
     </div>
     <LatestVod :videos="videos" v-if="checkTab(1)"/>
     <CatogVods v-if="checkTab(2)"/>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-5001725934888164",
+        enable_page_level_ads: true
+      });
+    </script>
   </section>
 </template>
 
@@ -35,7 +38,6 @@
 import LatestVod from "@/components/index_videos/latest_vods";
 import ViewCatogs from "@/components/views_catogs";
 import CatogVods from "@/components/index_videos/catog_videos";
-import Wideads from "@/components/adsComponents/wide_ads";
 import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
@@ -109,8 +111,7 @@ export default {
   },
   components: {
     LatestVod,
-    CatogVods,
-    Wideads
+    CatogVods
   },
   data() {
     return {
