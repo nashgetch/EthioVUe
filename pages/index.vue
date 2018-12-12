@@ -5,7 +5,7 @@
   </section>
 </template>
 <script>
-import Allads from "/components/ads-page/all_ads";
+import Allads from "@/components/ads-page/all_ads";
 
 // import LatestVod from "@/components/index_videos/latest_vods";
 // import ViewCatogs from "@/components/views_catogs";
