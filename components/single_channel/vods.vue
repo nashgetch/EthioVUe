@@ -38,7 +38,7 @@
               <small style="margin-right: 20%"></small>
               <div class="percent">
                 <span class="circle"></span>
-                {{video.created_at}}
+                {{ video.created_at }}
               </div>
             </div>
           </div>

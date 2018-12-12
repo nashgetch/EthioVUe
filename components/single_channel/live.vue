@@ -45,8 +45,6 @@
                                 class="imgur1"
                                 :poster="'https://video2.vixtream.net/'+video.filename"
                               ></video>
-        
-
                             <div ng-click="viewVideo(video.v_id)" class="play">
                               <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                             </div>
