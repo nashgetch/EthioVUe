@@ -46,10 +46,6 @@ export default {
             "All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
         },
         {
-          hid: "keywords",
-          name: "keywords",
-        },
-        {
           hid: "og:title",
           property: "og:title",
           content:
