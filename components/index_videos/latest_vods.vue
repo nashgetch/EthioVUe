@@ -56,7 +56,7 @@
           >
             <div class="kaleb-vids">
               <div class="Vimg itemContainer" style="background-color: black;">
-                <nuxt-link :to="'/single-video/'+video.v_id">
+                <nuxt-link :to="'/singleVideo/'+video.v_id">
                   <img :src="'//video2.vixtream.net/'+video.filename" :alt="video.title"/>
                   <div ng-click="viewVideo(video.v_id)" class="play">
                     <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
