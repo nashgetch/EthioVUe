@@ -1,5 +1,6 @@
 <template>
   <section style="padding-top:6rem;">
+    <wideads/>
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: 6rem;">
       <div class="row">
         <div class="col-lg-10 offset-lg-2">
@@ -31,6 +32,7 @@
 import LatestVod from "@/components/index_videos/latest_vods";
 import ViewCatogs from "@/components/views_catogs";
 import CatogVods from "@/components/index_videos/catog_videos";
+import wideads from "@/components/adsComponents/wide_ads"
 import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
@@ -97,7 +99,8 @@ export default {
   },
   components: {
     LatestVod,
-    CatogVods
+    CatogVods,
+    wideads
   },
   data() {
     return {
