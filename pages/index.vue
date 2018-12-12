@@ -1,6 +1,6 @@
 <template>
   <section style="padding-top:6rem;">
-    <wideads/>
+    <nuxt-link to="/ads-test">Test Ads</nuxt-link>
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: 6rem;">
       <div class="row">
         <div class="col-lg-10 offset-lg-2">
