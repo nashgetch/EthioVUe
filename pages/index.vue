@@ -1,5 +1,10 @@
 <template>
   <section style="padding-top:6rem;">
+    <no-ssr>
+      <div class="adblock2">
+        <Wideads/>
+      </div>
+    </no-ssr>
     <nuxt-link to="/ads-test">Test Ads</nuxt-link>
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: 6rem;">
       <div class="row">
@@ -32,7 +37,7 @@
 import LatestVod from "@/components/index_videos/latest_vods";
 import ViewCatogs from "@/components/views_catogs";
 import CatogVods from "@/components/index_videos/catog_videos";
-import wideads from "@/components/adsComponents/wide_ads"
+import Wideads from "@/components/adsComponents/wide_ads"
 import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
@@ -100,7 +105,7 @@ export default {
   components: {
     LatestVod,
     CatogVods,
-    wideads
+    Wideads
   },
   data() {
     return {
