@@ -41,18 +41,10 @@
                       <div class="col-sm-12 col-xs-6">
                         <div class="Vimg itemContainer" style="background-color: black;">
                           <nuxt-link :to="'/single-video/'+video.v_id">
-                            <clazy-load :src="'//video2.vixtream.net/'+video.filename">
-                              <div
-                                slot="placeholder"
-                                class="bg-inverse"
-                                style="background-color: black; height:115px;"
-                              ></div>
-                              <video
+                              <img
                                 class="imgur1"
-                                :poster="'https://video2.vixtream.net/'+video.filename"
-                              ></video>
-                            </clazy-load>
-
+                                :src="'https://video2.vixtream.net/'+video.filename"
+                              />
                             <div ng-click="viewVideo(video.v_id)" class="play">
                               <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                             </div>
