@@ -70,7 +70,7 @@
                       :key="$index"
                     >
                       <div class="nash-vids row">
-                        <div class="col-6 col-sm-12">
+                        <div class="col-sm-12 col-xs-6">
                           <div class="Vimg" style="background-color: black;">
                             <nuxt-link :to="'/single-video/'+video.v_id">
                               <img class="imgur1" :src="url + video.filename" :alt="video.title">

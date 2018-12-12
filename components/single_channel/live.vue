@@ -29,7 +29,7 @@
             </div>
             <div class="clearfix"></div>
 
-            <!-- <div class="single-v-footer">
+            <div class="single-v-footer">
               <div class="similar-v single-video video-mobile-02">
                 <div class="row">
                   <div
@@ -41,10 +41,12 @@
                       <div class="col-sm-12 col-xs-6">
                         <div class="Vimg itemContainer" style="background-color: black;">
                           <nuxt-link :to="'/single-video/'+video.v_id">
-                              <img
+                              <video
                                 class="imgur1"
-                                :src="'https://video2.vixtream.net/'+video.filename"
-                              />
+                                :poster="'https://video2.vixtream.net/'+video.filename"
+                              ></video>
+        
+
                             <div ng-click="viewVideo(video.v_id)" class="play">
                               <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                             </div>
@@ -66,7 +68,7 @@
                   </div>
                 </div>
               </div>
-            </div> -->
+            </div>
           </div>
         </div>
         <div class="col-lg-4 d-none d-sm-block mt-3">
