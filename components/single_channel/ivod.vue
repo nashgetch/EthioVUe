@@ -70,21 +70,10 @@
                       :key="$index"
                     >
                       <div class="nash-vids row">
-                        <div class="col-sm-12 col-xs-6">
+                        <div class="col-6 col-sm-12">
                           <div class="Vimg" style="background-color: black;">
                             <nuxt-link :to="'/single-video/'+video.v_id">
-                              <clazy-load :src="url + video.filename">
-                                <div
-                                  slot="placeholder"
-                                  class="bg-inverse"
-                                  style="background-color: black; height:115px;"
-                                ></div>
-                                <video
-                                  class="imgur1"
-                                  :poster="url + video.filename"
-                                  :alt="video.title"
-                                ></video>
-                              </clazy-load>
+                              <img class="imgur1" :src="url + video.filename" :alt="video.title">
                               <div class="time">{{video.duration}}</div>
                             </nuxt-link>
                           </div>
