@@ -1,6 +1,5 @@
 <template>
   <section style="padding-top:6rem;">
-    <Adsense root-class="wrapper VueAdsense" data-ad-client="ca-pub-5001725934888164" data-ad-slot="5950915078"></Adsense>
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: 6rem;">
       <div class="row">
         <div class="col-lg-10 offset-lg-2">
