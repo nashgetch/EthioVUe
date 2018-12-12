@@ -3,7 +3,9 @@
         <div class="adblock2">
             <Wideads/>
         </div>
-        
+        <div style="margin-top:2rem;">
+            <Tallads/>
+        </div>
     </section>
 </template>
 <script>

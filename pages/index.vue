@@ -1,10 +1,5 @@
 <template>
   <section style="padding-top:6rem;">
-    <no-ssr>
-      <div class="adblock2">
-        <Wideads/>
-      </div>
-    </no-ssr>
     <nuxt-link to="/ads-test">Test Ads</nuxt-link>
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: 6rem;">
       <div class="row">
