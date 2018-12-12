@@ -103,6 +103,7 @@ module.exports = {
     },
     {
       src: '~plugins/vue-lazyload',
+      ssr:false
     },
     
   ],
