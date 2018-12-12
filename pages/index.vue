@@ -1,6 +1,6 @@
 <template>
   <section style="padding-top:6rem;">
-    <adsbygoogle ad-slot="5950915078" ad-format="auto"/>
+    <adsbygoogle ad-slot="5950915078" ad-format="auto" ad-style="display:inline-block;width:728px;height:90px"/>
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: 6rem;">
       <div class="row">
         <div class="col-lg-10 offset-lg-2">
@@ -48,8 +48,6 @@ export default {
         {
           hid: "keywords",
           name: "keywords",
-          keywords:
-            "ጠ/ሚ ዶ/ር አብይ ዐህመድ, ዜና, Fana TV, Walta, EBC, Bethel TV, Ethiopian TV Channels, Ethiopian Videos, Elroi, Amhara TV, Tigrai TV, Ethiopian News, Ethiopian Comedy, Abiy"
         },
         {
           hid: "og:title",
