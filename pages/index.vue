@@ -1,6 +1,5 @@
 <template>
   <section style="padding-top:6rem;">
-    <adsbygoogle ad-slot="5950915078" ad-format="auto" ad-style="display:inline-block;width:728px;height:90px"/>
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: 6rem;">
       <div class="row">
         <div class="col-lg-10 offset-lg-2">
