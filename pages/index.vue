@@ -36,7 +36,7 @@ const base_url = "https://ethiov.com/api";
 export default {
   head() {
     return {
-      title: "Ethiov",
+      title: "Ethiov ->Ethiopian Videos and Live channels",
       meta: [
         {
           hid: "description",
