@@ -78,7 +78,7 @@
                   </a>
                   <ul class="dropdown-menu poll">
                     <social-sharing
-                      :url="'https://ethiov.com/single_video/' + single.v_id"
+                      :url="'https://ethiov.com/single-video/' + single.v_id"
                       :title="'EthioV - ' +single.title"
                       :description="'EthioV - ' + single.description"
                       :quote="'EthioV - ' + single.description"
