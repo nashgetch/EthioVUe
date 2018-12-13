@@ -11,7 +11,7 @@
  <!-- <script2>
    (adsbygoogle = window.adsbygoogle || []).push({});
  </script2> -->
- <adsbygoogle ad-slot="5950915078" />
+ <adsbygoogle class="nashian" ad-slot="5950915078" />
 <!-- </no-ssr> -->
 
 </template>
