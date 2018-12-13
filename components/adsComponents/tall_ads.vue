@@ -1,18 +1,18 @@
 <template>
-<no-ssr>
-  <div>
+<!-- <no-ssr> -->
+  <!-- <div> -->
     <!-- <ins
       class="adsbygoogle nashian"
       style="display:inline-block;"
       data-ad-client="ca-pub-5001725934888164"
       data-ad-slot="5950915078"
     ></ins> -->
-  </div>
+  <!-- </div> -->
  <!-- <script2>
    (adsbygoogle = window.adsbygoogle || []).push({});
  </script2> -->
  <adsbygoogle ad-slot="5950915078" />
-</no-ssr>
+<!-- </no-ssr> -->
 
 </template>
 <script>
