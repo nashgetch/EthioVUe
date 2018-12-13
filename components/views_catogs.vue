@@ -14,7 +14,7 @@
       </h1>
     </div>
 
-    <no-ssr placeholder="Loading ..." v-if="!isIndex">
+    <no-ssr placeholder="Loading ..." v-if="!isIndex && !isSingle">
       <div class="views">views</div>
       <div class="percent">
         <span class="circle"></span>

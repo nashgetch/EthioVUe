@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid pl-0 pl-sm-5 pr-0" style="padding-top: 6rem;">
+  <div class="container-fluid pl-0 pl-sm-5 pr-0 pr-sm-5" style="padding-top: 6rem;">
     <div class="row rowDiv">
       <div class="col-lg-8 col-xs-12 col-sm-12">
         <div id="iframe1" class="video-container">
@@ -303,7 +303,7 @@
         </div>
         <!-- right column -->
       </div>
-      <div class="col-lg-4 col-xs-12 col-sm-12 hidden-xs">
+      <div class="col-sm-12 col-lg-4 d-none d-lg-block">
         <div class="caption">
           <Tallads/>
           <div class="left">
@@ -546,6 +546,15 @@ async function getViews(v_id) {
   margin-left: auto;
 }
 
+@media (min-width: 300px) and (max-width: 768px) {
+  .imgur {
+  max-width: 250px;
+  max-height: 200px;
+  width: 100%;
+}
+
+
+}
 .nashians {
   width: 320px !important;
   height: 100px !important;
