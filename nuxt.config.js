@@ -47,7 +47,7 @@ module.exports = {
       //   charset: 'utf-8'
       // }
     ],
-    __dangerouslyDisableSanitizers: ['script'],
+    // __dangerouslyDisableSanitizers: ['script'],
     link: [{
         rel: 'icon',
         type: 'image/x-icon',
