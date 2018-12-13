@@ -102,8 +102,7 @@ module.exports = {
       ssr: false
     },
     {
-      src: '~plugins/vue-lazyload',
-      ssr:false
+      src: '~plugins/vue-lazyload'
     },
 
   ],
