@@ -122,7 +122,7 @@ module.exports = {
    ** Axios module configuration
    */
   'google-adsense': {
-    id: 'ca-pub-5001725934888164',
+    id: 'pub-5001725934888164',
     pageLevelAds:true
   },
   toast: {
