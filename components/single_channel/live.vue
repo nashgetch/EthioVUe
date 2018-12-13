@@ -58,7 +58,7 @@
                             class="hideOverflow"
                             :aria-label="video.title"
                             :title="video.title"
-                          >{{video.title}}</a>
+                          >{{video.title_en}}</a>
                         </div>
                         <ViewCatogs :vid="video.v_id" :cat_id="video.category_id"/>
                       </div>
