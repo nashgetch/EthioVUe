@@ -1,6 +1,6 @@
 <template>
  <no-ssr>
- <ins
+ <!-- <ins
     class="adsbygoogle nashians"
     style="display:inline-block;"
     data-ad-client="ca-pub-5001725934888164"
@@ -8,7 +8,8 @@
   ></ins>
  <script2>
     (adsbygoogle= window.adsbygoogle || []).push({});
- </script2>
+ </script2> -->
+ <adsbygoogle ad-slot="5950915078" />
  </no-ssr>
 
 </template>
