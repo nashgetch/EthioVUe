@@ -3,7 +3,7 @@
     <div class="container parentDiv">
       <div class="container parentDiv">
         <div class="row display-flex">
-          <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3 ml-auto mr-auto mb-3">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 ml-auto mr-auto mb-3">
             <div class="kaleb-vids">
               <div class="Vimg" style="background-color:#fbe631 !important;">
                 <div class="row chn-image-container index m-0">
@@ -44,7 +44,7 @@
                 </div>
               </div>
             </div>
-          </div> -->
+          </div>
           <div
             class="col-12 col-sm-6 col-md-4 col-lg-3 videoitem"
             v-for="(video,$index) in videos"
