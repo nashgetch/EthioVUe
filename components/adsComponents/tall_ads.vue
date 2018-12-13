@@ -8,17 +8,20 @@
       data-ad-slot="5950915078"
     ></ins>
   </div>
+ <script>
+   (adsbygoogle = window.adsbygoogle || []).push({});
+ </script>
 </no-ssr>
 
 </template>
 <script>
 export default {
-  mounted: function() {
-    // (window.adsbygoogle = window.adsbygoogle || []).push({});
-    this.$nextTick(() => {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    });
-  }
+  // mounted: function() {
+  //   // (window.adsbygoogle = window.adsbygoogle || []).push({});
+  //   this.$nextTick(() => {
+  //     (window.adsbygoogle = window.adsbygoogle || []).push({});
+  //   });
+  // }
 };
 </script>
 
