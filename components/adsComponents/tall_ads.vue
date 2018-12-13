@@ -1,4 +1,5 @@
 <template>
+<no-ssr>
   <div>
     <ins
       class="adsbygoogle nashian"
@@ -7,6 +8,8 @@
       data-ad-slot="5950915078"
     ></ins>
   </div>
+</no-ssr>
+
 </template>
 <script>
 export default {

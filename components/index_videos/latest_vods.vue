@@ -1,16 +1,6 @@
 <template>
 
   <div>
-     <ins
-    class="adsbygoogle nashians"
-    style="display:inline-block;"
-    data-ad-client="ca-pub-5001725934888164"
-    data-ad-slot="5950915078"
-    data-ad-status="done"
-  ></ins>
-  <script>
-    (adsbygoogle= window.adsbygoogle || []).push({});
-  </script>
     <div class="container parentDiv">
       <div class="container parentDiv">
         <div class="row display-flex">

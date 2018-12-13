@@ -1,11 +1,14 @@
 <template>
-  <ins
+ <no-ssr>
+ <ins
     class="adsbygoogle nashians"
     style="display:inline-block;"
     data-ad-client="ca-pub-5001725934888164"
     data-ad-slot="5950915078"
     data-ad-status="done"
   ></ins>
+ </no-ssr>
+
 </template>
 <script>
 export default {
