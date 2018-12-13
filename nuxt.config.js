@@ -51,7 +51,7 @@ module.exports = {
     link: [{
         rel: 'icon',
         type: 'image/x-icon',
-        href: '/img/ethio_log.png'
+        href: '/img/ethiov_logo2.png'
       },
 
       {
@@ -105,7 +105,7 @@ module.exports = {
       src: '~plugins/vue-lazyload',
       ssr:false
     },
-    
+
   ],
 
   /*

@@ -1118,7 +1118,9 @@ small {
   font-size: 16px;
   color: #fbe631
 }
-
+html, body {
+  height: initial;
+}
 .cl-name-date a:hover {
   text-decoration: underline
 }

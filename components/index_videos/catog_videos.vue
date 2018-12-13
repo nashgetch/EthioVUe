@@ -25,7 +25,7 @@
                       <div
                         slot="placeholder"
                         class="bg-inverse"
-                        style="background-color: black; height:200px;"
+                        style="background-color: black; height:145px;"
                       >
                       <!-- You can put any component you want in here. -->
                       </div>
