@@ -41,11 +41,11 @@ module.exports = {
       // },
 
 
-      // {
-      //   innerHTML: `(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-5001725934888164",enable_page_level_ads: true});`,
-      //   type: 'text/javascript',
-      //   charset: 'utf-8'
-      // }
+      {
+        innerHTML: `(adsbygoogle = window.adsbygoogle || []).push();`,
+        type: 'text/javascript',
+        charset: 'utf-8'
+      }
     ],
     // __dangerouslyDisableSanitizers: ['script'],
     link: [{
