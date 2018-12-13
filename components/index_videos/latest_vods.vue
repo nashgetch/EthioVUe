@@ -10,28 +10,28 @@
                   <div class="col-6">
                     <a href="/live-channels">
                       <div class="small-logo mt-3 index">
-                        <img src="//video2.vixtream.net/tvposter/fbctv_poster.jpg" alt>
+                        <img  alt="Fana">
                       </div>
                     </a>
                   </div>
                   <div class="col-6">
                     <a href="/live-channels">
                       <div class="small-logo mt-3 index">
-                        <img src="//video2.vixtream.net/tvposter/walta_poster.jpg" alt>
+                        <img src="" alt="Amhara">
                       </div>
                     </a>
                   </div>
                   <div class="col-6">
                     <a href="/live-channels">
                       <div class="small-logo mt-3 index">
-                        <img src="//video2.vixtream.net/tvposter/amma_poster.jpg" alt>
+                        <img src="" alt="Walta">
                       </div>
                     </a>
                   </div>
                   <div class="col-6">
                     <a href="/live-channels">
                       <div class="small-logo mt-3 index">
-                        <img src="//video2.vixtream.net/tvposter/etvz_poster.jpg" alt>
+                        <img src="" alt="EBC">
                       </div>
                     </a>
                   </div>
