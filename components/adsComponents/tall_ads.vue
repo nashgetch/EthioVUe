@@ -8,9 +8,9 @@
       data-ad-slot="5950915078"
     ></ins>
   </div>
- <script>
+ <script2>
    (adsbygoogle = window.adsbygoogle || []).push({});
- </script>
+ </script2>
 </no-ssr>
 
 </template>

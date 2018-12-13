@@ -6,9 +6,9 @@
     data-ad-client="ca-pub-5001725934888164"
     data-ad-slot="5950915078"
   ></ins>
- <script>
+ <script2>
     (adsbygoogle= window.adsbygoogle || []).push({});
- </script>
+ </script2>
  </no-ssr>
 
 </template>
