@@ -1,5 +1,16 @@
 <template>
+
   <div>
+     <ins
+    class="adsbygoogle nashians"
+    style="display:inline-block;"
+    data-ad-client="ca-pub-5001725934888164"
+    data-ad-slot="5950915078"
+    data-ad-status="done"
+  ></ins>
+  <script>
+    (adsbygoogle= window.adsbygoogle || []).push({});
+  </script>
     <div class="container parentDiv">
       <div class="container parentDiv">
         <div class="row display-flex">
@@ -54,19 +65,19 @@
               <div class="Vimg itemContainer" style="background-color: black;">
 
                 <nuxt-link :to="'/single-video/'+video.v_id">
-                  <clazy-load :src="'//video2.vixtream.net/'+video.filename">
+                  <!-- <clazy-load :src="'//video2.vixtream.net/'+video.filename">
                   <div
                         slot="placeholder"
                         class="bg-inverse"
                         style="background-color: black; height:145px;"
                       >
-                      <!-- You can put any component you want in here. -->
-                      </div>
+                      You can put any component you want in here. -->
+                      <!-- </div> -->
                   <video :poster="'//video2.vixtream.net/'+video.filename" :alt="video.title"/>
                   <div ng-click="viewVideo(video.v_id)" class="play">
                     <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                   </div>
-                  </clazy-load>
+                  <!-- </clazy-load> -->
                 </nuxt-link>
                 <div class="time">{{video.duration}}</div>
                 <div
