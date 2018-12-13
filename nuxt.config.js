@@ -104,7 +104,10 @@ module.exports = {
     {
       src: '~plugins/vue-lazyload'
     },
-
+    {
+      src: '~plugins/ga.js',
+      ssr: false
+    },
   ],
 
   /*
