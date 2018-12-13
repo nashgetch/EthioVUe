@@ -1,5 +1,5 @@
 <template>
- <no-ssr>
+ <!-- <no-ssr> -->
  <!-- <ins
     class="adsbygoogle nashians"
     style="display:inline-block;"
@@ -10,7 +10,7 @@
     (adsbygoogle= window.adsbygoogle || []).push({});
  </script2> -->
  <adsbygoogle ad-slot="5950915078" />
- </no-ssr>
+ <!-- </no-ssr> -->
 
 </template>
 <script>
