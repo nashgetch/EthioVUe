@@ -1,11 +1,11 @@
 <template>
   <section style="padding-top:6rem;">
-    <script>
+    <!-- <script>
      (adsbygoogle = window.adsbygoogle || []).push({
           google_ad_client: "ca-pub-5001725934888164",
           enable_page_level_ads: true
      });
-    </script>
+    </script> -->
     <!-- <a href="/ads-test">Test Ads</a> -->
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: .2rem;">
       <div class="row">
