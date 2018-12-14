@@ -48,7 +48,7 @@ module.exports = {
       //      });`
       // }
     ],
-    // __dangerouslyDisableSanitizers: ['script'],
+    __dangerouslyDisableSanitizers: ['script'],
     link: [{
         rel: 'icon',
         type: 'image/x-icon',
