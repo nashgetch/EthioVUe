@@ -41,11 +41,11 @@ module.exports = {
       // },
 
 
-      {
-        innerHTML: `(adsbygoogle = window.adsbygoogle || []).push();`,
-        type: 'text/javascript',
-        charset: 'utf-8'
-      }
+      // {
+      //   innerHTML: `(adsbygoogle = window.adsbygoogle || []).push();`,
+      //   type: 'text/javascript',
+      //   charset: 'utf-8'
+      // }
     ],
     // __dangerouslyDisableSanitizers: ['script'],
     link: [{
@@ -126,7 +126,7 @@ module.exports = {
    */
   'google-adsense': {
     id: 'ca-pub-5001725934888164',
-    // pageLevelAds:true
+    pageLevelAds:true
   },
   toast: {
     position: 'top-center',
