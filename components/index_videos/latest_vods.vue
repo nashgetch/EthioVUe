@@ -88,10 +88,10 @@
               <div class="descr" ng-click="viewVideo(video.v_id)">
                 <h1 style="font-size: 14px !important;">
                   <a
-
+                    class="hideOverflow"
                     :aria-label="video.title"
                     :title="video.title"
-                  >{{video.title_en}}</a>
+                  >{{video.title}}</a>
                 </h1>
                 <!-- <h1 v-show="engshow(video.v_id)" style="font-size: 14px !important;"><a
                   class="hideOverflow"
@@ -134,7 +134,7 @@ export default {
       // The component to use as a placeholder while the
       // async component is loading.
 
-      delay: 2000,
+      delay: 1000,
       // If this timeout is reached, the async component is considered
       // to have failed loading.
       timeout: 3000
