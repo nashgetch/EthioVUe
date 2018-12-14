@@ -6,7 +6,7 @@
           enable_page_level_ads: true
      });
     </script> -->
-    <!-- <a href="/ads-test">Test Ads</a> -->
+    <a href="/ads-test">Test Ads</a>
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: .2rem;">
       <div class="row">
         <div class="col-lg-10 offset-lg-2">
