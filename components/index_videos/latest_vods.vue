@@ -134,7 +134,7 @@ export default {
       // The component to use as a placeholder while the
       // async component is loading.
 
-      delay: 100,
+      delay: 2000,
       // If this timeout is reached, the async component is considered
       // to have failed loading.
       timeout: 3000
