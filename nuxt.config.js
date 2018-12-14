@@ -35,17 +35,20 @@ module.exports = {
         src: "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js",
 
       },
-      // {
-      //   src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
-      //   async: true
-      // },
+      {
+        src: "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+        async: true
+      },
 
 
-      // {
-      //   innerHTML: `(adsbygoogle = window.adsbygoogle || []).push();`,
-      //   type: 'text/javascript',
-      //   charset: 'utf-8'
-      // }
+      {
+        innerHTML: ` (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-5001725934888164",
+          enable_page_level_ads: true
+           });`,
+        type: 'text/javascript',
+        charset: 'utf-8'
+      }
     ],
     // __dangerouslyDisableSanitizers: ['script'],
     link: [{
@@ -124,10 +127,10 @@ module.exports = {
   /*
    ** Axios module configuration
    */
-  'google-adsense': {
-    id: 'ca-pub-5001725934888164',
-    pageLevelAds:true
-  },
+  // 'google-adsense': {
+  //   id: 'ca-pub-5001725934888164',
+  //   pageLevelAds:true
+  // },
   toast: {
     position: 'top-center',
     duration: 2000
