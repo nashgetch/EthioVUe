@@ -125,10 +125,10 @@ module.exports = {
   /*
    ** Axios module configuration
    */
-  // 'google-adsense': {
-  //   id: 'ca-pub-5001725934888164',
-  //   pageLevelAds:true
-  // },
+  'google-adsense': {
+    id: 'ca-pub-5001725934888164',
+    pageLevelAds:true
+  },
   toast: {
     position: 'top-center',
     duration: 2000
