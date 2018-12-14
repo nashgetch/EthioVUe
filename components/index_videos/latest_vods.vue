@@ -88,7 +88,7 @@
               <div class="descr" ng-click="viewVideo(video.v_id)">
                 <h1 style="font-size: 14px !important;">
                   <a
-                    class="hideOverflow"
+
                     :aria-label="video.title"
                     :title="video.title"
                   >{{video.title}}</a>
