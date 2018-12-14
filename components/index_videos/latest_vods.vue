@@ -1,11 +1,7 @@
 <template>
 
   <div>
-    <no-ssr>
-      <wideads>
 
-    </wideads>
-    </no-ssr>
 
     <div class="container parentDiv">
       <div class="container parentDiv">
@@ -117,7 +113,13 @@
       </div>
     </div>
     <infinite-loading @infinite="infiniteHandler"></infinite-loading>
+
+      <wideads>
+
+    </wideads>
+
   </div>
+
 </template>
 
 <script>
