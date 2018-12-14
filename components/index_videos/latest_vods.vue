@@ -1,6 +1,9 @@
 <template>
 
   <div>
+    <wideads>
+
+    </wideads>
     <div class="container parentDiv">
       <div class="container parentDiv">
         <div class="row display-flex">
@@ -117,10 +120,22 @@
 <script>
 import ViewCatogs from "@/components/views_catogs";
 import axios from "axios";
+const wideads = import('@/components/adsComponents/wide_ads.vue');
 const base_url = "https://ethiov.com/api";
 export default {
   components: {
-    ViewCatogs
+    ViewCatogs,
+    wideads: () => ({
+      // The component we want to load.
+      component: wideads,
+      // The component to use as a placeholder while the
+      // async component is loading.
+
+      delay: 100,
+      // If this timeout is reached, the async component is considered
+      // to have failed loading.
+      timeout: 3000
+    })
   },
   props: {
     videos: {
