@@ -91,7 +91,7 @@
 
                     :aria-label="video.title"
                     :title="video.title"
-                  >{{video.title}}</a>
+                  >{{video.title_en}}</a>
                 </h1>
                 <!-- <h1 v-show="engshow(video.v_id)" style="font-size: 14px !important;"><a
                   class="hideOverflow"
