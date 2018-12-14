@@ -18,11 +18,11 @@
             <a>{{channel.tv_name}}</a>
           </h1>
           <!-- Ads block -->
-          <div class="adblock2">
+          <!-- <div class="adblock2">
             <div class="img">
               <Wideads/>
             </div>
-          </div>
+          </div> -->
           <div class="content-wrapper">
             <div class="left mb-2">
               <a>Similar Videos</a>
@@ -73,7 +73,7 @@
           <!-- up next -->
           <div class>
             <div class="caption">
-              <Tallads/>
+              <!-- <Tallads/> -->
               <div class="left">
                 <a>
                   <h5 style="font-size: 22px;font-weight: 300;">Other Channels</h5>

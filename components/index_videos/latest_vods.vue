@@ -113,13 +113,6 @@
       </div>
     </div>
     <infinite-loading @infinite="infiniteHandler"></infinite-loading>
-<no-ssr>
-<wideads>
-
-    </wideads>
-
-</no-ssr>
-
   </div>
 
 </template>

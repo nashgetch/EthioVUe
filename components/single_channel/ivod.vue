@@ -20,11 +20,11 @@
               Active {{time}} Hours Ago!
             </a>
           </h1>
-          <div class="adblock2">
+          <!-- <div class="adblock2">
             <div class="img">
               <Wideads/>
             </div>
-          </div>
+          </div> -->
 
           <div class="content-wrapper">
             <div class="left mb-2">
@@ -110,7 +110,7 @@
         <div class="col-lg-4 d-none d-sm-block mt-3">
           <!-- up next -->
           <div class>
-            <Tallads/>
+            <!-- <Tallads/> -->
             <div class="caption">
               <div class="left">
                 <a>

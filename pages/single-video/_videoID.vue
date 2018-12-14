@@ -26,11 +26,11 @@
             />
           </h1>
         </div>
-        <div class="adblock2" style>
+        <!-- <div class="adblock2" style>
           <div class="img">
             <Wideads/>
           </div>
-        </div>
+        </div> -->
         <div class="content-wrapper">
           <!-- The Author Part -->
           <div class="author">
@@ -78,7 +78,7 @@
                   </a>
                   <ul class="dropdown-menu poll">
                     <social-sharing
-                      :url="'https://ethiov.com/single-video/' + single.v_id"
+                      :url="'https://www.ethiov.com/single-video/' + single.v_id"
                       :title="'EthioV - ' +single.title"
                       :description="'EthioV - ' + single.description"
                       :quote="'EthioV - ' + single.description"
@@ -305,7 +305,7 @@
       </div>
       <div class="col-sm-12 col-lg-4 d-none d-lg-block">
         <div class="caption">
-          <Tallads/>
+          <!-- <Tallads/> -->
           <div class="left">
             <a>
               <h5 style="font-size: 19px;font-weight: 700; margin-bottom: 15px;">Other Videos</h5>
@@ -405,7 +405,7 @@ export default {
         {
           hid: "twitter:url",
           property: "twiiter:url",
-          content: "https://ethiov.com/single-video/" + this.single.v_id
+          content: "https://www.ethiov.com/single-video/" + this.single.v_id
         },
         {
           hid: "twitter:image",

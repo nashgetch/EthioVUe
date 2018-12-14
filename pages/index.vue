@@ -1,7 +1,7 @@
 <template>
   <section style="padding-top:6rem;">
-    <a href="/ads-test">Test Ads</a>
-    <div class="container-fluid top-margin-bn-sm-md" style="padding-top: 6rem;">
+    <!-- <a href="/ads-test">Test Ads</a> -->
+    <div class="container-fluid top-margin-bn-sm-md" style="padding-top: .2rem;">
       <div class="row">
         <div class="col-lg-10 offset-lg-2">
           <div class="row">
@@ -38,7 +38,7 @@ const base_url = "https://ethiov.com/api";
 export default {
   head() {
     return {
-      title: "Ethiov ->Ethiopian Videos and Live channels",
+      title: "Ethiov - Ethiopian Videos and Live channels",
       meta: [
         {
           hid: "description",
@@ -55,7 +55,7 @@ export default {
         {
           hid: "og:url",
           property: "og:url",
-          content: "https://ethiov.com"
+          content: "https://www.ethiov.com"
         },
         {
           hid: "og:image",
@@ -76,7 +76,7 @@ export default {
         {
           hid: "twitter:url",
           property: "twitter:url",
-          content: "https://ethiov.com"
+          content: "https://www.ethiov.com"
         },
         {
           hid: "twitter:image",
@@ -226,5 +226,6 @@ export default {
     height: 90px !important;
   }
 }
+ins{background: #fff}
 </style>
 
