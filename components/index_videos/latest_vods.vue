@@ -100,8 +100,9 @@
                   :vid="video.v_id"
                   :cat_id="video.category_id"
                   :isIndex="true"
-                  :title_en="video.title_en"
+
                 />
+                 <!-- :title_en="video.title_en" -->
                 <span class="percent">
                   <span class="circle"></span>
                   {{video.created_at}}
