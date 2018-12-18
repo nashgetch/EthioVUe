@@ -358,6 +358,7 @@ const base_url = "https://ethiov.com/api";
 export default {
   head() {
     return {
+
       title: this.single.title,
       meta: [
         {
@@ -462,6 +463,15 @@ export default {
     };
   },
   mounted: function() {
+     if (process.browser) {
+      let recaptchaScript = document.createElement('script')
+      recaptchaScript.setAttribute('src', 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+      document.body.appendChild(recaptchaScript)
+      let adsScript = document.createElement('script')
+      recaptchaScript.setAttribute('src', '/js/ads.js')
+      document.body.appendChild(adsScript)
+    }
+
     let mydata = [];
     axios
       .post(
@@ -484,7 +494,10 @@ export default {
           this.owner.subs = res.data;
         });
       });
-  }
+  },
+ created() {
+
+  },
 };
 async function loop(params) {
   let main_array = [];
