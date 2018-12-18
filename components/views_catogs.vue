@@ -10,7 +10,7 @@
     <div v-if="isSingle">
       <i class="fa fa-language fa-2x mt-2" @click="show_en=!show_en"></i>
       <h1 v-show="show_en" style="font-size: 14px !important;">
-        <!-- <a class="hideOverflow" :aria-label="title_en+' '+title_am_ph" :title="title_en + ' '+ title_am_ph">{{title_en+" || " +title_am_ph}}</a> -->
+        <a class="hideOverflow" :aria-label="title_en+' '+title_am_ph" :title="title_en + ' '+ title_am_ph">{{title_en+" || " +title_am_ph}}</a>
       </h1>
     </div>
 
