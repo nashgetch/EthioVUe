@@ -18,11 +18,11 @@
             <a>{{channel.tv_name}}</a>
           </h1>
           <!-- Ads block -->
-          <!-- <div class="adblock2">
+          <div class="adblock2">
             <div class="img">
               <Wideads/>
             </div>
-          </div> -->
+          </div>
           <div class="content-wrapper">
             <div class="left mb-2">
               <a>Similar Videos</a>

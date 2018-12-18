@@ -1,8 +1,6 @@
 <template>
   <section style="padding-top:6rem;">
-    <div class="adblock2">
-      <Wideads/>
-    </div>
+
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: 6rem;">
       <div class="row">
         <div class="col-lg-10 offset-lg-2">
