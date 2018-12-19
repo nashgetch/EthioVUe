@@ -95,6 +95,7 @@
                               :vid="video.v_id"
                               :cat_id="video.category_id"
                               :isIndex="true"
+                              :title_en="video.title_en"
                             />
                           </div>
                           <!-- <div class="percent"><span class="circle"></span> 83%</div> -->

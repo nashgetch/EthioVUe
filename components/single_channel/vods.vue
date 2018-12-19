@@ -34,7 +34,7 @@
               </h1>
             </div>
             <div class="views small">
-              <ViewCatogs :vid="video.v_id" :cat_id="video.category_id" :isIndex="true"/>
+              <ViewCatogs :vid="video.v_id" :cat_id="video.category_id" :isIndex="true" :title_en="video.title_en"/>
               <small style="margin-right: 20%"></small>
               <div class="percent">
                 <span class="circle"></span>
