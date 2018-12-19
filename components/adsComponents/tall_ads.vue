@@ -1,28 +1,20 @@
 <template>
-<!-- <no-ssr> -->
-  <!-- <div> -->
-    <!-- <ins
+    <ins
       class="adsbygoogle nashian"
       style="display:inline-block;"
       data-ad-client="ca-pub-5001725934888164"
       data-ad-slot="5950915078"
-    ></ins> -->
-  <!-- </div> -->
- <!-- <script2>
-   (adsbygoogle = window.adsbygoogle || []).push({});
- </script2> -->
- <adsbygoogle class="nashian" ad-slot="5950915078" />
-<!-- </no-ssr> -->
+    ></ins>
 
 </template>
 <script>
 export default {
-  // mounted: function() {
-  //   // (window.adsbygoogle = window.adsbygoogle || []).push({});
-  //   this.$nextTick(() => {
-  //     (window.adsbygoogle = window.adsbygoogle || []).push({});
-  //   });
-  // }
+  mounted: function() {
+    // (window.adsbygoogle = window.adsbygoogle || []).push({});
+    this.$nextTick(() => {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    });
+  }
 };
 </script>
 
