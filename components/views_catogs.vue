@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="isIndex">
-      <i class="fa fa-language" @click="show_en=!show_en"></i>
+      <i class="fa fa-language fa-2x" @click="show_en=!show_en"></i>
       <h1 v-show="show_en" style="font-size: 14px !important;">
         <a class="hideOverflow" :aria-label="title_en" :title="title_en">{{title_en}}</a>
       </h1>
