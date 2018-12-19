@@ -27,14 +27,14 @@
                   <div class="col-6">
                     <a href="/live-channels">
                       <div class="small-logo mt-3 index">
-                        <img src="/img/walta_poster.jpg" alt="Walta">
+                        <img src="/img/walta_posters.jpg" alt="Walta">
                       </div>
                     </a>
                   </div>
                   <div class="col-6">
                     <a href="/live-channels">
                       <div class="small-logo mt-3 index">
-                        <img src="/img/etvz_poster.jpg" alt="EBC">
+                        <img src="/img/obm_poster.jpg" alt="OBN">
                       </div>
                     </a>
                   </div>
