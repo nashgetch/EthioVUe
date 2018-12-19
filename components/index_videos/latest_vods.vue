@@ -13,28 +13,28 @@
                   <div class="col-6">
                     <a href="/live-channels">
                       <div class="small-logo mt-3 index">
-                        <img  alt="Fana">
+                        <img src="/img/fbctv_poster.jpg"  alt="Fana">
                       </div>
                     </a>
                   </div>
                   <div class="col-6">
                     <a href="/live-channels">
                       <div class="small-logo mt-3 index">
-                        <img src="" alt="Amhara">
+                        <img src="/img/amma_poster.jpg" alt="Amhara">
                       </div>
                     </a>
                   </div>
                   <div class="col-6">
                     <a href="/live-channels">
                       <div class="small-logo mt-3 index">
-                        <img src="" alt="Walta">
+                        <img src="/img/walta_poster.jpg" alt="Walta">
                       </div>
                     </a>
                   </div>
                   <div class="col-6">
                     <a href="/live-channels">
                       <div class="small-logo mt-3 index">
-                        <img src="" alt="EBC">
+                        <img src="/img/etvz_poster.jpg" alt="EBC">
                       </div>
                     </a>
                   </div>

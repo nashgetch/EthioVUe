@@ -131,14 +131,14 @@
                 <div class="nash-vids row">
                   <div class="col-sm-12 col-xs-6">
                     <div class="Vimg itemContainer" style="background-color: black;">
-                      <clazy-load :src="pos_url+'/'+pub.filename">
+                      <!-- <clazy-load :src="pos_url+'/'+pub.filename">
                         <div
                           slot="placeholder"
                           class="bg-inverse"
                           style="background-color: black; height:200px;"
-                        ></div>
+                        ></div> -->
                         <video class="imgur" :poster="pos_url+'/'+pub.filename" :alt="pub.title"></video>
-                      </clazy-load>
+                      <!-- </clazy-load> -->
                       <a :href="'/single-video/'+pub.v_id">
                         <div ng-click="viewVideo(pub.v_id)" class="play">
                           <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
