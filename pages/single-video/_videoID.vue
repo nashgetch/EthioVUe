@@ -26,11 +26,11 @@
             />
           </h1>
         </div>
-        <div class="adblock2" style>
+        <!-- <div class="adblock2" style>
           <div class="img">
             <Wideads/>
           </div>
-        </div>
+        </div> -->
         <div class="content-wrapper">
           <!-- The Author Part -->
           <div class="author">
@@ -305,7 +305,7 @@
       </div>
       <div class="col-sm-12 col-lg-4 d-none d-lg-block">
         <div class="caption">
-          <Tallads/>
+          <!-- <Tallads/> -->
           <div class="left">
             <a>
               <h5 style="font-size: 19px;font-weight: 700; margin-bottom: 15px;">Other Videos</h5>
