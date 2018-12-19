@@ -1,10 +1,8 @@
 <template>
   <div style="margin-top: 6rem; position: relative;">
-    <!-- <div id="processing" class="text-center" style="background-color: white;
-    margin-left: auto;
-    margin-right: auto;">
-        <img src="/img/ajax6.gif" width="100px" height="100px">
-    </div>-->
+    <div id="processing" class="text-center" style="background-color: white; font-weight:500; font-size: 35px;">
+       Search Results
+    </div>
     <div class="container parentDiv">
       <div class="row display-flex">
         <div
@@ -14,19 +12,19 @@
         >
           <div class="kaleb-vids">
             <div class="Vimg itemContainer bg-inverse">
-              <nuxt-link :to="'/single-video/' + video.v_id">
-                <clazy-load :src="'//video2.vixtream.net/'+video.filename">
+              <a :href="'/single-video/' + video.v_id">
+                <!-- <clazy-load :src="'//video2.vixtream.net/'+video.filename">
                   <div
                     slot="placeholder"
                     class="bg-inverse"
                     style="background-color: black; height:200px;"
-                  ></div>
+                  ></div> -->
                   <video :poster="'//video2.vixtream.net/'+video.filename" :alt="video.title"></video>
-                </clazy-load>
+                <!-- </clazy-load> -->
                 <div class="play">
                   <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                 </div>
-              </nuxt-link>
+              </a>
               <div class="time">{{video.duration}}</div>
             </div>
             <div class="descr">

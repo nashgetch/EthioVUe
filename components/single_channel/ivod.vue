@@ -72,10 +72,10 @@
                       <div class="nash-vids row">
                         <div class="col-sm-12 col-xs-6">
                           <div class="Vimg" style="background-color: black;">
-                            <nuxt-link :to="'/single-video/'+video.v_id">
+                            <a :href="'/single-video/'+video.v_id">
                               <video class="imgur1" :poster="url + video.filename" :alt="video.title"></video>
                               <div class="time">{{video.duration}}</div>
-                            </nuxt-link>
+                            </a>
                           </div>
                         </div>
                         <div class="col-sm-12 col-xs-6">
@@ -126,9 +126,9 @@
               <div class="thumb row" v-for="(tv,$index) in tvs.slice(0,6)" :key="$index">
                 <div class="col-lg-6 col-sm-6" ng-click="viewTV(tv.id)">
                   <div class="Vimg" style="background-color: black;">
-                    <nuxt-link :to="'/single-channel/'+tv.id">
+                    <a :href="'/single-channel/'+tv.id">
                       <img class="imgur" :src="'https://video2.vixtream.net'+tv.poster_image" alt>
-                    </nuxt-link>
+                    </a>
                   </div>
                 </div>
                 <div class="col-lg-6 col-sm-6">

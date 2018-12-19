@@ -43,21 +43,21 @@
         </div>
         <div class="container">
           <div class="row">
-            <nuxt-link to="/">
+            <a href="/">
               <div class="text-center ethiov_logo">
                 <img src="/img/EthioV_LOGO_Black3.png" alt>
               </div>
-            </nuxt-link>
+            </a>
             <div class="navbar-nav flex-row mr-auto  mt-1 d-none d-md-flex d-lg-flex">
-              <nuxt-link to="/" class="nav-item nav-link" style="font-weight: bold;">
+              <a href="/" class="nav-item nav-link" style="font-weight: bold;">
                 Home
                 <span class="sr-only">(current)</span>
-              </nuxt-link>
-              <nuxt-link
+              </a>
+              <a
                 class="nav-item nav-link"
                 style="font-weight: bold;"
-                to="/live-channels"
-              >Channels</nuxt-link>
+                href="/live-channels"
+              >Channels</a>
             </div>
 
             <div class="col-9 col-lg-8 d-none d-lg-block">
@@ -100,17 +100,17 @@
               aria-expanded="false"
             >
               <span v-if="loggedIn" class="i-circle">{{user.name.charAt(0)}}</span>
-              <nuxt-link class to="/login" v-if="!loggedIn">
+              <a class href="/login" v-if="!loggedIn">
                 <i class="fa fa-sign-in" style="font-size:38px;"></i>
-              </nuxt-link>
+              </a>
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu poll" v-if="loggedIn">
               <li>
-                <nuxt-link class="dropdown-item" to="/watchlist">My Watchlist</nuxt-link>
+                <a class="dropdown-item" href="/watchlist">My Watchlist</a>
               </li>
               <li>
-                <nuxt-link class="dropdown-item" to="/subscription">Subscription</nuxt-link>
+                <a class="dropdown-item" href="/subscription">Subscription</a>
               </li>
               <li>
                 <a class="dropdown-item" href="/">Account Info</a>
@@ -163,27 +163,27 @@
       <div class="container-fluid">
         <div class="row">
           <a @click.prevent="sidetoggle" class="ml-3 mobile_menu_close" style="margin-top:33px; margin-right:4px;" id="menu-toggler-side"></a>
-          <nuxt-link to="/">
+          <a href="/">
             <div class="text-center ethiov_logo mt-3">
               <img src="/img/EthioV_LOGO_Black3.png" alt="EthioV Logo">
             </div>
-          </nuxt-link>
+          </a>
         </div>
       </div>
       <hr>
       <div class="content-wrapper back ml-2">
         <div class="fikir-vids">
-          <nuxt-link to="/" class="descr bol d-block">
+          <a href="/" class="descr bol d-block">
             <div @click="sidetoggle">
               <i class="fa fa-mobile"></i> Home
             </div>
-          </nuxt-link>
+          </a>
           <hr>
-          <nuxt-link to="/live-channels" class="descr bol d-block">
+          <a href="/live-channels" class="descr bol d-block">
             <div @click="sidetoggle">
               <i class="fa fa-mobile"></i> - Live TVs!
             </div>
-          </nuxt-link>
+          </a>
           <hr>
 
         </div>

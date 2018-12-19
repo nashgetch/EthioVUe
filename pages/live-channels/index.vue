@@ -8,7 +8,7 @@
             v-for="(tv,$index) in tvs"
             :key="$index"
           >
-            <nuxt-link :to="'/single-channel/'+tv.id">
+            <a :href="'/single-channel/'+tv.id">
               <div class="chn-image-container">
                 <img :src="turl + tv.poster_image" :alt="tv.tv_name">
 
@@ -20,11 +20,12 @@
                   <div class="chan-descrip">
                     <strong class="chan-title">{{tv.tv_name}}</strong>
                     <span>[{{tv.tags}}]</span>
-                    <span class="hideOverflow">{{tv.description}}</span>
+                    <!-- <span class="hideOverflow">{{tv.description}}</span> -->
+
                   </div>
                 </div>
               </div>
-            </nuxt-link>
+            </a>
           </div>
         </div>
       </div>

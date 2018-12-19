@@ -10,6 +10,7 @@
       <div class="ch-social-links d-inline-flex flex-row">
         <div class="social-icons-container mt-2 ml-4 d-flex">
           <span class="mt-3" style="color:white; font-size:1rem;">Social</span>
+
           <social-sharing :url="'https://ethiov.com/single-channel/' + channel.id"
                           :title="'EthioV Live Stream ' + channel.tv_name"
                       :description="'EthioV - ' + channel.description"

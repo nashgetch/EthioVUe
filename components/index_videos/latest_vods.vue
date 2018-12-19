@@ -56,7 +56,7 @@
             <div class="kaleb-vids">
               <div class="Vimg itemContainer" style="background-color: black;">
 
-                <nuxt-link :to="'/single-video/'+video.v_id">
+                <a :href="'/single-video/'+video.v_id">
                   <!-- <clazy-load :src="'//video2.vixtream.net/'+video.filename">
                   <div
                         slot="placeholder"
@@ -70,7 +70,7 @@
                     <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                   </div>
                   <!-- </clazy-load> -->
-                </nuxt-link>
+                </a>
                 <div class="time">{{video.duration}}</div>
                 <div
                   ng-style="hiddenPlus"

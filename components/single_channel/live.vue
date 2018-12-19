@@ -40,7 +40,7 @@
                     <div class="nash-vids row">
                       <div class="col-sm-12 col-xs-6">
                         <div class="Vimg itemContainer" style="background-color: black;">
-                          <nuxt-link :to="'/single-video/'+video.v_id">
+                          <a :href="'/single-video/'+video.v_id">
                               <video
                                 class="imgur1"
                                 :poster="'https://video2.vixtream.net/'+video.filename"
@@ -49,7 +49,7 @@
                               <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                             </div>
                             <div class="time">{{video.duration}}</div>
-                          </nuxt-link>
+                          </a>
                         </div>
                       </div>
                       <div class="col-sm-12 col-xs-6">
@@ -85,13 +85,13 @@
               <div class="thumb row" v-for="(tv,$index) in tvs.slice(0,7)" :key="$index">
                 <div class="col-lg-6 col-sm-6" ng-click="viewTV(tv.id)">
                   <div class="Vimg" style="background-color: black;">
-                    <nuxt-link :to="'/single-channel/'+tv.id">
+                    <a :href="'/single-channel/'+tv.id">
                       <video
                         class="imgur"
                         :poster="'https://video2.vixtream.net'+tv.poster_image"
                         :alt="tv.tv_name"
                       ></video>
-                    </nuxt-link>
+                    </a>
                   </div>
                 </div>
                 <div class="col-lg-6 col-sm-6">
