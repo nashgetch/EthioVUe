@@ -23,7 +23,7 @@
                 <i class="fa fa-window-close"></i>
               </span>
               <!-- <img
-               
+
                 id="mobile_search_toggler"
                 class="close_icon mt-3 mr-2"
                 src="/img/cancel.png"
@@ -244,7 +244,7 @@ export default {
   },
   mounted:function(){
     this.active_route=$nuxt.$route.name;
-  
+
   },
   methods: {
     logout() {
