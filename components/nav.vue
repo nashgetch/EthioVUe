@@ -1,27 +1,34 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top p-0 p-sm-2">
       <div class="d-inline-flex">
-        <div class="float-left ml-md-auto ml-lg-auto d-block d-sm-none">
+        <div class="float-left ml-md-auto ml-lg-auto d-block d-sm-none mt-auto ml-2">
           <a
-            @click.prevent="toggle_side_menu"
+            href="/"
             class="text-gray-dark"
             style="font-size: 1.4rem;"
             id="menu-toggler"
           >
-            <i class="fa fa-bars"></i>
+            <i class="fa fa-youtube-play fa-2x"></i>
           </a>
         </div>
-        <div id="m_search_menu" class="d-none d-lg-none mobile_search_menu" :class="mobile_search">
+        <div
+          id="m_search_menu"
+          class="d-none d-lg-none mobile_search_menu p-2"
+          :class="mobile_search"
+        >
           <div class="d-flex flex-row flex-wrap">
             <div class="input-group">
-              <img
-                @click="close_search"
+              <span class="mt-auto mb-auto mr-2" style="font-size:1.45rem;" @click="close_search">
+                <i class="fa fa-window-close"></i>
+              </span>
+              <!-- <img
+               
                 id="mobile_search_toggler"
                 class="close_icon mt-3 mr-2"
                 src="/img/cancel.png"
                 alt
-              >
+              >-->
               <form style="width: 100%; height: 50px;" @submit.prevent="search(search1)">
                 <div class="input-group mt-1 mb-3">
                   <input
@@ -41,14 +48,19 @@
             </div>
           </div>
         </div>
-        <div class="container">
+        <div class="container p-0 ml-4 mr-auto mt-auto mb-auto text-dark">
           <div class="row">
-            <nuxt-link to="/">
+            <nuxt-link to="/" class="d-none d-sm-block">
               <div class="text-center ethiov_logo">
                 <img src="/img/EthioV_LOGO_Black3.png" alt>
               </div>
             </nuxt-link>
-            <div class="navbar-nav flex-row mr-auto  mt-1 d-none d-md-flex d-lg-flex">
+            <div class="d-block d-sm-none">
+              <nuxt-link to="/" class="text-gray-dark">
+               {{active_route==="index" ? "Home" : active_route==="live-channels"? active_route :"EthioV"}}
+              </nuxt-link>
+            </div>
+            <div class="navbar-nav flex-row mr-auto mt-1 d-none d-md-flex d-lg-flex">
               <nuxt-link to="/" class="nav-item nav-link" style="font-weight: bold;">
                 Home
                 <span class="sr-only">(current)</span>
@@ -100,7 +112,7 @@
               aria-expanded="false"
             >
               <span v-if="loggedIn" class="i-circle">{{user.name.charAt(0)}}</span>
-              <nuxt-link class to="/login" v-if="!loggedIn">
+              <nuxt-link to="/login" v-if="!loggedIn">
                 <i class="fa fa-sign-in" style="font-size:38px;"></i>
               </nuxt-link>
               <span class="caret"></span>
@@ -158,11 +170,40 @@
           </li>
         </ul>-->
       </div>
+      <div class="d-block d-lg-none mt-auto">
+        <div class="container-fluid mt-1">
+          <div class="row mr-auto ml-2 ml-md-5">
+            <div class="col-6" :class="{'active_route':('index'===active_route)}">
+              <span style="font-size:1.2rem;">
+                <a href="/" class="text-gray-dark">
+                  <i class="fa fa-home">
+                    Home
+                  </i>
+                </a>
+              </span>
+            </div>
+            <div class="col-6" :class="{'active_route':('live-channels'===active_route)}">
+              <span style="font-size:1.2rem;">
+                <a href="/live-channels" class="text-gray-dark">
+                  <i class="fa fa-tv">
+                    Live-Channels
+                  </i>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
     </nav>
     <div id="sidenav" class="d-lg-none" :class="hidden_side_nav">
       <div class="container-fluid">
         <div class="row">
-          <a @click.prevent="sidetoggle" class="ml-3 mobile_menu_close" style="margin-top:33px; margin-right:4px;" id="menu-toggler-side"></a>
+          <a
+            @click.prevent="sidetoggle"
+            class="ml-3 mobile_menu_close"
+            style="margin-top:33px; margin-right:4px;"
+            id="menu-toggler-side"
+          ></a>
           <nuxt-link to="/">
             <div class="text-center ethiov_logo mt-3">
               <img src="/img/EthioV_LOGO_Black3.png" alt="EthioV Logo">
@@ -185,7 +226,6 @@
             </div>
           </nuxt-link>
           <hr>
-
         </div>
       </div>
     </div>
@@ -198,8 +238,13 @@ export default {
       search1: "",
       $search_results: [],
       mobile_search: "",
-      hidden_side_nav: ""
+      hidden_side_nav: "",
+      active_route:""
     };
+  },
+  mounted:function(){
+    this.active_route=$nuxt.$route.name;
+    console.log(this.active_route);
   },
   methods: {
     logout() {
@@ -242,5 +287,9 @@ export default {
   color: #000000 !important;
   background-color: #fbe631 !important;
   border-color: #fafafa !important;
+}
+.active_route{
+  border-bottom-style: solid;
+  border-bottom-color: black;
 }
 </style>
