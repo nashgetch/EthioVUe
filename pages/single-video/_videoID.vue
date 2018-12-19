@@ -370,7 +370,7 @@ export default {
         {
           hid: "keywords",
           name: "keywords",
-          keywords: "Video, " + this.single.title + ", " + this.single.tags
+          keywords: "Video, " + this.single.title + ", " + this.single.tags + "," + this.single.title_en
         },
         {
           hid: "og:title",
