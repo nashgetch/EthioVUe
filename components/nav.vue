@@ -61,7 +61,7 @@
               </nuxt-link>
             </div>
             <div class="navbar-nav flex-row mr-auto mt-1 d-none d-md-flex d-lg-flex">
-              <nuxt-link to="/" class="nav-item nav-link" style="font-weight: bold;">
+              <a href="/" class="nav-item nav-link" style="font-weight: bold;">
                 Home
                 <span class="sr-only">(current)</span>
               </a>
@@ -204,7 +204,7 @@
             style="margin-top:33px; margin-right:4px;"
             id="menu-toggler-side"
           ></a>
-          <nuxt-link to="/">
+          <a href="/">
             <div class="text-center ethiov_logo mt-3">
               <img src="/img/EthioV_LOGO_Black3.png" alt="EthioV Logo">
             </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid pl-0 pl-sm-5 pr-0 pr-sm-5" style="padding-top: 6rem;">
+  <div class="container-fluid" style="padding-top: 6rem;">
     <div class="row rowDiv">
       <div class="col-lg-8 col-xs-12 col-sm-12">
         <div id="iframe1" class="video-container">
@@ -350,8 +350,8 @@
 
 <script>
 import ViewCatogs from "@/components/views_catogs";
-import Wideads from "@/components/adsComponents/wide_ads";
-import Tallads from "@/components/adsComponents/tall_ads";
+// import Wideads from "@/components/adsComponents/wide_ads";
+// import Tallads from "@/components/adsComponents/tall_ads";
 import axios from "axios";
 
 const base_url = "https://ethiov.com/api";
@@ -434,8 +434,8 @@ export default {
   },
   components: {
     ViewCatogs,
-    Wideads,
-    Tallads
+    // Wideads,
+    // Tallads
   },
   async asyncData(context) {
     let single_data = await axios.post(

@@ -34,7 +34,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #fbc400;
+  background-color: #fbe631;
   border-bottom-right-radius: 2px;
   border-top-left-radius: 2px;
   color: #000;
@@ -91,7 +91,7 @@
 
 .kaleb-vids .views .percent .circle,
 .views .percent .circle {
-  border: solid 2px #fbc400;
+  border: solid 2px #fbe631;
   border-radius: 7px;
   width: 14px;
   height: 14px;
@@ -107,7 +107,7 @@
 }
 
 .hideOverflow:focus {
-  color: #fbc400
+  color: #fbe631
 }
 
 .bg-image {
@@ -135,7 +135,7 @@
   background-color: transparent;
   color: #000;
   font-weight: 600;
-  border-bottom: 2px solid #fbc400
+  border-bottom: 2px solid #fbe631
 }
 
 .nav.nav-pills .nav-item {
@@ -147,7 +147,7 @@
 }
 
 .col-6.subscribe {
-  background-color: #fbc400 !important;
+  background-color: #fbe631 !important;
   color: #000 !important;
   text-align: center
 }
@@ -157,7 +157,7 @@
   position: absolute;
   bottom: 0;
   display: inline-block;
-  background-color: #fbc400;
+  background-color: #fbe631;
   height: 3px;
   width: 100%;
   left: 0;
@@ -180,7 +180,7 @@
 .navbar-inverse .navbar-nav .active>.nav-link,
 .navbar-inverse .navbar-nav .nav-link.open,
 .navbar-inverse .navbar-nav .nav-link.active {
-  color: #fbc400 !important;
+  color: #fbe631 !important;
   font-size: 1rem;
   font-weight: 900
 }
@@ -208,7 +208,7 @@
 }
 
 .subscription {
-  background-color: #fbc400;
+  background-color: #fbe631;
   border-radius: 3px;
   height: auto;
   font-size: 80%;
@@ -302,17 +302,17 @@ small {
   border: 0;
   cursor: pointer;
   z-index: 4;
-  color: #fbc400
+  color: #fbe631
 }
 
 .itemContainer:hover .playbtn {
   display: block;
-  color: #fbc400
+  color: #fbe631
 }
 
 .col-md-6 .itemContainer:hover .playbtn {
   display: block;
-  color: #fbc400
+  color: #fbe631
 }
 
 .channel-img {
@@ -464,7 +464,7 @@ small {
 .chn-image-container .small-logo>img {
   width: 100% !important;
   height: 100% !important;
-  border-radius: 32px;
+  border-radius: 91px;
   padding: 3px
 }
 
@@ -486,19 +486,19 @@ small {
 
 .navbar {
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
-  background-color: #fbc400
+  background-color: #fbe631
 }
 
 .nav-search {
   width: 90%;
   padding: .7rem .75rem;
   margin-top: 0 !important;
-  background-color: #fbc400;
+  background-color: #fbe631;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15)
 }
 .input-group-addon{
-    background-color: #fbc400;
+    background-color: #fbe631;
 }
 .ethiov_logo img {
   width: 120px;
@@ -548,7 +548,7 @@ small {
 .mobile_search_menu {
   position: absolute;
   width: 100%;
-  background-color: #fbc400;
+  background-color: #fbe631;
   z-index: 1040
 }
 
@@ -624,7 +624,7 @@ small {
 .hideOverflow .tooltiptext {
   visibility: hidden;
   width: 120px;
-  background-color: #fbc400;
+  background-color: #fbe631;
   color: #000;
   text-align: center;
   padding: 5px 0;
@@ -642,7 +642,7 @@ small {
 .live_chan_img_container .tooltiptext {
   visibility: hidden;
   width: 120px;
-  background-color: #fbc400;
+  background-color: #fbe631;
   color: #000;
   text-align: center;
   padding: 5px 0;
@@ -696,7 +696,7 @@ small {
 }
 
 .nash-vids .percent .circle {
-  border: solid 2px #fbc400;
+  border: solid 2px #fbe631;
   border-radius: 7px;
   width: 14px;
   height: 14px;
@@ -737,7 +737,7 @@ small {
 }
 
 .author .sv-name a:hover {
-  color: #fbc400
+  color: #fbe631
 }
 
 .author .sv-name .c-sub {
@@ -749,10 +749,10 @@ small {
   float: left;
   width: 86px;
   padding: 5px 10px 0;
-  border: solid 1px #fbc400;
+  border: solid 1px #fbe631;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
-  background-color: #fbc400;
+  background-color: #fbe631;
   color: #111
 }
 
@@ -787,11 +787,11 @@ small {
 .author .sv-views .sv-views-progress .sv-views-progress-bar {
   height: 3px;
   width: 80%;
-  background-color: #fbc400
+  background-color: #fbe631
 }
 
 .author .sv-views .sv-views-stats .percent {
-  color: #fbc400;
+  color: #fbe631;
   font-size: 15px;
   padding-right: 30px
 }
@@ -890,7 +890,7 @@ small {
 }
 
 .thumb .percent .circle {
-  border: solid 2px #fbc400;
+  border: solid 2px #fbe631;
   border-radius: 7px;
   width: 14px;
   height: 14px;
@@ -1121,7 +1121,7 @@ small {
 
 .cl-name-date a {
   font-size: 16px;
-  color: #fbc400
+  color: #fbe631
 }
 
 html,
@@ -1180,7 +1180,7 @@ body {
     height: 52px;
     margin-left: auto;
     border-radius: 30px;
-    background-color: #fbc400;
+    background-color: #fbe631;
     align-items: center;
     justify-content: center;
     display: -moz-box;
@@ -1223,7 +1223,7 @@ body {
     width: 13px;
     height: 13px;
     border-radius: 50%;
-    border: solid 2px #fbc400
+    border: solid 2px #fbe631
   }
 
   .author .sv-views .sv-views-stats .grey {
