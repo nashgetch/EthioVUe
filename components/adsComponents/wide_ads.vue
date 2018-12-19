@@ -16,9 +16,9 @@
 export default {
   mounted: function() {
     //  (windowadsbygoogle= window.adsbygoogle || []).push({});
-    this.$nextTick(()=>{
+    // this.$nextTick(()=>{
        (window.adsbygoogle= window.adsbygoogle || []).push({});
-    });
+    // });
   }
 };
 </script>
