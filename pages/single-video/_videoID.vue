@@ -35,13 +35,13 @@
           <!-- The Author Part -->
           <div class="author">
             <div class="author-head" ng-controller="navController">
-              <nuxt-link :to="'/single-channel/'+owner.id">
+              <a :href="'/single-channel/'+owner.id">
                 <img
                   :src="'//video2.vixtream.net'+owner.poster_image"
                   :alt="owner.tv_name"
                   class="sv-avatar"
                 >
-              </nuxt-link>
+              </a>
               <div class="sv-name">
                 <div>
                   <a></a>
@@ -131,19 +131,19 @@
                 <div class="nash-vids row">
                   <div class="col-sm-12 col-xs-6">
                     <div class="Vimg itemContainer" style="background-color: black;">
-                      <clazy-load :src="pos_url+'/'+pub.filename">
+                      <!-- <clazy-load :src="pos_url+'/'+pub.filename">
                         <div
                           slot="placeholder"
                           class="bg-inverse"
                           style="background-color: black; height:200px;"
-                        ></div>
+                        ></div> -->
                         <video class="imgur" :poster="pos_url+'/'+pub.filename" :alt="pub.title"></video>
-                      </clazy-load>
-                      <nuxt-link :to="'/single-video/'+pub.v_id">
+                      <!-- </clazy-load> -->
+                      <a :href="'/single-video/'+pub.v_id">
                         <div ng-click="viewVideo(pub.v_id)" class="play">
                           <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                         </div>
-                      </nuxt-link>
+                      </a>
                       <div class="time">{{pub.duration}}</div>
                     </div>
                   </div>
@@ -323,11 +323,11 @@
                     :poster="pos_url + '/'+re.filename"
                     :alt="re.title"
                   ></video>
-                  <nuxt-link :to="'/single-video/'+re.v_id">
+                  <a :href="'/single-video/'+re.v_id">
                     <div ng-click="viewVideo(re.v_id)" class="play">
                       <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                     </div>
-                  </nuxt-link>
+                  </a>
                   <div class="time">{{re.duration}}</div>
                 </div>
               </div>

@@ -6,7 +6,7 @@
           enable_page_level_ads: true
      });
     </script> -->
-    <a href="/ads-test">Test Ads</a>
+    <!-- <a href="/ads-test">Test Ads</a> -->
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: .2rem;">
       <div class="row">
         <div class="col-lg-10 offset-lg-2">
@@ -51,6 +51,11 @@ export default {
           name: "description",
           content:
             "All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          keywords: "EthioV, Fana TV, Amhara TV, Live Ethiopian Channels, Zena, ኢትዮጵያ, ዜና, Walta, ETV, EBC, Bisrat TV, MEZINAGNA, Entertainment"
         },
         {
           hid: "og:title",

@@ -3,7 +3,7 @@
   <div>
     <div style="padding-top: 6rem;" id="nas">
       <div class="container parentDiv">
-        <h5 style="margin-bottom: 16px;">Your Watchlist - Customized!</h5>
+        <h5 style="margin-bottom: 16px;">Watch Later Videos</h5>
 
         <div class="row display-flex">
           <div
@@ -13,19 +13,19 @@
           >
             <div class="kaleb-vids">
               <div class="Vimg itemContainer" style="opacity: 1">
-                <nuxt-link :to="'/single-video/' + video.v_id">
-                  <clazy-load :src="'//video2.vixtream.net/'+video.filename">
-                    <div
+                <a :href="'/single-video/' + video.v_id">
+                  <!-- <clazy-load :src="'//video2.vixtream.net/'+video.filename"> -->
+                    <!-- <div
                       slot="placeholder"
                       class="bg-inverse"
                       style="background-color: black; height:200px;"
-                    ></div>
+                    ></div> -->
                     <video :poster="'//video2.vixtream.net/'+video.filename" :alt="video.title"></video>
-                  </clazy-load>
+                  <!-- </clazy-load> -->
                   <div class="play">
                     <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                   </div>
-                </nuxt-link>
+                </a>
                 <div class="time">{{video.duration}}</div>
               </div>
               <div class="descr">

@@ -13,28 +13,28 @@
                   <div class="col-6">
                     <a href="/live-channels">
                       <div class="small-logo mt-3 index">
-                        <img  alt="Fana">
+                        <img src="/img/fbctv_poster.jpg"  alt="Fana">
                       </div>
                     </a>
                   </div>
                   <div class="col-6">
                     <a href="/live-channels">
                       <div class="small-logo mt-3 index">
-                        <img src="" alt="Amhara">
+                        <img src="/img/amma_poster.jpg" alt="Amhara">
                       </div>
                     </a>
                   </div>
                   <div class="col-6">
                     <a href="/live-channels">
                       <div class="small-logo mt-3 index">
-                        <img src="" alt="Walta">
+                        <img src="/img/walta_posters.jpg" alt="Walta">
                       </div>
                     </a>
                   </div>
                   <div class="col-6">
                     <a href="/live-channels">
                       <div class="small-logo mt-3 index">
-                        <img src="" alt="EBC">
+                        <img src="/img/obm_poster.jpg" alt="OBN">
                       </div>
                     </a>
                   </div>
@@ -56,7 +56,7 @@
             <div class="kaleb-vids">
               <div class="Vimg itemContainer" style="background-color: black;">
 
-                <nuxt-link :to="'/single-video/'+video.v_id">
+                <a :href="'/single-video/'+video.v_id">
                   <!-- <clazy-load :src="'//video2.vixtream.net/'+video.filename">
                   <div
                         slot="placeholder"
@@ -70,7 +70,7 @@
                     <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                   </div>
                   <!-- </clazy-load> -->
-                </nuxt-link>
+                </a>
                 <div class="time">{{video.duration}}</div>
                 <div
                   ng-style="hiddenPlus"

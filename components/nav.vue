@@ -64,12 +64,12 @@
               <nuxt-link to="/" class="nav-item nav-link" style="font-weight: bold;">
                 Home
                 <span class="sr-only">(current)</span>
-              </nuxt-link>
-              <nuxt-link
+              </a>
+              <a
                 class="nav-item nav-link"
                 style="font-weight: bold;"
-                to="/live-channels"
-              >Channels</nuxt-link>
+                href="/live-channels"
+              >Channels</a>
             </div>
 
             <div class="col-9 col-lg-8 d-none d-lg-block">
@@ -119,10 +119,10 @@
             </a>
             <ul class="dropdown-menu poll" v-if="loggedIn">
               <li>
-                <nuxt-link class="dropdown-item" to="/watchlist">My Watchlist</nuxt-link>
+                <a class="dropdown-item" href="/watchlist">My Watchlist</a>
               </li>
               <li>
-                <nuxt-link class="dropdown-item" to="/subscription">Subscription</nuxt-link>
+                <a class="dropdown-item" href="/subscription">Subscription</a>
               </li>
               <li>
                 <a class="dropdown-item" href="/">Account Info</a>
@@ -208,23 +208,23 @@
             <div class="text-center ethiov_logo mt-3">
               <img src="/img/EthioV_LOGO_Black3.png" alt="EthioV Logo">
             </div>
-          </nuxt-link>
+          </a>
         </div>
       </div>
       <hr>
       <div class="content-wrapper back ml-2">
         <div class="fikir-vids">
-          <nuxt-link to="/" class="descr bol d-block">
+          <a href="/" class="descr bol d-block">
             <div @click="sidetoggle">
               <i class="fa fa-mobile"></i> Home
             </div>
-          </nuxt-link>
+          </a>
           <hr>
-          <nuxt-link to="/live-channels" class="descr bol d-block">
+          <a href="/live-channels" class="descr bol d-block">
             <div @click="sidetoggle">
               <i class="fa fa-mobile"></i> - Live TVs!
             </div>
-          </nuxt-link>
+          </a>
           <hr>
         </div>
       </div>
@@ -244,7 +244,7 @@ export default {
   },
   mounted:function(){
     this.active_route=$nuxt.$route.name;
-    console.log(this.active_route);
+  
   },
   methods: {
     logout() {
