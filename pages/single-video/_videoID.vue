@@ -26,11 +26,11 @@
             />
           </h1>
         </div>
-        <!-- <div class="adblock2" style>
+        <div class="adblock2" style>
           <div class="img">
             <Wideads/>
           </div>
-        </div> -->
+        </div>
         <div class="content-wrapper">
           <!-- The Author Part -->
           <div class="author">
@@ -305,7 +305,7 @@
       </div>
       <div class="col-sm-12 col-lg-4 d-none d-lg-block">
         <div class="caption">
-          <!-- <Tallads/> -->
+          <Tallads/>
           <div class="left">
             <a>
               <h5 style="font-size: 19px;font-weight: 700; margin-bottom: 15px;">Other Videos</h5>
@@ -358,6 +358,7 @@ const base_url = "https://ethiov.com/api";
 export default {
   head() {
     return {
+
       title: this.single.title,
       meta: [
         {
@@ -462,6 +463,15 @@ export default {
     };
   },
   mounted: function() {
+     if (process.browser) {
+      let recaptchaScript = document.createElement('script')
+      recaptchaScript.setAttribute('src', 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+      document.body.appendChild(recaptchaScript)
+      let adsScript = document.createElement('script')
+      recaptchaScript.setAttribute('src', '/js/ads.js')
+      document.body.appendChild(adsScript)
+    }
+
     let mydata = [];
     axios
       .post(
@@ -484,7 +494,10 @@ export default {
           this.owner.subs = res.data;
         });
       });
-  }
+  },
+ created() {
+
+  },
 };
 async function loop(params) {
   let main_array = [];
