@@ -100,9 +100,9 @@
               aria-expanded="false"
             >
               <span v-if="loggedIn" class="i-circle">{{user.name.charAt(0)}}</span>
-              <a class href="/login" v-if="!loggedIn">
+              <nuxt-link to="/login" v-if="!loggedIn">
                 <i class="fa fa-sign-in" style="font-size:38px;"></i>
-              </a>
+              </nuxt-link>
               <span class="caret"></span>
             </a>
             <ul class="dropdown-menu poll" v-if="loggedIn">
