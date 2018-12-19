@@ -174,7 +174,7 @@
         <div class="container-fluid mt-1">
           <div class="row mr-auto ml-2 ml-md-5">
             <div class="col-6" :class="{'active_route':('index'===active_route)}">
-              <span style="font-size:1.2rem;">
+              <span style="font-size:1rem;">
                 <a href="/" class="text-gray-dark">
                   <i class="fa fa-home">
                     Home
@@ -183,7 +183,7 @@
               </span>
             </div>
             <div class="col-6" :class="{'active_route':('live-channels'===active_route)}">
-              <span style="font-size:1.2rem;">
+              <span style="font-size:1rem;">
                 <a href="/live-channels" class="text-gray-dark">
                   <i class="fa fa-tv">
                     Live-Channels
