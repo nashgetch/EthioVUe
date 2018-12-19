@@ -33,12 +33,12 @@
               <div class="similar-v single-video video-mobile-02">
                 <div class="row">
                   <div
-                    class="col-lg-3 col-sm-6 col-xs-12"
+                    class="col-12 col-lg-3 col-sm-6"
                     v-for="(video,$index) in videos.slice(0,4)"
                     :key="$index"
                   >
                     <div class="nash-vids row">
-                      <div class="col-sm-12 col-xs-6">
+                      <div class="col-12">
                         <div class="Vimg itemContainer" style="background-color: black;">
                           <a :href="'/single-video/'+video.v_id">
                               <video
@@ -52,7 +52,7 @@
                           </a>
                         </div>
                       </div>
-                      <div class="col-sm-12 col-xs-6">
+                      <div class="col-6 col-sm-12 ml-3">
                         <div class="descr">
                           <a
                             class="hideOverflow"
@@ -69,7 +69,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-4 d-none d-sm-block mt-3">
+        <div class="col-lg-4 d-none d-lg-block mt-3">
           <!-- up next -->
           <div class>
             <div class="caption">
@@ -166,6 +166,8 @@ export default {
 .content-wrapper.wrap {
   margin: 0 0 0 !important;
 }
+
+
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -251,7 +253,7 @@ export default {
 .imgur1 {
   display: block;
   max-width: 145px;
-  max-height: 115px;
+  max-height: 133px;
   width: auto;
   height: auto;
   margin-right: auto;
@@ -260,7 +262,13 @@ export default {
 @media (max-width: 768px) {
   .imgur1 {
     max-width: 245px;
-    max-height: 160px;
+    max-height: 205px;
+  }
+}
+@media (min-width: 992px){
+  .row{
+    margin-right: -37px;
+    margin-left: -15px;
   }
 }
 </style>

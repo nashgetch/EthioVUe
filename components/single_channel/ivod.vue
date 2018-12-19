@@ -65,12 +65,12 @@
                 <div class="similar-v single-video video-mobile-02" ng-controller="videoController">
                   <div class="row">
                     <div
-                      class="col-lg-3 col-sm-6 col-xs-12"
+                      class="col-12 col-sm-6 col-lg-3"
                       v-for="(video,$index) in videos.slice(0,4)"
                       :key="$index"
                     >
                       <div class="nash-vids row">
-                        <div class="col-sm-12 col-xs-6">
+                        <div class="col-12 p-0 p-sm-2">
                           <div class="Vimg" style="background-color: black;">
                             <a :href="'/single-video/'+video.v_id">
                               <video class="imgur1" :poster="url + video.filename" :alt="video.title"></video>
@@ -78,7 +78,7 @@
                             </a>
                           </div>
                         </div>
-                        <div class="col-sm-12 col-xs-6">
+                        <div class="col-6 col-sm-12">
                           <div class="descr">
                             <h1 style="font-size: 14px !important;">
                               <a
@@ -277,9 +277,6 @@ export default {
   .nashitiwa {
     margin-top: 0% !important;
   }
-  h1 {
-    font-size: 18px;
-  }
 }
 
 .imgur {
@@ -294,7 +291,7 @@ export default {
 .imgur1 {
   display: block;
   max-width: 145px;
-  max-height: 115px;
+  max-height: 133px;
   width: auto;
   height: auto;
   margin-right: auto;
@@ -302,8 +299,8 @@ export default {
 }
 @media (max-width: 768px) {
   .imgur1 {
-    max-width: 245px;
-    max-height: 160px;
+    max-width: 277px;
+    max-height: 232px;
   }
 }
 </style>
