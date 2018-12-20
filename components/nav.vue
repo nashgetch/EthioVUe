@@ -2,13 +2,8 @@
   <div>
     <nav class="navbar navbar-expand-lg fixed-top p-0 p-sm-2">
       <div class="d-inline-flex">
-        <div class="float-left ml-md-auto ml-lg-auto d-block d-sm-none mt-auto ml-2">
-          <a
-            href="/"
-            class="text-gray-dark"
-            style="font-size: 1.4rem;"
-            id="menu-toggler"
-          >
+        <div class="float-left ml-md-auto ml-lg-auto d-block d--none mt-auto ml-2">
+          <a href="/" class="text-gray-dark" style="font-size: 1.4rem;" id="menu-toggler">
             <i class="fa fa-youtube-play fa-2x"></i>
           </a>
         </div>
@@ -50,17 +45,18 @@
         </div>
         <div class="container p-0 ml-4 mr-auto mt-auto mb-auto text-dark">
           <div class="row">
-            <nuxt-link to="/" class="d-none d-sm-block">
+            <nuxt-link to="/" class="d-none d-lg-block">
               <div class="text-center ethiov_logo">
                 <img src="/img/EthioV_LOGO_Black3.png" alt>
               </div>
             </nuxt-link>
-            <div class="d-block d-sm-none">
-              <nuxt-link to="/" class="text-gray-dark">
-               {{active_route==="index" ? "Home" : active_route==="live-channels"? active_route :"EthioV"}}
-              </nuxt-link>
+            <div class="d-block d-lg-none">
+              <nuxt-link
+                to="/"
+                class="text-gray-dark"
+              >{{active_route==="index" ? "Home" : active_route==="live-channels"? active_route :"EthioV"}}</nuxt-link>
             </div>
-            <div class="navbar-nav flex-row mr-auto mt-1 d-none d-md-flex d-lg-flex">
+            <div class="navbar-nav flex-row mr-auto mt-1 d-none d-lg-flex">
               <a href="/" class="nav-item nav-link" style="font-weight: bold;">
                 Home
                 <span class="sr-only">(current)</span>
@@ -69,10 +65,15 @@
                 class="nav-item nav-link"
                 style="font-weight: bold;"
                 href="/live-channels"
-              >Channels</a>
+              >Ethiopian Channels</a>
+              <a
+                class="nav-item nav-link"
+                style="font-weight: bold;"
+                href="/religious-channels"
+              >Religious channels</a>
             </div>
 
-            <div class="col-9 col-lg-8 d-none d-lg-block">
+            <div class="col-9 col-lg-4 col-xl-6 d-none d-lg-block">
               <form @submit.prevent="search(search1)">
                 <div class="input-group mt-1 mb-3">
                   <input
@@ -93,7 +94,7 @@
             </div>
           </div>
         </div>
-        <div class="d-block d-lg-none mr-2 mt-1">
+        <div class="d-block d-lg-none mr-3 mt-auto mb-auto mb-md-0 mt-md-0">
           <i
             @click="open_search"
             id="mobile_menu_toggler"
@@ -101,7 +102,7 @@
             class="fa fa-search"
           ></i>
         </div>
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right mt-2 mt-lg-0">
           <li class="dropdown">
             <a
               style="text-decoration: none; color: black;"
@@ -173,21 +174,24 @@
       <div class="d-block d-lg-none mt-auto">
         <div class="container-fluid mt-1">
           <div class="row mr-auto ml-2 ml-md-5">
-            <div class="col-6" :class="{'active_route':('index'===active_route)}">
+            <div class="col-4" :class="{'active_route':('index'===active_route)}">
               <span style="font-size:1rem;">
                 <a href="/" class="text-gray-dark">
-                  <i class="fa fa-home">
-                    Home
-                  </i>
+                  <i class="fa fa-home">Home</i>
                 </a>
               </span>
             </div>
-            <div class="col-6" :class="{'active_route':('live-channels'===active_route)}">
+            <div class="col-4" :class="{'active_route':('live-channels'===active_route)}">
               <span style="font-size:1rem;">
                 <a href="/live-channels" class="text-gray-dark">
-                  <i class="fa fa-tv">
-                    Live-Channels
-                  </i>
+                  <i class="fa fa-tv">Live Channels</i>
+                </a>
+              </span>
+            </div>
+            <div class="col-4" :class="{'active_route':('religious-channels'===active_route)}">
+              <span style="font-size:1rem;">
+                <a href="/religious-channels" class="text-gray-dark">
+                  <i class="fa fa-crosshairs">Religious Channels</i>
                 </a>
               </span>
             </div>
@@ -239,12 +243,11 @@ export default {
       $search_results: [],
       mobile_search: "",
       hidden_side_nav: "",
-      active_route:""
+      active_route: ""
     };
   },
-  mounted:function(){
-    this.active_route=$nuxt.$route.name;
-
+  mounted: function() {
+    this.active_route = $nuxt.$route.name;
   },
   methods: {
     logout() {
@@ -288,7 +291,7 @@ export default {
   background-color: #fbe631 !important;
   border-color: #fafafa !important;
 }
-.active_route{
+.active_route {
   border-bottom-style: solid;
   border-bottom-color: black;
 }

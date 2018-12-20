@@ -144,7 +144,7 @@ export default {
     tvs() {
         return this.tvsss.filter(ref=>{
             console.log(ref.category)
-            return  ref.category === '1';
+            return  ref.category === '2';
         })
     }
   }

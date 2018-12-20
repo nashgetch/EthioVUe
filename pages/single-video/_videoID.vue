@@ -30,7 +30,7 @@
           <div class="img">
             <Wideads/>
           </div>
-        </div> -->
+        </div>-->
         <div class="content-wrapper">
           <!-- The Author Part -->
           <div class="author">
@@ -52,69 +52,71 @@
                   <div class="c-s">{{owner.subs}}</div>
                   <div class="clearfix"></div>
                 </div>
-              </div>
-            </div>
-            <div class="sv-views">
-              <div class="sv-views-count">{{ single.views }} views</div>
-              <div class="sv-views-progress">
-                <div class="sv-views-progress-bar"></div>
-              </div>
-              <div class="sv-views-stats">
-                <div class="dropdown">
-                  <a
-                    style="text-decoration: none; color: black;"
-                    class="dropdown-toggle"
-                    data-toggle="dropdown"
-                    role="button"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    <i
-                      class="fa fa-share-alt"
-                      style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
-                    ></i>
-                    Share
-                    <span class="caret"></span>
-                  </a>
-                  <ul class="dropdown-menu poll">
-                    <social-sharing
-                      :url="'https://www.ethiov.com/single-video/' + single.v_id"
-                      :title="'EthioV - ' +single.title"
-                      :description="'EthioV - ' + single.description"
-                      :quote="'EthioV - ' + single.description"
-                      :hashtags="'#EthioV, ' + single.tags"
-                      inline-template
-                    >
-                      <div>
-                        <network class="dropdown-item" network="facebook">
-                          <i
-                            class="fa fa-fw fa-facebook"
-                            style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
-                          ></i>- Facebook
-                        </network>
+                <div class="sv-views">
+                  <div class="sv-views-count">{{ single.views }} views</div>
+                  <div class="sv-views-progress">
+                    <div class="sv-views-progress-bar"></div>
+                  </div>
+                  <div class="sv-views-stats">
+                    <div class="dropdown">
+                      <a
+                        style="text-decoration: none; color: black;"
+                        class="dropdown-toggle"
+                        data-toggle="dropdown"
+                        role="button"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        <i
+                          class="fa fa-share-alt"
+                          style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
+                        ></i>
+                        Share
+                        <span class="caret"></span>
+                      </a>
+                      <ul class="dropdown-menu poll">
+                        <social-sharing
+                          :url="'https://www.ethiov.com/single-video/' + single.v_id"
+                          :title="'EthioV - ' +single.title"
+                          :description="'EthioV - ' + single.description"
+                          :quote="'EthioV - ' + single.description"
+                          :hashtags="'#EthioV, ' + single.tags"
+                          inline-template
+                        >
+                          <div>
+                            <network class="dropdown-item" network="facebook">
+                              <i
+                                class="fa fa-fw fa-facebook"
+                                style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
+                              ></i>- Facebook
+                            </network>
 
-                        <network network="twitter" class="dropdown-item">
-                          <i
-                            class="fa fa-fw fa-twitter"
-                            style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
-                          ></i>- Twitter
-                        </network>
-                        <network network="telegram" class="dropdown-item">
-                          <i
-                            class="fa fa-telegram"
-                            style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
-                          ></i>- Telegram
-                        </network>
-                      </div>
-                    </social-sharing>
-                  </ul>
+                            <network network="twitter" class="dropdown-item">
+                              <i
+                                class="fa fa-fw fa-twitter"
+                                style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
+                              ></i>- Twitter
+                            </network>
+                            <network network="telegram" class="dropdown-item">
+                              <i
+                                class="fa fa-telegram"
+                                style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
+                              ></i>- Telegram
+                            </network>
+                          </div>
+                        </social-sharing>
+                      </ul>
+                    </div>
+                    <span class="green">
+                      <a v-if="loggedIn" @click="likeVid(user.id, single.v_id)">
+                        <i class="fa fa-thumbs-up">{{likes}} Likes</i>
+                      </a>
+                    </span>
+                  </div>
                 </div>
-
-                <span class="green">
-                  <span class="circle"></span>
-                </span>
               </div>
             </div>
+
             <div class="clearfix"></div>
           </div>
           <!-- End of The Author Part -->
@@ -136,8 +138,8 @@
                           slot="placeholder"
                           class="bg-inverse"
                           style="background-color: black; height:200px;"
-                        ></div> -->
-                        <video class="imgur" :poster="pos_url+'/'+pub.filename" :alt="pub.title"></video>
+                      ></div>-->
+                      <video class="imgur" :poster="pos_url+'/'+pub.filename" :alt="pub.title"></video>
                       <!-- </clazy-load> -->
                       <a :href="'/single-video/'+pub.v_id">
                         <div ng-click="viewVideo(pub.v_id)" class="play">
@@ -164,6 +166,134 @@
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div class="comments" ng-controller="navController">
+            <div class="reply-comment" ng-controller="videoController" v-if="loggedIn">
+              <div class="rc-header">
+                <i class="cv cvicon-cv-comment"></i>
+                <span class="semibold">All</span>
+                Comments
+              </div>
+              <div class="rc-ava">
+                <span v-if="loggedIn" class="i-circle">{{user.name.charAt(0)}}</span>
+              </div>
+              <div class="form-group">
+                <form @submit.prevent="addComments(user.id, single.v_id)">
+                  <textarea class="form-control mt-3" name="com" v-model="com" id="grnash" rows="3"></textarea>
+                  <button type="submit" class="btn btn-warning pull-right mt-2">
+                    <i class="fa fa-comments-o" aria-hidden="true"></i>
+                  </button>
+                </form>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="fikir-vids" v-if="!loggedIn">
+              <a class="descr" href="#/login">Sign in to comment!</a>
+            </div>
+            <div class="comments-list" ng-controller="videoController">
+              <div class="cl-header">
+                <div class="c-nav">
+                  <ul v-if="loggedIn" class="list-inline">
+                    <li>
+                      <a class="active">
+                        Popular
+                        <span class="hidden-xs">Comments</span>
+                        <button class="btn btn-warning pull-right" ng-click="refresh(single.v_id)">
+                          <i class="fa fa-refresh pull-right" aria-hidden="true"></i>
+                        </button>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="cl-comment" v-for="(comment, $index) in comments" :key="$index">
+                <div class="cl-avatar">
+                  <a class="i-circle">{{comment.cat_name.charAt(0)}}</a>
+                </div>
+                <div class="cl-comment-text">
+                  <div class="cl-name-date">. {{comment.created_at}}</div>
+                  <div class="cl-text">{{comment.com}}</div>
+                  <div class="cl-meta">
+                    <span class="green">
+                      <span class="circle"></span> 121
+                    </span>
+                    <span class="grey">
+                      <span class="circle"></span>
+                      {{comment.created_at}}
+                    </span> .
+                    <a @click="showReply(comment.id)">Reply</a>
+                  </div>
+                  <div class="cl-replies">
+                    <a @click="showComments(comment.comment_id)">
+                      View all 5
+                      replies
+                      <i
+                        class="fa fa-chevron-down"
+                        aria-hidden="true"
+                      ></i>
+                    </a>
+                  </div>
+
+                  <div
+                    class="reply-comment"
+                    ng-controller="videoController"
+                    v-if="isShown(comment.id)"
+                  >
+                    <div class="rc-ava">
+                      <span v-if="loggedIn" class="i-circle">{{user.name.charAt(0)}}</span>
+                    </div>
+                    <div class="form-group">
+                      <form @submit.prevent="addReply(comment.comment_id)">
+                        <textarea
+                          class="form-control mt-3"
+                          name="rep"
+                          v-model="rep"
+                          id="grnash"
+                          rows="3"
+                        ></textarea>
+                        <button type="submit" class="btn btn-warning pull-right mt-2">
+                          <i class="fa fa-comments-o" aria-hidden="true"></i>
+                        </button>
+                      </form>
+                    </div>
+
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="clearfix"></div>
+                  <div
+                    class="cl-comment-reply"
+                    v-if="whichComment(comment.comment_id)"
+                    v-for="(comment, $index) in comment.replies"
+                    :key="$index"
+                  >
+                    <div class="cl-avatar">
+                      <a class="i-circle">{{comment.cat_name.charAt(0)}}</a>
+                    </div>
+                    <div class="cl-comment-text">
+                      <div class="cl-name-date">. {{comment.created_at}}</div>
+                      <div class="cl-text">{{comment.rep}}</div>
+                      <div class="cl-meta">
+                        <span class="green">
+                          <span class="circle"></span> 70
+                        </span>
+                        <span class="grey">
+                          <span class="circle"></span> 9
+                        </span> .
+                        <a href>Reply</a>
+                      </div>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="cl-flag">
+                    <a>
+                      <i class="cv cvicon-cv-flag"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
               </div>
             </div>
           </div>
@@ -358,7 +488,6 @@ const base_url = "https://ethiov.com/api";
 export default {
   head() {
     return {
-
       title: this.single.title,
       meta: [
         {
@@ -370,7 +499,13 @@ export default {
         {
           hid: "keywords",
           name: "keywords",
-          keywords: "Video, " + this.single.title + ", " + this.single.tags + "," + this.single.title_en
+          keywords:
+            "Video, " +
+            this.single.title +
+            ", " +
+            this.single.tags +
+            "," +
+            this.single.title_en
         },
         {
           hid: "og:title",
@@ -433,9 +568,37 @@ export default {
     };
   },
   components: {
-    ViewCatogs,
+    ViewCatogs
     // Wideads,
     // Tallads
+  },
+  methods: {
+    likeVid(user_id, v_id) {
+      axios.post(base_url + "/like_vid/" + user_id + "/" + v_id).then(res => {
+        this.$toast.success("You Liked this Video.");
+      });
+    },
+    nash() {
+      console.log("ansh");
+    },
+    addComments(user_id, v_id) {
+      axios
+        .post(base_url + "/comment/" + user_id + "/" + v_id, {
+          com: this.com,
+          headers: {
+            "Content-type": "application/json"
+          }
+        })
+        .then(res => {
+          this.$toast.success("You Commented on this Video.");
+        });
+    },
+    showReply(setTabs) {
+      this.setTab = setTabs;
+    },
+    isShown(whichTab) {
+      return this.setTab === whichTab;
+    }
   },
   async asyncData(context) {
     let single_data = await axios.post(
@@ -459,17 +622,26 @@ export default {
       pos_url: "https://video2.vixtream.net",
       cUrl: "https://video2.vixtream.net/vod/v/" + single_data.data.v_id,
       single: single,
-      owner: {}
+      owner: {},
+      likes: {},
+      com: "",
+      comments: {},
+      isRe: false,
+      rep: "",
+      setTab: ""
     };
   },
   mounted: function() {
-     if (process.browser) {
-      let recaptchaScript = document.createElement('script')
-      recaptchaScript.setAttribute('src', 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
-      document.body.appendChild(recaptchaScript)
-      let adsScript = document.createElement('script')
-      recaptchaScript.setAttribute('src', '/js/ads.js')
-      document.body.appendChild(adsScript)
+    if (process.browser) {
+      let recaptchaScript = document.createElement("script");
+      recaptchaScript.setAttribute(
+        "src",
+        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      );
+      document.body.appendChild(recaptchaScript);
+      let adsScript = document.createElement("script");
+      recaptchaScript.setAttribute("src", "/js/ads.js");
+      document.body.appendChild(adsScript);
     }
 
     let mydata = [];
@@ -494,10 +666,16 @@ export default {
           this.owner.subs = res.data;
         });
       });
+    axios.post(base_url + "/countLike/" + this.single.v_id).then(res => {
+      return (this.likes = res.data);
+    });
+    axios.post(base_url + "/fetchComments/" + this.single.v_id).then(res => {
+      loops(res.data).then(data => {
+        this.comments = data;
+      });
+    });
   },
- created() {
-
-  },
+  created() {}
 };
 async function loop(params) {
   let main_array = [];
@@ -515,6 +693,22 @@ async function loop(params) {
   }
   return main_array;
 }
+async function loops(params) {
+  let main_array = [];
+  var i = 0;
+  for (i = 0; i < params.length; i++) {
+    let temp = {};
+    temp = params[i];
+    let cat = await getUsername(temp.user_id);
+    temp.cat_name = cat.name;
+    // getViews(temp.v_id).then(resp => {
+    //   temp.views = resp;
+    //   main_array.push(temp);
+    // });
+    main_array.push(temp);
+  }
+  return main_array;
+}
 
 async function getCatname(v_id) {
   let t_resp = await axios.post(base_url + "/return_cat/" + v_id);
@@ -524,6 +718,10 @@ async function getCatname(v_id) {
 async function getViews(v_id) {
   let t_resp = await axios.post(base_url + "/return_view/" + v_id);
   return t_resp.data;
+}
+async function getUsername(user_id) {
+  let t_resp = await axios.post(base_url + "/return_user/" + user_id);
+  return t_resp.data[0];
 }
 </script>
 
@@ -561,12 +759,10 @@ async function getViews(v_id) {
 
 @media (min-width: 300px) and (max-width: 768px) {
   .imgur {
-  max-width: 250px;
-  max-height: 200px;
-  width: 100%;
-}
-
-
+    max-width: 250px;
+    max-height: 200px;
+    width: 100%;
+  }
 }
 .nashians {
   width: 320px !important;

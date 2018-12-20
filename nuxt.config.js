@@ -109,6 +109,10 @@ module.exports = {
       src: '~plugins/ga.js',
       ssr: false
     },
+    {
+      src:'~plugins/vuetify.js',
+      ssr:false
+    }
   ],
 
   /*
@@ -131,7 +135,7 @@ module.exports = {
    },
   toast: {
     position: 'top-center',
-    duration: 2000
+    duration: 5000
   },
   axios: {
     baseURL: 'https://ethiov.com/api'
@@ -150,6 +154,21 @@ module.exports = {
             method: 'get',
             propertyName: 'data'
           },
+          // admin_user:{
+          //   url:"admin_user",
+          //   method:'get',
+          //   propertyName:'data'
+          // },
+          // admin_login:{
+          //   url: 'admin_login',
+          //   method: 'post',
+          //   propertyName: 'meta.token'
+          // },
+          // admin_user:{
+          //   url: 'admin_user',
+          //   method: 'get',
+          //   propertyName: 'data'
+          // },
           logout: {
             url: 'logout',
             method: 'post'

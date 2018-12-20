@@ -20,12 +20,8 @@
         <div class="form-group">
             <button type="submit" class="btn btn-warning btn-block">Log in</button>
         </div>
-        <div class="clearfix">
-            <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
-            <a class="pull-right">Forgot Password?</a>
-        </div>
     </form>
-    <p class="text-center"><nuxt-link to="/register">Create an Account</nuxt-link></p>
+
 </div>
 </template>
 <script>
@@ -44,11 +40,9 @@ export default {
        await this.$auth.login({
             data: this.userForm
        });
-       console.log(this.user.isAdmin);
-       if(this.user.isAdmin!=1){
-           this.$router.push({path: '/'});
-        }
-       this.$router.push({path: '/admin'});
+       this.$router.push({
+            path: '/admin'
+        });
          this.$toast.success('Welcome Back...');
         }
         catch(e){

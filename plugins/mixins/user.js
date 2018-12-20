@@ -7,7 +7,7 @@ const User = {
             computed: {
                 ...mapGetters({
                     loggedIn: 'auth/loggedIn',
-                    user: 'auth/user'
+                    user: 'auth/user',
                 })
             }
         })

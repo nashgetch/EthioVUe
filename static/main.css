@@ -697,6 +697,16 @@ small {
   padding-left: 19px
 }
 
+@media only screen and (min-width:768px) {
+  .author .sv-views{
+    margin-top: -29px;
+  }
+ }
+ @media only screen and (max-width:768px) {
+   .author .sv-views{
+     text-align: center;
+   }
+  }
 .nash-vids .percent .circle {
   border: solid 2px #fbe631;
   border-radius: 7px;
