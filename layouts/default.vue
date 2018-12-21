@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavHeader/>
-    <nuxt/>
+    <nuxt style="margin-top:0.8rem;"/>
   </div>
 </template>
  

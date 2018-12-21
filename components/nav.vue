@@ -172,7 +172,7 @@
         </ul>-->
       </div>
       <div class="d-block d-lg-none mt-auto">
-        <div class="container-fluid mt-1">
+        <div class="container-fluid" style="margin-top:0.7rem; !important">
           <div class="row mr-auto ml-2 ml-md-5">
             <div class="col-4" :class="{'active_route':('index'===active_route)}">
               <span style="font-size:1rem;">
