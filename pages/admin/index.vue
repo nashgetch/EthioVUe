@@ -15,13 +15,13 @@
             <v-container grid-list-md>
               <v-layout wrap>
                 <v-flex xs12 sm6 md4>
-                  <v-text-field :multi-line="true" height="100%" v-model="editedItem.title" label="name"></v-text-field>
+                  <v-text-field  height="100%" v-model="editedItem.title" label="name"></v-text-field>
                 </v-flex>
                 <v-flex xs12 sm6 md4>
-                  <v-text-field :multi-line="true" height="100px" v-model="editedItem.title_en" label="Title in English"></v-text-field>
+                  <v-text-field  height="100px" v-model="editedItem.title_en" label="Title in English"></v-text-field>
                 </v-flex>
                 <v-flex xs12 sm6 md4>
-                  <v-text-field :multi-line="true" height="100px" v-model="editedItem.description" label="Description"></v-text-field>
+                  <v-text-field height="100px" v-model="editedItem.description" label="Description"></v-text-field>
                 </v-flex>
                 <v-flex xs12 sm6 md4>
                   <v-text-field type="number" hint="enter a 0 or 1 other wise it defaults to zero" v-model="editedItem.trending" label="Trending"></v-text-field>

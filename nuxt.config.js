@@ -111,7 +111,6 @@ module.exports = {
     },
     {
       src:'~plugins/vuetify.js',
-      ssr:false
     }
   ],
 
