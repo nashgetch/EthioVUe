@@ -190,6 +190,7 @@ export default {
   methods:{
     setTabs(tab) {
       this.tab = tab;
+      this.tab1Style={};
     },
     checkTab(tab) {
      return this.tab === tab;

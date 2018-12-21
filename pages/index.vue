@@ -19,10 +19,10 @@
             <div class="col-md-8 col-sm-12">
               <ul class="nav nav-pills">
                 <li class="nav-item text-center" :class="tab1Style">
-                  <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(1)">Latest VoDs</a>
+                  <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(1)">Latest Videos</a>
                 </li>
                 <li class="nav-item text-center">
-                  <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(2)">By Category</a>
+                  <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(2)">Other Videos</a>
                 </li>
               </ul>
             </div>
@@ -175,8 +175,9 @@ export default {
   },
 
   methods: {
-    setTabs(tab) {
+   setTabs(tab) {
       this.tab = tab;
+      this.tab1Style={};
     },
     checkTab(tab) {
       return this.tab === tab;

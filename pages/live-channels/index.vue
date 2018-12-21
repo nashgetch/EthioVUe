@@ -143,8 +143,8 @@ export default {
   computed: {
     tvs() {
         return this.tvsss.filter(ref=>{
-            console.log(ref.category)
-            return  ref.category === '1';
+            console.log(ref);
+            return  ref.category === '1' && ref.chn !== 'ammas' && ref.chn !== 'fanas' && ref.chn !== 'waltas' ;
         })
     }
   }

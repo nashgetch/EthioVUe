@@ -751,8 +751,8 @@ async function getUsername(user_id) {
   display: block;
   max-width: 190px;
   max-height: 115px;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
   margin-right: auto;
   margin-left: auto;
 }
