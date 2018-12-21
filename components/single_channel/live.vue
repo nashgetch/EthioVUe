@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div ng-show="isSet(1)" class="container">
+    <div class="container">
       <div class="row rowDiv" ng-controller="tvController">
         <div class="col-lg-8 col-xs-12 col-sm-12">
           <div class="video-container">
@@ -14,7 +14,7 @@
               allow-scripts
             ></iframe>
           </div>
-          <h1 :class="marginTop(channel.owner_id)">
+          <h1 :class="marginTop(channel.owner_id)" class="display-4" style="font-size:1rem">
             <a>{{channel.tv_name}}</a>
           </h1>
           <!-- Ads block -->
