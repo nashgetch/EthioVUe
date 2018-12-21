@@ -14,7 +14,7 @@
               allow-scripts
             ></iframe>
           </div>
-          <h1 :class="marginTop(channel.owner_id)">
+          <h1 :class="marginTop(channel.owner_id)" class="display-4" style="font-size:1rem">
             <a>
               {{channel.tv_name}}| {{channel.description}} :
               Active {{time}} Hours Ago!
