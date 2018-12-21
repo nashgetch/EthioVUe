@@ -53,7 +53,22 @@
                   <div class="clearfix"></div>
                 </div>
                 <div class="sv-views">
-                  <div class="sv-views-count">{{ single.views }} views</div>
+                  <div class="sv-views-count">
+                    {{ single.views }} views
+                    <div class="d-inline-block" style="font-size:1rem;">
+                      <span class="green d-inline-block">
+                        <a v-if="loggedIn" @click="likeVid(user.id, single.v_id)" class="ml-2">
+                          <i class="fa fa-thumbs-up">{{likes}} Likes</i>
+                        </a>
+                      </span>
+                      <span class="green d-inline-block">
+                        <a v-if="loggedIn" @click="dislikeVid(user.id, single.v_id)" class="ml-2">
+                          <i class="fa fa-thumbs-down">{{dislikes}} Dislikes</i>
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+
                   <div class="sv-views-progress">
                     <div class="sv-views-progress-bar"></div>
                   </div>
@@ -107,11 +122,6 @@
                         </social-sharing>
                       </ul>
                     </div>
-                    <span class="green">
-                      <a v-if="loggedIn" @click="likeVid(user.id, single.v_id)">
-                        <i class="fa fa-thumbs-up">{{likes}} Likes</i>
-                      </a>
-                    </span>
                   </div>
                 </div>
               </div>
@@ -193,22 +203,6 @@
               <a class="descr" href="#/login">Sign in to comment!</a>
             </div>
             <div class="comments-list" ng-controller="videoController">
-              <div class="cl-header">
-                <div class="c-nav">
-                  <ul v-if="loggedIn" class="list-inline">
-                    <li>
-                      <a class="active">
-                        Popular
-                        <span class="hidden-xs">Comments</span>
-                        <button class="btn btn-warning pull-right" ng-click="refresh(single.v_id)">
-                          <i class="fa fa-refresh pull-right" aria-hidden="true"></i>
-                        </button>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
               <div class="cl-comment" v-for="(comment, $index) in comments" :key="$index">
                 <div class="cl-avatar">
                   <a class="i-circle">{{comment.cat_name.charAt(0)}}</a>
@@ -223,75 +217,9 @@
                     <span class="grey">
                       <span class="circle"></span>
                       {{comment.created_at}}
-                    </span> .
-                    <a @click="showReply(comment.id)">Reply</a>
+                    </span>
                   </div>
-                  <div class="cl-replies">
-                    <a @click="showComments(comment.comment_id)">
-                      View all 5
-                      replies
-                      <i
-                        class="fa fa-chevron-down"
-                        aria-hidden="true"
-                      ></i>
-                    </a>
-                  </div>
-
-                  <div
-                    class="reply-comment"
-                    ng-controller="videoController"
-                    v-if="isShown(comment.id)"
-                  >
-                    <div class="rc-ava">
-                      <span v-if="loggedIn" class="i-circle">{{user.name.charAt(0)}}</span>
-                    </div>
-                    <div class="form-group">
-                      <form @submit.prevent="addReply(comment.comment_id)">
-                        <textarea
-                          class="form-control mt-3"
-                          name="rep"
-                          v-model="rep"
-                          id="grnash"
-                          rows="3"
-                        ></textarea>
-                        <button type="submit" class="btn btn-warning pull-right mt-2">
-                          <i class="fa fa-comments-o" aria-hidden="true"></i>
-                        </button>
-                      </form>
-                    </div>
-
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="clearfix"></div>
-                  <div
-                    class="cl-comment-reply"
-                    v-if="whichComment(comment.comment_id)"
-                    v-for="(comment, $index) in comment.replies"
-                    :key="$index"
-                  >
-                    <div class="cl-avatar">
-                      <a class="i-circle">{{comment.cat_name.charAt(0)}}</a>
-                    </div>
-                    <div class="cl-comment-text">
-                      <div class="cl-name-date">. {{comment.created_at}}</div>
-                      <div class="cl-text">{{comment.rep}}</div>
-                      <div class="cl-meta">
-                        <span class="green">
-                          <span class="circle"></span> 70
-                        </span>
-                        <span class="grey">
-                          <span class="circle"></span> 9
-                        </span> .
-                        <a href>Reply</a>
-                      </div>
-                    </div>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="cl-flag">
-                    <a>
-                      <i class="cv cvicon-cv-flag"></i>
-                    </a>
-                  </div>
+                  <Replies :rcomment="comment"/>
                 </div>
                 <div class="clearfix"></div>
               </div>
@@ -349,6 +277,7 @@
 import ViewCatogs from "@/components/views_catogs";
 // import Wideads from "@/components/adsComponents/wide_ads";
 // import Tallads from "@/components/adsComponents/tall_ads";
+import Replies from "@/components/replies/replies";
 import axios from "axios";
 
 const base_url = "https://ethiov.com/api";
@@ -435,16 +364,32 @@ export default {
     };
   },
   components: {
-    ViewCatogs
+    ViewCatogs,
+    Replies
     // Wideads,
     // Tallads
   },
   methods: {
     likeVid(user_id, v_id) {
       axios.post(base_url + "/like_vid/" + user_id + "/" + v_id).then(res => {
+        axios.post(base_url + "/countLike/" + this.single.v_id).then(rres => {
+          this.likes = rres.data;
+        });
         this.$toast.success("You Liked this Video.");
       });
     },
+    dislikeVid(user_id, v_id) {
+      axios
+        .post(base_url + "/dislike_vid/" + user_id + "/" + v_id)
+        .then(res => {
+          axios
+            .post(base_url + "/countDislike/" + this.single.v_id)
+            .then(rres => {
+              this.dislikes = rres.data;
+            });
+        });
+    },
+
     addComments(user_id, v_id) {
       axios
         .post(base_url + "/comment/" + user_id + "/" + v_id, {
@@ -454,14 +399,10 @@ export default {
           }
         })
         .then(res => {
+          get_single_comment(res.data).then(res => this.comments.push(res));
+          this.com = "";
           this.$toast.success("You Commented on this Video.");
         });
-    },
-    showReply(setTabs) {
-      this.setTab = setTabs;
-    },
-    isShown(whichTab) {
-      return this.setTab === whichTab;
     }
   },
   async asyncData(context) {
@@ -487,12 +428,13 @@ export default {
       cUrl: "https://video2.vixtream.net/vod/v/" + single_data.data.v_id,
       single: single,
       owner: {},
-      likes: {},
+      likes: 0,
       com: "",
-      comments: {},
+      comments: [],
       isRe: false,
       rep: "",
-      setTab: ""
+      setTab: "",
+      dislikes: 0
     };
   },
   mounted: function() {
@@ -538,6 +480,9 @@ export default {
         this.comments = data;
       });
     });
+    axios.post(base_url + "/countDislike/" + this.single.v_id).then(res => {
+      return (this.dislikes = res.data);
+    });
   },
   created() {}
 };
@@ -571,9 +516,17 @@ async function loops(params) {
     // });
     main_array.push(temp);
   }
+
   return main_array;
 }
+async function get_single_comment(params) {
+  let temp = {};
+  temp = params;
+  let cat = await getUsername(params.user_id);
+  temp.cat_name = cat.name;
 
+  return temp;
+}
 async function getCatname(v_id) {
   let t_resp = await axios.post(base_url + "/return_cat/" + v_id);
   return t_resp.data[0];
