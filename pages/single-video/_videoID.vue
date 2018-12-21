@@ -1,5 +1,5 @@
 <template>
-  <div class="container" style="padding-top: 6rem;">
+  <div class="container" style="padding-top: 6.5rem;">
     <div class="row rowDiv">
       <div class="col-lg-8 col-xs-12 col-sm-12">
         <div id="iframe1" class="video-container">
