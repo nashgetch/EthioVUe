@@ -134,7 +134,7 @@ module.exports = {
    },
   toast: {
     position: 'top-center',
-    duration: 5000
+    duration: 2000
   },
   axios: {
     baseURL: 'https://ethiov.com/api'

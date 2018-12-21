@@ -44,13 +44,15 @@ export default {
        await this.$auth.login({
             data: this.userForm
        });
-       console.log(this.user.isAdmin);
-       if(this.user.isAdmin!=1){
+       if(this.user.isAdmin===1){
+         this.$router.push({path: '/admin'});
+          this.$toast.success('Welcome Back...');
+       }
+       else if(this.user.isAdmin !==1){
            this.$router.push({path: '/'});
-        }
-       this.$router.push({path: '/admin'});
-         this.$toast.success('Welcome Back...');
-        }
+            this.$toast.success('Welcome Back...');
+       }
+     }
         catch(e){
              this.$toast.error('Whoops. There seems to be an error. Please Try Again.');
         }
