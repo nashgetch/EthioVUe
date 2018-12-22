@@ -81,7 +81,7 @@ export default {
         text: "Videos",
         align: "left",
         sortable: false,
-        value: "name"
+        value: "title"
       },
       { text: "Title in English", value: "title_en" },
       { text: "Description", value: "description" },
