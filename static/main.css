@@ -700,8 +700,7 @@ small {
 @media only screen and (min-width:768px) {
   .author .sv-views{
     margin-top: -29px;
-    margin-left: -30px;
-    margin-left: auto;
+    margin-left: 10px;
     margin-right:auto;
     
   }
