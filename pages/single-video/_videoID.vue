@@ -58,13 +58,19 @@
                   {{ single.views }} views
                   <div class="d-inline-block" style="font-size:1rem;">
                     <span class="green d-inline-block">
-                      <a v-if="loggedIn" @click="likeVid(user.id, single.v_id)" class="ml-2">
-                        <i class="fa fa-thumbs-up">{{likes}} Likes</i>
+                      <a @click="likeVid(single.v_id)" class="ml-2">
+                        <i class="fa fa-thumbs-up" style="color:green">
+                          {{likes}}
+                          <span class="text-gray-dark">Likes</span>
+                        </i>
                       </a>
                     </span>
                     <span class="green d-inline-block">
-                      <a v-if="loggedIn" @click="dislikeVid(user.id, single.v_id)" class="ml-2">
-                        <i class="fa fa-thumbs-down">{{dislikes}} Dislikes</i>
+                      <a @click="dislikeVid( single.v_id)" class="ml-2">
+                        <i class="fa fa-thumbs-down" style="color:red">
+                          {{likes}}
+                          <span class="text-gray-dark">DisLikes</span>
+                        </i>
                       </a>
                     </span>
                   </div>
@@ -370,24 +376,34 @@ export default {
     // Tallads
   },
   methods: {
-    likeVid(user_id, v_id) {
-      axios.post(base_url + "/like_vid/" + user_id + "/" + v_id).then(res => {
-        axios.post(base_url + "/countLike/" + this.single.v_id).then(rres => {
-          this.likes = rres.data;
+    likeVid(v_id) {
+      if (this.loggedIn) {
+        axios.post(base_url + "/like_vid/" + this.user.id + "/" + v_id).then(res => {
+          axios.post(base_url + "/countLike/" + this.single.v_id).then(rres => {
+            this.likes = rres.data;
+          });
+          this.$toast.success("You Liked this Video.");
         });
-        this.$toast.success("You Liked this Video.");
-      });
+      }
+      else{
+        this.$toast.error("Sign in To Like or Dislike Video");
+      }
     },
-    dislikeVid(user_id, v_id) {
-      axios
-        .post(base_url + "/dislike_vid/" + user_id + "/" + v_id)
-        .then(res => {
-          axios
-            .post(base_url + "/countDislike/" + this.single.v_id)
-            .then(rres => {
-              this.dislikes = rres.data;
-            });
-        });
+    dislikeVid(v_id) {
+      if (this.loggedIn) {
+        axios
+          .post(base_url + "/dislike_vid/" + this.user.id + "/" + v_id)
+          .then(res => {
+            axios
+              .post(base_url + "/countDislike/" + this.single.v_id)
+              .then(rres => {
+                this.dislikes = rres.data;
+              });
+          });
+      }
+    else{
+       this.$toast.error("Sign in To Like or Dislike Video");
+    }
     },
 
     addComments(user_id, v_id) {
