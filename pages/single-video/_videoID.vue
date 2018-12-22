@@ -34,7 +34,7 @@
         <div class="content-wrapper">
           <!-- The Author Part -->
           <div class="author">
-            <div class="author-head" ng-controller="navController">
+            <div class="author-head">
               <a :href="'/single-channel/'+owner.id">
                 <img
                   :src="'//video2.vixtream.net'+owner.poster_image"
@@ -42,8 +42,8 @@
                   class="sv-avatar"
                 >
               </a>
-              <div class="sv-name">
-                <div>
+              <div class="sv-name ml-auto mr-auto">
+                <div class="mr-2">
                   <a></a>
                   {{ owner.tv_name }} - Videos - {{ single.cat_name }}
                 </div>
@@ -52,76 +52,76 @@
                   <div class="c-s">{{owner.subs}}</div>
                   <div class="clearfix"></div>
                 </div>
-                <div class="sv-views">
-                  <div class="sv-views-count">
-                    {{ single.views }} views
-                    <div class="d-inline-block" style="font-size:1rem;">
-                      <span class="green d-inline-block">
-                        <a v-if="loggedIn" @click="likeVid(user.id, single.v_id)" class="ml-2">
-                          <i class="fa fa-thumbs-up">{{likes}} Likes</i>
-                        </a>
-                      </span>
-                      <span class="green d-inline-block">
-                        <a v-if="loggedIn" @click="dislikeVid(user.id, single.v_id)" class="ml-2">
-                          <i class="fa fa-thumbs-down">{{dislikes}} Dislikes</i>
-                        </a>
-                      </span>
-                    </div>
-                  </div>
-
-                  <div class="sv-views-progress">
-                    <div class="sv-views-progress-bar"></div>
-                  </div>
-                  <div class="sv-views-stats">
-                    <div class="dropdown">
-                      <a
-                        style="text-decoration: none; color: black;"
-                        class="dropdown-toggle"
-                        data-toggle="dropdown"
-                        role="button"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                      >
-                        <i
-                          class="fa fa-share-alt"
-                          style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
-                        ></i>
-                        Share
-                        <span class="caret"></span>
+              </div>
+              <div class="sv-views float-none d-inline-block">
+                <div class="sv-views-count">
+                  {{ single.views }} views
+                  <div class="d-inline-block" style="font-size:1rem;">
+                    <span class="green d-inline-block">
+                      <a v-if="loggedIn" @click="likeVid(user.id, single.v_id)" class="ml-2">
+                        <i class="fa fa-thumbs-up">{{likes}} Likes</i>
                       </a>
-                      <ul class="dropdown-menu poll">
-                        <social-sharing
-                          :url="'https://www.ethiov.com/single-video/' + single.v_id"
-                          :title="'EthioV - ' +single.title"
-                          :description="'EthioV - ' + single.description"
-                          :quote="'EthioV - ' + single.description"
-                          :hashtags="'#EthioV, ' + single.tags"
-                          inline-template
-                        >
-                          <div>
-                            <network class="dropdown-item" network="facebook">
-                              <i
-                                class="fa fa-fw fa-facebook"
-                                style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
-                              ></i>- Facebook
-                            </network>
+                    </span>
+                    <span class="green d-inline-block">
+                      <a v-if="loggedIn" @click="dislikeVid(user.id, single.v_id)" class="ml-2">
+                        <i class="fa fa-thumbs-down">{{dislikes}} Dislikes</i>
+                      </a>
+                    </span>
+                  </div>
+                </div>
 
-                            <network network="twitter" class="dropdown-item">
-                              <i
-                                class="fa fa-fw fa-twitter"
-                                style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
-                              ></i>- Twitter
-                            </network>
-                            <network network="telegram" class="dropdown-item">
-                              <i
-                                class="fa fa-telegram"
-                                style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
-                              ></i>- Telegram
-                            </network>
-                          </div>
-                        </social-sharing>
-                      </ul>
-                    </div>
+                <div class="sv-views-progress">
+                  <div class="sv-views-progress-bar"></div>
+                </div>
+                <div class="sv-views-stats">
+                  <div class="dropdown">
+                    <a
+                      style="text-decoration: none; color: black;"
+                      class="dropdown-toggle"
+                      data-toggle="dropdown"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <i
+                        class="fa fa-share-alt"
+                        style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
+                      ></i>
+                      Share
+                      <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu poll">
+                      <social-sharing
+                        :url="'https://www.ethiov.com/single-video/' + single.v_id"
+                        :title="'EthioV - ' +single.title"
+                        :description="'EthioV - ' + single.description"
+                        :quote="'EthioV - ' + single.description"
+                        :hashtags="'#EthioV, ' + single.tags"
+                        inline-template
+                      >
+                        <div>
+                          <network class="dropdown-item" network="facebook">
+                            <i
+                              class="fa fa-fw fa-facebook"
+                              style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
+                            ></i>- Facebook
+                          </network>
+
+                          <network network="twitter" class="dropdown-item">
+                            <i
+                              class="fa fa-fw fa-twitter"
+                              style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
+                            ></i>- Twitter
+                          </network>
+                          <network network="telegram" class="dropdown-item">
+                            <i
+                              class="fa fa-telegram"
+                              style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
+                            ></i>- Telegram
+                          </network>
+                        </div>
+                      </social-sharing>
+                    </ul>
                   </div>
                 </div>
               </div>

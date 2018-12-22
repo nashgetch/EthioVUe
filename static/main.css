@@ -699,15 +699,12 @@ small {
 
 @media only screen and (min-width:768px) {
   .author .sv-views{
-    margin-top: -29px;
-    margin-left: 10px;
-    margin-right:auto;
-    
+   margin: auto; 
   }
  }
  @media only screen and (max-width:768px) {
    .author .sv-views{
-     text-align: center;
+     text-align: end;
    }
   }
 .nash-vids .percent .circle {
@@ -726,7 +723,7 @@ small {
 }
 
 .author {
-  padding: 30px;
+  padding: 2rem;
   background-color: #fff;
   border-radius: 5px;
   -webkit-box-shadow: 0 2px 1px 1px #d6d7d8;
@@ -740,7 +737,7 @@ small {
 }
 
 .author .sv-name {
-  width: 430px;
+  width: fit-content;
   float: left;
   color: #7e7e7e
 }
@@ -783,6 +780,7 @@ small {
 
 .author .sv-views {
   float: right;
+  text-align: end;
 }
 
 .author .sv-views .sv-views-count {
