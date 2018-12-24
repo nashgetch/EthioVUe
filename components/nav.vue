@@ -58,7 +58,9 @@
             </div>
             <div class="navbar-nav flex-row mr-auto mt-1 d-none d-lg-flex">
               <a href="/" class="nav-item nav-link" style="font-weight: bold;">
-                Home
+
+                   Home
+
                 <span class="sr-only">(current)</span>
               </a>
               <a
@@ -177,14 +179,14 @@
             <div class="col-4" :class="{'active_route':('index'===active_route)}">
               <span style="font-size:1rem;">
                 <a href="/" class="text-gray-dark">
-                  <i class="fa fa-home">Home</i>
+                 <i class="fa fa-home">Home</i>
                 </a>
               </span>
             </div>
             <div class="col-4" :class="{'active_route':('live-channels'===active_route)}">
               <span style="font-size:1rem;">
                 <a href="/live-channels" class="text-gray-dark">
-                  <i class="fa fa-tv">Live Channels</i>
+                  <i class="fa fa-tv"> Live Channels</i>
                 </a>
               </span>
             </div>
@@ -294,5 +296,11 @@ export default {
 .active_route {
   border-bottom-style: solid;
   border-bottom-color: black;
+}
+.title{
+   font-size: 16px;
+  vertical-align: -4px;
+  font-weight: 700;
+  display: inline-block;
 }
 </style>

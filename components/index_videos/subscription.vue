@@ -1,5 +1,8 @@
 <template>
   <div class>
+  <span class="title">
+      Subscription
+  </span>
     <div class v-for="(owner, $index) in tvs" :key="$index">
       <div class="content-wrapper">
         <div class="owner">
@@ -99,6 +102,12 @@ export default {
   /* text-align: center;
   margin-left: auto;
   margin-right: auto; */
+}
+.title{
+   font-size: 16px;
+  vertical-align: -4px;
+  font-weight: 700;
+  display: inline-block;
 }
 </style>
 

@@ -1,5 +1,8 @@
 <template>
   <div>
+    <span class="title">
+     By Category...
+  </span>
     <div class="col-12 col-sm-7 offset-sm-2 mt-2">
       <v-select
         :options="options"
@@ -170,6 +173,12 @@ export default {
 </script>
 
 <style scoped>
+.title{
+   font-size: 16px;
+  vertical-align: -4px;
+  font-weight: 700;
+  display: inline-block;
+}
 .v-select pol {
   margin-left: 0px !important;
 }

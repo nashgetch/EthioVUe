@@ -2,6 +2,9 @@
   <div>
 
     <div class="mb-2">
+      <span class="title">
+        Trending Videos...
+      </span>
       <div class="container parentDiv">
         <div class="container parentDiv">
           <div class="row display-flex" ng-controller="navController">
@@ -130,6 +133,16 @@ export default {
 </script>
 
 <style scoped>
+.title {
+  /* color: #fbe631 !important; */
+  font-size: 16px;
+  vertical-align: -4px;
+  font-weight: 700;
+  display: inline-block;
+  /* text-align: center;
+  margin-left: auto;
+  margin-right: auto; */
+}
 .v-select pol {
   margin-left: 0px !important;
 }

@@ -2,7 +2,9 @@
 
   <div>
 
-
+   <span class="title">
+      Recent Videos...
+  </span>
     <div class="container parentDiv">
       <div class="container parentDiv">
         <div class="row display-flex">
@@ -185,3 +187,11 @@ export default {
 </script>
 
 
+<style>
+  .title{
+   font-size: 16px;
+  vertical-align: -4px;
+  font-weight: 700;
+  display: inline-block;
+}
+</style>
