@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span class="title">
+    <span class="d-inline-block d-sm-none title">
      By Category...
   </span>
     <div class="col-12 col-sm-7 offset-sm-2 mt-2">

@@ -2,7 +2,7 @@
 
   <div>
 
-   <span class="title">
+   <span class="d-inline-block d-sm-none title">
       Recent Videos...
   </span>
     <div class="container parentDiv">

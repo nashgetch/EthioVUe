@@ -1,6 +1,6 @@
 <template>
   <div class>
-  <span class="title">
+  <span class="d-inline-block d-sm-none title">
       Subscription
   </span>
     <div class v-for="(owner, $index) in tvs" :key="$index">

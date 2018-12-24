@@ -2,7 +2,7 @@
   <div>
 
     <div class="mb-2">
-      <span class="title">
+      <span class="d-inline-block d-sm-none title">
         Trending Videos...
       </span>
       <div class="container parentDiv">
