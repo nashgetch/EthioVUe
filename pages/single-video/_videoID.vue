@@ -37,7 +37,7 @@
             <div class="author-head">
               <a :href="'/single-channel/'+owner.id">
                 <img
-                  :src="'//video2.vixtream.net'+ owner.poster_image"
+                  :src="'//video2.vixtream.net'+owner.poster_image"
                   :alt="owner.tv_name"
                   class="sv-avatar"
                 >
@@ -206,7 +206,7 @@
               <div class="clearfix"></div>
             </div>
             <div class="fikir-vids" v-if="!loggedIn">
-              <a class="descr" href="#/login">Sign in to comment!</a>
+              <nuxt-link class="descr" to="/login">Sign in to comment!</nuxt-link>
             </div>
             <div class="comments-list" ng-controller="videoController">
               <div class="cl-comment" v-for="(comment, $index) in comments" :key="$index">
@@ -378,7 +378,7 @@ export default {
   methods: {
     subscribe(){
       if (this.loggedIn) {
-      axios.post(base_url + "/subscribe/" + this.user.id + "/" + this.owner.id).then(res =>
+      axios.post(base_url + "/subscribe/" + this.user.id + "/" + this.owner.owner_id).then(res =>
 
       {
           this.$toast.success("You have Subscibed to this Channel...");
