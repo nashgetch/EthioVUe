@@ -1,13 +1,6 @@
 <template>
   <div>
-    <div class="col-12 col-sm-7 offset-sm-2 mt-2">
-      <v-select
-        :options="options"
-        label="category_name"
-        placeholder="Select Category"
-        :onChange="Selecthandler"
-      ></v-select>
-    </div>
+
     <div class="mb-2">
       <div class="container parentDiv">
         <div class="container parentDiv">
@@ -88,16 +81,9 @@ export default {
     };
   },
   mounted: function() {
+
     axios
-      .post(base_url + "/fetch_catogs")
-      .then(res => {
-        return (this.options = [...res.data]);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-    axios
-      .post(base_url + "/cat_load", {
+      .post(base_url + "/trending", {
         page: this.page,
         cat: this.cat_id,
         headers: {
@@ -115,7 +101,7 @@ export default {
     catogHandler($state) {
       this.page += 1;
       axios
-        .post(base_url + "/cat_load", {
+        .post(base_url + "/trending", {
           page: this.page,
           cat: this.cat_id,
           headers: {
@@ -138,33 +124,7 @@ export default {
           this.$toast.success("The Video is added to Watch Later");
         });
     },
-    Selecthandler(searctext) {
-      if (searctext != null) {
-        this.page = 1;
-        this.cat_id = parseInt(searctext.category_id);
-        this.videos = [];
-        axios
-          .post(base_url + "/cat_load", {
-            page: this.page,
-            cat: this.cat_id
-          })
-          .then(res => {
-            this.videos = [...res.data.data];
-          });
-      } else {
-        this.page = 1;
-        this.cat_id = 1;
-        this.videos = [];
-        axios
-          .post(base_url + "/cat_load", {
-            page: this.page,
-            cat: this.cat_id
-          })
-          .then(res => {
-            this.videos = [...res.data.data];
-          });
-      }
-    }
+
   }
 };
 </script>

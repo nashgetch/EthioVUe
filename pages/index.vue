@@ -8,7 +8,7 @@
     </script> -->
     <!-- <a href="/ads-test">Test Ads</a> -->
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: .2rem;">
-      <div class="row">
+      <div class="row fas">
         <div class="col-lg-10 offset-lg-2">
           <div class="row">
             <div class="col-md-2 col-sm-12 mt-2 channel-name d-none d-sm-block">
@@ -16,14 +16,38 @@
               <a href="/live-channels">Live TVs</a>
             </div>
 
-            <div class="col-md-8 col-sm-12">
+            <div class="col-md-8 col-sm-12 text-center">
               <ul class="nav nav-pills">
-                <li class="nav-item text-center" :class="tab1Style">
-                  <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(1)">Latest Videos</a>
+                <li class="nav-item text-center ml-auto mr-auto" :class="tab1Style">
+                  <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(1)">
+                    <span class="d-none d-sm-block ">Latest Videos</span>
+                    <i class="fa fa-clock-o fa-2x d-inline-block d-sm-none"></i>
+                  </a>
                 </li>
-                <li class="nav-item text-center">
-                  <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(2)">Other Videos</a>
+                <li class="nav-item text-center ml-auto mr-auto">
+                  <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(2)">
+                    <span  class="d-none d-sm-block ">Other Videos</span>
+                    <i class="fa fa-video-camera fa-2x d-inline-block d-sm-none"></i>
+                  </a>
                 </li>
+               <li class="nav-item text-center ml-auto mr-auto">
+                  <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(3)">
+                    <span  class="d-none d-sm-block ">Trending</span>
+                    <i class="fa fa-fire fa-2x d-inline-block d-sm-none"></i>
+                  </a>
+                </li>
+                 <li class="nav-item text-center ml-auto mr-auto">
+                  <a v-if="loggedIn" class="nav-link" data-toggle="pill" @click.prevent="setTabs(4)">
+                    <span class="d-none d-sm-block ">Subscription</span>
+                      <i class="fa fa-envelope-open fa-2x d-inline-block d-sm-none"></i>
+                  </a>
+                </li>
+                <!-- <li class="nav-item text-center ml-auto mr-auto">
+                  <a v-if="loggedIn" class="nav-link" data-toggle="pill" @click.prevent="setTabs(5)">
+                    <span class="d-none d-sm-block">Account</span>
+                      <i class="fa fa-user fa-2x d-inline-block d-sm-none"></i>
+                  </a>
+                </li> -->
               </ul>
             </div>
           </div>
@@ -32,12 +56,16 @@
     </div>
     <LatestVod :videos="videos" v-if="checkTab(1)"/>
     <CatogVods v-if="checkTab(2)"/>
+    <TrendingVods v-if="checkTab(3)"/>
+    <Subscription v-if="checkTab(4)"/>
   </section>
 </template>
 <script>
 import LatestVod from "@/components/index_videos/latest_vods";
 import ViewCatogs from "@/components/views_catogs";
 import CatogVods from "@/components/index_videos/catog_videos";
+import TrendingVods from "@/components/index_videos/trend_videos";
+import Subscription from "@/components/index_videos/subscription";
 import wideads from "@/components/adsComponents/wide_ads"
 import axios from "axios";
 const base_url = "https://ethiov.com/api";
@@ -111,7 +139,9 @@ export default {
   components: {
     LatestVod,
     CatogVods,
-    wideads
+    wideads,
+    TrendingVods,
+    Subscription
   },
   data() {
     return {
@@ -238,6 +268,10 @@ export default {
     height: 90px !important;
   }
 }
-ins{background: #fff}
+@media (max-width: 990px) {
+  .row.fas {
+  background-color: #fbe631;
+  }
+}
 </style>
 

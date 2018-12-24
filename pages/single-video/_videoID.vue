@@ -37,7 +37,7 @@
             <div class="author-head">
               <a :href="'/single-channel/'+owner.id">
                 <img
-                  :src="'//video2.vixtream.net'+owner.poster_image"
+                  :src="'//video2.vixtream.net'+ owner.poster_image"
                   :alt="owner.tv_name"
                   class="sv-avatar"
                 >
@@ -47,7 +47,7 @@
                   <a></a>
                   {{ owner.tv_name }} - Videos - {{ single.cat_name }}
                 </div>
-                <div class="c-sub" ng-click="subscribe(user.id, owner[0].id)">
+                <div class="c-sub" @click="subscribe()">
                   <div class="c-f">Subscribe</div>
                   <div class="c-s">{{owner.subs}}</div>
                   <div class="clearfix"></div>
@@ -376,6 +376,18 @@ export default {
     // Tallads
   },
   methods: {
+    subscribe(){
+      if (this.loggedIn) {
+      axios.post(base_url + "/subscribe/" + this.user.id + "/" + this.owner.id).then(res =>
+
+      {
+          this.$toast.success("You have Subscibed to this Channel...");
+      })
+      }
+      else{
+          this.$toast.error("Sign in to Subscribe to this Channel");
+      }
+    },
     likeVid(v_id) {
       if (this.loggedIn) {
         axios.post(base_url + "/like_vid/" + this.user.id + "/" + v_id).then(res => {
@@ -454,17 +466,17 @@ export default {
     };
   },
   mounted: function() {
-    if (process.browser) {
-      let recaptchaScript = document.createElement("script");
-      recaptchaScript.setAttribute(
-        "src",
-        "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-      );
-      document.body.appendChild(recaptchaScript);
-      let adsScript = document.createElement("script");
-      recaptchaScript.setAttribute("src", "/js/ads.js");
-      document.body.appendChild(adsScript);
-    }
+    // if (process.browser) {
+    //   let recaptchaScript = document.createElement("script");
+    //   recaptchaScript.setAttribute(
+    //     "src",
+    //     "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+    //   );
+    //   document.body.appendChild(recaptchaScript);
+    //   let adsScript = document.createElement("script");
+    //   recaptchaScript.setAttribute("src", "/js/ads.js");
+    //   document.body.appendChild(adsScript);
+    // }
 
     let mydata = [];
     axios
