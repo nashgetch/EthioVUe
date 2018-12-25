@@ -73,7 +73,7 @@
                         <div class="col-12 p-0 p-sm-2">
                           <div class="Vimg" style="background-color: black;">
                             <a :href="'/single-video/'+video.v_id">
-                              <video class="imgur1" :poster="url + video.filename" :alt="video.title"></video>
+                              <video class="imgur1" :poster="url + video.filename2" :alt="video.title"></video>
                               <div class="time">{{video.duration}}</div>
                             </a>
                           </div>

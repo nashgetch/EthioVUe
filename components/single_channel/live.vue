@@ -43,7 +43,7 @@
                           <a :href="'/single-video/'+video.v_id">
                               <video
                                 class="imgur1"
-                                :poster="'https://video2.vixtream.net/'+video.filename"
+                                :poster="'https://video2.vixtream.net/'+video.filename2"
                               ></video>
                             <div ng-click="viewVideo(video.v_id)" class="play">
                               <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>

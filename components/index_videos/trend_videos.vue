@@ -25,7 +25,7 @@
                       > -->
                       <!-- You can put any component you want in here. -->
                       <!-- </div> -->
-                      <video :poster="'//video2.vixtream.net/'+video.filename" :alt="video.title"></video>
+                      <video :poster="'//video2.vixtream.net/'+video.filename2" :alt="video.title"></video>
                       <!-- The placeholder slot displays while the image is loading. -->
                     <!-- </clazy-load> -->
                     <div ng-click="viewVideo(video.v_id)" class="play">

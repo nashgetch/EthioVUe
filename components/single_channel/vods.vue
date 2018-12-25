@@ -10,13 +10,13 @@
           <div class="kaleb-vids">
             <div class="Vimg itemContainer bg-inverse">
               <a :href="'/single-video/'+video.v_id">
-                <clazy-load :src="'//video2.vixtream.net/'+video.filename">
+                <clazy-load :src="'//video2.vixtream.net/'+video.filename2">
                   <div
                     slot="placeholder"
                     class="bg-inverse"
                     style="background-color: black; height:200px;"
                   ></div>
-                  <video :poster="'https://video2.vixtream.net/'+video.filename" :alt="video.title"></video>
+                  <video :poster="'https://video2.vixtream.net/'+video.filename2" :alt="video.title"></video>
                 </clazy-load>
                 <div ng-click="viewVideo(video.v_id)" class="play">
                   <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
