@@ -30,13 +30,14 @@
             <div class="descr">
               <a class="hideOverflow" :href="'/single-video/' + video.v_id">{{video.title}}</a>
             </div>
-            <div class="views">
+            <!-- <div class="views">
               {{video.view_count}} views.
               <span class="percent">
                 <span class="circle"></span>
                 {{video.created_at}}
               </span>
-            </div>
+            </div> -->
+             <ViewCatogs :vid="video.v_id" :cat_id="video.category_id" :created_at="video.created_at" :isIndex="true" :title_en="video.title_en"/>
           </div>
         </div>
         <div></div>
@@ -46,8 +47,12 @@
 </template>
 <script>
 import axios from "axios";
+import ViewCatogs from "@/components/views_catogs";
 const base_url = "https://ethiov.com/api";
 export default {
+components: {
+    ViewCatogs,
+  },
   asyncData(context) {
     return axios
       .post(base_url + "/translate/" + context.params.ser)
