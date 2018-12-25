@@ -5,7 +5,7 @@
    <span class="d-inline-block d-sm-none title">
       Recent Videos...
   </span>
-    <div class="container parentDiv">
+    <!-- <div class="container parentDiv"> -->
       <div class="container parentDiv">
         <div class="row display-flex">
           <div class="col-12 col-sm-6 col-md-4 col-lg-3 ml-auto mr-auto mb-3">
@@ -97,23 +97,23 @@
                   :title="video.title_en"
                 >{{video.title_en}}</a></h1>-->
               </div>
-              <div class="views text-center">
+              <div class="views">
                 <ViewCatogs
                   :vid="video.v_id"
                   :cat_id="video.category_id"
                   :isIndex="true"
                   :title_en="video.title_en"
-                />
-                <span class="percent">
-                  <span class="circle"></span>
-                  {{video.created_at}}
-                </span>
+                  :created_at="video.created_at"
+                >
+
+                </ViewCatogs>
+
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    <!-- </div> -->
     <infinite-loading @infinite="infiniteHandler"></infinite-loading>
   </div>
 
