@@ -111,6 +111,9 @@ module.exports = {
     },
     {
       src:'~plugins/vuetify.js',
+    },
+    {
+      src:'~plugins/mom.js'
     }
   ],
 

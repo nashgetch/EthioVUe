@@ -17,7 +17,7 @@
               <span class="mt-auto mb-auto mr-2" style="font-size:1.45rem;" @click="close_search">
                 <i class="fa fa-window-close"></i>
               </span>
-              <!-- <img
+              <!-- <imgnpm install vue-moment
 
                 id="mobile_search_toggler"
                 class="close_icon mt-3 mr-2"
@@ -105,7 +105,7 @@
           ></i>
         </div>
         <ul class="nav navbar-nav navbar-right mt-2 mt-lg-0">
-          <li class="dropdown">
+          <li class="dropdown" style="font-family: none;">
             <a
               style="text-decoration: none; color: black;"
               class="dropdown-toggle"

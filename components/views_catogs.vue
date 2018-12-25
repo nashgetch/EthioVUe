@@ -6,7 +6,7 @@
         <a class="hideOverflow" :aria-label="title_en" :title="title_en">{{title_en}}</a>
       </h1>
         <small style="font-size: 12px; color: black;">
-            {{ catName }} |   {{created_at}}
+            {{ catName }} |   {{created_at | moment("from", "now")}}
         </small>
 
 
@@ -65,6 +65,7 @@ export default {
       type: String
     }
   },
+
   data: function() {
     return {
       catName: "Loading..",
@@ -72,9 +73,11 @@ export default {
     };
   },
   mounted: function() {
+
     // axios.post(base_url+"/return_view/" + this.vid).then(res => {
     //   return (this.views = res.data);
     // });
+
     if (!this.isSingle) {
       axios.post(base_url + "/return_cat/" + this.cat_id).then(res => {
         return (this.catName = res.data[0].category_name);

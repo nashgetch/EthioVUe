@@ -3,7 +3,7 @@
   <span class="d-inline-block d-sm-none title">
       Subscription
   </span>
-    <div class v-for="(owner, $index) in tvs" :key="$index">
+    <div v-for="(owner, $index) in tvs" :key="$index">
       <div class="content-wrapper">
         <div class="owner">
           <a :href="'/single-channel/'+owner.id">
@@ -14,7 +14,7 @@
             >
           </a>
           <span class="title">
-            {{owner.tv_name}} -
+            {{owner.tv_name}} <small> - Latest Updates from {{owner.tv_name}}</small>
             <!-- <span>{{owner.description}}</span> -->
           </span>
         </div>

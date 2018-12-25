@@ -12,7 +12,7 @@
       ></v-select>
     </div>
     <div class="mb-2">
-      <div class="container parentDiv">
+
         <div class="container parentDiv">
           <div class="row display-flex" ng-controller="navController">
             <div
@@ -55,21 +55,22 @@
                       class="hideOverflow"
                       :aria-label="video.title"
                       :title="video.title"
+
                     >{{video.title}}</a>
                   </h1>
                 </div>
                 <div class="views text-center">
-                  <ViewCatogs :vid="video.v_id" :cat_id="video.category_id" :isIndex="true" :title_en="video.title_en"/>
-                  <span class="percent">
+                  <ViewCatogs :vid="video.v_id" :cat_id="video.category_id" :created_at="video.created_at" :isIndex="true" :title_en="video.title_en"/>
+                  <!-- <span class="percent">
                     <span class="circle"></span>
                     {{video.created_at}}
-                  </span>
+                  </span> -->
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      <!-- </div> -->
       <infinite-loading @infinite="catogHandler" spinner="wavedots"></infinite-loading>
     </div>
   </div>

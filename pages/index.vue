@@ -21,25 +21,37 @@
                 <li class="nav-item text-center ml-auto mr-auto" :class="tab1Style">
                   <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(1)">
                     <span class="d-none d-sm-block ">Latest Videos</span>
-                    <i class="fa fa-clock-o fa-2x d-inline-block d-sm-none"></i>
+                    <i class="fa fa-clock-o d-inline-block d-sm-none"
+                    style="font-size: 23px;"
+                    :class="{'active_route':(1===tab)}"
+                    ></i>
                   </a>
                 </li>
                 <li class="nav-item text-center ml-auto mr-auto">
                   <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(2)">
                     <span  class="d-none d-sm-block ">Other Videos</span>
-                    <i class="fa fa-video-camera fa-2x d-inline-block d-sm-none"></i>
+                    <i class="fa fa-video-camera d-inline-block d-sm-none"
+                    style="font-size: 23px;"
+                    :class="{'active_route':(2===tab)}"
+                    ></i>
                   </a>
                 </li>
                <li class="nav-item text-center ml-auto mr-auto">
                   <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(3)">
-                    <span  class="d-none d-sm-block ">Trending</span>
-                    <i class="fa fa-fire fa-2x d-inline-block d-sm-none"></i>
+                    <span  class="d-none d-sm-block">Trending</span>
+                    <i class="fa fa-fire d-inline-block d-sm-none"
+                    style="font-size: 23px;"
+                    :class="{'active_route':(3===tab)}"
+                    ></i>
                   </a>
                 </li>
                  <li class="nav-item text-center ml-auto mr-auto">
                   <a v-if="loggedIn" class="nav-link" data-toggle="pill" @click.prevent="setTabs(4)">
                     <span class="d-none d-sm-block ">Subscription</span>
-                      <i class="fa fa-envelope-open fa-2x d-inline-block d-sm-none"></i>
+                      <i class="fa fa-envelope-open d-inline-block d-sm-none"
+                      style="font-size: 23px;"
+                      :class="{'active_route':(4===tab)}"
+                      ></i>
                   </a>
                 </li>
                 <!-- <li class="nav-item text-center ml-auto mr-auto">
@@ -243,7 +255,9 @@ export default {
         });
     }
   },
-  mounted: function() {}
+  mounted: function() {
+    this.active_route = this.tab;
+  }
 };
 </script>
 
@@ -272,6 +286,11 @@ export default {
   .row.fas {
   background-color: #fbe631;
   }
+}
+.active_route {
+  border-bottom-style: solid;
+  border-bottom-color: #111;
+    box-shadow: 0 2px 60px 0 rgba(18, 10, 32, 1), 0 2px 10px 0 rgba(0, 0, 0, 1);
 }
 </style>
 
