@@ -19,7 +19,7 @@
                 <div class="text-center mt-5">
                   <div class="chan-descrip">
                     <strong class="chan-title">{{tv.tv_name}}</strong>
-                    <span>[{{tv.tags}}]</span>
+                    <small style="font-size:10px">[{{tv.description}}]</small>
                     <!-- <span class="hideOverflow">{{tv.description}}</span> -->
 
                   </div>
