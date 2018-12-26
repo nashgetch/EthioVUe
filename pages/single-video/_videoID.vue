@@ -378,8 +378,9 @@ export default {
   methods: {
     subscribe(){
       if (this.loggedIn) {
-      axios.post(base_url + "/subscribe/" + this.user.id + "/" + this.owner.owner_id).then(res =>
-
+      axios.post(
+        base_url + "/subscribe/" + this.user.id + "/" +
+        this.owner.owner_id).then(res =>
       {
           this.$toast.success("You have Subscibed to this Channel...");
       })
@@ -496,7 +497,7 @@ export default {
       .post(base_url + "/video_owner/" + this.single.publisher_id)
       .then(res => {
         this.owner = res.data;
-        axios.post(base_url + "/countSub/" + this.owner.id).then(res => {
+        axios.post(base_url + "/countSub/" + this.owner.owner_id).then(res => {
           this.owner.subs = res.data;
         });
       });
