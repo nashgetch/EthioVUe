@@ -257,8 +257,9 @@ export default {
     },
     search(search1) {
       let k = this.search1.split(" ").join("+");
+      let r = k.split("/").join("-");
       this.$router.push({
-        path: "/search-results/" + k
+        path: "/search-results/" + r
       });
     },
     toggle_side_menu() {
