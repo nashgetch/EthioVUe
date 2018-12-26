@@ -380,7 +380,7 @@ export default {
       if (this.loggedIn) {
       axios.post(
         base_url + "/subscribe/" + this.user.id + "/" +
-        this.owner.owner_id).then(res =>
+        this.owner.id).then(res =>
       {
           this.$toast.success("You have Subscibed to this Channel...");
       })

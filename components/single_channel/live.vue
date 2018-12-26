@@ -152,10 +152,16 @@ export default {
     }
   },
   mounted: function() {
+
     axios.post(base_url + "/live_channel").then(res => {
       return (this.tvs = [
         ...res.data.filter(res => {
-          return res.tv_name != "test";
+            if(this.channel.category == "2"){
+                return res.owner_id == this.channel.owner_id && res.category == "2";
+            }
+              return res.tv_name != "test" &&
+              res.owner_id != this.channel.owner_id && res.category === this.channel.category;
+              // console.log(res);
         })
       ]);
     });
