@@ -34,7 +34,7 @@
                 <div class="row">
                   <div
                     class="col-12 col-lg-3 col-sm-6"
-                    v-for="(video,$index) in videos.slice(0,4)"
+                    v-for="(video,$index) in videos.slice(0,8)"
                     :key="$index"
                   >
                     <div class="nash-vids row">
