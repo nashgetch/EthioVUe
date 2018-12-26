@@ -124,12 +124,12 @@
               <li>
                 <a class="dropdown-item" href="/watchlist">My Watchlist</a>
               </li>
-              <li>
+              <!-- <li>
                 <a class="dropdown-item" href="/subscription">Subscription</a>
               </li>
               <li>
                 <a class="dropdown-item" href="/">Account Info</a>
-              </li>
+              </li> -->
               <li role="separator" class="divider"></li>
               <li>
                 <a class="dropdown-item" @click.prevent="logout" href="/">Logout</a>
