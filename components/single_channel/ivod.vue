@@ -96,6 +96,7 @@
                               :cat_id="video.category_id"
                               :isIndex="true"
                               :title_en="video.title_en"
+                              :created_at="video.created_at"
                             />
                           </div>
                           <!-- <div class="percent"><span class="circle"></span> 83%</div> -->
@@ -119,7 +120,7 @@
                 </a>
               </div>
 
-              <div data-ads2></div>
+              <!-- <div data-ads2></div> -->
 
               <div class="clearfix"></div>
             </div>
