@@ -50,6 +50,19 @@ import axios from "axios";
 import ViewCatogs from "@/components/views_catogs";
 const base_url = "https://ethiov.com/api";
 export default {
+  head() {
+    return {
+      title: "Search Results",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "Search Results"
+        }
+      ]
+    };
+  },
 components: {
     ViewCatogs,
   },

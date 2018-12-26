@@ -50,6 +50,19 @@
 </template>
 <script>
 export default {
+head() {
+    return {
+      title: "Ethiov - Watchlist",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "Your Watchlist"
+        }
+      ]
+    };
+  },
   data() {
     return {
       my_watch: []
