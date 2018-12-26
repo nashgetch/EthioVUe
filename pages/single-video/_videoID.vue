@@ -497,7 +497,7 @@ export default {
       .post(base_url + "/video_owner/" + this.single.publisher_id)
       .then(res => {
         this.owner = res.data;
-        axios.post(base_url + "/countSub/" + this.owner.owner_id).then(res => {
+        axios.post(base_url + "/countSub/" + this.owner.id).then(res => {
           this.owner.subs = res.data;
         });
       });
