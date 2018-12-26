@@ -14,7 +14,7 @@
                   <div
                     slot="placeholder"
                     class="bg-inverse"
-                    style="background-color: black; height:200px;"
+                    style="background-color: black; height:143px;"
                   ></div>
                   <video :poster="'https://video2.vixtream.net/'+video.filename2" :alt="video.title"></video>
                 </clazy-load>

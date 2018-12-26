@@ -86,11 +86,11 @@
                 <div class="col-lg-6 col-sm-6" ng-click="viewTV(tv.id)">
                   <div class="Vimg" style="background-color: black;">
                     <a :href="'/single-channel/'+tv.id">
-                      <video
+                      <img
                         class="imgur"
-                        :poster="'https://video2.vixtream.net'+tv.poster_image"
+                        :src="'https://video2.vixtream.net'+tv.poster_image"
                         :alt="tv.tv_name"
-                      ></video>
+                      >
                     </a>
                   </div>
                 </div>
@@ -243,7 +243,7 @@ export default {
 
 .imgur {
   display: block;
-  max-width: 190px;
+  max-width: 174px;
   max-height: 115px;
   width: auto;
   height: auto;
@@ -253,7 +253,7 @@ export default {
 .imgur1 {
   display: block;
   max-width: 145px;
-  max-height: 133px;
+  max-height: 82px;
   width: auto;
   height: auto;
   margin-right: auto;

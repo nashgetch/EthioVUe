@@ -282,7 +282,7 @@ export default {
 
 .imgur {
   display: block;
-  max-width: 190px;
+  max-width: 161px;
   max-height: 115px;
   width: auto;
   height: auto;
@@ -292,7 +292,7 @@ export default {
 .imgur1 {
   display: block;
   max-width: 145px;
-  max-height: 133px;
+  max-height: 82px;
   width: auto;
   height: auto;
   margin-right: auto;

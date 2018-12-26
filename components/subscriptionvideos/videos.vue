@@ -9,14 +9,15 @@
           <div class="kaleb-vids">
             <div class="Vimg itemContainer bg-inverse">
               <a :href="'/single-video/'+video.v_id">
-                <!-- <clazy-load :src="'//video2.vixtream.net/'+video.filename"> -->
-                  <!-- <div
+                <clazy-load :src="'//video2.vixtream.net/'+video.filename"> -->
+                  <div
                     slot="placeholder"
                     class="bg-inverse"
-                    style="background-color: black; height:200px;"
-                  ></div> -->
+                    style="background-color: black; height:143px;"
+                  >
+                  </div>
                   <video :poster="'https://video2.vixtream.net/'+video.filename2" :alt="video.title"></video>
-                <!-- </clazy-load> -->
+                </clazy-load>
                 <div ng-click="viewVideo(video.v_id)" class="play">
                   <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                 </div>
@@ -36,7 +37,7 @@
               <ViewCatogs :vid="video.v_id" :created_at="video.created_at" :cat_id="video.category_id" :isIndex="true" :title_en="video.title_en"/>
               <small style="margin-right: 20%"></small>
               <!-- <div class="percent"> -->
-                <!-- <span class="circle"></span> -->
+                <!--    </clazy-load><span class="circle"></span> -->
                 <!-- {{ video.created_at }} -->
               <!-- </div> -->
             </div>

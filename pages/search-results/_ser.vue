@@ -13,14 +13,14 @@
           <div class="kaleb-vids">
             <div class="Vimg itemContainer bg-inverse">
               <a :href="'/single-video/' + video.v_id">
-                <!-- <clazy-load :src="'//video2.vixtream.net/'+video.filename">
+                <clazy-load :src="'//video2.vixtream.net/'+video.filename">
                   <div
                     slot="placeholder"
                     class="bg-inverse"
-                    style="background-color: black; height:200px;"
-                  ></div> -->
+                    style="background-color: black; height:143px;"
+                  ></div>
                   <video :poster="'//video2.vixtream.net/'+video.filename" :alt="video.title"></video>
-                <!-- </clazy-load> -->
+                </clazy-load>
                 <div class="play">
                   <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                 </div>
