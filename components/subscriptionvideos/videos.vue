@@ -9,7 +9,7 @@
           <div class="kaleb-vids">
             <div class="Vimg itemContainer bg-inverse">
               <a :href="'/single-video/'+video.v_id">
-                <clazy-load :src="'//video2.vixtream.net/'+video.filename"> -->
+                <clazy-load :src="'//video2.vixtream.net/'+video.filename">
                   <div
                     slot="placeholder"
                     class="bg-inverse"
