@@ -12,7 +12,7 @@
             :key="$index"
           >
             <div class="kaleb-vids">
-              <div class="Vimg itemContainer" style="opacity: 1">
+              <div class="Vimg itemContainer" style="opacity: 1;background-color: black;">
                 <a :href="'/single-video/' + video.v_id">
                   <!-- <clazy-load :src="'//video2.vixtream.net/'+video.filename"> -->
                     <!-- <div
