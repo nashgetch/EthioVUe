@@ -61,6 +61,7 @@
                   </a>
                 </li> -->
               </ul>
+              <hr class="fas">
             </div>
           </div>
         </div>
@@ -283,14 +284,16 @@ export default {
   }
 }
 @media (max-width: 990px) {
-  .row.fas {
-  background-color: #fbe631;
+  .fas {
+  display:block;
+  color: #fbe631;
+  box-shadow: 1px 0px 0px 0px rgba(18, 10, 32, 1), 0 0px 3px 0 rgba(0, 0, 0, 1);
   }
 }
 .active_route {
   border-bottom-style: solid;
   border-bottom-color: #111;
-    box-shadow: 0 2px 60px 0 rgba(18, 10, 32, 1), 0 2px 10px 0 rgba(0, 0, 0, 1);
+
 }
 </style>
 

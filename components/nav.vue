@@ -3,8 +3,8 @@
     <nav class="navbar navbar-expand-lg fixed-top p-0 p-sm-2">
       <div class="d-inline-flex">
         <div class="float-left ml-md-auto ml-lg-auto d-block d--none mt-auto ml-2">
-          <a href="/" class="text-gray-dark" style="font-size: 1.4rem;" id="menu-toggler">
-            <i class="fa fa-youtube-play fa-2x"></i>
+          <a href="/" class="" style="font-size: 1.4rem;" id="menu-toggler">
+            <i class="fa fa-youtube-play fa-2x d-inline-block d-lg-none" style="color: #fbe631;"></i>
           </a>
         </div>
         <div
@@ -47,13 +47,13 @@
           <div class="row">
             <nuxt-link to="/" class="d-none d-lg-block">
               <div class="text-center ethiov_logo">
-                <img src="/img/EthioV_LOGO_Black3.png" alt>
+                <img src="/img/EthioV_LOGO3.png" alt>
               </div>
             </nuxt-link>
             <div class="d-block d-lg-none">
               <nuxt-link
                 to="/"
-                class="text-gray-dark"
+                class=""
               >{{active_route==="index" ? "Home" : active_route==="live-channels"? active_route :"EthioV"}}</nuxt-link>
             </div>
             <div class="navbar-nav flex-row mr-auto mt-1 d-none d-lg-flex">
@@ -65,12 +65,12 @@
               </a>
               <a
                 class="nav-item nav-link"
-                style="font-weight: bold;"
+                style="font-weight: bold; color: #fbe631;"
                 href="/live-channels"
-              >Ethiopian Channels</a>
+              >Live Channels</a>
               <a
                 class="nav-item nav-link"
-                style="font-weight: bold;"
+                style="font-weight: bold; color: #fbe631;"
                 href="/religious-channels"
               >Religious channels</a>
             </div>
@@ -100,7 +100,7 @@
           <i
             @click="open_search"
             id="mobile_menu_toggler"
-            style="margin-top: 10px; font-size: 1.3rem;"
+            style="margin-top: 10px; font-size: 1.3rem; color: #fbe631;"
             class="fa fa-search"
           ></i>
         </div>
@@ -116,7 +116,7 @@
             >
               <span v-if="loggedIn" class="i-circle">{{user.name.charAt(0)}}</span>
               <nuxt-link to="/login" v-if="!loggedIn">
-                <i class="fa fa-sign-in" style="font-size:38px;"></i>
+                <i class="fa fa-sign-in" style="font-size:38px; color: #fbe631;"></i>
               </nuxt-link>
               <span class="caret"></span>
             </a>
@@ -174,26 +174,26 @@
         </ul>-->
       </div>
       <div class="d-block d-lg-none mt-auto">
-        <div class="container-fluid" style="margin-top:0.7rem; !important">
+        <div class="container-fluid" style="">
           <div class="row mr-auto ml-2 ml-md-5">
             <div class="col-4" :class="{'active_route':('index'===active_route)}">
-              <span style="font-size:1rem;">
-                <a href="/" class="text-gray-dark">
-                 <i class="fa fa-home">Home</i>
+              <span style="font-size:1rem; color: #fbe631; font-weight: bold;">
+                <a href="/" class="" style="color: #fbe631;">
+                 <i class="fa fa-home" style="font-weight: bold;">Home</i>
                 </a>
               </span>
             </div>
             <div class="col-4" :class="{'active_route':('live-channels'===active_route)}">
-              <span style="font-size:1rem;">
-                <a href="/live-channels" class="text-gray-dark">
-                  <i class="fa fa-tv"> Live Channels</i>
+              <span style="font-size:1rem; color: #fbe631;">
+                <a href="/live-channels" style="color:#fbe631;font-weight: bold;">
+                  <i class="fa fa-tv" style="font-weight: bold;"> Live</i>
                 </a>
               </span>
             </div>
             <div class="col-4" :class="{'active_route':('religious-channels'===active_route)}">
-              <span style="font-size:1rem;">
-                <a href="/religious-channels" class="text-gray-dark">
-                  <i class="fa fa-crosshairs">Religious Channels</i>
+              <span style="font-size:1rem; color: #fbe631;">
+                <a href="/religious-channels" style="color:#fbe631;font-weight: bold;">
+                  <i class="fa fa-bell" style="font-weight: bold;">Religious</i>
                 </a>
               </span>
             </div>
@@ -201,7 +201,7 @@
         </div>
       </div>
     </nav>
-    <div id="sidenav" class="d-lg-none" :class="hidden_side_nav">
+    <!-- <div id="sidenav" class="d-lg-none" :class="hidden_side_nav">
       <div class="container-fluid">
         <div class="row">
           <a
@@ -212,7 +212,7 @@
           ></a>
           <a href="/">
             <div class="text-center ethiov_logo mt-3">
-              <img src="/img/EthioV_LOGO_Black3.png" alt="EthioV Logo">
+              <img src="/img/EthioV_LOGO3.png" alt="EthioV Logo">
             </div>
           </a>
         </div>
@@ -234,7 +234,7 @@
           <hr>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 <script>
@@ -258,6 +258,7 @@ export default {
     search(search1) {
       let k = this.search1.split(" ").join("+");
       let r = k.split("/").join("-");
+
       this.$router.push({
         path: "/search-results/" + r
       });
@@ -297,11 +298,15 @@ export default {
 .active_route {
   border-bottom-style: solid;
   border-bottom-color: black;
+  color: #fbe631 !important;
 }
 .title{
-   font-size: 16px;
+  font-size: 16px;
   vertical-align: -4px;
   font-weight: 700;
   display: inline-block;
+}
+.esti{
+
 }
 </style>
