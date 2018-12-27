@@ -293,7 +293,7 @@ export default {
 .active_route {
   border-bottom-style: solid;
   border-bottom-color: #111;
-
+  box-shadow: 0 5px 18px 0 rgba(0, 0, 0, -7.84), 3px 11px 19px 10px rgba(0, 0, 0, 0.45);
 }
 </style>
 
