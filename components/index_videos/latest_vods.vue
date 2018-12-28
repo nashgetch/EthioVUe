@@ -126,18 +126,7 @@ const wideads = import('@/components/adsComponents/wide_ads.vue');
 const base_url = "https://ethiov.com/api";
 export default {
   components: {
-    ViewCatogs,
-    wideads: () => ({
-      // The component we want to load.
-      component: wideads,
-      // The component to use as a placeholder while the
-      // async component is loading.
-
-      delay: 1000,
-      // If this timeout is reached, the async component is considered
-      // to have failed loading.
-      timeout: 3000
-    })
+    ViewCatogs
   },
   props: {
     videos: {

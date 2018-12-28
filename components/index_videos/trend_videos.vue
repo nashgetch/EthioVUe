@@ -63,8 +63,9 @@
           </div>
         </div>
       <!-- </div> -->
-      <infinite-loading @infinite="catogHandler" spinner="wavedots"></infinite-loading>
+
     </div>
+      <infinite-loading @infinite="infiniteHandler" spinner="wavedots"></infinite-loading>
   </div>
 </template>
 <script>
@@ -101,22 +102,26 @@ export default {
       });
   },
   methods: {
-    catogHandler($state) {
-      this.page += 1;
+     infiniteHandler($state) {
       axios
         .post(base_url + "/trending", {
           page: this.page,
-          cat: this.cat_id,
           headers: {
             "Content-type": "application/x-www-form-urlencoded"
           }
         })
-        .then(res => {
-          if (res.data.data.length) {
-            this.videos.push(...res.data.data);
+        .then(({ data }) => {
+          console.log(data.data);
+          this.page += 1;
+          if (data.data.length) {
+            data.data.forEach(element => {
+              let temp = {};
+              temp = element;
+              this.videos.push(temp);
+            });
             $state.loaded();
           } else {
-            $state.loaded();
+            $state.complete();
           }
         });
     },
