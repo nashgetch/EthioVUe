@@ -3,8 +3,8 @@
     <nav class="navbar navbar-expand-lg fixed-top p-0 p-sm-2">
       <div class="d-inline-flex">
         <div class="float-left ml-md-auto ml-lg-auto d-block d--none mt-auto ml-2">
-          <a href="/" class="" style="font-size: 1.4rem;" id="menu-toggler">
-            <i class="fa fa-youtube-play fa-2x d-inline-block d-lg-none" style="color: #fbe631;"></i>
+          <a href="/" class style="font-size: 1.4rem;" id="menu-toggler">
+            <!-- <i class="fa fa-youtube-play fa-2x d-none d-lg-none" style="color: #fbe631;"></i> -->
           </a>
         </div>
         <div
@@ -51,16 +51,15 @@
               </div>
             </nuxt-link>
             <div class="d-block d-lg-none">
-              <nuxt-link
+              <span style="color: white; font-weight: bold; font-size: 17px;">EthioV</span>
+              <!-- <nuxt-link
                 to="/"
-                class=""
-              >{{active_route==="index" ? "Home" : active_route==="live-channels"? active_route :"EthioV"}}</nuxt-link>
+                class
+              >{{active_route==="index" ? "Home" : active_route==="live-channels"? active_route :"EthioV"}}</nuxt-link>-->
             </div>
             <div class="navbar-nav flex-row mr-auto mt-1 d-none d-lg-flex">
               <a href="/" class="nav-item nav-link" style="font-weight: bold;">
-
-                   Home
-
+                Home
                 <span class="sr-only">(current)</span>
               </a>
               <a
@@ -73,9 +72,14 @@
                 style="font-weight: bold; color: #fbe631;"
                 href="/religious-channels"
               >Religious channels</a>
+              <a
+                class="nav-item nav-link"
+                style="font-weight: bold; color: #fbe631;"
+                href="/education"
+              >Educational</a>
             </div>
 
-            <div class="col-9 col-lg-4 col-xl-6 d-none d-lg-block">
+            <div class="col-6 col-lg-3 col-xl-4 d-none d-lg-block">
               <form @submit.prevent="search(search1)">
                 <div class="input-group mt-1 mb-3">
                   <input
@@ -129,7 +133,7 @@
               </li>
               <li>
                 <a class="dropdown-item" href="/">Account Info</a>
-              </li> -->
+              </li>-->
               <li role="separator" class="divider"></li>
               <li>
                 <a class="dropdown-item" @click.prevent="logout" href="/">Logout</a>
@@ -174,33 +178,50 @@
         </ul>-->
       </div>
       <div class="d-block d-lg-none mt-auto">
-        <div class="container-fluid" style="">
-          <div class="row mr-auto ml-2 ml-md-5">
-            <div class="col-4" :class="{'active_route':('index'===active_route)}">
-              <span style="font-size:1rem; color: #fbe631; font-weight: bold;">
+        <!-- <div class="container-fluid" style="">
+          <div class="row">
+            <div class="col-2" :class="{'active_route':('index'===active_route)}">
+              <span style="font-size:17px; color: #fbe631; font-weight: bold;">
                 <a href="/" class="" style="color: #fbe631;">
-                 <i class="fa fa-home" style="font-weight: bold;">Home</i>
+                 <span style="font-weight: bold;">Home</span>
                 </a>
               </span>
             </div>
-            <div class="col-4" :class="{'active_route':('live-channels'===active_route)}">
-              <span style="font-size:1rem; color: #fbe631;">
+            <div class="col-2" :class="{'active_route':('live-channels'===active_route)}">
+              <span style="font-size:17px; color: #fbe631;">
                 <a href="/live-channels" style="color:#fbe631;font-weight: bold;">
-                  <i class="fa fa-tv" style="font-weight: bold;"> Live</i>
+                  <span  style="font-weight: bold;">Live</span>
                 </a>
               </span>
             </div>
-            <div class="col-4" :class="{'active_route':('religious-channels'===active_route)}">
-              <span style="font-size:1rem; color: #fbe631;">
+            <div class="col-2 mr-2" :class="{'active_route':('religious-channels'===active_route)}">
+              <span style="font-size:17px; color: #fbe631;">
                 <a href="/religious-channels" style="color:#fbe631;font-weight: bold;">
-                  <i class="fa fa-bell" style="font-weight: bold;">Religious</i>
+                  <span style="font-weight: bold;">Religion</span>
+                </a>
+              </span>
+            </div>
+            <div class="col-2 ml-4" :class="{'active_route':('education'===active_route)}">
+              <span style="font-size:17px; color: #fbe631;">
+                <a href="/education" style="color:#fbe631;font-weight: bold;">
+                  <span style="font-weight: bold;">Education</span>
                 </a>
               </span>
             </div>
           </div>
-        </div>
+        </div>-->
+        <no-ssr>
+          <quick-menu
+            :menu-count="4"
+            :icon-class="icons"
+            :menuUrlList="menulinks"
+            backgroundColor="#fbe631"
+            color="black"
+          ></quick-menu>
+        </no-ssr>
       </div>
     </nav>
+
     <!-- <div id="sidenav" class="d-lg-none" :class="hidden_side_nav">
       <div class="container-fluid">
         <div class="row">
@@ -234,18 +255,41 @@
           <hr>
         </div>
       </div>
-    </div> -->
+    </div>-->
   </div>
 </template>
 <script>
+import quickMenu from "vue-quick-menu";
 export default {
+  components: {
+    quickMenu
+  },
   data() {
     return {
       search1: "",
       $search_results: [],
       mobile_search: "",
       hidden_side_nav: "",
-      active_route: ""
+      active_route: "",
+      menulinks: [
+        {
+          isLink: true,
+          url: "/"
+        },
+        {
+          isLink: true,
+          url: "/live-channels"
+        },
+        {
+          isLink: true,
+          url: "/religious-channels"
+        },
+        {
+          isLink: true,
+          url: "/education"
+        }
+      ],
+      icons: ["fa fa-home", "fa fa-tv", "fa fa-bell", "fa fa-fire"]
     };
   },
   mounted: function() {
@@ -300,13 +344,10 @@ export default {
   border-bottom-color: black;
   color: #fbe631 !important;
 }
-.title{
+.title {
   font-size: 16px;
   vertical-align: -4px;
   font-weight: 700;
   display: inline-block;
-}
-.esti{
-
 }
 </style>

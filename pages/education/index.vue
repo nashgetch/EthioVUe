@@ -9,7 +9,7 @@
             :key="$index"
           >
             <a :href="'/single-channel/'+tv.id">
-              <div class="chn-image-container" >
+              <div class="chn-image-container">
                 <img class="imgur" :src="turl + tv.poster_image" :alt="tv.tv_name">
 
                 <div class="small-logo">
@@ -143,15 +143,15 @@ export default {
   computed: {
     tvs() {
         return this.tvsss.filter(ref=>{
-            // console.log(ref);
-            return  ref.category === '1' && ref.chn !== 'ammas' && ref.chn !== 'fanas' && ref.chn !== 'waltas' ;
+            return  ref.chn === 'moe';
         })
     }
   }
 };
 </script>
+
 <style>
-  .imgur {
+   .imgur {
   display: block;
   max-width: 174px;
   max-height: 115px;

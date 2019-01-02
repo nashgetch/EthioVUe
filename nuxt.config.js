@@ -114,6 +114,9 @@ module.exports = {
     },
     {
       src:'~plugins/mom.js'
+    },
+    {
+      src:'~plugins/menu.js'
     }
   ],
 
