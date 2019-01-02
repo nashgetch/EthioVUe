@@ -161,7 +161,7 @@ export default {
       tvs() {
       let searchString = this.searchString;
       if (!searchString) {
-        return this.tvsss.filter(ref => {
+
          return this.tvsss.filter(ref => {
         // console.log(ref);
         return (
@@ -171,7 +171,6 @@ export default {
           ref.chn !== "waltas"
         );
       });
-        });
       } else {
         searchString = searchString.trim().toLowerCase();
         console.log(searchString);
