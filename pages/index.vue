@@ -61,7 +61,7 @@
                   </a>
                 </li> -->
               </ul>
-              <hr class="fas">
+              <!-- <hr class="fas"> -->
             </div>
           </div>
         </div>
