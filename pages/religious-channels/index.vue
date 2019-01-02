@@ -10,7 +10,7 @@
           >
             <a :href="'/single-channel/'+tv.id">
               <div class="chn-image-container">
-                <img :src="turl + tv.poster_image" :alt="tv.tv_name">
+                <img class="imgur" :src="turl + tv.poster_image" :alt="tv.tv_name">
 
                 <div class="small-logo">
                   <img :src="turl + tv.poster_image" :alt="tv.tv_name">
@@ -150,3 +150,14 @@ export default {
 };
 </script>
 
+<style>
+   .imgur {
+  display: block;
+  max-width: 174px;
+  max-height: 115px;
+  width: auto;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+</style>
