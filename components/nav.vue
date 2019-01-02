@@ -214,7 +214,7 @@
           <quick-menu
             :menu-count="4"
             :icon-class="icons"
-            :menu-url-list=menulinks
+            :menu-url-list="menulinks"
             backgroundColor="#fbe631"
             color="black"
           ></quick-menu>
@@ -276,20 +276,21 @@ export default {
           isLink: true,
           url: "/"
         },
-        {
-          isLink: true,
-          url: "/live-channels"
-        },
+
         {
           isLink: true,
           url: "/religious-channels"
         },
         {
           isLink: true,
+          url: "/live-channels"
+        },
+        {
+          isLink: true,
           url: "/education"
         }
       ],
-      icons: ["fa fa-home", "fa fa-tv", "fa fa-bell", "fa fa-fire"]
+      icons: ["fa fa-home", "fa fa-archive", "fa fa-tv", "fa fa-book"]
     };
   },
   mounted: function() {
