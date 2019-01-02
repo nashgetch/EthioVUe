@@ -153,7 +153,7 @@ export default {
 <style>
   .imgur {
   display: block;
-  max-width: 174px;
+  max-width: 274px;
   max-height: 115px;
   width: auto;
   height: auto;

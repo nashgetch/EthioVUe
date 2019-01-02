@@ -214,7 +214,7 @@
           <quick-menu
             :menu-count="4"
             :icon-class="icons"
-            :menuUrlList="menulinks"
+            :menu-url-list=menulinks
             backgroundColor="#fbe631"
             color="black"
           ></quick-menu>
