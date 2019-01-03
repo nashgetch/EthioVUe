@@ -109,7 +109,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-4 d-none d-sm-block mt-3">
+        <div class="col-lg-4 d-none d-lg-block mt-3">
           <!-- up next -->
           <div class>
             <!-- <Tallads/> -->
