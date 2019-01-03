@@ -149,14 +149,14 @@
                 <div class="nash-vids row">
                   <div class="col-sm-12 col-xs-6">
                     <div class="Vimg itemContainer" style="background-color: black;">
-                      <clazy-load :src="pos_url+'/'+pub.filename">
+                      <!-- <clazy-load :src="pos_url+'/'+pub.filename">
                         <div
                           slot="placeholder"
                           class="bg-inverse"
                           style="background-color: black; height:200px;"
-                      ></div>
+                      ></div> -->
                       <video class="imgur" :poster="pos_url+'/'+pub.filename2" :alt="pub.title"></video>
-                      </clazy-load>
+                      <!-- </clazy-load> -->
                       <a :href="'/single-video/'+pub.v_id">
                         <div ng-click="viewVideo(pub.v_id)" class="play">
                           <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
@@ -236,7 +236,7 @@
       </div>
       <div class="col-sm-12 col-lg-4 d-none d-lg-block">
         <div class="caption">
-          <!-- <Tallads/> -->
+          <Tallads/>
           <div class="left">
             <a>
               <h5 style="font-size: 19px;font-weight: 700; margin-bottom: 15px;">Other Videos</h5>
@@ -282,7 +282,7 @@
 <script>
 import ViewCatogs from "@/components/views_catogs";
 // import Wideads from "@/components/adsComponents/wide_ads";
-// import Tallads from "@/components/adsComponents/tall_ads";
+import Tallads from "@/components/adsComponents/tall_ads";
 import Replies from "@/components/replies/replies";
 import axios from "axios";
 
@@ -371,9 +371,9 @@ export default {
   },
   components: {
     ViewCatogs,
-    Replies
+    Replies,
     // Wideads,
-    // Tallads
+    Tallads
   },
   methods: {
     subscribe(){
