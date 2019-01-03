@@ -236,7 +236,7 @@
       </div>
       <div class="col-sm-12 col-lg-4 d-none d-lg-block">
         <div class="caption">
-          <Tallads/>
+          <!-- <Tallads/> -->
           <div class="left">
             <a>
               <h5 style="font-size: 19px;font-weight: 700; margin-bottom: 15px;">Other Videos</h5>
@@ -282,7 +282,7 @@
 <script>
 import ViewCatogs from "@/components/views_catogs";
 // import Wideads from "@/components/adsComponents/wide_ads";
-import Tallads from "@/components/adsComponents/tall_ads";
+// import Tallads from "@/components/adsComponents/tall_ads";
 import Replies from "@/components/replies/replies";
 import axios from "axios";
 
@@ -373,7 +373,7 @@ export default {
     ViewCatogs,
     Replies,
     // Wideads,
-    Tallads
+    // Tallads
   },
   methods: {
     subscribe(){
