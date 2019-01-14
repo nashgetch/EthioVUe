@@ -22,7 +22,7 @@
             v-for="(tv,$index) in tvs"
             :key="$index"
           >
-            <a :href="'/single-channel/'+tv.id">
+            <a :href="'/single-channel/' + tv.id">
               <div class="chn-image-container">
                 <img class="imgur" :src="turl + tv.poster_image" :alt="tv.tv_name">
 
@@ -82,8 +82,8 @@
 import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
-  data(){
-    return{
+  data() {
+    return {
       searchString: ""
     };
   },
@@ -147,6 +147,7 @@ export default {
           content: "/img/EthioV_LOGO_Black.png"
         }
       ]
+
     };
   },
   asyncData() {
@@ -158,19 +159,18 @@ export default {
     });
   },
   computed: {
-      tvs() {
+    tvs() {
       let searchString = this.searchString;
       if (!searchString) {
-
-         return this.tvsss.filter(ref => {
-        // console.log(ref);
-        return (
-          ref.category === "1" &&
-          ref.chn !== "ammas" &&
-          ref.chn !== "fanas" &&
-          ref.chn !== "waltas"
-        );
-      });
+        return this.tvsss.filter(ref => {
+          // console.log(ref);
+          return (
+            ref.category === "1" &&
+            ref.chn !== "ammas" &&
+            ref.chn !== "fanas" &&
+            ref.chn !== "waltas"
+          );
+        });
       } else {
         searchString = searchString.trim().toLowerCase();
         console.log(searchString);
@@ -226,13 +226,11 @@ export default {
   outline: none;
   text-indent: 40px;
 }
-.nash{
-
+.nash {
 }
-.nash >
-input,
+.nash > input,
 span,
-label{
+label {
   font-family: "Ubuntu", sans-serif;
   display: block;
   margin: 10px;
@@ -240,13 +238,11 @@ label{
   border: none;
   font-size: 12px;
 }
-.nash >
-input:focus {
+.nash > input:focus {
   outline: 0;
 }
 /* Question */
-.nash >
-input.question {
+.nash > input.question {
   font-size: 18px;
   font-weight: 300;
   border-radius: 2px;
@@ -258,8 +254,7 @@ input.question {
   overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
 }
 /* Underline and Placeholder */
-.nash >
-input.question + label{
+.nash > input.question + label {
   display: block;
   position: relative;
   white-space: nowrap;
@@ -272,32 +267,26 @@ input.question + label{
   height: 0px;
   text-align: left;
 }
-.nash >
-input.question:focus + label {
+.nash > input.question:focus + label {
   width: 80%;
 }
-.nash >
-input.question:focus,
+.nash > input.question:focus,
 input.question:valid {
   padding-top: 15px;
 }
-.nash >
-input.question:focus + label > span,
+.nash > input.question:focus + label > span,
 input.question:valid + label > span {
   top: -90px;
   font-size: 22px;
   color: #333;
 }
-.nash >
-input.question:valid + label {
+.nash > input.question:valid + label {
   border-color: green;
 }
-.nash >
-input.question:invalid {
+.nash > input.question:invalid {
   box-shadow: none;
 }
-.nash >
-input.question + label > span{
+.nash > input.question + label > span {
   font-weight: 300;
   margin: 0;
   position: absolute;
@@ -309,8 +298,7 @@ input.question + label > span{
   -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
   transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
 }
-.nash >
-input[type="submit"] {
+.nash > input[type="submit"] {
   -webkit-transition: opacity 0.2s ease, background 0.2s ease;
   transition: opacity 0.2s ease, background 0.2s ease;
   display: block;
@@ -319,22 +307,18 @@ input[type="submit"] {
   padding: 10px;
   cursor: pointer;
 }
-.nash >
-input[type="submit"]:hover {
+.nash > input[type="submit"]:hover {
   background: #eee;
 }
-.nash >
-input[type="submit"]:active {
+.nash > input[type="submit"]:active {
   background: #999;
 }
-.nash >
-input.question:valid ~ input[type="submit"],
+.nash > input.question:valid ~ input[type="submit"],
 textarea.question:valid ~ input[type="submit"] {
   -webkit-animation: appear 1s forwards;
   animation: appear 1s forwards;
 }
-.nash >
-input.question:invalid ~ input[type="submit"],
+.nash > input.question:invalid ~ input[type="submit"],
 textarea.question:invalid ~ input[type="submit"] {
   display: none;
 }

@@ -1,9 +1,7 @@
 <template>
   <div>
     <span class="d-inline-block d-sm-none title">Recent Videos...</span>
-    <div class="adblock2">
-      <adsbygoogle />
-    </div>
+   
     <!-- <div class="container parentDiv"> -->
     <div class="container parentDiv">
       <div class="row display-flex">
@@ -115,7 +113,7 @@
 <script>
 import ViewCatogs from "@/components/views_catogs";
 import axios from "axios";
-const wideads = import("@/components/adsComponents/wide_ads.vue");
+
 const base_url = "https://ethiov.com/api";
 export default {
   components: {

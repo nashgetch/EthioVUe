@@ -2,9 +2,7 @@
   <div>
     <div ng-show="isSet(2)" class="container parentDiv" ng-style="hidden2">
       <div class="row rowDiv" ng-controller="videoController">
-        <div class="adblock2">
-          <adsbygoogle/>
-        </div>
+
         <div
           class="col-12 col-sm-6 col-md-4 col-lg-3 videoitem"
           v-for="(video,$index) in videos"

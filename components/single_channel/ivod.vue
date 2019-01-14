@@ -20,9 +20,6 @@
               Active {{time}} Hours Ago!
             </a>
           </h1>
-          <div class="adblock2">
-            <adsbygoogle />
-          </div>
 
           <div class="content-wrapper">
             <div class="left mb-2">
@@ -114,9 +111,7 @@
         <div class="col-lg-4 d-none d-lg-block mt-3">
           <!-- up next -->
           <div class>
-            <div class="nashian">
-              <adsbygoogle/>
-            </div>
+
             <div class="caption">
               <div class="left">
                 <a>
@@ -154,7 +149,7 @@
 <script>
 import ViewCatogs from "@/components/views_catogs";
 import axios from "axios";
-import Wideads from "@/components/adsComponents/wide_ads";
+
 import Tallads from "@/components/adsComponents/tall_ads";
 const base_url = "https://ethiov.com/api";
 export default {
@@ -169,9 +164,7 @@ export default {
     }
   },
   components: {
-    ViewCatogs,
-    Wideads,
-    Tallads
+    ViewCatogs
   },
   data() {
     return {

@@ -26,9 +26,7 @@
             />
           </h1>
         </div>
-        <div class="adblock2">
-          <adsbygoogle />
-        </div>
+
         <div class="content-wrapper">
           <!-- The Author Part -->
           <div class="author">
@@ -234,9 +232,7 @@
       </div>
       <div class="col-sm-12 col-lg-4 d-none d-lg-block">
         <div class="caption">
-          <div class="nashian">
-            <adsbygoogle />
-          </div>
+          
           <div class="left">
             <a>
               <h5 style="font-size: 19px;font-weight: 700; margin-bottom: 15px;">Other Videos</h5>

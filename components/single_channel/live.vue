@@ -18,9 +18,7 @@
             <a>{{channel.tv_name}}</a>
           </h1>
           <!-- Ads block -->
-          <div class="adblock2">
-            <adsbygoogle />
-          </div>
+          
           <div class="content-wrapper">
             <div class="left mb-2">
               <a>Similar Videos</a>
@@ -71,9 +69,7 @@
           <!-- up next -->
           <div class>
             <div class="caption">
-              <div class="nashian">
-                <adsbygoogle />
-              </div>
+
               <div class="left">
                 <a>
                   <h5 style="font-size: 22px;font-weight: 300;">Other Channels</h5>
@@ -115,15 +111,12 @@
 <script>
 import axios from "axios";
 import ViewCatogs from "@/components/views_catogs";
-import Wideads from "@/components/adsComponents/wide_ads";
-import Tallads from "@/components/adsComponents/tall_ads";
 
 const base_url = "https://ethiov.com/api";
 export default {
   components: {
     ViewCatogs,
-    Wideads,
-    Tallads
+
   },
   props: {
     videos: {
