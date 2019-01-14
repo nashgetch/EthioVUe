@@ -20,11 +20,9 @@
               Active {{time}} Hours Ago!
             </a>
           </h1>
-          <!-- <div class="adblock2">
-            <div class="img">
-              <Wideads/>
-            </div>
-          </div> -->
+          <div class="adblock2">
+            <adsbygoogle />
+          </div>
 
           <div class="content-wrapper">
             <div class="left mb-2">
@@ -73,7 +71,11 @@
                         <div class="col-12 p-0 p-sm-2">
                           <div class="Vimg" style="background-color: black;">
                             <a :href="'/single-video/'+video.v_id">
-                              <video class="imgur1" :poster="url + video.filename2" :alt="video.title"></video>
+                              <video
+                                class="imgur1"
+                                :poster="url + video.filename2"
+                                :alt="video.title"
+                              ></video>
                               <div class="time">{{video.duration}}</div>
                             </a>
                           </div>
@@ -112,7 +114,9 @@
         <div class="col-lg-4 d-none d-lg-block mt-3">
           <!-- up next -->
           <div class>
-            <!-- <Tallads/> -->
+            <div class="nashian">
+              <adsbygoogle/>
+            </div>
             <div class="caption">
               <div class="left">
                 <a>
@@ -121,7 +125,6 @@
               </div>
 
               <!-- <div data-ads2></div> -->
-
               <div class="clearfix"></div>
             </div>
             <div class="list">
@@ -196,12 +199,15 @@ export default {
     axios.post(base_url + "/live_channel").then(res => {
       return (this.tvs = [
         ...res.data.filter(res => {
-        if(this.channel.category == "2"){
-                return res.category == "2";
-            }
-              return res.tv_name != "test" &&
-              res.owner_id != this.channel.owner_id && res.category === this.channel.category;
-              // console.log(res);
+          if (this.channel.category == "2") {
+            return res.category == "2";
+          }
+          return (
+            res.tv_name != "test" &&
+            res.owner_id != this.channel.owner_id &&
+            res.category === this.channel.category
+          );
+          // console.log(res);
         })
       ]);
     });

@@ -26,11 +26,9 @@
             />
           </h1>
         </div>
-        <!-- <div class="adblock2" style>
-          <div class="img">
-            <Wideads/>
-          </div>
-        </div>-->
+        <div class="adblock2">
+          <adsbygoogle />
+        </div>
         <div class="content-wrapper">
           <!-- The Author Part -->
           <div class="author">
@@ -154,7 +152,7 @@
                           slot="placeholder"
                           class="bg-inverse"
                           style="background-color: black; height:200px;"
-                      ></div> -->
+                      ></div>-->
                       <video class="imgur" :poster="pos_url+'/'+pub.filename2" :alt="pub.title"></video>
                       <!-- </clazy-load> -->
                       <a :href="'/single-video/'+pub.v_id">
@@ -236,7 +234,9 @@
       </div>
       <div class="col-sm-12 col-lg-4 d-none d-lg-block">
         <div class="caption">
-          <!-- <Tallads/> -->
+          <div class="nashian">
+            <adsbygoogle />
+          </div>
           <div class="left">
             <a>
               <h5 style="font-size: 19px;font-weight: 700; margin-bottom: 15px;">Other Videos</h5>
@@ -371,34 +371,35 @@ export default {
   },
   components: {
     ViewCatogs,
-    Replies,
+    Replies
     // Wideads,
     // Tallads
   },
   methods: {
-    subscribe(){
+    subscribe() {
       if (this.loggedIn) {
-      axios.post(
-        base_url + "/subscribe/" + this.user.id + "/" +
-        this.owner.id).then(res =>
-      {
-          this.$toast.success("You have Subscibed to this Channel...");
-      })
-      }
-      else{
-          this.$toast.error("Sign in to Subscribe to this Channel");
+        axios
+          .post(base_url + "/subscribe/" + this.user.id + "/" + this.owner.id)
+          .then(res => {
+            this.$toast.success("You have Subscibed to this Channel...");
+          });
+      } else {
+        this.$toast.error("Sign in to Subscribe to this Channel");
       }
     },
     likeVid(v_id) {
       if (this.loggedIn) {
-        axios.post(base_url + "/like_vid/" + this.user.id + "/" + v_id).then(res => {
-          axios.post(base_url + "/countLike/" + this.single.v_id).then(rres => {
-            this.likes = rres.data;
+        axios
+          .post(base_url + "/like_vid/" + this.user.id + "/" + v_id)
+          .then(res => {
+            axios
+              .post(base_url + "/countLike/" + this.single.v_id)
+              .then(rres => {
+                this.likes = rres.data;
+              });
+            this.$toast.success("You Liked this Video.");
           });
-          this.$toast.success("You Liked this Video.");
-        });
-      }
-      else{
+      } else {
         this.$toast.error("Sign in To Like or Dislike Video");
       }
     },
@@ -413,10 +414,9 @@ export default {
                 this.dislikes = rres.data;
               });
           });
+      } else {
+        this.$toast.error("Sign in To Like or Dislike Video");
       }
-    else{
-       this.$toast.error("Sign in To Like or Dislike Video");
-    }
     },
 
     addComments(user_id, v_id) {
@@ -624,6 +624,22 @@ async function getUsername(user_id) {
   .nashians {
     width: 728px !important;
     height: 90px !important;
+  }
+}
+.nashian {
+  width: 200px !important;
+  height: 200px !important;
+}
+@media (min-width: 500px) {
+  .nashian {
+    width: 300px !important;
+    height: 250px !important;
+  }
+}
+@media (min-width: 800px) {
+  .nashian {
+    width: 336px !important;
+    height: 280px !important;
   }
 }
 </style>

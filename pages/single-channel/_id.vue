@@ -300,4 +300,5 @@ export default {
     max-height: 160px;
   }
 }
+
 </style>

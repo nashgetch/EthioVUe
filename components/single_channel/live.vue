@@ -18,11 +18,9 @@
             <a>{{channel.tv_name}}</a>
           </h1>
           <!-- Ads block -->
-          <!-- <div class="adblock2">
-            <div class="img">
-              <Wideads/>
-            </div>
-          </div> -->
+          <div class="adblock2">
+            <adsbygoogle />
+          </div>
           <div class="content-wrapper">
             <div class="left mb-2">
               <a>Similar Videos</a>
@@ -41,10 +39,10 @@
                       <div class="col-12">
                         <div class="Vimg itemContainer" style="background-color: black;">
                           <a :href="'/single-video/'+video.v_id">
-                              <video
-                                class="imgur1"
-                                :poster="'https://video2.vixtream.net/'+video.filename2"
-                              ></video>
+                            <video
+                              class="imgur1"
+                              :poster="'https://video2.vixtream.net/'+video.filename2"
+                            ></video>
                             <div ng-click="viewVideo(video.v_id)" class="play">
                               <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                             </div>
@@ -73,7 +71,9 @@
           <!-- up next -->
           <div class>
             <div class="caption">
-              <!-- <Tallads/> -->
+              <div class="nashian">
+                <adsbygoogle />
+              </div>
               <div class="left">
                 <a>
                   <h5 style="font-size: 22px;font-weight: 300;">Other Channels</h5>
@@ -152,16 +152,18 @@ export default {
     }
   },
   mounted: function() {
-
     axios.post(base_url + "/live_channel").then(res => {
       return (this.tvs = [
         ...res.data.filter(res => {
-            if(this.channel.category == "2"){
-                return res.owner_id == this.channel.owner_id && res.category == "2";
-            }
-              return res.tv_name != "test" &&
-              res.owner_id != this.channel.owner_id && res.category === this.channel.category;
-              // console.log(res);
+          if (this.channel.category == "2") {
+            return res.owner_id == this.channel.owner_id && res.category == "2";
+          }
+          return (
+            res.tv_name != "test" &&
+            res.owner_id != this.channel.owner_id &&
+            res.category === this.channel.category
+          );
+          // console.log(res);
         })
       ]);
     });
@@ -172,7 +174,6 @@ export default {
 .content-wrapper.wrap {
   margin: 0 0 0 !important;
 }
-
 
 .video-container {
   position: relative;
@@ -271,8 +272,8 @@ export default {
     max-height: 205px;
   }
 }
-@media (min-width: 992px){
-  .row{
+@media (min-width: 992px) {
+  .row {
     margin-right: -37px;
     margin-left: -15px;
   }
