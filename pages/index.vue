@@ -5,7 +5,7 @@
           google_ad_client: "ca-pub-5001725934888164",
           enable_page_level_ads: true
      });
-    </script> -->
+    </script>-->
     <!-- <a href="/ads-test">Test Ads</a> -->
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: .2rem;">
       <div class="row fas">
@@ -20,38 +20,51 @@
               <ul class="nav nav-pills">
                 <li class="nav-item text-center ml-auto mr-auto" :class="tab1Style">
                   <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(1)">
-                    <span class="d-none d-sm-block ">Latest Videos</span>
-                    <i class="fa fa-clock-o d-inline-block d-sm-none"
-                    style="font-size: 23px;"
-                    :class="{'active_route':(1===tab)}"
+                    <span class="d-none d-sm-block">Latest Videos</span>
+                    <i
+                      class="fa fa-clock-o d-inline-block d-sm-none"
+                      style="font-size: 15px;"
+                      :class="{'active_route':(1===tab)}"
                     ></i>
+                    <span class="d-inline-block d-sm-none" style="font-size: 10px; font-weight: bold;">Latest</span>
                   </a>
                 </li>
                 <li class="nav-item text-center ml-auto mr-auto">
                   <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(2)">
-                    <span  class="d-none d-sm-block ">Other Videos</span>
-                    <i class="fa fa-video-camera d-inline-block d-sm-none"
-                    style="font-size: 23px;"
-                    :class="{'active_route':(2===tab)}"
+                    <span class="d-none d-sm-block">Other Videos</span>
+                    <i
+                      class="fa fa-video-camera d-inline-block d-sm-none"
+                      style="font-size: 15px;"
+                      :class="{'active_route':(2===tab)}"
                     ></i>
+                    <span class="d-inline-block d-sm-none" style="font-size: 10px; font-weight: bold;">Category</span>
                   </a>
                 </li>
-               <li class="nav-item text-center ml-auto mr-auto">
+                <li class="nav-item text-center ml-auto mr-auto">
                   <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(3)">
-                    <span  class="d-none d-sm-block">Trending</span>
-                    <i class="fa fa-fire d-inline-block d-sm-none"
-                    style="font-size: 23px;"
-                    :class="{'active_route':(3===tab)}"
+                    <span class="d-none d-sm-block">Trending</span>
+                    <i
+                      class="fa fa-fire d-inline-block d-sm-none"
+                      style="font-size: 15px;"
+                      :class="{'active_route':(3===tab)}"
                     ></i>
+                    <span style="font-size: 10px; font-weight: bold;" class="d-inline-block d-sm-none">Trending</span>
                   </a>
                 </li>
-                 <li class="nav-item text-center ml-auto mr-auto">
-                  <a v-if="loggedIn" class="nav-link" data-toggle="pill" @click.prevent="setTabs(4)">
-                    <span class="d-none d-sm-block ">Subscription</span>
-                      <i class="fa fa-envelope-open d-inline-block d-sm-none"
-                      style="font-size: 23px;"
+                <li class="nav-item text-center ml-auto mr-auto">
+                  <a
+                    v-if="loggedIn"
+                    class="nav-link"
+                    data-toggle="pill"
+                    @click.prevent="setTabs(4)"
+                  >
+                    <span class="d-none d-sm-block">Subscription</span>
+                    <i
+                      class="fa fa-envelope-open d-inline-block d-sm-none"
+                      style="font-size: 15px;"
                       :class="{'active_route':(4===tab)}"
-                      ></i>
+                    ></i>
+                    <span style="font-size: 10px; font-weight: bold;" class="d-inline-block d-sm-none">Subscription</span>
                   </a>
                 </li>
                 <!-- <li class="nav-item text-center ml-auto mr-auto">
@@ -59,7 +72,7 @@
                     <span class="d-none d-sm-block">Account</span>
                       <i class="fa fa-user fa-2x d-inline-block d-sm-none"></i>
                   </a>
-                </li> -->
+                </li>-->
               </ul>
               <!-- <hr class="fas"> -->
             </div>
@@ -96,7 +109,8 @@ export default {
         {
           hid: "keywords",
           name: "keywords",
-          keywords: "EthioV, Fana TV, Amhara TV, Live Ethiopian Channels, Zena, ኢትዮጵያ, ዜና, Walta, ETV, EBC, Bisrat TV, MEZINAGNA, Entertainment"
+          keywords:
+            "EthioV, Fana TV, Amhara TV, Live Ethiopian Channels, Zena, ኢትዮጵያ, ዜና, Walta, ETV, EBC, Bisrat TV, MEZINAGNA, Entertainment"
         },
         {
           hid: "og:title",
@@ -218,9 +232,9 @@ export default {
   },
 
   methods: {
-   setTabs(tab) {
+    setTabs(tab) {
       this.tab = tab;
-      this.tab1Style={};
+      this.tab1Style = {};
     },
     checkTab(tab) {
       return this.tab === tab;
@@ -264,7 +278,7 @@ export default {
 
 
 <style scoped>
-.wrapper{
+.wrapper {
   width: 100%;
 }
 .nashians {
@@ -285,15 +299,17 @@ export default {
 }
 @media (max-width: 990px) {
   .fas {
-  display:block;
-  color: #fbe631;
-  box-shadow: 1px 0px 0px 0px rgba(18, 10, 32, 1), 0 0px 3px 0 rgba(0, 0, 0, 1);
+    display: block;
+    color: #fbe631;
+    box-shadow: 1px 0px 0px 0px rgba(18, 10, 32, 1),
+      0 0px 3px 0 rgba(0, 0, 0, 1);
   }
 }
 .active_route {
   border-bottom-style: solid;
   border-bottom-color: #111;
-  box-shadow: 0 5px 18px 0 rgba(0, 0, 0, -7.84), 3px 11px 19px 10px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 5px 18px 0 rgba(0, 0, 0, -7.84),
+    3px 11px 19px 10px rgba(0, 0, 0, 0.45);
 }
 </style>
 
