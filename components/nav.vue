@@ -211,13 +211,13 @@
           </div>
         </div>-->
         <no-ssr>
-          <!-- <quick-menu
+          <quick-menu
             :menu-count="4"
             :icon-class="icons"
             :menu-url-list="menulinks"
             backgroundColor="#fbe631"
             color="black"
-          ></quick-menu>-->
+          ></quick-menu>
 
         </no-ssr>
 
