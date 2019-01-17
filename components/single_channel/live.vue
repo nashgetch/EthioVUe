@@ -18,7 +18,7 @@
             <a>{{channel.tv_name}}</a>
           </h1>
           <!-- Ads block -->
-          
+
           <div class="content-wrapper">
             <div class="left mb-2">
               <a>Similar Videos</a>
@@ -51,7 +51,7 @@
                       <div class="col-6 col-sm-12 ml-3">
                         <div class="descr">
                           <a
-                            class="text"
+                            class="hideOverflow"
                             :aria-label="video.title"
                             :title="video.title"
                           >{{video.title}}</a>

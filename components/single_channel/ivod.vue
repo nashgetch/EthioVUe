@@ -81,7 +81,7 @@
                           <div class="descr">
                             <h1 style="font-size: 14px !important;">
                               <a
-                                class="text"
+                                class="hideOverflow"
                                 :aria-label="video.title"
                                 :title="video.title"
                                 tooltip
