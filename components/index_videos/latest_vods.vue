@@ -1,7 +1,7 @@
 <template>
   <div>
     <span class="d-inline-block d-sm-none title">Recent Videos...</span>
-   
+
     <!-- <div class="container parentDiv"> -->
     <div class="container parentDiv">
       <div class="row display-flex">
@@ -81,7 +81,7 @@
             <div class="descr" ng-click="viewVideo(video.v_id)">
               <h1 style="font-size: 14px !important;">
                 <a
-                  class="hideOverflow"
+                  class="text"
                   :aria-label="video.title"
                   :title="video.title"
                 >{{video.title}}</a>
@@ -99,6 +99,7 @@
                 :isIndex="true"
                 :title_en="video.title_en"
                 :created_at="video.created_at"
+                :view_count="video.view_count"
               ></ViewCatogs>
             </div>
           </div>
@@ -173,5 +174,28 @@ export default {
   vertical-align: -4px;
   font-weight: 700;
   display: inline-block;
+}
+.tit{
+ float: left;
+    font-family: 'Lato', Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 15px;
+    min-height: 55px;
+    text-align: right;
+    width: 90%;
+    color: #999;
+    text-transform: uppercase;
+    /* border-right: 10px solid #BEDB39; */
+    padding-right: 4px;
+    word-break: break-all;
+}
+.text {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 16px;     /* fallback */
+   max-height: 32px;      /* fallback */
+   -webkit-line-clamp: 2; /* number of lines to show */
+   -webkit-box-orient: vertical;
 }
 </style>

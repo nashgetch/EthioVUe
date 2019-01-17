@@ -48,7 +48,7 @@ module.exports = {
       //      });`
       // }
     ],
-//    __dangerouslyDisableSanitizers: ['script'],
+    //    __dangerouslyDisableSanitizers: ['script'],
     link: [{
         rel: 'icon',
         type: 'image/x-icon',
@@ -110,14 +110,17 @@ module.exports = {
       ssr: false
     },
     {
-      src:'~plugins/vuetify.js',
+      src: '~plugins/vuetify.js',
     },
     {
-      src:'~plugins/mom.js'
+      src: '~plugins/mom.js'
     },
     {
-      src:'~plugins/menu.js'
-    }
+      src: '~plugins/menu.js'
+    },
+    // {
+    //   src: '~plugins/sidebar.js'
+    // }
   ],
 
   /*
@@ -135,9 +138,9 @@ module.exports = {
    ** Axios module configuration
    */
   'google-adsense': {
-     id: 'ca-pub-5001725934888164',
-     pageLevelAds:true
-   },
+    id: 'ca-pub-5001725934888164',
+    pageLevelAds: true
+  },
   toast: {
     position: 'top-center',
     duration: 2000

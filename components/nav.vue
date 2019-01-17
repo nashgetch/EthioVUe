@@ -210,6 +210,23 @@
             </div>
           </div>
         </div>-->
+        <!-- <radial-menu
+          style="margin: auto; margin-top: 300px; background-color: white"
+          :itemSize="50"
+          :radius="120"
+          :angle-restriction="180"
+        >
+          <radial-menu-item
+            v-for="(item, index) in items"
+            :key="index"
+            style="background-color: white"
+            @click="() => handleClick(item)"
+          >
+            <span>{{item}}</span>
+          </radial-menu-item>
+        </radial-menu>
+        <div style="color: rgba(0,0,0,0.6); margin-top: 16px;">{{ lastClicked }}</div> -->
+
         <no-ssr>
           <quick-menu
             :menu-count="4"
@@ -218,9 +235,7 @@
             backgroundColor="#fbe631"
             color="black"
           ></quick-menu>
-
         </no-ssr>
-
       </div>
     </nav>
 
@@ -262,9 +277,13 @@
 </template>
 <script>
 import quickMenu from "vue-quick-menu";
+// import { RadialMenu, RadialMenuItem } from "vue-radial-menu";
+
 export default {
   components: {
-    quickMenu
+    quickMenu,
+    // RadialMenu,
+    // RadialMenuItem
   },
   data() {
     return {
@@ -292,7 +311,9 @@ export default {
           url: "/education"
         }
       ],
-      icons: ["fa fa-home", "fa fa-archive", "fa fa-tv", "fa fa-book"]
+      icons: ["fa fa-home", "fa fa-archive", "fa fa-tv", "fa fa-book"],
+      items: ["foo", "bar", "hello", "world", "more", "items"],
+      lastClicked: "click on something!"
     };
   },
   mounted: function() {

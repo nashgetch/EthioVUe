@@ -5,11 +5,13 @@
       <h1 v-show="show_en" style="font-size: 10px !important;">
         <a class="hideOverflow" :aria-label="title_en" :title="title_en">{{title_en}}</a>
       </h1>
-        <small style="font-size: 12px; color: black;">
-            {{ catName }} |   {{created_at | moment("from", "now")}}
-        </small>
-
-
+      <small style="font-size: 12px; color: black;">{{ catName }}</small>
+      <br>
+      <small style="color: #7e7e7e; font-size: 13px;">
+        <i class="fa fa-eye"></i>
+        {{view_count}} views
+        {{created_at | moment("from", "now")}}
+      </small>
     </div>
     <div v-if="isSingle">
       <i class="fa fa-language fa-2x mt-2" @click="show_en=!show_en"></i>
@@ -23,11 +25,12 @@
     </div>
 
     <no-ssr placeholder="Loading ..." v-if="!isIndex && !isSingle">
-      <div class="views">views</div>
-      <div class="percent">
-        <span class="circle"></span>
-        {{ catName }}
-      </div>
+      <small style="color: #7e7e7e; font-size: 13px;">
+        <i class="fa fa-eye"></i>
+        {{view_count}} views
+      </small>
+
+      <small style="font-weight: bold; color: #7e7e7e; font-size: 13px;">{{ catName }}</small>
     </no-ssr>
   </div>
 </template>
@@ -42,8 +45,7 @@ export default {
       required: true
     },
     cat_id: {
-      type: Number,
-      required: true
+      type: Number
     },
     isIndex: {
       type: Boolean,
@@ -63,17 +65,19 @@ export default {
     },
     created_at: {
       type: String
+    },
+    view_count: {
+      type: Number
     }
   },
 
   data: function() {
     return {
-      catName: "Loading..",
+      catName: "",
       show_en: false
     };
   },
   mounted: function() {
-
     // axios.post(base_url+"/return_view/" + this.vid).then(res => {
     //   return (this.views = res.data);
     // });

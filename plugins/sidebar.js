@@ -1,4 +1,3 @@
 import Vue from 'vue'
-import VueSidebarMenu from 'vue-sidebar-menu'
-import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
+import VueSidebarMenu from 'vue2-sidebar'
 Vue.use(VueSidebarMenu)

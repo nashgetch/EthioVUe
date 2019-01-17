@@ -81,7 +81,7 @@
                           <div class="descr">
                             <h1 style="font-size: 14px !important;">
                               <a
-                                class="hideOverflow"
+                                class="text"
                                 :aria-label="video.title"
                                 :title="video.title"
                                 tooltip
@@ -96,6 +96,7 @@
                               :isIndex="true"
                               :title_en="video.title_en"
                               :created_at="video.created_at"
+                              :view_count="video.view_count"
                             />
                           </div>
                           <!-- <div class="percent"><span class="circle"></span> 83%</div> -->
@@ -268,6 +269,15 @@ export default {
   .nashiti {
     margin-top: -16% !important;
   }
+}
+.text {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 16px;     /* fallback */
+   max-height: 32px;      /* fallback */
+   -webkit-line-clamp: 2; /* number of lines to show */
+   -webkit-box-orient: vertical;
 }
 @media (max-width: 500px) {
   .nashiwa {

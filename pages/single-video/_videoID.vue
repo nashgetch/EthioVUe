@@ -51,7 +51,7 @@
               </div>
               <div class="sv-views float-none d-inline-block">
                 <div class="sv-views-count">
-                  {{ single.views }} views
+                  {{ single.view_count }} views
                   <div class="d-inline-block" style="font-size:1rem;">
                     <span class="green d-inline-block">
                       <a @click="likeVid(single.v_id)" class="ml-2">
@@ -165,17 +165,13 @@
                     <div class="descr">
                       <h1 style="font-size: 14px !important;">
                         <a
-                          class="hideOverflow"
+                          class="text"
                           :aria-label="pub.title"
                           :title="pub.title"
                         >{{pub.title}}</a>
                       </h1>
                     </div>
-                    <div class="views">{{pub.views}} views</div>
-                    <div class="percent">
-                      <span class="circle"></span>
-                      {{pub.cat_name}}
-                    </div>
+                     <ViewCatogs :vid="pub.v_id" :cat_id="pub.category_id" :view_count="pub.view_count"/>
                   </div>
                 </div>
               </div>
@@ -232,7 +228,6 @@
       </div>
       <div class="col-sm-12 col-lg-4 d-none d-lg-block">
         <div class="caption">
-
           <div class="left">
             <a>
               <h5 style="font-size: 19px;font-weight: 700; margin-bottom: 15px;">Other Videos</h5>
@@ -261,10 +256,11 @@
               <div class="col-lg-6 col-sm-6" ng-click="viewVideo(re.v_id)">
                 <div class="descr">
                   <h1 style="font-size: 14px !important;">
-                    <a class="hideOverflow" :aria-label="re.title" :title="re.title">{{re.title}}</a>
+                    <a class="text" :aria-label="re.title" :title="re.title">{{re.title}}</a>
                   </h1>
                 </div>
-                <ViewCatogs :vid="re.v_id" :cat_id="re.category_id"/>
+                <ViewCatogs :vid="re.v_id" :view_count="re.view_count"/>
+                <small>{{single.cat_name}}</small>
               </div>
               <div class="clearfix"></div>
             </div>
@@ -442,10 +438,10 @@ export default {
         single_data.data.v_id
     );
     let sing_cn = await getCatname(single_data.data.category_id);
-    let sing_views = await getViews(single_data.data.v_id);
+    // let sing_views = await getViews(single_data.data.v_id);
     let single = single_data.data;
     single.cat_name = sing_cn.category_name;
-    single.views = sing_views;
+    // single.views = sing_views;
     return {
       recommended: [...recommended_videos.data],
       owned: [],
@@ -557,10 +553,10 @@ async function getCatname(v_id) {
   return t_resp.data[0];
 }
 
-async function getViews(v_id) {
-  let t_resp = await axios.post(base_url + "/return_view/" + v_id);
-  return t_resp.data;
-}
+// async function getViews(v_id) {
+//   let t_resp = await axios.post(base_url + "/return_view/" + v_id);
+//   return t_resp.data;
+// }
 async function getUsername(user_id) {
   let t_resp = await axios.post(base_url + "/return_user/" + user_id);
   return t_resp.data[0];
@@ -636,6 +632,22 @@ async function getUsername(user_id) {
   .nashian {
     width: 336px !important;
     height: 280px !important;
+  }
+}
+.text {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 16px;     /* fallback */
+   max-height: 32px;      /* fallback */
+   -webkit-line-clamp: 2; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
+@media (max-width: 800px) {
+  .text{
+    line-height: 26px;     /* fallback */
+    max-height: 62px;      /* fallback */
+   -webkit-line-clamp: 2; /* number of lines to show */
   }
 }
 </style>

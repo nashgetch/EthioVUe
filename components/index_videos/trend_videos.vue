@@ -45,14 +45,14 @@
                 <div class="descr" ng-click="viewVideo(video.v_id)">
                   <h1 style="font-size: 14px !important;">
                     <a
-                      class="hideOverflow"
+                      class="text"
                       :aria-label="video.title"
                       :title="video.title"
                     >{{video.title}}</a>
                   </h1>
                 </div>
-                <div class="views text-center">
-                  <ViewCatogs :vid="video.v_id" :created_at="video.created_at" :cat_id="video.category_id" :isIndex="true" :title_en="video.title_en"/>
+                <div class="views">
+                  <ViewCatogs :vid="video.v_id" :created_at="video.created_at" :cat_id="video.category_id" :isIndex="true" :title_en="video.title_en" :view_count="video.view_count"/>
                   <!-- <span class="percent">
                     <span class="circle"></span>
                     {{video.created_at}}
@@ -150,6 +150,15 @@ export default {
 }
 .v-select pol {
   margin-left: 0px !important;
+}
+.text {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 16px;     /* fallback */
+   max-height: 32px;      /* fallback */
+   -webkit-line-clamp: 2; /* number of lines to show */
+   -webkit-box-orient: vertical;
 }
 </style>
 

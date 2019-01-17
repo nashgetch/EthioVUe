@@ -51,12 +51,12 @@
                       <div class="col-6 col-sm-12 ml-3">
                         <div class="descr">
                           <a
-                            class="hideOverflow"
+                            class="text"
                             :aria-label="video.title"
                             :title="video.title"
                           >{{video.title}}</a>
                         </div>
-                        <ViewCatogs :vid="video.v_id" :cat_id="video.category_id"/>
+                        <ViewCatogs :vid="video.v_id" :cat_id="video.category_id" :view_count="video.view_count"/>
                       </div>
                     </div>
                   </div>
@@ -229,6 +229,15 @@ export default {
   .nashiwa {
     margin-top: 0% !important;
   }
+}
+.text {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 16px;     /* fallback */
+   max-height: 32px;      /* fallback */
+   -webkit-line-clamp: 2; /* number of lines to show */
+   -webkit-box-orient: vertical;
 }
 @media (max-width: 500px) {
   .nashiwwa {
