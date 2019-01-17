@@ -12,7 +12,7 @@
       >
       <div class="d-inline-block">
          <!-- <i :class="iconClass[n-1]" ref="icon" :text="menuUrlList[n-1].url"> -->
-           <span style="font-weight: bold; font-size: 13px;">
+           <span style="font-weight: bold; font-size: 13px; margin: 0; padding: 0;">
          <i :class="iconClass[n-1]" ref="icon" :text="menuUrlList[n-1].url"></i>
             {{menuUrlList[n-1].header}}
         </span>

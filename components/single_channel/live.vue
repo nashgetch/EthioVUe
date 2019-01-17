@@ -48,7 +48,7 @@
                           </a>
                         </div>
                       </div>
-                      <div class="col-6 col-sm-12 ml-3">
+                      <div class="col-12 col-sm-12 ml-3">
                         <div class="descr">
                           <a
                             class="hideOverflow"
@@ -56,7 +56,9 @@
                             :title="video.title"
                           >{{video.title}}</a>
                         </div>
-                        <ViewCatogs :vid="video.v_id" :cat_id="video.category_id" :view_count="video.view_count"/>
+                        <ViewCatogs :vid="video.v_id"
+                        :cat_id="video.category_id" :view_count="video.view_count"
+                        :created_at="video.created_at" />
                       </div>
                     </div>
                   </div>

@@ -33,13 +33,9 @@
                   <a class="hideOverflow" :href="'single-video/' + video.v_id">{{video.title}}</a>
                 </h1>
               </div>
-              <div class="views">
-                {{video.view_count}} views.
-                <span class="percent">
-                  <span class="circle"></span>
-                  {{video.created_at}}
-                </span>
-              </div>
+             <ViewCatogs :vid="video.v_id"
+             :cat_id="video.category_id" :created_at="video.created_at"
+             :isIndex="true" :title_en="video.title_en" :view_count="video.view_count" />
             </div>
           </div>
           <div></div>
@@ -49,6 +45,7 @@
   </div>
 </template>
 <script>
+import ViewCatogs from "@/components/views_catogs";
 export default {
 head() {
     return {
@@ -68,6 +65,7 @@ head() {
       my_watch: []
     };
   },
+  components: {ViewCatogs},
   mounted() {
     this.$axios.post("/my_watchlist/" + this.user.id).then(res => {
       return (this.my_watch = [...res.data]);

@@ -5,11 +5,11 @@
       <h1 v-show="show_en" style="font-size: 10px !important;">
         <a class="hideOverflow" :aria-label="title_en" :title="title_en">{{title_en}}</a>
       </h1>
-      <small style="font-size: 12px; color: black; margin: auto">
+      <small style="font-size: 12px; color: black;">
         <i class="fa fa-angle-double-right"></i>
         {{ catName }}
         </small>
-
+       <br class="d-none d-lg-block">
       <small style="font-weight: bold; color: #7e7e7e; font-size: 12px; margin-left: 4px">
         <i class="fa fa-eye"></i>
         {{view_count}} views
@@ -29,12 +29,12 @@
     </div>
 
     <no-ssr placeholder="Loading ..." v-if="!isIndex && !isSingle">
-      <small style="color: #7e7e7e; font-size: 10px; font-weight: bold; margin-left: 10px">
+      <small style="color: #7e7e7e; font-size: 12px; font-weight: bold; margin-left: 10px">
 
         {{ catName }}
       </small>
 
-      <small style="color: #7e7e7e; font-size: 9px; margin: 5px; font-weight: 300">
+      <small style="color: #7e7e7e; font-size: 12px; margin: 5px; font-weight: 300">
         <i class="fa fa-eye"></i>
         {{view_count}} views
         <i class="fa fa-dot-circle-o">

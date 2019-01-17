@@ -77,7 +77,7 @@
                             </a>
                           </div>
                         </div>
-                        <div class="col-6 col-sm-12">
+                        <div class="col-12 col-sm-12">
                           <div class="descr">
                             <h1 style="font-size: 14px !important;">
                               <a
@@ -89,7 +89,7 @@
                               >{{video.title}}</a>
                             </h1>
                           </div>
-                          <div class="views">
+
                             <ViewCatogs
                               :vid="video.v_id"
                               :cat_id="video.category_id"
@@ -98,7 +98,7 @@
                               :created_at="video.created_at"
                               :view_count="video.view_count"
                             />
-                          </div>
+
                           <!-- <div class="percent"><span class="circle"></span> 83%</div> -->
                         </div>
                       </div>

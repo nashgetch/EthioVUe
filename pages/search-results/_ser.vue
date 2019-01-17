@@ -37,7 +37,9 @@
                 {{video.created_at}}
               </span>
             </div> -->
-             <ViewCatogs :vid="video.v_id" :cat_id="video.category_id" :created_at="video.created_at" :isIndex="true" :title_en="video.title_en"/>
+             <ViewCatogs :vid="video.v_id"
+             :cat_id="video.category_id" :created_at="video.created_at"
+             :isIndex="true" :title_en="video.title_en" :view_count="video.view_count" />
           </div>
         </div>
         <div></div>
