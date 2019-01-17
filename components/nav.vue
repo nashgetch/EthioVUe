@@ -276,7 +276,7 @@
   </div>
 </template>
 <script>
-import quickMenu from "vue-quick-menu";
+import quickMenu from "@/components/quickmenu/quickmenu";
 // import { RadialMenu, RadialMenuItem } from "vue-radial-menu";
 
 export default {
@@ -295,20 +295,24 @@ export default {
       menulinks: [
         {
           isLink: true,
-          url: "/"
+          url: "/",
+          header: "Home"
         },
 
         {
           isLink: true,
-          url: "/religious-channels"
+          url: "/religious-channels",
+          header: "Religious"
         },
         {
           isLink: true,
-          url: "/live-channels"
+          url: "/live-channels",
+          header: "Live"
         },
         {
           isLink: true,
-          url: "/education"
+          url: "/education",
+          header: "Education"
         }
       ],
       icons: ["fa fa-home", "fa fa-archive", "fa fa-tv", "fa fa-book"],

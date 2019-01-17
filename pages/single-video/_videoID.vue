@@ -171,7 +171,9 @@
                         >{{pub.title}}</a>
                       </h1>
                     </div>
-                     <ViewCatogs :vid="pub.v_id" :cat_id="pub.category_id" :view_count="pub.view_count"/>
+                     <ViewCatogs :vid="pub.v_id" :cat_id="pub.category_id" :view_count="pub.view_count"
+                     :created_at="pub.created_at"
+                     />
                   </div>
                 </div>
               </div>
@@ -259,7 +261,7 @@
                     <a class="text" :aria-label="re.title" :title="re.title">{{re.title}}</a>
                   </h1>
                 </div>
-                <ViewCatogs :vid="re.v_id" :view_count="re.view_count"/>
+                <ViewCatogs :vid="re.v_id" :view_count="re.view_count" :created_at="re.created_at"/>
                 <small>{{single.cat_name}}</small>
               </div>
               <div class="clearfix"></div>

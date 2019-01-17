@@ -1,16 +1,20 @@
 <template>
   <div>
     <div v-if="isIndex">
-      <i class="fa fa-language" @click="show_en=!show_en" style="font-size: 23px;"></i>
+      <i class="fa fa-language" @click="show_en=!show_en" style="font-size: 19px;"></i>
       <h1 v-show="show_en" style="font-size: 10px !important;">
         <a class="hideOverflow" :aria-label="title_en" :title="title_en">{{title_en}}</a>
       </h1>
-      <small style="font-size: 12px; color: black;">{{ catName }}</small>
-      <br>
-      <small style="color: #7e7e7e; font-size: 13px;">
+      <small style="font-size: 12px; color: black; margin: auto">
+        <i class="fa fa-angle-double-right"></i>
+        {{ catName }}
+        </small>
+
+      <small style="font-weight: bold; color: #7e7e7e; font-size: 12px; margin-left: 4px">
         <i class="fa fa-eye"></i>
         {{view_count}} views
-        {{created_at | moment("from", "now")}}
+        <i class="fa fa-dot-circle-o">
+        </i> {{created_at | moment("from", "now")}}
       </small>
     </div>
     <div v-if="isSingle">
@@ -25,12 +29,17 @@
     </div>
 
     <no-ssr placeholder="Loading ..." v-if="!isIndex && !isSingle">
-      <small style="color: #7e7e7e; font-size: 13px;">
-        <i class="fa fa-eye"></i>
-        {{view_count}} views
+      <small style="color: #7e7e7e; font-size: 10px; font-weight: bold; margin-left: 10px">
+
+        {{ catName }}
       </small>
 
-      <small style="font-weight: bold; color: #7e7e7e; font-size: 13px;">{{ catName }}</small>
+      <small style="color: #7e7e7e; font-size: 9px; margin: 5px; font-weight: 300">
+        <i class="fa fa-eye"></i>
+        {{view_count}} views
+        <i class="fa fa-dot-circle-o">
+        </i> {{created_at | moment("from", "now")}}
+        </small>
     </no-ssr>
   </div>
 </template>
@@ -82,7 +91,7 @@ export default {
     //   return (this.views = res.data);
     // });
 
-    if (!this.isSingle) {
+    if (!this.isSingle && this.cat_id) {
       axios.post(base_url + "/return_cat/" + this.cat_id).then(res => {
         return (this.catName = res.data[0].category_name);
       });
