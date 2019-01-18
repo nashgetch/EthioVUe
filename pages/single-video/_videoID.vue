@@ -162,18 +162,21 @@
                     </div>
                   </div>
                   <div class="col-sm-12 col-xs-6" ng-click="viewVideo(pub.v_id)">
+
                     <div class="descr">
                       <h1 style="font-size: 14px !important;">
-                        <a
+                        <a style="text-decoration: none;"
                           class="text"
                           :aria-label="pub.title"
                           :title="pub.title"
                         >{{pub.title}}</a>
                       </h1>
                     </div>
+                      <a :href="'/single-video/'+pub.v_id" style="text-decoration: none;">
                      <ViewCatogs :vid="pub.v_id" :cat_id="pub.category_id" :view_count="pub.view_count"
                      :created_at="pub.created_at"
                      />
+                     </a>
                   </div>
                 </div>
               </div>
@@ -258,11 +261,13 @@
               <div class="col-lg-6 col-sm-6" ng-click="viewVideo(re.v_id)">
                 <div class="descr" style="padding-top: 0px;">
                   <h1 style="font-size: 14px !important;">
-                    <a class="text" :aria-label="re.title" :title="re.title">{{re.title}}</a>
+                    <a class="text" style="text-decoration: none;" :href="'/single-video/'+re.v_id"
+                     :aria-label="re.title" :title="re.title">{{re.title}}</a>
                   </h1>
                 </div>
+                <a :href="'/single-video/'+re.v_id" style="text-decoration: none;">
                 <ViewCatogs :vid="re.v_id" :cat_id="re.category_id" :view_count="re.view_count" :created_at="re.created_at"
-                 />
+                 /></a>
                 <!-- <small>{{single.cat_name}}</small> -->
               </div>
               <div class="clearfix"></div>

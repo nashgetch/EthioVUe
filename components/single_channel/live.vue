@@ -50,15 +50,18 @@
                       </div>
                       <div class="col-12 col-sm-12 ml-3">
                         <div class="descr">
-                          <a
+                          <a style="text-decoration: none;"
+                            :href="'/single-video/' + video.v_id"
                             class="hideOverflow"
                             :aria-label="video.title"
                             :title="video.title"
                           >{{video.title}}</a>
                         </div>
+                          <a style="text-decoration: none;"
+                            >
                         <ViewCatogs :vid="video.v_id"
                         :cat_id="video.category_id" :view_count="video.view_count"
-                        :created_at="video.created_at" />
+                        :created_at="video.created_at" /></a>
                       </div>
                     </div>
                   </div>
@@ -95,7 +98,7 @@
                 <div class="col-lg-6 col-sm-6">
                   <div class="descr" style="padding-left:4px;">
                     <h1 style="font-size: 14px !important;">
-                      <a>{{tv.tv_name}}</a>
+                      <a :href="'/single-channel/'+tv.id">{{tv.tv_name}}</a>
                     </h1>
                   </div>
                   <div class="views" style="padding-left:4px;">{{tv.tags}}</div>

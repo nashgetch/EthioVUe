@@ -81,6 +81,7 @@
                           <div class="descr">
                             <h1 style="font-size: 14px !important;">
                               <a
+                                :href="'/single-video/' + video.v_id"
                                 class="hideOverflow"
                                 :aria-label="video.title"
                                 :title="video.title"
@@ -89,15 +90,15 @@
                               >{{video.title}}</a>
                             </h1>
                           </div>
-
+                          <a style="text-decoration: none;"
+                            :href="'/single-video/' + video.v_id">
                             <ViewCatogs
                               :vid="video.v_id"
                               :cat_id="video.category_id"
-                              :isIndex="true"
-                              :title_en="video.title_en"
+
                               :created_at="video.created_at"
                               :view_count="video.view_count"
-                            />
+                            /></a>
 
                           <!-- <div class="percent"><span class="circle"></span> 83%</div> -->
                         </div>
