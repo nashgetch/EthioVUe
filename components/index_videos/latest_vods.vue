@@ -78,7 +78,7 @@
                 <i class="fa fa-plus"></i>
               </div>
             </div>
-            <div class="descr" ng-click="viewVideo(video.v_id)">
+            <div class="descr main" ng-click="viewVideo(video.v_id)">
               <h1 style="font-size: 14px !important;">
                 <a
                   class="text"
@@ -175,7 +175,7 @@ export default {
   font-weight: 700;
   display: inline-block;
 }
-.tit{
+.t{
  float: left;
     font-family: 'Lato', Helvetica, sans-serif;
     font-size: 13px;
@@ -198,4 +198,5 @@ export default {
    -webkit-line-clamp: 2; /* number of lines to show */
    -webkit-box-orient: vertical;
 }
+
 </style>

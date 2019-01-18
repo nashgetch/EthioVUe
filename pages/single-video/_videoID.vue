@@ -256,13 +256,14 @@
                 </div>
               </div>
               <div class="col-lg-6 col-sm-6" ng-click="viewVideo(re.v_id)">
-                <div class="descr">
+                <div class="descr" style="padding-top: 0px;">
                   <h1 style="font-size: 14px !important;">
                     <a class="text" :aria-label="re.title" :title="re.title">{{re.title}}</a>
                   </h1>
                 </div>
-                <ViewCatogs :vid="re.v_id" :view_count="re.view_count" :created_at="re.created_at"/>
-                <small>{{single.cat_name}}</small>
+                <ViewCatogs :vid="re.v_id" :cat_id="re.category_id" :view_count="re.view_count" :created_at="re.created_at"
+                 />
+                <!-- <small>{{single.cat_name}}</small> -->
               </div>
               <div class="clearfix"></div>
             </div>
@@ -590,7 +591,7 @@ async function getUsername(user_id) {
 .imgur {
   display: block;
   max-width: 190px;
-  max-height: 115px;
+  max-height: 86px;
   width: 100%;
   height: 100%;
   margin-right: auto;

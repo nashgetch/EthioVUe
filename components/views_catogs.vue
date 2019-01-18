@@ -8,13 +8,13 @@
       <small style="font-size: 12px; color: black;">
         <i class="fa fa-angle-double-right"></i>
         {{ catName }}
-        </small>
-       <br class="d-none d-lg-block">
+      </small>
+      <br class="d-none d-lg-block">
       <small style="font-weight: bold; color: #7e7e7e; font-size: 12px; margin-left: 4px">
         <i class="fa fa-eye"></i>
         {{view_count}} views
-        <i class="fa fa-dot-circle-o">
-        </i> {{created_at | moment("from", "now")}}
+        <i class="fa fa-dot-circle-o"></i>
+        {{created_at | moment("from", "now")}}
       </small>
     </div>
     <div v-if="isSingle">
@@ -29,17 +29,17 @@
     </div>
 
     <no-ssr placeholder="Loading ..." v-if="!isIndex && !isSingle">
-      <small style="color: #7e7e7e; font-size: 12px; font-weight: bold; margin-left: 10px">
-
+      <small style="color: #7e7e7e; font-size: 12px; font-weight: bold;">
+        <i class="fa fa-angle-double-right"></i>
         {{ catName }}
       </small>
 
-      <small style="color: #7e7e7e; font-size: 12px; margin: 5px; font-weight: 300">
+      <small style="color: #7e7e7e; font-size: 12px; font-weight: 300">
         <i class="fa fa-eye"></i>
         {{view_count}} views
-        <i class="fa fa-dot-circle-o">
-        </i> {{created_at | moment("from", "now")}}
-        </small>
+        <i class="fa fa-dot-circle-o"></i>
+        {{created_at | moment("from", "now")}}
+      </small>
     </no-ssr>
   </div>
 </template>
