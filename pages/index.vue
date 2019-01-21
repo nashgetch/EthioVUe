@@ -26,7 +26,10 @@
                       style="font-size: 15px;"
                       :class="{'active_route':(1===tab)}"
                     ></i>
-                    <span class="d-inline-block d-sm-none" style="font-size: 10px; font-weight: bold;">Latest</span>
+                    <span
+                      class="d-inline-block d-sm-none"
+                      style="font-size: 10px; font-weight: bold;"
+                    >Latest</span>
                   </a>
                 </li>
                 <li class="nav-item text-center ml-auto mr-auto">
@@ -37,7 +40,10 @@
                       style="font-size: 15px;"
                       :class="{'active_route':(2===tab)}"
                     ></i>
-                    <span class="d-inline-block d-sm-none" style="font-size: 10px; font-weight: bold;">Category</span>
+                    <span
+                      class="d-inline-block d-sm-none"
+                      style="font-size: 10px; font-weight: bold;"
+                    >Category</span>
                   </a>
                 </li>
                 <li class="nav-item text-center ml-auto mr-auto">
@@ -48,7 +54,10 @@
                       style="font-size: 15px;"
                       :class="{'active_route':(3===tab)}"
                     ></i>
-                    <span style="font-size: 10px; font-weight: bold;" class="d-inline-block d-sm-none">Trending</span>
+                    <span
+                      style="font-size: 10px; font-weight: bold;"
+                      class="d-inline-block d-sm-none"
+                    >Trending</span>
                   </a>
                 </li>
                 <li class="nav-item text-center ml-auto mr-auto">
@@ -64,7 +73,10 @@
                       style="font-size: 15px;"
                       :class="{'active_route':(4===tab)}"
                     ></i>
-                    <span style="font-size: 10px; font-weight: bold;" class="d-inline-block d-sm-none">Subscription</span>
+                    <span
+                      style="font-size: 10px; font-weight: bold;"
+                      class="d-inline-block d-sm-none"
+                    >Subscription</span>
                   </a>
                 </li>
                 <!-- <li class="nav-item text-center ml-auto mr-auto">
@@ -159,6 +171,15 @@ export default {
           property: "twitter:description",
           content:
             "EthioV - All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here."
+        }
+      ],
+      script: [
+        {
+          innerHtml: `(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-3424290372640283",enable_page_level_ads: true});`
+        },
+        {
+          src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+          async: true
         }
       ]
     };

@@ -162,21 +162,24 @@
                     </div>
                   </div>
                   <div class="col-sm-12 col-xs-6" ng-click="viewVideo(pub.v_id)">
-
                     <div class="descr">
                       <h1 style="font-size: 14px !important;">
-                        <a style="text-decoration: none;"
+                        <a
+                          style="text-decoration: none;"
                           class="text"
                           :aria-label="pub.title"
                           :title="pub.title"
                         >{{pub.title}}</a>
                       </h1>
                     </div>
-                      <a :href="'/single-video/'+pub.v_id" style="text-decoration: none;">
-                     <ViewCatogs :vid="pub.v_id" :cat_id="pub.category_id" :view_count="pub.view_count"
-                     :created_at="pub.created_at"
-                     />
-                     </a>
+                    <a :href="'/single-video/'+pub.v_id" style="text-decoration: none;">
+                      <ViewCatogs
+                        :vid="pub.v_id"
+                        :cat_id="pub.category_id"
+                        :view_count="pub.view_count"
+                        :created_at="pub.created_at"
+                      />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -261,13 +264,23 @@
               <div class="col-lg-6 col-sm-6" ng-click="viewVideo(re.v_id)">
                 <div class="descr" style="padding-top: 0px;">
                   <h1 style="font-size: 14px !important;">
-                    <a class="text" style="text-decoration: none;" :href="'/single-video/'+re.v_id"
-                     :aria-label="re.title" :title="re.title">{{re.title}}</a>
+                    <a
+                      class="text"
+                      style="text-decoration: none;"
+                      :href="'/single-video/'+re.v_id"
+                      :aria-label="re.title"
+                      :title="re.title"
+                    >{{re.title}}</a>
                   </h1>
                 </div>
                 <a :href="'/single-video/'+re.v_id" style="text-decoration: none;">
-                <ViewCatogs :vid="re.v_id" :cat_id="re.category_id" :view_count="re.view_count" :created_at="re.created_at"
-                 /></a>
+                  <ViewCatogs
+                    :vid="re.v_id"
+                    :cat_id="re.category_id"
+                    :view_count="re.view_count"
+                    :created_at="re.created_at"
+                  />
+                </a>
                 <!-- <small>{{single.cat_name}}</small> -->
               </div>
               <div class="clearfix"></div>
@@ -365,6 +378,15 @@ export default {
           property: "twitter:description",
           content:
             "EthioV - " + this.single.description + ". " + this.single.tags
+        }
+      ],
+      script: [
+        {
+          innerHtml: `(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-3424290372640283",enable_page_level_ads: true});`
+        },
+        {
+          src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+          async: true
         }
       ]
     };
@@ -643,19 +665,19 @@ async function getUsername(user_id) {
   }
 }
 .text {
-   overflow: hidden;
-   text-overflow: ellipsis;
-   display: -webkit-box;
-   line-height: 16px;     /* fallback */
-   max-height: 32px;      /* fallback */
-   -webkit-line-clamp: 2; /* number of lines to show */
-   -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 16px; /* fallback */
+  max-height: 32px; /* fallback */
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
 }
 @media (max-width: 800px) {
-  .text{
-    line-height: 26px;     /* fallback */
-    max-height: 62px;      /* fallback */
-   -webkit-line-clamp: 2; /* number of lines to show */
+  .text {
+    line-height: 26px; /* fallback */
+    max-height: 62px; /* fallback */
+    -webkit-line-clamp: 2; /* number of lines to show */
   }
 }
 </style>

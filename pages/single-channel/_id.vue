@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div>
     <div class="channel-img">
       <div class="ch-featured-img">
         <img src="/img/back.jpeg" alt>
@@ -11,28 +11,34 @@
         <div class="social-icons-container mt-2 ml-4 d-flex">
           <span class="mt-3" style="color:white; font-size:1rem;">Social</span>
 
-          <social-sharing :url="'https://ethiov.com/single-channel/' + channel.id"
-                          :title="'EthioV Live Stream ' + channel.tv_name"
-                      :description="'EthioV - ' + channel.description"
-                      :quote="'EthioV - ' + channel.description"
-                      :hashtags="'#EthioV, ' + channel.tags"
-                      inline-template>
+          <social-sharing
+            :url="'https://ethiov.com/single-channel/' + channel.id"
+            :title="'EthioV Live Stream ' + channel.tv_name"
+            :description="'EthioV - ' + channel.description"
+            :quote="'EthioV - ' + channel.description"
+            :hashtags="'#EthioV, ' + channel.tags"
+            inline-template
+          >
             <div>
               <network network="facebook">
-                <i class="fa fa-fw fa-facebook fa-2x"
-                style="color: #fbe631; padding-left: 5px; margin-top: 10px;"></i>
+                <i
+                  class="fa fa-fw fa-facebook fa-2x"
+                  style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
+                ></i>
               </network>
 
               <network network="twitter">
-                <i class="fa fa-fw fa-twitter fa-2x"
-                style="color: #fbe631; padding-left: 5px; margin-top: 10px;" ></i>
+                <i
+                  class="fa fa-fw fa-twitter fa-2x"
+                  style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
+                ></i>
               </network>
               <network network="telegram">
-                  <i class="fa fa-telegram fa-2x"
-                  style="color: #fbe631; padding-left: 5px; margin-top: 10px;" ></i>
+                <i
+                  class="fa fa-telegram fa-2x"
+                  style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
+                ></i>
               </network>
-
-
             </div>
           </social-sharing>
         </div>
@@ -68,14 +74,14 @@
 </template>
 
 <script>
-import Live from '@/components/single_channel/live';
-import Vods from '@/components/single_channel/vods';
-import Ivods from '@/components/single_channel/ivod';
+import Live from "@/components/single_channel/live";
+import Vods from "@/components/single_channel/vods";
+import Ivods from "@/components/single_channel/ivod";
 
-import axios from 'axios';
+import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
-   head() {
+  head() {
     return {
       title: this.channel.tv_name,
       meta: [
@@ -115,9 +121,9 @@ export default {
           content: "https://video2.vixtream.net" + this.channel.poster_image
         },
         {
-          hid: 'og:type',
-          property: 'og:type',
-          content: 'video.movie'
+          hid: "og:type",
+          property: "og:type",
+          content: "video.movie"
         },
         {
           hid: "og:description",
@@ -146,14 +152,14 @@ export default {
           content: "https://video2.vixtream.net" + this.channel.poster_image
         },
         {
-          hid: 'twitter:type',
-          property: 'twitter:type',
-          content: 'video.movie'
+          hid: "twitter:type",
+          property: "twitter:type",
+          content: "video.movie"
         },
         {
-          hid: 'twitter:card',
-          property: 'twitter:card',
-          content: 'summary_large_image'
+          hid: "twitter:card",
+          property: "twitter:card",
+          content: "summary_large_image"
         },
         {
           hid: "twitter:description",
@@ -166,6 +172,15 @@ export default {
             this.channel.tv_name +
             " here."
         }
+      ],
+      script: [
+        {
+          innerHtml: `(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-3424290372640283",enable_page_level_ads: true});`
+        },
+        {
+          src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+          async: true
+        }
       ]
     };
   },
@@ -175,25 +190,29 @@ export default {
     Ivods
   },
   async asyncData(context) {
-    let single_channel= await axios.post(base_url+'/single_channel/'+context.params.id);
-    let similar_videos = await axios.post(base_url+'/channel_videos/'+single_channel.data.owner_id);
-    return{
-      channel:single_channel.data,
-      videos:[...similar_videos.data],
-      tab:1,
+    let single_channel = await axios.post(
+      base_url + "/single_channel/" + context.params.id
+    );
+    let similar_videos = await axios.post(
+      base_url + "/channel_videos/" + single_channel.data.owner_id
+    );
+    return {
+      channel: single_channel.data,
+      videos: [...similar_videos.data],
+      tab: 1,
       tab1Style: {
         active: true,
-        show:true
+        show: true
       }
-    }
+    };
   },
-  methods:{
+  methods: {
     setTabs(tab) {
       this.tab = tab;
-      this.tab1Style={};
+      this.tab1Style = {};
     },
     checkTab(tab) {
-     return this.tab === tab;
+      return this.tab === tab;
     }
   }
 };
@@ -300,5 +319,4 @@ export default {
     max-height: 160px;
   }
 }
-
 </style>
