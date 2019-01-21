@@ -110,7 +110,7 @@ const base_url = "https://ethiov.com/api";
 export default {
   head() {
     return {
-      title: "Ethiov - Ethiopian Videos and Live channels",
+      title: "EthioV - Ethiopian Videos and Live channels",
       meta: [
         {
           hid: "description",
@@ -171,15 +171,6 @@ export default {
           property: "twitter:description",
           content:
             "EthioV - All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here."
-        }
-      ],
-      script: [
-        {
-          innerHtml: `(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-3424290372640283",enable_page_level_ads: true});`
-        },
-        {
-          src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
-          async: true
         }
       ]
     };
