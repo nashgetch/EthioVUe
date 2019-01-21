@@ -2,14 +2,14 @@
   <div>
     <div class="channel-img">
       <div class="ch-featured-img">
-        <img src="/img/back.jpeg" alt>
+        <img src="/img/black.jpg" alt>
       </div>
       <div class="ch-logo-img">
         <img :src="'https://video2.vixtream.net'+channel.poster_image" alt>
       </div>
       <div class="ch-social-links d-inline-flex flex-row">
         <div class="social-icons-container mt-2 ml-4 d-flex">
-          <span class="mt-3" style="color:white; font-size:1rem;">Social</span>
+          <span class="mt-3" style="color:black; font-size:1rem;">Social</span>
 
           <social-sharing
             :url="'https://ethiov.com/single-channel/' + channel.id"
@@ -23,20 +23,20 @@
               <network network="facebook">
                 <i
                   class="fa fa-fw fa-facebook fa-2x"
-                  style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
+                  style="color: #3b5998; padding-left: 5px; margin-top: 10px;"
                 ></i>
               </network>
 
               <network network="twitter">
                 <i
                   class="fa fa-fw fa-twitter fa-2x"
-                  style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
+                  style="color: #55acee; padding-left: 5px; margin-top: 10px;"
                 ></i>
               </network>
               <network network="telegram">
                 <i
                   class="fa fa-telegram fa-2x"
-                  style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
+                  style="color: #00405d; padding-left: 5px; margin-top: 10px;"
                 ></i>
               </network>
             </div>

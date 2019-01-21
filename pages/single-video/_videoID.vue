@@ -105,20 +105,20 @@
                           <network class="dropdown-item" network="facebook">
                             <i
                               class="fa fa-fw fa-facebook"
-                              style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
+                              style="color: #3b5998; padding-left: 5px; margin-top: 10px;"
                             ></i>- Facebook
                           </network>
 
                           <network network="twitter" class="dropdown-item">
                             <i
                               class="fa fa-fw fa-twitter"
-                              style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
+                              style="color: #55acee; padding-left: 5px; margin-top: 10px;"
                             ></i>- Twitter
                           </network>
                           <network network="telegram" class="dropdown-item">
                             <i
                               class="fa fa-telegram"
-                              style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
+                              style="color: #00405d; padding-left: 5px; margin-top: 10px;"
                             ></i>- Telegram
                           </network>
                         </div>
