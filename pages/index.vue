@@ -416,7 +416,7 @@ export default {
 @media (min-width: 300px) and (max-width: 768px) {
   .avicii {
     width: 63px;
-    height: 59px;
+    height: 49px;
   }
 }
 .martin {
