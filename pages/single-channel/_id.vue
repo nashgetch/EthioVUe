@@ -2,7 +2,7 @@
   <div>
     <div class="channel-img">
       <div class="ch-featured-img">
-        <img src="/img/black.jpg" alt>
+        <img src="/img/back.jpeg" alt>
       </div>
       <div class="ch-logo-img">
         <img :src="'https://video2.vixtream.net'+channel.poster_image" alt>
