@@ -139,9 +139,7 @@ module.exports = {
    */
   'google-adsense': {
     id: 'ca-pub-5001725934888164',
-    pageLevelAds: true,
-    includeQuery: true,
-    analyticsUacct: "UA-16578813-1"
+    pageLevelAds: true
   },
   toast: {
     position: 'top-center',
