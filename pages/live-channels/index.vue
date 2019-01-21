@@ -14,6 +14,8 @@
         <span style="font-size: 17px;">Search for your Favorite Channel here.</span>
       </label>
     </div>
+
+
     <div class="row">
       <div class="container mt-2">
         <div class="row mt-3 display-flex">
@@ -333,4 +335,5 @@ textarea.question:invalid ~ input[type="submit"] {
     opacity: 1;
   }
 }
+
 </style>

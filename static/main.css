@@ -296,7 +296,7 @@ small {
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  font-size: 26px;
+  font-size: 26px;  box-shadow: 0 5px 9px 0 #a8a8a8;
   display: block;
   padding: 12px;
   border: 0;

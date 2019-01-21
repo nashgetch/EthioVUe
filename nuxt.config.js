@@ -48,7 +48,7 @@ module.exports = {
       //      });`
       // }
     ],
-      //  __dangerouslyDisableSanitizers: ['script'],
+    //  __dangerouslyDisableSanitizers: ['script'],
     link: [{
         rel: 'icon',
         type: 'image/x-icon',
@@ -139,7 +139,9 @@ module.exports = {
    */
   'google-adsense': {
     id: 'ca-pub-5001725934888164',
-    pageLevelAds: true
+    pageLevelAds: true,
+    includeQuery: true,
+    analyticsUacct: "UA-16578813-1"
   },
   toast: {
     position: 'top-center',
