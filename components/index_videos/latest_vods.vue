@@ -4,9 +4,10 @@
 
     <!-- <div class="container parentDiv"> -->
     <div class="container parentDiv">
-
+      <div class="nashians">
+        <adsbygoogle/>
+      </div>
       <div class="row display-flex">
-
         <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3 ml-auto mr-auto mb-3">
           <div class="kaleb-vids">
             <div class="Vimg" style="background-color:#fbe631 !important;">
@@ -53,7 +54,6 @@
           v-for="(video,$index) in videos"
           :key="$index"
         >
-
           <div class="kaleb-vids">
             <div class="Vimg itemContainer" style="background-color: black;">
               <a :href="'/single-video/'+video.v_id">
@@ -197,20 +197,20 @@ export default {
   -webkit-line-clamp: 2; /* number of lines to show */
   -webkit-box-orient: vertical;
 }
-.nashian {
-  width: 200px !important;
-  height: 200px !important;
+.nashians {
+  width: 320px !important;
+  height: 100px !important;
 }
 @media (min-width: 500px) {
-  .nashian {
-    width: 300px !important;
-    height: 250px !important;
+  .nashians {
+    width: 468px !important;
+    height: 60px !important;
   }
 }
 @media (min-width: 800px) {
-  .nashian {
-    width: 336px !important;
-    height: 280px !important;
+  .nashians {
+    width: 728px !important;
+    height: 90px !important;
   }
 }
 </style>
