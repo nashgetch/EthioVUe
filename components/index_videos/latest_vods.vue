@@ -53,9 +53,7 @@
           v-for="(video,$index) in videos"
           :key="$index"
         >
-         <div class="adblock2">
 
-        </div>
           <div class="kaleb-vids">
             <div class="Vimg itemContainer" style="background-color: black;">
               <a :href="'/single-video/'+video.v_id">
