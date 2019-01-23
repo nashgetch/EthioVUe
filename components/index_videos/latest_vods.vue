@@ -9,6 +9,8 @@
       <!-- <div class="nashians">
         <adsbygoogle/>
       </div>-->
+        <span class="title">Other Recommended Videos...</span>
+        <hr class="guetta">
       <div class="row display-flex">
         <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3 ml-auto mr-auto mb-3">
           <div class="kaleb-vids">
@@ -51,7 +53,7 @@
             </div>
           </div>
         </div>-->
-        <span class="d-inline-block d-sm-none title">Recent Videos...</span>
+
         <div
           class="col-12 col-sm-6 col-md-3 col-lg-2 videoitem kygo"
           v-for="(video,$index) in videos"
@@ -103,8 +105,10 @@
               :created_at="video.created_at"
               :view_count="video.view_count"
             ></ViewCatogs>
+
             <!-- </div> -->
           </div>
+           <!-- <hr> -->
         </div>
       </div>
     </div>

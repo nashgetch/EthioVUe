@@ -116,7 +116,7 @@
                 </li>
                 <li class="nav-item text-center ml-auto mr-auto">
                   <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(2)">
-                    <span class="d-none d-sm-block">Other Videos</span>
+                    <span class="d-none d-sm-block">Category</span>
                     <i
                       class="fa fa-video-camera d-inline-block d-sm-none"
                       style="font-size: 15px;"
