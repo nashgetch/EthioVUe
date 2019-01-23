@@ -16,7 +16,7 @@
         <div class="container parentDiv">
           <div class="row display-flex" ng-controller="navController">
             <div
-              class="col-12 col-sm-6 col-md-4 col-lg-3 videoitem"
+              class="col-12 col-sm-6 col-md-3 col-lg-2 videoitem kygo"
               v-for="(video,$index) in videos"
               :key="$index"
             >
@@ -28,7 +28,7 @@
                        <div
                         slot="placeholder"
                         class="bg-inverse"
-                        style="background-color: black; height:145px;"
+                        style="background-color: black; height:102px;"
                       >
                       <!-- You can put any component you want in here. -->
                       </div>
@@ -187,10 +187,17 @@ export default {
    overflow: hidden;
    text-overflow: ellipsis;
    display: -webkit-box;
-   line-height: 16px;     /* fallback */
-   max-height: 32px;      /* fallback */
+   line-height: 12px;     /* fallback */
+   max-height: 25px;      /* fallback */
    -webkit-line-clamp: 2; /* number of lines to show */
    -webkit-box-orient: vertical;
+}
+.kygo{
+  padding-left: 4px !important;
+  padding-right: 4px !important;
+}
+.views.calvin{
+padding-top: 0px;
 }
 </style>
 

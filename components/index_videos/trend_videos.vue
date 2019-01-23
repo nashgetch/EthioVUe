@@ -9,7 +9,7 @@
         <div class="container parentDiv">
           <div class="row display-flex" ng-controller="navController">
             <div
-              class="col-12 col-sm-6 col-md-4 col-lg-3 videoitem"
+              class="col-12 col-sm-6 col-md-3 col-lg-2 videoitem kygo"
               v-for="(video,$index) in videos"
               :key="$index"
             >
@@ -51,13 +51,13 @@
                     >{{video.title}}</a>
                   </h1>
                 </div>
-                <div class="views">
+                <!-- <div class="views"> -->
                   <ViewCatogs :vid="video.v_id" :created_at="video.created_at" :cat_id="video.category_id" :isIndex="true" :title_en="video.title_en" :view_count="video.view_count"/>
                   <!-- <span class="percent">
                     <span class="circle"></span>
                     {{video.created_at}}
                   </span> -->
-                </div>
+                <!-- </div> -->
               </div>
             </div>
           </div>
@@ -159,6 +159,10 @@ export default {
    max-height: 32px;      /* fallback */
    -webkit-line-clamp: 2; /* number of lines to show */
    -webkit-box-orient: vertical;
+}
+.kygo{
+  padding-left: 4px !important;
+  padding-right: 4px !important;
 }
 </style>
 

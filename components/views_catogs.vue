@@ -3,13 +3,13 @@
     <div v-if="isIndex">
       <i class="fa fa-language" @click="show_en=!show_en" style="font-size: 19px;color: #d59541;" ></i>
       <h1 v-show="show_en" style="font-size: 10px !important;">
-        <a class="hideOverflow" :aria-label="title_en" :title="title_en">{{title_en}}</a>
+        <a :href="'/single-video/' + vid" class="hideOverflow" :aria-label="title_en" :title="title_en">{{title_en}}</a>
       </h1>
       <small style="font-size: 12px; color: black;">
         <i class="fa fa-angle-double-right" style="color: #d59541;"></i>
         {{ catName }}
       </small>
-      <br class="d-none d-lg-block">
+      <!-- <br class="d-none d-lg-block"> -->
       <small style="font-weight: bold; color: #7e7e7e; font-size: 12px; margin-left: 4px">
         <i class="fa fa-eye" style="color: #d59541;"></i>
         {{view_count}} views

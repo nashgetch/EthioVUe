@@ -120,7 +120,7 @@
             >
               <span v-if="loggedIn" class="i-circle">{{user.name.charAt(0)}}</span>
               <nuxt-link to="/login" v-if="!loggedIn">
-                <i class="fa fa-sign-in" style="font-size:38px; color: #fbe631;"></i>
+                <i class="fa fa-sign-in" style="font-size:30px; color: #fbe631;"></i>
               </nuxt-link>
               <span class="caret"></span>
             </a>
