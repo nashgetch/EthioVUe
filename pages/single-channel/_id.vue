@@ -20,7 +20,7 @@
             inline-template
           >
             <div>
-              <network network="facebook">https://www.npmjs.com/package/@nuxtjs/feed
+              <network network="facebook">
                 <i
                   class="fa fa-fw fa-facebook fa-2x"
                   style="color: #3b5998; padding-left: 5px; margin-top: 10px;"

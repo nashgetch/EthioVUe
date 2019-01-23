@@ -2,9 +2,8 @@
   <div>
     <div ng-show="isSet(2)" class="container parentDiv" ng-style="hidden2">
       <div class="row rowDiv" ng-controller="videoController">
-
         <div
-          class="col-12 col-sm-6 col-md-4 col-lg-3 videoitem"
+          class="col-12 col-sm-6 col-md-3 col-lg-2 videoitem kygo"
           v-for="(video,$index) in videos"
           :key="$index"
         >
@@ -15,7 +14,7 @@
                   <div
                     slot="placeholder"
                     class="bg-inverse"
-                    style="background-color: black; height:143px;"
+                    style="background-color: black; height:102px;"
                   ></div>
                   <video
                     :poster="'https://video2.vixtream.net/'+video.filename2"
@@ -30,11 +29,7 @@
             </div>
             <div class="descr" ng-click="viewVideo(video.v_id)">
               <h1 style="font-size: 14px !important;">
-                <a
-                  class="text"
-                  :aria-label="video.title"
-                  :title="video.title"
-                >{{video.title}}</a>
+                <a class="text" :aria-label="video.title" :title="video.title">{{video.title}}</a>
               </h1>
             </div>
             <div class="views small">
@@ -71,17 +66,20 @@ export default {
     }
   }
 };
-
 </script>
 <style>
-  .text {
-   overflow: hidden;
-   text-overflow: ellipsis;
-   display: -webkit-box;
-   line-height: 16px;     /* fallback */
-   max-height: 32px;      /* fallback */
-   -webkit-line-clamp: 2; /* number of lines to show */
-   -webkit-box-orient: vertical;
+.text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 12px; /* fallback */
+  max-height: 25px; /* fallback */
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+.kygo {
+  padding-left: 4px;
+  padding-right: 4px;
 }
 </style>
 
