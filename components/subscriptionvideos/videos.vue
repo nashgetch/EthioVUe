@@ -2,7 +2,7 @@
    <div class="container parentDiv" ng-style="hidden2">
       <div class="row rowDiv">
         <div
-          class="col-12 col-sm-6 col-md-4 col-lg-3 videoitem"
+          class="col-12 col-sm-6 col-md-3 col-lg-2 videoitem kygo"
           v-for="(video,$index) in videos.slice(0,8)"
           :key="$index"
         >
@@ -13,7 +13,7 @@
                   <div
                     slot="placeholder"
                     class="bg-inverse"
-                    style="background-color: black; height:143px;"
+                    style="background-color: black; height:102px;"
                   >
                   </div>
                   <video :poster="'https://video2.vixtream.net/'+video.filename2" :alt="video.title"></video>
@@ -79,9 +79,13 @@ const base_url="https://ethiov.com/api/"
    overflow: hidden;
    text-overflow: ellipsis;
    display: -webkit-box;
-   line-height: 16px;     /* fallback */
-   max-height: 32px;      /* fallback */
+   line-height: 12px;     /* fallback */
+   max-height: 25px;      /* fallback */
    -webkit-line-clamp: 2; /* number of lines to show */
    -webkit-box-orient: vertical;
+}
+.kygo{
+ padding-left: 4px;
+ padding-right: 4px;
 }
 </style>

@@ -21,7 +21,7 @@
                       <div
                         slot="placeholder"
                         class="bg-inverse"
-                        style="background-color: black; height:145px;"
+                        style="background-color: black; height:102px;"
                       >
                       <!-- You can put any component you want in here. -->
                       </div>
@@ -155,8 +155,8 @@ export default {
    overflow: hidden;
    text-overflow: ellipsis;
    display: -webkit-box;
-   line-height: 16px;     /* fallback */
-   max-height: 32px;      /* fallback */
+   line-height: 12px;     /* fallback */
+   max-height: 25px;      /* fallback */
    -webkit-line-clamp: 2; /* number of lines to show */
    -webkit-box-orient: vertical;
 }
