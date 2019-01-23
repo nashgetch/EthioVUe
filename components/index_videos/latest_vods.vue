@@ -1,8 +1,10 @@
 <template>
   <div>
-    <span class="d-inline-block d-sm-none title">Recent Videos...</span>
-
-    <!-- <div class="container parentDiv"> -->
+    <div class="container">
+      <FeaturedVideos></FeaturedVideos>
+      <!-- <div class="container parentDiv"> -->
+      <PopularVideos></PopularVideos>
+    </div>
     <div class="container parentDiv">
       <!-- <div class="nashians">
         <adsbygoogle/>
@@ -49,6 +51,7 @@
             </div>
           </div>
         </div>-->
+        <span class="d-inline-block d-sm-none title">Recent Videos...</span>
         <div
           class="col-12 col-sm-6 col-md-3 col-lg-2 videoitem kygo"
           v-for="(video,$index) in videos"
@@ -111,13 +114,17 @@
 </template>
 
 <script>
+import FeaturedVideos from "@/components/featureVideos/videos";
 import ViewCatogs from "@/components/views_catogs";
+import PopularVideos from "@/components/popularVideos/videos";
 import axios from "axios";
 
 const base_url = "https://ethiov.com/api";
 export default {
   components: {
-    ViewCatogs
+    ViewCatogs,
+    FeaturedVideos,
+    PopularVideos
   },
   props: {
     videos: {
@@ -163,6 +170,11 @@ export default {
         });
     }
   }
+  // mounted: function() {
+  //   axios.post(base_url + "/featured").then(res => {
+  //     this.featured = [...res.data];
+  //   });
+  // }
 };
 </script>
 

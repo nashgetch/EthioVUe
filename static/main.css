@@ -364,7 +364,11 @@ small {
 .dropdown-menu.poll {
   margin-left: -87px !important;
 }
-
+.guetta{
+  color: #6c6c8a !important;
+  background-color: #5a0606;
+  border-bottom: 1px solid;
+}
 .ch-logo-img img {
   max-width: 100%;
   width: 100%;

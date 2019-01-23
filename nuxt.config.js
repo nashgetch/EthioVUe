@@ -104,6 +104,9 @@ module.exports = {
     },
     {
       src: '~plugins/vue-lazyload'
+    },{
+      src: '~plugins/vue-slick',
+      ssr: false
     },
     {
       src: '~plugins/ga.js',
