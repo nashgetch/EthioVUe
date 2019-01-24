@@ -460,11 +460,11 @@ export default {
     // single.cat_name = sing_cn.category_name;
 
     return {
-      recommended: [...recommended_videos.data],
+      recommended: [],  //...recommended_videos.data
       owned: [],
       pos_url: "https://video2.vixtream.net",
       cUrl: "https://video2.vixtream.net/vod/v/" + single_data.data.v_id,
-      single: single,
+      single: single_data.data,
       owner: {},
       likes: 0,
       com: "",
