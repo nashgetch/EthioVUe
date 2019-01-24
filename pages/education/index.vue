@@ -1,5 +1,6 @@
 <template>
   <div style="padding-top: 6rem;" class="content-wrapper">
+
     <div class="nash">
       <input
         type="text"
@@ -13,6 +14,9 @@
       <label for="name">
         <span style="font-size: 17px;">Search for your Favorite Channel here.</span>
       </label>
+    </div>
+    <div>
+      <adsbygoogle :ad-slot="'5950915078'" />
     </div>
     <div class="row">
       <div class="container mt-2">
@@ -73,6 +77,22 @@
   text-overflow: ellipsis;
   width: 100%;
   display: block;
+}
+.nashians {
+  width: 320px !important;
+  height: 100px !important;
+}
+@media (min-width: 500px) {
+  .nashians {
+    width: 468px !important;
+    height: 60px !important;
+  }
+}
+@media (min-width: 800px) {
+  .nashians {
+    width: 728px !important;
+    height: 90px !important;
+  }
 }
 </style>
 
