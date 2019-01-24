@@ -287,12 +287,10 @@
             </div>
           </div>
         </div>
-      </div>
-      <no-ssr>
-        <div class="nashian">
+        <div class="nashian" v-if="isReady">
           <adsbygoogle :ad-slot="'5950915078'"/>
         </div>
-      </no-ssr>
+      </div>
     </div>
   </div>
 </template>
@@ -465,6 +463,7 @@ export default {
     // let sing_views = await getViews(single_data.data.v_id);
     let single = single_data.data;
     single.cat_name = sing_cn.category_name;
+
     // single.views = sing_views;
     return {
       recommended: [...recommended_videos.data],
@@ -479,7 +478,8 @@ export default {
       isRe: false,
       rep: "",
       setTab: "",
-      dislikes: 0
+      dislikes: 0,
+      isReady: false
     };
   },
   mounted: function() {
@@ -526,6 +526,9 @@ export default {
     });
     axios.post(base_url + "/countDislike/" + this.single.v_id).then(res => {
       return (this.dislikes = res.data);
+    });
+    this.$nextTick(function() {
+      this.isReady = true;
     });
   },
   created() {}
