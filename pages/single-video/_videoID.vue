@@ -17,13 +17,13 @@
         <div class="content-wrapper" style="margin: 0 !important;">
           <h1 style="font-size: 15px !important; padding-top: 7px;">
             {{ single.title }}
-            <ViewCatogs
+            <!-- <ViewCatogs
               :isSingle="true"
               :vid="single.v_id"
               :cat_id="single.category_id"
               :title_en="single.title_en"
               :title_am_ph="single.am_en_ph"
-            />
+            /> -->
           </h1>
         </div>
         <div class="nashians">
