@@ -26,7 +26,9 @@
             />
           </h1>
         </div>
-
+        <div class="nashians">
+          <adsbygoogle :ad-slot="'5950915078'"/>
+        </div>
         <div class="content-wrapper">
           <!-- The Author Part -->
           <div class="author">
@@ -491,40 +493,39 @@ export default {
     //   recaptchaScript.setAttribute("src", "/js/ads.js");
     //   document.body.appendChild(adsScript);
     // }
-
-    let mydata = [];
-    axios
-      .post(
-        base_url +
-          "/byOwner/" +
-          this.single.publisher_id +
-          "/" +
-          this.single.v_id
-      )
-      .then(resp => {
-        loop(resp.data).then(data => {
-          this.owned = data;
-        });
-      });
-    axios
-      .post(base_url + "/video_owner/" + this.single.publisher_id)
-      .then(res => {
-        this.owner = res.data;
-        axios.post(base_url + "/countSub/" + this.owner.id).then(res => {
-          this.owner.subs = res.data;
-        });
-      });
-    axios.post(base_url + "/countLike/" + this.single.v_id).then(res => {
-      return (this.likes = res.data);
-    });
-    axios.post(base_url + "/fetchComments/" + this.single.v_id).then(res => {
-      loops(res.data).then(data => {
-        this.comments = data;
-      });
-    });
-    axios.post(base_url + "/countDislike/" + this.single.v_id).then(res => {
-      return (this.dislikes = res.data);
-    });
+    // let mydata = [];
+    // axios
+    //   .post(
+    //     base_url +
+    //       "/byOwner/" +
+    //       this.single.publisher_id +
+    //       "/" +
+    //       this.single.v_id
+    //   )
+    //   .then(resp => {
+    //     loop(resp.data).then(data => {
+    //       this.owned = data;
+    //     });
+    //   });
+    // axios
+    //   .post(base_url + "/video_owner/" + this.single.publisher_id)
+    //   .then(res => {
+    //     this.owner = res.data;
+    //     axios.post(base_url + "/countSub/" + this.owner.id).then(res => {
+    //       this.owner.subs = res.data;
+    //     });
+    //   });
+    // axios.post(base_url + "/countLike/" + this.single.v_id).then(res => {
+    //   return (this.likes = res.data);
+    // });
+    // axios.post(base_url + "/fetchComments/" + this.single.v_id).then(res => {
+    //   loops(res.data).then(data => {
+    //     this.comments = data;
+    //   });
+    // });
+    // axios.post(base_url + "/countDislike/" + this.single.v_id).then(res => {
+    //   return (this.dislikes = res.data);
+    // });
   },
   created() {}
 };
@@ -669,6 +670,22 @@ async function getUsername(user_id) {
     line-height: 26px; /* fallback */
     max-height: 62px; /* fallback */
     -webkit-line-clamp: 2; /* number of lines to show */
+  }
+}
+.nashians {
+  width: 320px !important;
+  height: 100px !important;
+}
+@media (min-width: 500px) {
+  .nashians {
+    width: 468px !important;
+    height: 60px !important;
+  }
+}
+@media (min-width: 800px) {
+  .nashians {
+    width: 728px !important;
+    height: 90px !important;
   }
 }
 </style>
