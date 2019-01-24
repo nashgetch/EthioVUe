@@ -1,9 +1,6 @@
 
 <template >
   <div>
-    <div class="nashians">
-      <adsbygoogle :ad-slot="'5950915078'"/>
-    </div>
     <div style="padding-top: 6rem;" id="nas">
       <div class="container parentDiv">
         <h5 style="margin-bottom: 16px;">Watch Later Videos</h5>

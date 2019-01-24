@@ -1,8 +1,5 @@
 <template>
   <div style="padding-top: 6rem;" class="content-wrapper">
-    <div class="nashians">
-      <adsbygoogle :ad-slot="'5950915078'"/>
-    </div>
     <!-- <div class="bars">
       <input type="text" v-model="searchString" placeholder="Search Channels here...">
     </div>-->
@@ -20,6 +17,9 @@
         <label for="name">
           <span style="font-size: 17px;">Search for your Favorite Channel here.</span>
         </label>
+      </div>
+      <div class="nashians">
+        <adsbygoogle :ad-slot="'5950915078'"/>
       </div>
       <div class="container mt-2">
         <div class="row mt-3 display-flex">
