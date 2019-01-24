@@ -91,11 +91,11 @@ export default {
     //   return (this.views = res.data);
     // });
 
-    if (!this.isSingle && this.cat_id) {
-      axios.post(base_url + "/return_cat/" + this.cat_id).then(res => {
-        return (this.catName = res.data[0].category_name);
-      });
-    }
+    // if (!this.isSingle && this.cat_id) {
+    //   axios.post(base_url + "/return_cat/" + this.cat_id).then(res => {
+    //     return (this.catName = res.data[0].category_name);
+    //   });
+    // }
   }
 };
 </script>
