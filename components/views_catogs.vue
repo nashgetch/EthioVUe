@@ -32,9 +32,7 @@
         >{{title_en+" || " +title_am_ph}}</a>
       </h1>
     </div>
-     <div class="nashians">
-       <adsbygoogle :ad-slot="'5950915078'"/>
-     </div>
+
     <no-ssr placeholder="Loading ..." v-if="!isIndex && !isSingle">
       <small style="color: #7e7e7e; font-size: 12px; font-weight: bold;">
         <i class="fa fa-angle-double-right" style="color: #d59541;"></i>
