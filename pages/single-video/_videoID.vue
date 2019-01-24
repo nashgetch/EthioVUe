@@ -30,8 +30,8 @@
           <adsbygoogle :ad-slot="'5950915078'"/>
         </div>
         <div class="content-wrapper">
-          <!-- The Author Part -->
-          <div class="author">
+
+          <!-- <div class="author">
             <div class="author-head">
               <a :href="'/single-channel/'+owner.id">
                 <img
@@ -132,7 +132,7 @@
             </div>
 
             <div class="clearfix"></div>
-          </div>
+          </div> -->
           <!-- End of The Author Part -->
           <div class="info">
             <div>
@@ -141,20 +141,14 @@
               <p>{{single.description}}</p>
             </div>
           </div>
-          <div class="fikir-vids">
+          <!-- <div class="fikir-vids">
             <div class="row">
               <div class="col-lg-3 col-sm-6 col-xs-12" v-for="(pub,$index) in owned" :key="$index">
                 <div class="nash-vids row">
                   <div class="col-sm-12 col-xs-6">
                     <div class="Vimg itemContainer" style="background-color: black;">
-                      <!-- <clazy-load :src="pos_url+'/'+pub.filename">
-                        <div
-                          slot="placeholder"
-                          class="bg-inverse"
-                          style="background-color: black; height:200px;"
-                      ></div>-->
+
                       <video class="imgur" :poster="pos_url+'/'+pub.filename2" :alt="pub.title"></video>
-                      <!-- </clazy-load> -->
                       <a :href="'/single-video/'+pub.v_id">
                         <div ng-click="viewVideo(pub.v_id)" class="play">
                           <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
@@ -186,8 +180,8 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="comments" ng-controller="navController">
+          </div> -->
+          <!-- <div class="comments" ng-controller="navController">
             <div class="reply-comment" ng-controller="videoController" v-if="loggedIn">
               <div class="rc-header">
                 <i class="cv cvicon-cv-comment"></i>
@@ -232,11 +226,11 @@
                 <div class="clearfix"></div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
-        <!-- right column -->
+
       </div>
-      <div class="col-sm-12 col-lg-4 d-none d-lg-block">
+      <!-- <div class="col-sm-12 col-lg-4 d-none d-lg-block">
         <div class="caption">
           <div class="left">
             <a>
@@ -283,13 +277,13 @@
                     :created_at="re.created_at"
                   />
                 </a>
-                <!-- <small>{{single.cat_name}}</small> -->
+
               </div>
               <div class="clearfix"></div>
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -453,18 +447,18 @@ export default {
     let single_data = await axios.post(
       base_url + "/single_video/" + context.params.videoID
     );
-    let recommended_videos = await axios.post(
-      base_url +
-        "/recommended/" +
-        single_data.data.category_id +
-        "/" +
-        single_data.data.v_id
-    );
-    let sing_cn = await getCatname(single_data.data.category_id);
-    // let sing_views = await getViews(single_data.data.v_id);
-    let single = single_data.data;
-    single.cat_name = sing_cn.category_name;
-    // single.views = sing_views;
+    // let recommended_videos = await axios.post(
+    //   base_url +
+    //     "/recommended/" +
+    //     single_data.data.category_id +
+    //     "/" +
+    //     single_data.data.v_id
+    // );
+    // let sing_cn = await getCatname(single_data.data.category_id);
+
+    // let single = single_data.data;
+    // single.cat_name = sing_cn.category_name;
+
     return {
       recommended: [...recommended_videos.data],
       owned: [],
