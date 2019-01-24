@@ -1,8 +1,6 @@
 <template>
   <div style="margin-top: 6rem; position: relative;">
-     <div class="nashians">
-      <adsbygoogle :ad-slot="'5950915078'"/>
-    </div>
+
     <div id="processing" class="text-center" style="background-color: white; font-weight:500; font-size: 35px;">
        Search Results
     </div>
