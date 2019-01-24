@@ -1,5 +1,8 @@
 <template>
   <div style="padding-top: 6rem;" class="content-wrapper">
+    <div class="nashians">
+      <adsbygoogle :ad-slot="'5950915078'"/>
+    </div>
     <div class="nash">
       <input
         type="text"
@@ -14,7 +17,6 @@
         <span style="font-size: 17px;">Search for your Favorite Channel here.</span>
       </label>
     </div>
-
 
     <div class="row">
       <div class="container mt-2">
@@ -335,5 +337,4 @@ textarea.question:invalid ~ input[type="submit"] {
     opacity: 1;
   }
 }
-
 </style>

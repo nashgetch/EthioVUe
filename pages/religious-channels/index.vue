@@ -1,5 +1,8 @@
 <template>
   <div style="padding-top: 6rem;" class="content-wrapper">
+    <div class="nashians">
+      <adsbygoogle :ad-slot="'5950915078'"/>
+    </div>
     <!-- <div class="bars">
       <input type="text" v-model="searchString" placeholder="Search Channels here...">
     </div>-->

@@ -1312,3 +1312,35 @@ img {
 a {
   color: #d59541;
 }
+.nashian {
+  width: 200px !important;
+  height: 200px !important;
+}
+@media (min-width: 500px) {
+  .nashian {
+    width: 300px !important;
+    height: 250px !important;
+  }
+}
+@media (min-width: 800px) {
+  .nashian {
+    width: 336px !important;
+    height: 280px !important;
+  }
+}
+.nashians {
+  width: 320px !important;
+  height: 100px !important;
+}
+@media (min-width: 500px) {
+  .nashians {
+    width: 468px !important;
+    height: 60px !important;
+  }
+}
+@media (min-width: 800px) {
+  .nashians {
+    width: 728px !important;
+    height: 90px !important;
+  }
+}

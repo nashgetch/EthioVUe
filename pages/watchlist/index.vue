@@ -1,6 +1,9 @@
 
 <template >
   <div>
+    <div class="nashians">
+      <adsbygoogle :ad-slot="'5950915078'"/>
+    </div>
     <div style="padding-top: 6rem;" id="nas">
       <div class="container parentDiv">
         <h5 style="margin-bottom: 16px;">Watch Later Videos</h5>
@@ -15,12 +18,12 @@
               <div class="Vimg itemContainer" style="opacity: 1;background-color: black;">
                 <a :href="'/single-video/' + video.v_id">
                   <!-- <clazy-load :src="'//video2.vixtream.net/'+video.filename"> -->
-                    <!-- <div
+                  <!-- <div
                       slot="placeholder"
                       class="bg-inverse"
                       style="background-color: black; height:200px;"
-                    ></div> -->
-                    <video :poster="'//video2.vixtream.net/'+video.filename" :alt="video.title"></video>
+                  ></div>-->
+                  <video :poster="'//video2.vixtream.net/'+video.filename" :alt="video.title"></video>
                   <!-- </clazy-load> -->
                   <div class="play">
                     <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
@@ -33,9 +36,14 @@
                   <a class="hideOverflow" :href="'single-video/' + video.v_id">{{video.title}}</a>
                 </h1>
               </div>
-             <ViewCatogs :vid="video.v_id"
-             :cat_id="video.category_id" :created_at="video.created_at"
-             :isIndex="true" :title_en="video.title_en" :view_count="video.view_count" />
+              <ViewCatogs
+                :vid="video.v_id"
+                :cat_id="video.category_id"
+                :created_at="video.created_at"
+                :isIndex="true"
+                :title_en="video.title_en"
+                :view_count="video.view_count"
+              />
             </div>
           </div>
           <div></div>
@@ -47,15 +55,14 @@
 <script>
 import ViewCatogs from "@/components/views_catogs";
 export default {
-head() {
+  head() {
     return {
       title: "Ethiov - Watchlist",
       meta: [
         {
           hid: "description",
           name: "description",
-          content:
-            "Your Watchlist"
+          content: "Your Watchlist"
         }
       ]
     };
@@ -65,7 +72,7 @@ head() {
       my_watch: []
     };
   },
-  components: {ViewCatogs},
+  components: { ViewCatogs },
   mounted() {
     this.$axios.post("/my_watchlist/" + this.user.id).then(res => {
       return (this.my_watch = [...res.data]);
