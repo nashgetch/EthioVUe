@@ -20,10 +20,11 @@
       </div>
 
       <div class="container mt-2">
-        <div class="row mt-3 display-flex">
-          <div class="nashians">
+         <div class="nashians">
             <adsbygoogle :ad-slot="'5950915078'"/>
           </div>
+        <div class="row mt-3 display-flex">
+
           <div
             class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
             v-for="(tv,$index) in tvs"
