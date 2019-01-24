@@ -2,7 +2,7 @@
   <div class="container" style="padding-top: 6.5rem;">
     <div class="row rowDiv">
       <div class="col-lg-8 col-xs-12 col-sm-12">
-        <!-- <div id="iframe1" class="video-container">
+        <div id="iframe1" class="video-container">
           <iframe
             id="inash"
             class="iframe"
@@ -13,7 +13,7 @@
             allowfullscreen
             allow-scripts
           ></iframe>
-        </div>-->
+        </div>
         <div class="content-wrapper" style="margin: 0 !important;">
           <h1 style="font-size: 15px !important; padding-top: 7px;">
             {{ single.title }}
@@ -26,9 +26,7 @@
             />
           </h1>
         </div>
-        <div class="nashians">
-          <adsbygoogle :ad-slot="'5950915078'"/>
-        </div>
+
         <div class="content-wrapper">
           <!-- The Author Part -->
           <div class="author">
@@ -290,6 +288,9 @@
           </div>
         </div>
       </div>
+      <div class="nashian">
+          <adsbygoogle :ad-slot="'5950915078'"/>
+        </div>
     </div>
   </div>
 </template>
@@ -663,20 +664,20 @@ async function getUsername(user_id) {
     -webkit-line-clamp: 2; /* number of lines to show */
   }
 }
-.nashians {
-  width: 320px !important;
-  height: 100px !important;
+.nashian {
+  width: 200px !important;
+  height: 200px !important;
 }
 @media (min-width: 500px) {
-  .nashians {
-    width: 468px !important;
-    height: 60px !important;
+  .nashian {
+    width: 300px !important;
+    height: 250px !important;
   }
 }
 @media (min-width: 800px) {
-  .nashians {
-    width: 728px !important;
-    height: 90px !important;
+  .nashian {
+    width: 336px !important;
+    height: 280px !important;
   }
 }
 </style>

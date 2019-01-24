@@ -1,9 +1,14 @@
 <template>
   <div>
     <div v-if="isIndex">
-      <i class="fa fa-language" @click="show_en=!show_en" style="font-size: 19px;color: #d59541;" ></i>
+      <i class="fa fa-language" @click="show_en=!show_en" style="font-size: 19px;color: #d59541;"></i>
       <h1 v-show="show_en" style="font-size: 10px !important;">
-        <a :href="'/single-video/' + vid" class="hideOverflow" :aria-label="title_en" :title="title_en">{{title_en}}</a>
+        <a
+          :href="'/single-video/' + vid"
+          class="hideOverflow"
+          :aria-label="title_en"
+          :title="title_en"
+        >{{title_en}}</a>
       </h1>
       <small style="font-size: 12px; color: black;">
         <i class="fa fa-angle-double-right" style="color: #d59541;"></i>
@@ -27,7 +32,9 @@
         >{{title_en+" || " +title_am_ph}}</a>
       </h1>
     </div>
-
+     <div class="nashians">
+       <adsbygoogle :ad-slot="'5950915078'"/>
+     </div>
     <no-ssr placeholder="Loading ..." v-if="!isIndex && !isSingle">
       <small style="color: #7e7e7e; font-size: 12px; font-weight: bold;">
         <i class="fa fa-angle-double-right" style="color: #d59541;"></i>
@@ -87,7 +94,7 @@ export default {
     };
   },
   mounted: function() {
-    axios.post(base_url+"/return_view/" + this.vid).then(res => {
+    axios.post(base_url + "/return_view/" + this.vid).then(res => {
       return (this.views = res.data);
     });
 
@@ -99,3 +106,21 @@ export default {
   }
 };
 </script>
+<style>
+.nashians {
+  width: 320px !important;
+  height: 100px !important;
+}
+@media (min-width: 500px) {
+  .nashians {
+    width: 468px !important;
+    height: 60px !important;
+  }
+}
+@media (min-width: 800px) {
+  .nashians {
+    width: 728px !important;
+    height: 90px !important;
+  }
+}
+</style>
