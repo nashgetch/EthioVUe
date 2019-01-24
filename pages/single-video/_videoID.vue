@@ -483,39 +483,39 @@ export default {
     //   recaptchaScript.setAttribute("src", "/js/ads.js");
     //   document.body.appendChild(adsScript);
     // }
-    // let mydata = [];
-    // axios
-    //   .post(
-    //     base_url +
-    //       "/byOwner/" +
-    //       this.single.publisher_id +
-    //       "/" +
-    //       this.single.v_id
-    //   )
-    //   .then(resp => {
-    //     loop(resp.data).then(data => {
-    //       this.owned = data;
-    //     });
-    //   });
-    // axios
-    //   .post(base_url + "/video_owner/" + this.single.publisher_id)
-    //   .then(res => {
-    //     this.owner = res.data;
-    //     axios.post(base_url + "/countSub/" + this.owner.id).then(res => {
-    //       this.owner.subs = res.data;
-    //     });
-    //   });
-    // axios.post(base_url + "/countLike/" + this.single.v_id).then(res => {
-    //   return (this.likes = res.data);
-    // });
-    // axios.post(base_url + "/fetchComments/" + this.single.v_id).then(res => {
-    //   loops(res.data).then(data => {
-    //     this.comments = data;
-    //   });
-    // });
-    // axios.post(base_url + "/countDislike/" + this.single.v_id).then(res => {
-    //   return (this.dislikes = res.data);
-    // });
+    let mydata = [];
+    axios
+      .post(
+        base_url +
+          "/byOwner/" +
+          this.single.publisher_id +
+          "/" +
+          this.single.v_id
+      )
+      .then(resp => {
+        loop(resp.data).then(data => {
+          this.owned = data;
+        });
+      });
+    axios
+      .post(base_url + "/video_owner/" + this.single.publisher_id)
+      .then(res => {
+        this.owner = res.data;
+        axios.post(base_url + "/countSub/" + this.owner.id).then(res => {
+          this.owner.subs = res.data;
+        });
+      });
+    axios.post(base_url + "/countLike/" + this.single.v_id).then(res => {
+      return (this.likes = res.data);
+    });
+    axios.post(base_url + "/fetchComments/" + this.single.v_id).then(res => {
+      loops(res.data).then(data => {
+        this.comments = data;
+      });
+    });
+    axios.post(base_url + "/countDislike/" + this.single.v_id).then(res => {
+      return (this.dislikes = res.data);
+    });
   },
   created() {}
 };
