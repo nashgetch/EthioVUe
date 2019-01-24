@@ -67,9 +67,7 @@
         </div>
       </div>
     </div>
-    <div class="adblock">
-      <adsbygoogle :ad-slot="'5950915078'"/>
-    </div>
+    
     <Live :videos="videos" :channel="channel" v-if="checkTab(1)"/>
     <Vods :videos="videos" v-else-if="checkTab(2)"/>
     <Ivods :videos="videos" :channel="channel" v-else/>

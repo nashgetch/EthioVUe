@@ -18,7 +18,6 @@
             <a>{{channel.tv_name}}</a>
           </h1>
           <!-- Ads block -->
-
           <div class="content-wrapper">
             <div class="left mb-2">
               <a>Similar Videos</a>
@@ -50,18 +49,22 @@
                       </div>
                       <div class="col-12 col-sm-12 ml-3">
                         <div class="descr">
-                          <a style="text-decoration: none;"
+                          <a
+                            style="text-decoration: none;"
                             :href="'/single-video/' + video.v_id"
                             class="hideOverflow"
                             :aria-label="video.title"
                             :title="video.title"
                           >{{video.title}}</a>
                         </div>
-                          <a style="text-decoration: none;"
-                            >
-                        <ViewCatogs :vid="video.v_id"
-                        :cat_id="video.category_id" :view_count="video.view_count"
-                        :created_at="video.created_at" /></a>
+                        <a style="text-decoration: none;">
+                          <ViewCatogs
+                            :vid="video.v_id"
+                            :cat_id="video.category_id"
+                            :view_count="video.view_count"
+                            :created_at="video.created_at"
+                          />
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -74,7 +77,6 @@
           <!-- up next -->
           <div class>
             <div class="caption">
-
               <div class="left">
                 <a>
                   <h5 style="font-size: 22px;font-weight: 300;">Other Channels</h5>
@@ -105,6 +107,9 @@
                 </div>
                 <div class="clearfix"></div>
               </div>
+              <div class="nashian">
+                <adsbygoogle :ad-slot="'5950915078'"/>
+              </div>
             </div>
           </div>
         </div>
@@ -120,8 +125,7 @@ import ViewCatogs from "@/components/views_catogs";
 const base_url = "https://ethiov.com/api";
 export default {
   components: {
-    ViewCatogs,
-
+    ViewCatogs
   },
   props: {
     videos: {
@@ -236,13 +240,13 @@ export default {
   }
 }
 .text {
-   overflow: hidden;
-   text-overflow: ellipsis;
-   display: -webkit-box;
-   line-height: 16px;     /* fallback */
-   max-height: 32px;      /* fallback */
-   -webkit-line-clamp: 2; /* number of lines to show */
-   -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 16px; /* fallback */
+  max-height: 32px; /* fallback */
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
 }
 @media (max-width: 500px) {
   .nashiwwa {
@@ -283,6 +287,22 @@ export default {
   .row {
     margin-right: -37px;
     margin-left: -15px;
+  }
+}
+.nashian {
+  width: 200px !important;
+  height: 200px !important;
+}
+@media (min-width: 500px) {
+  .nashian {
+    width: 300px !important;
+    height: 250px !important;
+  }
+}
+@media (min-width: 800px) {
+  .nashian {
+    width: 336px !important;
+    height: 280px !important;
   }
 }
 </style>
