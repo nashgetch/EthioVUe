@@ -1,9 +1,7 @@
 <template>
   <div>
     <div class="container">
-      <div class="adblock">
-        <adsbygoogle :ad-slot="'5950915078'" />
-      </div>
+
       <FeaturedVideos></FeaturedVideos>
       <!-- <div class="container parentDiv"> -->
       <PopularVideos></PopularVideos>
