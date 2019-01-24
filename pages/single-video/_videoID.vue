@@ -26,10 +26,9 @@
             />
           </h1>
         </div>
-        <!-- <div class="nashians">
-          <adsbygoogle :ad-slot="'5950915078'"/>
-        </div> -->
+
         <div class="content-wrapper">
+          <!-- The Author Part -->
           <div class="author">
             <div class="author-head">
               <a :href="'/single-channel/'+owner.id">
@@ -146,7 +145,14 @@
                 <div class="nash-vids row">
                   <div class="col-sm-12 col-xs-6">
                     <div class="Vimg itemContainer" style="background-color: black;">
+                      <!-- <clazy-load :src="pos_url+'/'+pub.filename">
+                        <div
+                          slot="placeholder"
+                          class="bg-inverse"
+                          style="background-color: black; height:200px;"
+                      ></div>-->
                       <video class="imgur" :poster="pos_url+'/'+pub.filename2" :alt="pub.title"></video>
+                      <!-- </clazy-load> -->
                       <a :href="'/single-video/'+pub.v_id">
                         <div ng-click="viewVideo(pub.v_id)" class="play">
                           <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
@@ -226,6 +232,7 @@
             </div>
           </div>
         </div>
+        <!-- right column -->
       </div>
       <div class="col-sm-12 col-lg-4 d-none d-lg-block">
         <div class="caption">
@@ -274,6 +281,7 @@
                     :created_at="re.created_at"
                   />
                 </a>
+                <!-- <small>{{single.cat_name}}</small> -->
               </div>
               <div class="clearfix"></div>
             </div>
@@ -290,7 +298,6 @@ import ViewCatogs from "@/components/views_catogs";
 // import Tallads from "@/components/adsComponents/tall_ads";
 import Replies from "@/components/replies/replies";
 import axios from "axios";
-
 const base_url = "https://ethiov.com/api";
 export default {
   head() {
@@ -423,7 +430,6 @@ export default {
         this.$toast.error("Sign in To Like or Dislike Video");
       }
     },
-
     addComments(user_id, v_id) {
       axios
         .post(base_url + "/comment/" + user_id + "/" + v_id, {
@@ -451,12 +457,12 @@ export default {
         single_data.data.v_id
     );
     let sing_cn = await getCatname(single_data.data.category_id);
-
+    // let sing_views = await getViews(single_data.data.v_id);
     let single = single_data.data;
     single.cat_name = sing_cn.category_name;
-
+    // single.views = sing_views;
     return {
-      recommended: [recommended_videos.data], //...recommended_videos.data
+      recommended: [...recommended_videos.data],
       owned: [],
       pos_url: "https://video2.vixtream.net",
       cUrl: "https://video2.vixtream.net/vod/v/" + single_data.data.v_id,
@@ -549,7 +555,6 @@ async function loops(params) {
     // });
     main_array.push(temp);
   }
-
   return main_array;
 }
 async function get_single_comment(params) {
@@ -557,14 +562,12 @@ async function get_single_comment(params) {
   temp = params;
   let cat = await getUsername(params.user_id);
   temp.cat_name = cat.name;
-
   return temp;
 }
 async function getCatname(v_id) {
   let t_resp = await axios.post(base_url + "/return_cat/" + v_id);
   return t_resp.data[0];
 }
-
 // async function getViews(v_id) {
 //   let t_resp = await axios.post(base_url + "/return_view/" + v_id);
 //   return t_resp.data;
@@ -580,10 +583,8 @@ async function getUsername(user_id) {
   position: relative;
   /* padding-bottom: 56.25%; */
   padding-top: 56.25%;
-
   overflow: hidden;
 }
-
 .video-container iframe {
   position: absolute;
   top: 0;
@@ -591,7 +592,6 @@ async function getUsername(user_id) {
   width: 100%;
   height: 100%;
 }
-
 @media (min-width: 500px) {
   .video-container {
     padding-top: 63.25% !important;
@@ -606,7 +606,6 @@ async function getUsername(user_id) {
   margin-right: auto;
   margin-left: auto;
 }
-
 @media (min-width: 300px) and (max-width: 768px) {
   .imgur {
     max-width: 250px;
@@ -662,21 +661,4 @@ async function getUsername(user_id) {
     -webkit-line-clamp: 2; /* number of lines to show */
   }
 }
-.nashians {
-  width: 320px !important;
-  height: 100px !important;
-}
-@media (min-width: 500px) {
-  .nashians {
-    width: 468px !important;
-    height: 60px !important;
-  }
-}
-@media (min-width: 800px) {
-  .nashians {
-    width: 728px !important;
-    height: 90px !important;
-  }
-}
 </style>
-
