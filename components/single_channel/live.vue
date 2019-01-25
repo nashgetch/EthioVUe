@@ -20,10 +20,10 @@
 
           <!-- Ads block -->
           <div class="content-wrapper">
-             <div class="nashians" v-if="videos.length < 4">
+            <div class="nashians" v-if="videos.length < 4">
               <adsbygoogle :ad-slot="'5950915078'"/>
             </div>
-            <div class="left mb-2">
+            <div class="rophy left mb-2">
               <a>Similar Videos</a>
             </div>
             <div class="clearfix"></div>
@@ -230,6 +230,11 @@ export default {
 @media (max-width: 500px) {
   .video-container {
     padding-top: 19.25% !important;
+  }
+}
+@media (max-width: 500px) {
+  .rophy {
+    margin-top: 214px;
   }
 }
 @media (max-width: 500px) {
