@@ -19,6 +19,9 @@
           </h1>
           <!-- Ads block -->
           <div class="content-wrapper">
+            <div class="nashians d-none d-sm-block" v-if="videos.length < 5">
+              <adsbygoogle :ad-slot="'5950915078'"/>
+            </div>
             <div class="left mb-2">
               <a>Similar Videos</a>
             </div>
@@ -26,9 +29,6 @@
 
             <div class="single-v-footer">
               <div class="similar-v single-video video-mobile-02">
-                <div class="nashians  d-none d-sm-block" v-if="videos.length < 5">
-                  <adsbygoogle :ad-slot="'5950915078'"/>
-                </div>
                 <div class="row">
                   <div
                     class="col-12 col-lg-3 col-sm-6"
