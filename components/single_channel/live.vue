@@ -18,7 +18,7 @@
             <a>{{channel.tv_name}}</a>
           </h1>
           <!-- Ads block -->
-          <!-- <div class="content-wrapper">
+          <div class="content-wrapper">
             <div class="left mb-2">
               <a>Similar Videos</a>
             </div>
@@ -71,10 +71,12 @@
                 </div>
               </div>
             </div>
-          </div> -->
+          </div>
         </div>
         <div class="col-lg-4 d-none d-lg-block mt-3">
-          <!-- up next -->
+          <div class="nashian" v-if="videos.length < 4">
+            <adsbygoogle :ad-slot="'5950915078'"/>
+          </div>
           <div class>
             <div class="caption">
               <div class="left">
@@ -106,9 +108,6 @@
                   <div class="views" style="padding-left:4px;">{{tv.tags}}</div>
                 </div>
                 <div class="clearfix"></div>
-              </div>
-              <div class="nashian">
-                <adsbygoogle :ad-slot="'5950915078'"/>
               </div>
             </div>
           </div>
