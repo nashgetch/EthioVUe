@@ -5,7 +5,7 @@
         <img src="/img/back.jpeg" alt>
       </div>
       <div class="ch-logo-img">
-        <img :src="'https://video2.vixtream.net'+channel.poster_image" alt>
+        <img :src="'//video2.vixtream.net'+channel.poster_image" alt>
       </div>
       <div class="ch-social-links d-inline-flex flex-row">
         <div class="social-icons-container mt-2 ml-4 d-flex">
@@ -119,7 +119,7 @@ export default {
         {
           hid: "og:image",
           property: "og:image",
-          content: "https://video2.vixtream.net" + this.channel.poster_image
+          content: "//video2.vixtream.net" + this.channel.poster_image
         },
         {
           hid: "og:type",
@@ -150,7 +150,7 @@ export default {
         {
           hid: "twitter:image",
           property: "twitter:image",
-          content: "https://video2.vixtream.net" + this.channel.poster_image
+          content: "//video2.vixtream.net" + this.channel.poster_image
         },
         {
           hid: "twitter:type",

@@ -8,7 +8,7 @@
               class="iframe"
               width="720"
               height="405"
-              :src="'https://video2.vixtream.net/tv/v/'+channel.chn"
+              :src="'//video2.vixtream.net/tv/v/'+channel.chn"
               frameborder="0"
               allowfullscreen
               allow-scripts
@@ -41,7 +41,7 @@
                           <a :href="'/single-video/'+video.v_id">
                             <video
                               class="imgur1"
-                              :poster="'https://video2.vixtream.net/'+video.filename2"
+                              :poster="'//video2.vixtream.net/'+video.filename2"
                             ></video>
                             <div ng-click="viewVideo(video.v_id)" class="play">
                               <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
@@ -96,7 +96,7 @@
                     <a :href="'/single-channel/'+tv.id">
                       <img
                         class="imgur"
-                        :src="'https://video2.vixtream.net'+tv.poster_image"
+                        :src="'//video2.vixtream.net'+tv.poster_image"
                         :alt="tv.tv_name"
                       >
                     </a>

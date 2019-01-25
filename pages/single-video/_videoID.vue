@@ -25,6 +25,9 @@
               :title_am_ph="single.am_en_ph"
             />
           </h1>
+          <div class="nashian" v-if="videos.length < 4">
+            <adsbygoogle :ad-slot="'5950915078'"/>
+          </div>
         </div>
 
         <div class="content-wrapper">
@@ -286,9 +289,6 @@
               <div class="clearfix"></div>
             </div>
           </div>
-        </div>
-        <div class="nashian" v-if="isReady">
-          <adsbygoogle :ad-slot="'5950915078'"/>
         </div>
       </div>
     </div>
