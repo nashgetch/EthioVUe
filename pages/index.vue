@@ -31,7 +31,7 @@
             </div>
 
             <div class="col-lg-2 col-sm-3 col-3">
-              <a href="/single-channel/115">
+              <a href="/single-channel/567">
                 <div class="chn-image-container index m-0">
                   <img class="avicii" src="/img/walta_posters.jpg" alt="Walta TV">
                 </div>
