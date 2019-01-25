@@ -19,7 +19,7 @@
           </h1>
           <!-- Ads block -->
           <div class="content-wrapper">
-            <div class="nashians d-none d-sm-block" >
+            <div class="nashians" v-if="videos.length < 4">
               <adsbygoogle :ad-slot="'5950915078'"/>
             </div>
             <div class="left mb-2">
@@ -61,12 +61,12 @@
                           >{{video.title}}</a>
                         </div>
                         <a style="text-decoration: none;">
-                          <!-- <ViewCatogs
+                          <ViewCatogs
                             :vid="video.v_id"
                             :cat_id="video.category_id"
                             :view_count="video.view_count"
                             :created_at="video.created_at"
-                          /> -->
+                          />
                         </a>
                       </div>
                     </div>
