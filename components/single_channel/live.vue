@@ -17,7 +17,7 @@
           <h1 :class="marginTop(channel.owner_id)" class="display-4" style="font-size:1rem">
             <a>{{channel.tv_name}}</a>
           </h1>
-           <div class="nashian" v-if="videos.length < 4">
+           <div class="nashianso" v-if="videos.length < 4">
               <adsbygoogle :ad-slot="'5950915078'"/>
             </div>
           <!-- Ads block -->
@@ -292,20 +292,20 @@ export default {
     margin-left: -15px;
   }
 }
-.nashian {
-  width: 200px !important;
-  height: 200px !important;
+.nashianso {
+  width: 320px !important;
+  height: 100px !important;
 }
 @media (min-width: 500px) {
-  .nashian {
-    width: 300px !important;
-    height: 250px !important;
+  .nashianso {
+    width: 468px !important;
+    height: 60px !important;
   }
 }
 @media (min-width: 800px) {
-  .nashian {
-    width: 336px !important;
-    height: 280px !important;
+  .nashianso {
+    width: 728px !important;
+    height: 90px !important;
   }
 }
 </style>
