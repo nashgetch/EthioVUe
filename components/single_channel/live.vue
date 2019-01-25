@@ -19,7 +19,7 @@
           </h1>
           <!-- Ads block -->
           <div class="content-wrapper">
-            <div class="nashians d-none d-sm-block" v-if="videos.length < 5">
+            <div class="nashians d-none d-sm-block" v-if="videos.length < 9">
               <adsbygoogle :ad-slot="'5950915078'"/>
             </div>
             <div class="left mb-2">
