@@ -77,6 +77,15 @@ export default {
       featured: []
     };
   },
+  methods: {
+    add_to_watchlist(user_id, v_id) {
+      axios
+        .post(base_url + "/add_to_watchlist/" + user_id + "/" + v_id)
+        .then(res => {
+          this.$toast.success("The Video is added to Watch Later");
+        });
+    }
+  },
   mounted() {
     // console.log(this.Channel);
     axios.post(base_url + "featured").then(res => (this.featured = res.data));
