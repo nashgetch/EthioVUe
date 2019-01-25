@@ -18,7 +18,7 @@
             <a>{{channel.tv_name}}</a>
           </h1>
           <!-- Ads block -->
-          <div class="content-wrapper">
+          <!-- <div class="content-wrapper">
             <div class="left mb-2">
               <a>Similar Videos</a>
             </div>
@@ -71,7 +71,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="col-lg-4 d-none d-lg-block mt-3">
           <!-- up next -->
