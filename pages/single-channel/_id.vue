@@ -67,7 +67,7 @@
         </div>
       </div>
     </div>
-    
+
     <Live :videos="videos" :channel="channel" v-if="checkTab(1)"/>
     <Vods :videos="videos" v-else-if="checkTab(2)"/>
     <Ivods :videos="videos" :channel="channel" v-else/>
@@ -185,12 +185,12 @@ export default {
     let single_channel = await axios.post(
       base_url + "/single_channel/" + context.params.id
     );
-    let similar_videos = await axios.post(
-      base_url + "/channel_videos/" + single_channel.data.owner_id
-    );
+    // let similar_videos = await axios.post(
+    //   base_url + "/channel_videos/" + single_channel.data.owner_id
+    // );
     return {
       channel: single_channel.data,
-      videos: [...similar_videos.data],
+      videos: [], //...similar_videos.data
       tab: 1,
       tab1Style: {
         active: true,
