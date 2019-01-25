@@ -80,7 +80,7 @@ export default {
   methods: {
     add_to_watchlist(user_id, v_id) {
       axios
-        .post(base_url + "/add_to_watchlist/" + user_id + "/" + v_id)
+        .post(base_url + "add_to_watchlist/" + user_id + "/" + v_id)
         .then(res => {
           this.$toast.success("The Video is added to Watch Later");
         });
