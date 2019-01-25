@@ -26,6 +26,9 @@
 
             <div class="single-v-footer">
               <div class="similar-v single-video video-mobile-02">
+                <div class="nashian  d-none d-sm-block" v-if="videos.length < 5">
+                  <adsbygoogle :ad-slot="'5950915078'"/>
+                </div>
                 <div class="row">
                   <div
                     class="col-12 col-lg-3 col-sm-6"
