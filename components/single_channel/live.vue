@@ -58,7 +58,7 @@
                             class="hideOverflow"
                             :aria-label="video.title"
                             :title="video.title"
-                          >{{video.title}}</a>
+                          >{{video.title_en}}</a>
                         </div>
                         <a style="text-decoration: none;">
                           <ViewCatogs
