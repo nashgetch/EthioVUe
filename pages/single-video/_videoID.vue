@@ -25,7 +25,7 @@
               :title_am_ph="single.am_en_ph"
             />
           </h1>
-          <div class="nashian" v-if="videos.length < 4">
+          <div class="nashian">
             <adsbygoogle :ad-slot="'5950915078'"/>
           </div>
         </div>
