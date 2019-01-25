@@ -17,7 +17,7 @@
           <h1 :class="marginTop(channel.owner_id)" class="display-4" style="font-size:1rem">
             <a>{{channel.tv_name}}</a>
           </h1>
-           <div class="nashians" v-if="videos.length < 4">
+           <div class="nashian" v-if="videos.length < 4">
               <adsbygoogle :ad-slot="'5950915078'"/>
             </div>
           <!-- Ads block -->
