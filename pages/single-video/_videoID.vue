@@ -25,9 +25,9 @@
               :title_am_ph="single.am_en_ph"
             />
           </h1>
-          <!-- <div class="nashian">
+          <div class="nashian">
             <adsbygoogle :ad-slot="'5950915078'"/>
-          </div> -->
+          </div>
         </div>
 
         <div class="content-wrapper">
@@ -319,7 +319,7 @@ export default {
           keywords:
             "Video, " +
             this.single.title_en
-            + ", Ethiopia, Worldwide, live stream, sports, sales, Africa, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
+            + ", Ethiopia, politics, Worldwide, live stream, sports, sales, Africa, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
         },
         {
           hid: "og:title",
