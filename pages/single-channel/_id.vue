@@ -105,7 +105,7 @@ export default {
             this.channel.tv_name +
             ", " +
             this.channel.description +
-            ", Africa, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
+            ", Bethel TV, Africa TV, Evangelical TV, Africa, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
         },
         {
           hid: "og:title",

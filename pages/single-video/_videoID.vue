@@ -319,7 +319,7 @@ export default {
           keywords:
             "Video, " +
             this.single.title_en
-            + ", Ethiopia, politics, Worldwide, live stream, sports, sales, Africa, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
+            + ", Bethel TV, Africa TV, Evangelical TV, Ethiopia, politics, Worldwide, live stream, sports, sales, Africa, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
         },
         {
           hid: "og:title",
