@@ -204,7 +204,7 @@ export default {
           hid: "keywords",
           name: "keywords",
           keywords:
-            "EthioV, Fana TV, Amhara TV, Live Ethiopian Channels, Zena, ኢትዮጵያ, ዜና, Walta, ETV, EBC, Bisrat TV, MEZINAGNA, Entertainment"
+            "Live Channels, Zena, ዜና, Entertainment, Sport, News, Current Afairs, Documentary, IPTV, videos, Africa, Ethiopia"
         },
         {
           hid: "og:title",

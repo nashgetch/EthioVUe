@@ -104,7 +104,8 @@ export default {
             "Live Stream, " +
             this.channel.tv_name +
             ", " +
-            this.channel.description
+            this.channel.description +
+            ", Africa, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
         },
         {
           hid: "og:title",

@@ -318,12 +318,8 @@ export default {
           name: "keywords",
           keywords:
             "Video, " +
-            this.single.title +
-            ", " +
-            this.single.tags +
-            "," +
             this.single.title_en
-            + "politics, Worldwide, live stream, sports, sales, Africa, religion"
+            + ", Ethiopia, Worldwide, live stream, sports, sales, Africa, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
         },
         {
           hid: "og:title",
