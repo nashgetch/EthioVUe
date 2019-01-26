@@ -323,6 +323,7 @@ export default {
             this.single.tags +
             "," +
             this.single.title_en
+            + "politics, Worldwide, live stream, sports, sales, Africa, religion"
         },
         {
           hid: "og:title",
