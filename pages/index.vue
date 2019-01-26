@@ -204,7 +204,7 @@ export default {
           hid: "keywords",
           name: "keywords",
           keywords:
-            "Bethel TV, Africa TV, Evangelical TV, Live Channels, Zena, ዜና, Entertainment, Sport, News, Current Afairs, Documentary, IPTV, videos, Africa, Ethiopia"
+            "Bethel TV, Africa TV, Evangelical TV, Live Channels, Zena, ዜና, Entertainment, Sport, News, Current Afairs, Documentary, IPTV, videos, Africa"
         },
         {
           hid: "og:title",
