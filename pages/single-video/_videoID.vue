@@ -25,9 +25,9 @@
               :title_am_ph="single.am_en_ph"
             />
           </h1>
-          <div class="nashian">
+          <!-- <div class="nashian">
             <adsbygoogle :ad-slot="'5950915078'"/>
-          </div>
+          </div> -->
         </div>
 
         <div class="content-wrapper">
