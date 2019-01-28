@@ -8,6 +8,9 @@
     </script>-->
     <!-- <a href="/ads-test">Test Ads</a> -->
     <div class="content-wrapper text-center">
+        <div class="nashians">
+          <adsbygoogle :ad-slot="'5950915078'"/>
+        </div>
       <span class="martin">Featured Live TV Channels</span>
       <hr>
       <div class="row" style="background-color:#fafafc;">
