@@ -224,17 +224,17 @@
   }
 }
 
-@media(max-width: 400px) {
+@media(max-width: 600px) {
   .kaleb-vids .Vimg img {
-    height: 200px;
+    height: 230px;
   }
 
   .kaleb-vids .Vimg video {
-    height: 200px;
+    height: 230px;
   }
 
   .kaleb-vids .Vimg {
-    height: 200px;
+    height: 230px;
   }
 }
 
