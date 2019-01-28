@@ -51,6 +51,7 @@
               </div>
             </nuxt-link>
             <div class="d-block d-lg-none">
+<a href="/home" style="color: black;">e</a>
               <span style="color: white; font-weight: bold; font-size: 17px;">EthioV</span>
               <!-- <nuxt-link
                 to="/"
