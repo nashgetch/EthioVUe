@@ -51,6 +51,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -61,6 +62,27 @@ export default {
   components: {
     ViewCatogs
   },
+  // methods: {
+  // loadmore() {
+  //     axios
+  //       .post(base_url + "/channel_loadmore", {
+  //         page: this.page,
+  //         headers: {
+  //           "Content-type": "application/x-www-form-urlencoded"
+  //         }
+  //       })
+  //       .then(({ data }) => {
+  //         this.page += 1;
+  //         if (data.data.length) {
+  //           data.data.forEach(element => {
+  //             let temp = {};
+  //             temp = element;
+  //             this.owned.push(temp);
+  //           });
+  //         }
+  //       });
+  //   },
+  // },
   props: {
     videos: {
       type: Array,

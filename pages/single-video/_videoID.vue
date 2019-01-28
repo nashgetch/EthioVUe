@@ -112,8 +112,8 @@
                             ></i>- Facebook
                           </network>
 
-                          <network network="twitter" class="dropdown-item">
-                       Search Results     <i
+                          <network network="twitter" class="dropdown-item">Search Results
+                            <i
                               class="fa fa-fw fa-twitter"
                               style="color: #55acee; padding-left: 5px; margin-top: 10px;"
                             ></i>- Twitter
@@ -193,11 +193,15 @@
                 @click="loadmore()"
               >Show More...</button>
               <div
-                style="margin-left: auto; margin-right: auto;margin-top: 19px; width: 142px;"
+                style="margin-top: 19px; width: 142px;"
                 class="d-lg-none d-block btn btn--orange text-center"
                 v-if="page > 3"
               >
-                <a href="/">Back to Home:-)</a>
+                <a href="/">
+                  <button class="btn btn--orange text-center"
+                    style="margin-left: auto; margin-right: auto;margin-top: 19px; width: 252px;"
+                  >Back to Home:-)</button>
+                </a>
               </div>
             </div>
           </div>
@@ -312,7 +316,12 @@
               class="btn btn--orange text-center"
               v-if="page > 3"
             >
-              <a href="/">Back to Home:-)</a>
+              <a href="/">
+                <button
+                  style="margin-left: 10px;margin-top: 19px; width: 350px;"
+                  class="btn btn--orange text-center"
+                >Back to Home:-)</button>
+              </a>
             </div>
           </div>
         </div>
