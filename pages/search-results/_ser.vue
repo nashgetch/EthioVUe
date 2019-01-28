@@ -1,13 +1,14 @@
 <template>
   <div style="margin-top: 6rem; position: relative;">
-
-    <div id="processing" class="text-center" style="background-color: white; font-weight:500; font-size: 35px;">
-       Search Results
-    </div>
+    <div
+      id="processing"
+      class="text-center"
+      style="background-color: white; font-weight:500; font-size: 35px;"
+    >Search Results</div>
     <div class="container parentDiv">
       <div class="row display-flex">
         <div
-          class="col-12 col-sm-6 col-md-4 col-lg-3 videoitem"
+          class="col-12 col-sm-6 col-md-3 col-lg-2 videoitem kygo"
           v-for="(video, $index) in search_results"
           :key="$index"
         >
@@ -18,7 +19,7 @@
                   <div
                     slot="placeholder"
                     class="bg-inverse"
-                    style="background-color: black; height:143px;"
+                    style="background-color: black; height:102px;"
                   ></div>
                   <video :poster="'//video2.vixtream.net/'+video.filename" :alt="video.title"></video>
                 </clazy-load>
@@ -37,10 +38,16 @@
                 <span class="circle"></span>
                 {{video.created_at}}
               </span>
-            </div> -->
-             <ViewCatogs :vid="video.v_id"
-             :cat_id="video.category_id" :created_at="video.created_at"
-             :isIndex="true" :title_en="video.title_en" :view_count="video.view_count" />
+            </div>-->
+            <ViewCatogs
+              :vid="video.v_id"
+              :cat_id="video.category_id"
+              :created_at="video.created_at"
+              :isIndex="true"
+              :title_en="video.title_en"
+              :view_count="video.view_count"
+              :type="video.type"
+            />
           </div>
         </div>
         <div></div>
@@ -60,14 +67,13 @@ export default {
         {
           hid: "description",
           name: "description",
-          content:
-            "Search Results"
+          content: "Search Results"
         }
       ]
     };
   },
-components: {
-    ViewCatogs,
+  components: {
+    ViewCatogs
   },
   asyncData(context) {
     return axios
@@ -78,3 +84,9 @@ components: {
   }
 };
 </script>
+<style>
+.kygo {
+  padding-left: 4px !important;
+  padding-right: 4px !important;
+}
+</style>

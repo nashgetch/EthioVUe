@@ -20,14 +20,14 @@
             <ViewCatogs
               :isSingle="true"
               :vid="single.v_id"
-              :cat_id="single.category_id"
               :title_en="single.title_en"
               :title_am_ph="single.am_en_ph"
+              :type="single.type"
             />
           </h1>
           <!-- <div class="nashian">
             <adsbygoogle :ad-slot="'5950915078'"/>
-          </div> -->
+          </div>-->
         </div>
 
         <div class="content-wrapper">
@@ -44,7 +44,7 @@
               <div class="sv-name ml-auto mr-auto">
                 <div class="mr-2">
                   <a></a>
-                  {{ owner.tv_name }} - Videos - {{ single.cat_name }}
+                  {{ owner.tv_name }} - Videos
                 </div>
                 <div class="c-sub" @click="subscribe()">
                   <div class="c-f">Subscribe</div>
@@ -178,14 +178,25 @@
                     <a :href="'/single-video/'+pub.v_id" style="text-decoration: none;">
                       <ViewCatogs
                         :vid="pub.v_id"
-                        :cat_id="pub.category_id"
                         :view_count="pub.view_count"
                         :created_at="pub.created_at"
+                        :type="single.type"
                       />
                     </a>
                   </div>
                 </div>
               </div>
+              <button
+                style="margin-left: auto; margin-right: auto;margin-top: 19px;"
+                class="d-lg-none d-block btn btn--orange text-center"
+                v-if="page < 4"
+                @click="loadmore()"
+              >Show More...</button>
+              <div
+                style="margin-left: auto; margin-right: auto;margin-top: 19px;"
+                class="d-lg-none d-block btn btn--orange text-center"
+                v-if="page > 3"
+              > <a href="/">Back to Home:-)</a>  </div>
             </div>
           </div>
           <div class="comments" ng-controller="navController">
@@ -279,14 +290,25 @@
                 <a :href="'/single-video/'+re.v_id" style="text-decoration: none;">
                   <ViewCatogs
                     :vid="re.v_id"
-                    :cat_id="re.category_id"
                     :view_count="re.view_count"
                     :created_at="re.created_at"
+                    :type="single.type"
                   />
                 </a>
                 <!-- <small>{{single.cat_name}}</small> -->
               </div>
               <div class="clearfix"></div>
+            </div>
+            <button
+              style="margin-left: 10px;margin-top: 19px;"
+              class="btn btn--orange text-center"
+              v-if="page < 4"
+              @click="loadmore2()"
+            >Show More...</button>
+            <div  style="margin-left: 10px;margin-top: 19px;"
+              class="btn btn--orange text-center"
+              v-if="page > 3">
+              <a href="/">Back to Home:-)</a>
             </div>
           </div>
         </div>
@@ -318,8 +340,8 @@ export default {
           name: "keywords",
           keywords:
             "Video, " +
-            this.single.title_en
-            + ", Bethel TV, Africa TV, Evangelical TV, Ethiopia, politics, Worldwide, live stream, sports, sales, Africa, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
+            this.single.title_en +
+            ", Bethel TV, Africa TV, Evangelical TV, Ethiopia, politics, Worldwide, live stream, sports, sales, Africa, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
         },
         {
           hid: "og:title",
@@ -399,6 +421,44 @@ export default {
         this.$toast.error("Sign in to Subscribe to this Channel");
       }
     },
+    loadmore() {
+      axios
+        .post(base_url + "/loadmore", {
+          page: this.page,
+          headers: {
+            "Content-type": "application/x-www-form-urlencoded"
+          }
+        })
+        .then(({ data }) => {
+          this.page += 1;
+          if (data.data.length) {
+            data.data.forEach(element => {
+              let temp = {};
+              temp = element;
+              this.owned.push(temp);
+            });
+          }
+        });
+    },
+    loadmore2() {
+      axios
+        .post(base_url + "/loadmore", {
+          page: this.page,
+          headers: {
+            "Content-type": "application/x-www-form-urlencoded"
+          }
+        })
+        .then(({ data }) => {
+          this.page += 1;
+          if (data.data.length) {
+            data.data.forEach(element => {
+              let temp = {};
+              temp = element;
+              this.recommended.push(temp);
+            });
+          }
+        });
+    },
     likeVid(v_id) {
       if (this.loggedIn) {
         axios
@@ -456,10 +516,10 @@ export default {
         "/" +
         single_data.data.v_id
     );
-    let sing_cn = await getCatname(single_data.data.category_id);
+    // let sing_cn = await getCatname(single_data.data.category_id);
     // let sing_views = await getViews(single_data.data.v_id);
     let single = single_data.data;
-    single.cat_name = sing_cn.category_name;
+    // single.cat_name = sing_cn.category_name;
 
     // single.views = sing_views;
     return {
@@ -476,7 +536,8 @@ export default {
       rep: "",
       setTab: "",
       dislikes: 0,
-      isReady: false
+      isReady: false,
+      page: 2
     };
   },
   mounted: function() {
@@ -501,51 +562,48 @@ export default {
           this.single.v_id
       )
       .then(resp => {
-        loop(resp.data).then(data => {
-          this.owned = data;
-        });
+        this.owned = resp.data;
       });
     axios
       .post(base_url + "/video_owner/" + this.single.publisher_id)
       .then(res => {
         this.owner = res.data;
+
         axios.post(base_url + "/countSub/" + this.owner.id).then(res => {
           this.owner.subs = res.data;
         });
       });
-    axios.post(base_url + "/countLike/" + this.single.v_id).then(res => {
-      return (this.likes = res.data);
-    });
-    axios.post(base_url + "/fetchComments/" + this.single.v_id).then(res => {
-      loops(res.data).then(data => {
-        this.comments = data;
+    if (this.loggedIn) {
+      axios.post(base_url + "/countLike/" + this.single.v_id).then(res => {
+        return (this.likes = res.data);
       });
-    });
-    axios.post(base_url + "/countDislike/" + this.single.v_id).then(res => {
-      return (this.dislikes = res.data);
-    });
-    this.$nextTick(function() {
-      this.isReady = true;
-    });
+
+      axios.post(base_url + "/fetchComments/" + this.single.v_id).then(res => {
+        loops(res.data).then(data => {
+          this.comments = data;
+        });
+      });
+
+      axios.post(base_url + "/countDislike/" + this.single.v_id).then(res => {
+        return (this.dislikes = res.data);
+      });
+    }
   },
   created() {}
 };
-async function loop(params) {
-  let main_array = [];
-  var i = 0;
-  for (i = 0; i < params.length; i++) {
-    let temp = {};
-    temp = params[i];
-    let cat = await getCatname(temp.category_id);
-    temp.cat_name = cat.category_name;
-    // getViews(temp.v_id).then(resp => {
-    //   temp.views = resp;
-    //   main_array.push(temp);
-    // });
-    main_array.push(temp);
-  }
-  return main_array;
-}
+// async function loop(params) {
+//   let main_array = [];
+//   var i = 0;
+//   for (i = 0; i < params.length; i++) {
+//     let temp = {};
+//     temp = params[i];
+//     let cat = await getCatname(temp.category_id);
+//     temp.cat_name = "";
+//     main_array.push(temp);
+//   }
+//   return main_array;
+// }
+
 async function loops(params) {
   let main_array = [];
   var i = 0;
@@ -554,29 +612,28 @@ async function loops(params) {
     temp = params[i];
     let cat = await getUsername(temp.user_id);
     temp.cat_name = cat.name;
-    // getViews(temp.v_id).then(resp => {
-    //   temp.views = resp;
-    //   main_array.push(temp);
-    // });
+
     main_array.push(temp);
   }
   return main_array;
+
+  async function get_single_comment(params) {
+    let temp = {};
+    temp = params;
+    let cat = await getUsername(params.user_id);
+    temp.cat_name = cat.name;
+    return temp;
+  }
 }
-async function get_single_comment(params) {
-  let temp = {};
-  temp = params;
-  let cat = await getUsername(params.user_id);
-  temp.cat_name = cat.name;
-  return temp;
-}
-async function getCatname(v_id) {
-  let t_resp = await axios.post(base_url + "/return_cat/" + v_id);
-  return t_resp.data[0];
-}
+// async function getCatname(v_id) {
+//   let t_resp = await axios.post(base_url + "/return_cat/" + v_id);
+//   return t_resp.data[0];
+// }
 // async function getViews(v_id) {
 //   let t_resp = await axios.post(base_url + "/return_view/" + v_id);
 //   return t_resp.data;
 // }
+
 async function getUsername(user_id) {
   let t_resp = await axios.post(base_url + "/return_user/" + user_id);
   return t_resp.data[0];

@@ -67,6 +67,7 @@
                             :cat_id="video.category_id"
                             :view_count="video.view_count"
                             :created_at="video.created_at"
+                            :type="video.type"
                           />
                         </a>
                       </div>

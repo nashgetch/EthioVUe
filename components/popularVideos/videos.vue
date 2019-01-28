@@ -53,6 +53,7 @@
             :title_en="video.title_en"
             :created_at="video.created_at"
             :view_count="video.view_count"
+            :type="video.type"
           ></ViewCatogs>
           <!-- </div> -->
         </div>

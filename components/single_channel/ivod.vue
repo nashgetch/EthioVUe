@@ -90,15 +90,15 @@
                               >{{video.title}}</a>
                             </h1>
                           </div>
-                          <a style="text-decoration: none;"
-                            :href="'/single-video/' + video.v_id">
+                          <a style="text-decoration: none;" :href="'/single-video/' + video.v_id">
                             <ViewCatogs
                               :vid="video.v_id"
                               :cat_id="video.category_id"
-
                               :created_at="video.created_at"
                               :view_count="video.view_count"
-                            /></a>
+                              :type="video.type"
+                            />
+                          </a>
 
                           <!-- <div class="percent"><span class="circle"></span> 83%</div> -->
                         </div>
@@ -113,7 +113,6 @@
         <div class="col-lg-4 d-none d-lg-block mt-3">
           <!-- up next -->
           <div class>
-
             <div class="caption">
               <div class="left">
                 <a>
@@ -272,13 +271,13 @@ export default {
   }
 }
 .text {
-   overflow: hidden;
-   text-overflow: ellipsis;
-   display: -webkit-box;
-   line-height: 16px;     /* fallback */
-   max-height: 32px;      /* fallback */
-   -webkit-line-clamp: 2; /* number of lines to show */
-   -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 16px; /* fallback */
+  max-height: 32px; /* fallback */
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
 }
 @media (max-width: 500px) {
   .nashiwa {

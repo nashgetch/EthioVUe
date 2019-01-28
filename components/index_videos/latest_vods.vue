@@ -1,18 +1,16 @@
 <template>
   <div>
     <div class="container">
-
       <FeaturedVideos></FeaturedVideos>
       <!-- <div class="container parentDiv"> -->
       <PopularVideos></PopularVideos>
-
     </div>
     <div class="container parentDiv">
       <!-- <div class="nashians">
         <adsbygoogle/>
       </div>-->
-        <span class="title">Other Recommended Videos...</span>
-        <hr class="guetta">
+      <span class="title">Other Recommended Videos...</span>
+      <hr class="guetta">
       <div class="row display-flex">
         <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3 ml-auto mr-auto mb-3">
           <div class="kaleb-vids">sa
@@ -55,7 +53,6 @@
             </div>
           </div>
         </div>-->
-
         <div
           class="col-12 col-sm-6 col-md-3 col-lg-2 videoitem kygo"
           v-for="(video,$index) in videos"
@@ -106,11 +103,12 @@
               :title_en="video.title_en"
               :created_at="video.created_at"
               :view_count="video.view_count"
+              :type="video.type"
             ></ViewCatogs>
 
             <!-- </div> -->
           </div>
-           <!-- <hr> -->
+          <!-- <hr> -->
         </div>
       </div>
     </div>

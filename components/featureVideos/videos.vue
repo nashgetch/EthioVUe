@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div>
     <span class="title">Recent Videos from Our Featured Channels...</span>
     <hr class="guetta">
     <div class="row display-flex" style="background-color: #fff6e8; margin-top: 2px;">
@@ -53,13 +53,13 @@
             :title_en="video.title_en"
             :created_at="video.created_at"
             :view_count="video.view_count"
+            :type="video.type"
           ></ViewCatogs>
           <!-- </div> -->
         </div>
       </div>
-
     </div>
-   <hr class="guetta">
+    <hr class="guetta">
   </div>
 </template>
 

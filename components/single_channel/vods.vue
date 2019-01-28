@@ -1,7 +1,6 @@
 <template>
   <div>
     <div ng-show="isSet(2)" class="container parentDiv" ng-style="hidden2">
-
       <div class="row rowDiv" ng-controller="videoController">
         <div
           class="col-12 col-sm-6 col-md-3 col-lg-2 videoitem kygo"
@@ -41,6 +40,7 @@
                 :isIndex="true"
                 :title_en="video.title_en"
                 :view_count="video.view_count"
+                :type="video.type"
               />
               <small style="margin-right: 20%"></small>
               <!-- <div class="percent">
