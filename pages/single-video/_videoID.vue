@@ -187,16 +187,18 @@
                 </div>
               </div>
               <button
-                style="margin-left: auto; margin-right: auto;margin-top: 19px;"
+                style="margin-left: auto; margin-right: auto;margin-top: 19px; width: 350px;"
                 class="d-lg-none d-block btn btn--orange text-center"
                 v-if="page < 4"
                 @click="loadmore()"
               >Show More...</button>
               <div
-                style="margin-left: auto; margin-right: auto;margin-top: 19px;"
+                style="margin-left: auto; margin-right: auto;margin-top: 19px; width: 142px;"
                 class="d-lg-none d-block btn btn--orange text-center"
                 v-if="page > 3"
-              > <a href="/">Back to Home:-)</a>  </div>
+              >
+                <a href="/">Back to Home:-)</a>
+              </div>
             </div>
           </div>
           <div class="comments" ng-controller="navController">
@@ -300,14 +302,16 @@
               <div class="clearfix"></div>
             </div>
             <button
-              style="margin-left: 10px;margin-top: 19px;"
+              style="margin-left: 10px;margin-top: 19px; width: 350px;"
               class="btn btn--orange text-center"
               v-if="page < 4"
               @click="loadmore2()"
             >Show More...</button>
-            <div  style="margin-left: 10px;margin-top: 19px;"
+            <div
+              style="margin-left: 10px; margin-top: 19px; width: 350px;"
               class="btn btn--orange text-center"
-              v-if="page > 3">
+              v-if="page > 3"
+            >
               <a href="/">Back to Home:-)</a>
             </div>
           </div>
