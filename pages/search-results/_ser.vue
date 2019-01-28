@@ -1,11 +1,8 @@
 <template>
   <div style="margin-top: 6rem; position: relative;">
-    <div
-      id="processing"
-      class="text-center"
-      style="background-color: white; font-weight:500; font-size: 35px;"
-    >Search Results</div>
     <div class="container parentDiv">
+      <span class="title">Search Results...</span>
+      <hr>
       <div class="row display-flex">
         <div
           class="col-12 col-sm-6 col-md-3 col-lg-2 videoitem kygo"
@@ -28,6 +25,7 @@
                 </div>
               </a>
               <div class="time">{{video.duration}}</div>
+              <div class="nashhh">{{video.type.toUpperCase()}}</div>
             </div>
             <div class="descr">
               <a class="hideOverflow" :href="'/single-video/' + video.v_id">{{video.title}}</a>
@@ -75,9 +73,15 @@ export default {
   components: {
     ViewCatogs
   },
+  methods: {
+    urldecode(text) {
+      return decodeURIComponent((text + "").replace(/\+/g, "%20"));
+    }
+  },
+
   asyncData(context) {
     return axios
-      .post(base_url + "/translate/" + context.params.ser)
+      .post(base_url + "/translate/" + encodeURIComponent(context.params.ser))
       .then(res => {
         return { search_results: [...res.data] };
       });

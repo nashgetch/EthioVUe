@@ -174,7 +174,7 @@ export default {
         });
       } else {
         searchString = searchString.trim().toLowerCase();
-        console.log(searchString);
+        // console.log(searchString);
         return this.tvsss.filter(ref => {
           if (ref.tv_name.toLowerCase().indexOf(searchString) !== -1) {
             return ref;

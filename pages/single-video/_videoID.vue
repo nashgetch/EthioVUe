@@ -113,7 +113,7 @@
                           </network>
 
                           <network network="twitter" class="dropdown-item">
-                            <i
+                       Search Results     <i
                               class="fa fa-fw fa-twitter"
                               style="color: #55acee; padding-left: 5px; margin-top: 10px;"
                             ></i>- Twitter

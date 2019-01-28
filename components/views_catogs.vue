@@ -10,14 +10,14 @@
           :title="title_en"
         >{{title_en}}</a>
       </h1>
-      <small style="font-size: 12px; color: white;">
+      <!-- <small style="font-size: 12px; color: white;">
         <i class="fa fa-angle-double-right" style="color: #d59541;"></i>
         <span
           style="background-color: #f79100;color: #353738;
                  font-weight: bold;
                  font-family: serif;"
         >{{ type.toUpperCase() }}</span>
-      </small>
+      </small> -->
       <!-- <br class="d-none d-lg-block"> -->
       <small style="font-weight: bold; color: #7e7e7e; font-size: 12px; margin-left: 4px">
         <i class="fa fa-eye" style="color: #d59541;"></i>
@@ -38,13 +38,13 @@
     </div>
 
     <no-ssr placeholder="Loading ..." v-if="!isIndex && !isSingle">
-      <small style="color: #7e7e7e; font-size: 12px; font-weight: bold;">
+      <!-- <small style="color: #7e7e7e; font-size: 12px; font-weight: bold;">
         <i class="fa fa-angle-double-right" style="color: #d59541;"></i>
         <span
           style="color: #353738;font-weight: bold;
           font-family: serif; background-color: #f79100;"
         >{{ type.toUpperCase() }}</span>
-      </small>
+      </small> -->
       <small style="color: #7e7e7e; font-size: 12px; font-weight: 300">
         <i class="fa fa-eye" style="color: #d59541"></i>
         {{view_count}} views

@@ -74,7 +74,9 @@
                                 :alt="video.title"
                               ></video>
                               <div class="time">{{video.duration}}</div>
+
                             </a>
+
                           </div>
                         </div>
                         <div class="col-12 col-sm-12">

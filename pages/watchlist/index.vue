@@ -3,7 +3,10 @@
   <div>
     <div style="padding-top: 6rem;" id="nas">
       <div class="container parentDiv">
-        <h5 style="margin-bottom: 16px;">Watch Later Videos</h5>
+        <span class="title">
+          {{user.name}} - Your Watchlist...
+        </span>
+        <hr>
 
         <div class="row display-flex">
           <div
@@ -27,6 +30,7 @@
                   </div>
                 </a>
                 <div class="time">{{video.duration}}</div>
+                <div class="nashhh">{{video.type.toUpperCase()}}</div>
               </div>
               <div class="descr">
                 <h1 style="font-size: 14px !important;">

@@ -45,6 +45,23 @@
   z-index: 100;
 }
 
+.kaleb-vids .Vimg .nashhh {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #e42b3b;
+  border-bottom-right-radius: 2px;
+  border-top-left-radius: 2px;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 6px 9px 5px;
+  line-height: 14px;
+  font-weight: 500;
+  z-index: 100;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
 .kaleb-vids .Vimg img {
   width: 100%;
   height: 122px;
@@ -142,7 +159,7 @@
   position: relative;
 }
 
-.nav.nav-pills .nav-item > a {
+.nav.nav-pills .nav-item>a {
   color: rgba(0, 0, 0, 0.7);
 }
 
@@ -176,8 +193,8 @@
   border-left: #444 3px solid;
 }
 
-.navbar-inverse .navbar-nav .open > .nav-link,
-.navbar-inverse .navbar-nav .active > .nav-link,
+.navbar-inverse .navbar-nav .open>.nav-link,
+.navbar-inverse .navbar-nav .active>.nav-link,
 .navbar-inverse .navbar-nav .nav-link.open,
 .navbar-inverse .navbar-nav .nav-link.active {
   color: #fbe631 !important;
@@ -206,7 +223,8 @@
     margin-top: 0;
   }
 }
-@media(max-width: 400px){
+
+@media(max-width: 400px) {
   .kaleb-vids .Vimg img {
     height: 200px;
   }
@@ -228,7 +246,7 @@
   overflow: hidden;
 }
 
-.subscription span > a {
+.subscription span>a {
   color: #fff;
   float: left;
   width: 5rem;
@@ -309,7 +327,8 @@ small {
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  font-size: 26px;  box-shadow: 0 5px 9px 0 #a8a8a8;
+  font-size: 26px;
+  box-shadow: 0 5px 9px 0 #a8a8a8;
   display: block;
   padding: 12px;
   border: 0;
@@ -364,11 +383,13 @@ small {
 .dropdown-menu.poll {
   margin-left: -87px !important;
 }
-.guetta{
+
+.guetta {
   color: #6c6c8a !important;
   background-color: #5a0606;
   border-bottom: 1px solid;
 }
+
 .ch-logo-img img {
   max-width: 100%;
   width: 100%;
@@ -404,7 +425,7 @@ small {
     z-index: 2;
   }
 
-  .visibile-sm-md > a:not([href]):not([tabindex]) {
+  .visibile-sm-md>a:not([href]):not([tabindex]) {
     color: #ea2c5a;
   }
 
@@ -446,7 +467,7 @@ small {
   border: 2px solid transparent;
 }
 
-.col-lg-3 .chn-image-container > img {
+.col-lg-3 .chn-image-container>img {
   width: 100% !important;
   height: 132px !important;
 }
@@ -478,7 +499,7 @@ small {
   }
 }
 
-.chn-image-container .small-logo > img {
+.chn-image-container .small-logo>img {
   width: 100% !important;
   height: 100% !important;
   border-radius: 91px;
@@ -495,7 +516,7 @@ small {
   margin-bottom: 3px;
 }
 
-.chan-descrip > span {
+.chan-descrip>span {
   display: block;
   color: #7e7e7e;
   margin-bottom: 3px;
@@ -514,9 +535,11 @@ small {
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
 }
+
 .input-group-addon {
   background-color: #fbe631;
 }
+
 .ethiov_logo img {
   width: 120px;
   height: 58px;
@@ -625,7 +648,7 @@ small {
   margin-bottom: auto !important;
 }
 
-.dropdown > li > a {
+.dropdown>li>a {
   text-decoration: none !important;
   color: #000 !important;
 }
@@ -719,11 +742,13 @@ small {
     margin: auto;
   }
 }
+
 @media only screen and (max-width: 768px) {
   .author .sv-views {
     text-align: end;
   }
 }
+
 .nash-vids .percent .circle {
   border: solid 2px #fbe631;
   border-radius: 7px;
@@ -835,11 +860,11 @@ small {
   display: flex;
 }
 
-.author-head > a:first-child {
+.author-head>a:first-child {
   margin-right: 20px;
 }
 
-.author-head > * {
+.author-head>* {
   margin-top: 7px;
   margin-bottom: 7px;
 }
@@ -901,7 +926,7 @@ small {
   font-weight: 500;
 }
 
-.thumb > col-lg-6 {
+.thumb>col-lg-6 {
   width: 100px;
 }
 
@@ -1035,7 +1060,7 @@ small {
   padding-left: 5px;
 }
 
-.v-desc > a {
+.v-desc>a {
   color: #2e2e2e !important;
 }
 
@@ -1153,9 +1178,11 @@ small {
   font-size: 16px;
   color: #fbe631;
 }
-body{
+
+body {
   font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace !important;
 }
+
 html,
 body {
   height: initial;
@@ -1239,7 +1266,7 @@ body {
     padding-right: 30px;
   }
 
-  .author > a {
+  .author>a {
     width: 100%;
     text-align: center;
     padding-bottom: 15px;
@@ -1312,32 +1339,38 @@ img {
 a {
   color: #d59541;
 }
+
 .nashian {
   width: 200px !important;
   height: 200px !important;
 }
+
 @media (min-width: 500px) {
   .nashian {
     width: 300px !important;
     height: 250px !important;
   }
 }
+
 @media (min-width: 800px) {
   .nashian {
     width: 336px !important;
     height: 280px !important;
   }
 }
+
 .nashians {
   width: 320px !important;
   height: 100px !important;
 }
+
 @media (min-width: 500px) {
   .nashians {
     width: 468px !important;
     height: 60px !important;
   }
 }
+
 @media (min-width: 800px) {
   .nashians {
     width: 728px !important;

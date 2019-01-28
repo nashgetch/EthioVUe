@@ -38,6 +38,7 @@
                 >
                   <i class="fa fa-plus"></i>
                 </div>
+                <div class="nashhh">{{video.type.toUpperCase()}}</div>
               </div>
               <div class="descr" ng-click="viewVideo(video.v_id)">
                 <h1 style="font-size: 14px !important;">
@@ -110,7 +111,7 @@ export default {
           }
         })
         .then(({ data }) => {
-          console.log(data.data);
+          // console.log(data.data);
           this.page += 1;
           if (data.data.length) {
             data.data.forEach(element => {

@@ -34,6 +34,7 @@
             >
               <i class="fa fa-plus"></i>
             </div>
+            <div class="nashhh">{{video.type.toUpperCase()}}</div>
           </div>
           <div class="descr main" ng-click="viewVideo(video.v_id)">
             <h1 style="font-size: 14px !important;">

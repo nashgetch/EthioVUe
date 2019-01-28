@@ -51,7 +51,7 @@
               </div>
             </nuxt-link>
             <div class="d-block d-lg-none">
-<a href="/home" style="color: black;">e</a>
+              <a href="/home" style="color: black;">e</a>
               <span style="color: white; font-weight: bold; font-size: 17px;">EthioV</span>
               <!-- <nuxt-link
                 to="/"
@@ -221,13 +221,12 @@
             v-for="(item, index) in items"
             :key="index"
             style="background-color: white"
-            @click="() => handleClick(item)"
+            @click="() : handleClick(item)"
           >
             <span>{{item}}</span>
           </radial-menu-item>
         </radial-menu>
-        <div style="color: rgba(0,0,0,0.6); margin-top: 16px;">{{ lastClicked }}</div> -->
-
+        <div style="color: rgba(0,0,0,0.6); margin-top: 16px;">{{ lastClicked }}</div>-->
         <no-ssr>
           <quick-menu
             :menu-count="4"
@@ -282,7 +281,7 @@ import quickMenu from "@/components/quickmenu/quickmenu";
 
 export default {
   components: {
-    quickMenu,
+    quickMenu
     // RadialMenu,
     // RadialMenuItem
   },
@@ -329,11 +328,13 @@ export default {
       this.$auth.logout();
     },
     search(search1) {
+
       let k = this.search1.split(" ").join("+");
       let r = k.split("/").join("-");
-
+      let x = encodeURIComponent(r);
+      // console.log(x);
       this.$router.push({
-        path: "/search-results/" + r
+        path: "/search-results/" + x
       });
     },
     toggle_side_menu() {
@@ -347,7 +348,18 @@ export default {
     },
     sidetoggle() {
       this.hidden_side_nav = "";
-    }
+    },
+// urlencode(text) {
+//         return encodeURIComponent(text).replace(/!/g,  '%21')
+//                                        .replace(/'/g,  '%27')
+//                                        .replace(/\(/g, '%28')
+//                                        .replace(/\)/g, '%29')
+//                                        .replace(/\*/g, '%2A')
+//                                        .replace(/%20/g, '+');
+//     },
+//    urldecode(text) {
+//         return decodeURIComponent((text + '').replace(/\+/g, '%20'));
+//     }
   }
 };
 </script>

@@ -22,6 +22,7 @@
               </div>
             </a>
             <div class="time">{{video.duration}}</div>
+            <div class="nashhh">{{video.type.toUpperCase()}}</div>
           </div>
           <div class="descr">
             <h1 style="font-size: 14px !important;">
