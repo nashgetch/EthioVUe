@@ -112,7 +112,7 @@
                             ></i>- Facebook
                           </network>
 
-                          <network network="twitter" class="dropdown-item">Search Results
+                          <network network="twitter" class="dropdown-item">
                             <i
                               class="fa fa-fw fa-twitter"
                               style="color: #55acee; padding-left: 5px; margin-top: 10px;"
