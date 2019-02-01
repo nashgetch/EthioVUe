@@ -7,9 +7,7 @@
      });
     </script>-->
     <!-- <a href="/ads-test">Test Ads</a> -->
-    <!--
     <div class="content-wrapper text-center">
-
       <span class="martin">Featured Live TV Channels</span>
       <hr>
       <div class="row" style="background-color:#fafafc;">
@@ -88,12 +86,10 @@
           </div>
         </div>
       </div>
-    </div>-->
+    </div>
+
     <hr style="border-top: 1px solid rgba(0,0,0,0.6);" class="d-lg-block d-none">
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: .2rem;">
-      <div class="nashian">
-        <adsbygoogle :ad-slot="'5950915078'"/>
-      </div>
       <div class="row fas">
         <div class="col-lg-10 offset-lg-2">
           <div class="row">
@@ -179,9 +175,9 @@
       </div>
     </div>
     <LatestVod :videos="videos" v-if="checkTab(1)"/>
-    <!-- <CatogVods v-if="checkTab(1)"/> -->
-    <!-- <TrendingVods v-if="checkTab(3)"/> -->
-    <!-- <Subscription v-if="checkTab(4)"/> -->
+    <CatogVods v-if="checkTab(2)"/>
+    <TrendingVods v-if="checkTab(3)"/>
+    <Subscription v-if="checkTab(4)"/>
   </section>
 </template>
 <script>
@@ -194,73 +190,73 @@ import Subscription from "@/components/index_videos/subscription";
 import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
-  // head() {
-  //   return {
-  //     title: "EthioV - Ethiopian Videos and Live channels",
-  //     meta: [
-  //       {
-  //         hid: "description",
-  //         name: "description",
-  //         content:
-  //           "All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
-  //       },
-  //       {
-  //         hid: "keywords",
-  //         name: "keywords",
-  //         keywords:
-  //           "Bethel TV, Africa TV, Evangelical TV, Live Channels, Zena, ዜና, Entertainment, Sport, News, Current Afairs, Documentary, IPTV, videos, Africa"
-  //       },
-  //       {
-  //         hid: "og:title",
-  //         property: "og:title",
-  //         content:
-  //           "EthioV - Ethiopian Live Channels and Videos on Demand. Ethiopia's Reliable TVs and Videos Archive. All Your Favorite TV Channels"
-  //       },
-  //       {
-  //         hid: "og:url",
-  //         property: "og:url",
-  //         content: "https://ethiov.com"
-  //       },
-  //       {
-  //         hid: "og:image",
-  //         property: "og:image",
-  //         content: "/img/EthioV_LOGO_Black.png"
-  //       },
-  //       {
-  //         hid: "og:description",
-  //         property: "og:description",
-  //         content:
-  //           "All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
-  //       },
-  //       {
-  //         hid: "twitter:title",
-  //         property: "twitter:title",
-  //         content: "EthioV - Ethiopian Live Channels and Videos on Demand"
-  //       },
-  //       {
-  //         hid: "twitter:url",
-  //         property: "twitter:url",
-  //         content: "https://ethiov.com"
-  //       },
-  //       {
-  //         hid: "twitter:image",
-  //         property: "twitter:image",
-  //         content: "/img/EthioV_LOGO_Black.png"
-  //       },
-  //       {
-  //         hid: "twitter:card",
-  //         property: "twitter:card",
-  //         content: "summary_large_image"
-  //       },
-  //       {
-  //         hid: "twitter:description",
-  //         property: "twitter:description",
-  //         content:
-  //           "EthioV - All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here."
-  //       }
-  //     ]
-  //   };
-  // },
+  head() {
+    return {
+      title: "EthioV - Ethiopian Videos and Live channels",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          keywords:
+            "Bethel TV, Africa TV, Evangelical TV, Live Channels, Zena, ዜና, Entertainment, Sport, News, Current Afairs, Documentary, IPTV, videos, Africa"
+        },
+        {
+          hid: "og:title",
+          property: "og:title",
+          content:
+            "EthioV - Ethiopian Live Channels and Videos on Demand. Ethiopia's Reliable TVs and Videos Archive. All Your Favorite TV Channels"
+        },
+        {
+          hid: "og:url",
+          property: "og:url",
+          content: "https://ethiov.com"
+        },
+        {
+          hid: "og:image",
+          property: "og:image",
+          content: "/img/EthioV_LOGO_Black.png"
+        },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content:
+            "All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
+        },
+        {
+          hid: "twitter:title",
+          property: "twitter:title",
+          content: "EthioV - Ethiopian Live Channels and Videos on Demand"
+        },
+        {
+          hid: "twitter:url",
+          property: "twitter:url",
+          content: "https://ethiov.com"
+        },
+        {
+          hid: "twitter:image",
+          property: "twitter:image",
+          content: "/img/EthioV_LOGO_Black.png"
+        },
+        {
+          hid: "twitter:card",
+          property: "twitter:card",
+          content: "summary_large_image"
+        },
+        {
+          hid: "twitter:description",
+          property: "twitter:description",
+          content:
+            "EthioV - All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here."
+        }
+      ]
+    };
+  },
   components: {
     LatestVod,
     CatogVods,
