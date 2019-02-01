@@ -60,7 +60,7 @@
         >
           <div class="kaleb-vids">
             <div class="Vimg itemContainer" style="background-color: black;">
-              <a :href="'/video/'+video.v_id">
+              <a :href="'/ads-test/'+video.v_id">
                 <!-- <clazy-load :src="'//video2.vixtream.net/'+video.filename">
                   <div
                         slot="placeholder"
