@@ -7,9 +7,7 @@
      });
     </script>-->
     <!-- <a href="/ads-test">Test Ads</a> -->
-
-          <adsbygoogle :ad-slot="'5950915078'"/>
-
+    <!--
     <div class="content-wrapper text-center">
 
       <span class="martin">Featured Live TV Channels</span>
@@ -90,10 +88,12 @@
           </div>
         </div>
       </div>
-    </div>
-
+    </div>-->
     <hr style="border-top: 1px solid rgba(0,0,0,0.6);" class="d-lg-block d-none">
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: .2rem;">
+      <div class="nashian">
+        <adsbygoogle :ad-slot="'5950915078'"/>
+      </div>
       <div class="row fas">
         <div class="col-lg-10 offset-lg-2">
           <div class="row">
@@ -105,7 +105,7 @@
             <div class="col-md-8 col-sm-12 text-center">
               <ul class="nav nav-pills">
                 <li class="nav-item text-center ml-auto mr-auto" :class="tab1Style">
-                  <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(1)">
+                  <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(2)">
                     <span class="d-none d-sm-block">Latest Videos</span>
                     <i
                       class="fa fa-clock-o d-inline-block d-sm-none"
@@ -119,7 +119,7 @@
                   </a>
                 </li>
                 <li class="nav-item text-center ml-auto mr-auto">
-                  <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(2)">
+                  <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(1)">
                     <span class="d-none d-sm-block">Category</span>
                     <i
                       class="fa fa-video-camera d-inline-block d-sm-none"
@@ -179,7 +179,7 @@
       </div>
     </div>
     <!-- <LatestVod :videos="videos" v-if="checkTab(1)"/> -->
-    <CatogVods v-if="checkTab(2)"/>
+    <CatogVods v-if="checkTab(1)"/>
     <!-- <TrendingVods v-if="checkTab(3)"/> -->
     <!-- <Subscription v-if="checkTab(4)"/> -->
   </section>
