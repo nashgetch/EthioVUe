@@ -179,13 +179,13 @@
       </div>
     </div>
     <LatestVod :videos="videos" v-if="checkTab(1)"/>
-    <!-- <CatogVods v-if="checkTab(2)"/> -->
+    <CatogVods v-if="checkTab(2)"/>
     <!-- <TrendingVods v-if="checkTab(3)"/> -->
     <!-- <Subscription v-if="checkTab(4)"/> -->
   </section>
 </template>
 <script>
-import LatestVod from "@/components/index_videos/latest_vodss";
+import LatestVod from "@/components/index_videos/latest_vods";
 import ViewCatogs from "@/components/views_catogs";
 import CatogVods from "@/components/index_videos/catog_videos";
 import TrendingVods from "@/components/index_videos/trend_videos";
