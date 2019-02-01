@@ -1,8 +1,8 @@
 {
   "name": "ethiov",
   "version": "1.0.0",
-  "description": "My impressive Nuxt.js project",
-  "author": "Kaleb",
+  "description": "Ethiopian Live Channels and On Demand Videos",
+  "author": "Websprix",
   "private": true,
   "scripts": {
     "dev": "nuxt",
