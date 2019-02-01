@@ -2,7 +2,7 @@
   <div class="container" style="padding-top: 6.5rem;">
     <div class="row rowDiv">
       <div class="col-lg-8 col-xs-12 col-sm-12">
-        <!-- <div id="iframe1" class="video-container">
+        <div id="iframe1" class="video-container">
           <iframe
             id="inash"
             class="iframe"
@@ -13,17 +13,17 @@
             allowfullscreen
             allow-scripts
           ></iframe>
-        </div> -->
+        </div>
         <div class="content-wrapper" style="margin: 0 !important;">
           <h1 style="font-size: 15px !important; padding-top: 7px;">
             {{ single.title }}
-            <ViewCatogs
+            <!-- <ViewCatogs
               :isSingle="true"
               :vid="single.v_id"
               :title_en="single.title_en"
               :title_am_ph="single.am_en_ph"
               :type="single.type"
-            />
+            /> -->
           </h1>
           <div class="nashian">
             <adsbygoogle :ad-slot="'5950915078'"/>
