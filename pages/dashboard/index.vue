@@ -91,9 +91,9 @@
     </div>-->
     <hr style="border-top: 1px solid rgba(0,0,0,0.6);" class="d-lg-block d-none">
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: .2rem;">
-      <div class="nashian">
+      <!-- <div class="nashian">
         <adsbygoogle :ad-slot="'5950915078'"/>
-      </div>
+      </div> -->
       <div class="row fas">
         <div class="col-lg-10 offset-lg-2">
           <div class="row">
@@ -180,8 +180,8 @@
     </div>
     <LatestVod :videos="videos" v-if="checkTab(1)"/>
     <CatogVods v-if="checkTab(2)"/>
-    <!-- <TrendingVods v-if="checkTab(3)"/> -->
-    <!-- <Subscription v-if="checkTab(4)"/> -->
+    <TrendingVods v-if="checkTab(3)"/>
+    <Subscription v-if="checkTab(4)"/>
   </section>
 </template>
 <script>
