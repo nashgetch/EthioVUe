@@ -25,9 +25,9 @@
               :type="single.type"
             />
           </h1>
-          <!-- <div class="nashian">
+          <div class="nashian">
             <adsbygoogle :ad-slot="'5950915078'"/>
-          </div>-->
+          </div>
         </div>
 
         <div class="content-wrapper">
