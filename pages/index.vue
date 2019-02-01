@@ -175,9 +175,9 @@
       </div>
     </div>
     <LatestVod :videos="videos" v-if="checkTab(1)"/>
-    <CatogVods v-if="checkTab(2)"/>
-    <TrendingVods v-if="checkTab(3)"/>
-    <Subscription v-if="checkTab(4)"/>
+    <!-- <CatogVods v-if="checkTab(2)"/> -->
+    <!-- <TrendingVods v-if="checkTab(3)"/> -->
+    <!-- <Subscription v-if="checkTab(4)"/> -->
   </section>
 </template>
 <script>
