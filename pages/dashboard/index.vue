@@ -7,10 +7,11 @@
      });
     </script>-->
     <!-- <a href="/ads-test">Test Ads</a> -->
-    <div class="content-wrapper text-center">
-        <div class="nashians">
+
           <adsbygoogle :ad-slot="'5950915078'"/>
-        </div>
+
+    <div class="content-wrapper text-center">
+
       <span class="martin">Featured Live TV Channels</span>
       <hr>
       <div class="row" style="background-color:#fafafc;">
@@ -177,10 +178,10 @@
         </div>
       </div>
     </div>
-    <LatestVod :videos="videos" v-if="checkTab(1)"/>
+    <!-- <LatestVod :videos="videos" v-if="checkTab(1)"/> -->
     <CatogVods v-if="checkTab(2)"/>
-    <TrendingVods v-if="checkTab(3)"/>
-    <Subscription v-if="checkTab(4)"/>
+    <!-- <TrendingVods v-if="checkTab(3)"/> -->
+    <!-- <Subscription v-if="checkTab(4)"/> -->
   </section>
 </template>
 <script>
