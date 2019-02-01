@@ -190,6 +190,7 @@ import Subscription from "@/components/index_videos/subscription";
 import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
+middleware: "red",
   head() {
     return {
       title: "EthioV - Ethiopian Videos and Live channels",
