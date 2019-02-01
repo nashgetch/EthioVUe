@@ -2,7 +2,7 @@
   <div class="container" style="padding-top: 6.5rem;">
     <div class="row rowDiv">
       <div class="col-lg-8 col-xs-12 col-sm-12">
-        <div id="iframe1" class="video-container">
+        <!-- <div id="iframe1" class="video-container">
           <iframe
             id="inash"
             class="iframe"
@@ -13,13 +13,8 @@
             allowfullscreen
             allow-scripts
           ></iframe>
-        </div>
-
-         <div class="nashian">
-            <adsbygoogle :ad-slot="'5950915078'"/>
-          </div>
-
-        <!-- <div class="content-wrapper" style="margin: 0 !important;">
+        </div> -->
+        <div class="content-wrapper" style="margin: 0 !important;">
           <h1 style="font-size: 15px !important; padding-top: 7px;">
             {{ single.title }}
             <ViewCatogs
@@ -30,12 +25,14 @@
               :type="single.type"
             />
           </h1>
-
-        </div> -->
+          <!-- <div class="nashian">
+            <adsbygoogle :ad-slot="'5950915078'"/>
+          </div>-->
+        </div>
 
         <div class="content-wrapper">
-
-          <!-- <div class="author">
+          <!-- The Author Part -->
+          <div class="author">
             <div class="author-head">
               <a :href="'/single-channel/'+owner.id">
                 <img
@@ -136,24 +133,30 @@
             </div>
 
             <div class="clearfix"></div>
-          </div> -->
+          </div>
           <!-- End of The Author Part -->
-          <!-- <div class="info">
+          <div class="info">
             <div>
               <p>{{ single.cat_name }} | {{single.tags}}</p>
               <h4>About :</h4>
               <p>{{single.description}}</p>
             </div>
-          </div> -->
-          <!-- <div class="fikir-vids">
+          </div>
+          <div class="fikir-vids">
             <div class="row">
               <div class="col-lg-3 col-sm-6 col-xs-12" v-for="(pub,$index) in owned" :key="$index">
                 <div class="nash-vids row">
                   <div class="col-sm-12 col-xs-6">
                     <div class="Vimg itemContainer" style="background-color: black;">
-
+                      <!-- <clazy-load :src="pos_url+'/'+pub.filename">
+                        <div
+                          slot="placeholder"
+                          class="bg-inverse"
+                          style="background-color: black; height:200px;"
+                      ></div>-->
                       <video class="imgur" :poster="pos_url+'/'+pub.filename2" :alt="pub.title"></video>
-                    ] <a :href="'/single-video/'+pub.v_id">
+                      <!-- </clazy-load> -->
+                      <a :href="'/single-video/'+pub.v_id">
                         <div ng-click="viewVideo(pub.v_id)" class="play">
                           <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                         </div>
@@ -247,11 +250,82 @@
                 <div class="clearfix"></div>
               </div>
             </div>
-          </div> -->
+          </div>
         </div>
-
+        <!-- right column -->
       </div>
-
+      <div class="col-sm-12 col-lg-4 d-none d-lg-block">
+        <div class="caption">
+          <div class="left">
+            <a>
+              <h5 style="font-size: 19px;font-weight: 700; margin-bottom: 15px;">Other Videos</h5>
+            </a>
+          </div>
+          <div class="clearfix"></div>
+          <div class="list">
+            <div class="thumb row" v-for="(re,$index) in recommended" :key="$index">
+              <div class="col-lg-6 col-sm-6" ng-click="viewVideo(re.v_id)">
+                <div class="Vimg itemContainer" style="background-color: #0c0c0c">
+                  <video
+                    class="imgur"
+                    height="400"
+                    width="400"
+                    :poster="pos_url + '/'+re.filename2"
+                    :alt="re.title"
+                  ></video>
+                  <a :href="'/single-video/'+re.v_id">
+                    <div ng-click="viewVideo(re.v_id)" class="play">
+                      <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
+                    </div>
+                  </a>
+                  <div class="time">{{re.duration}}</div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-sm-6" ng-click="viewVideo(re.v_id)">
+                <div class="descr" style="padding-top: 0px;">
+                  <h1 style="font-size: 14px !important;">
+                    <a
+                      class="text"
+                      style="text-decoration: none;"
+                      :href="'/single-video/'+re.v_id"
+                      :aria-label="re.title"
+                      :title="re.title"
+                    >{{re.title}}</a>
+                  </h1>
+                </div>
+                <a :href="'/single-video/'+re.v_id" style="text-decoration: none;">
+                  <ViewCatogs
+                    :vid="re.v_id"
+                    :view_count="re.view_count"
+                    :created_at="re.created_at"
+                    :type="single.type"
+                  />
+                </a>
+                <!-- <small>{{single.cat_name}}</small> -->
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <button
+              style="margin-left: 10px;margin-top: 19px; width: 350px;"
+              class="btn btn--orange text-center"
+              v-if="page < 4"
+              @click="loadmore2()"
+            >Show More...</button>
+            <div
+              style="margin-left: 10px; margin-top: 19px; width: 350px;"
+              class="btn btn--orange text-center"
+              v-if="page > 3"
+            >
+              <a href="/">
+                <button
+                  style="margin-left: 10px;margin-top: 19px; width: 350px;"
+                  class="btn btn--orange text-center"
+                >Back to Home:-)</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
