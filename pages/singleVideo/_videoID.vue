@@ -17,13 +17,13 @@
         <div class="content-wrapper" style="margin: 0 !important;">
           <h1 style="font-size: 15px !important; padding-top: 7px;">
             {{ single.title }}
-            <ViewCatogs
+            <!-- <ViewCatogs
               :isSingle="true"
               :vid="single.v_id"
               :title_en="single.title_en"
               :title_am_ph="single.am_en_ph"
               :type="single.type"
-            />
+            /> -->
           </h1>
           <div class="nashian">
             <adsbygoogle :ad-slot="'5950915078'"/>
@@ -254,7 +254,7 @@
         </div>
         <!-- right column -->
       </div>
-      <div class="col-sm-12 col-lg-4 d-none d-lg-block">
+      <!-- <div class="col-sm-12 col-lg-4 d-none d-lg-block">
         <div class="caption">
           <div class="left">
             <a>
@@ -301,7 +301,6 @@
                     :type="single.type"
                   />
                 </a>
-                <!-- <small>{{single.cat_name}}</small> -->
               </div>
               <div class="clearfix"></div>
             </div>
@@ -325,7 +324,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
