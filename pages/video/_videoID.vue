@@ -23,15 +23,15 @@
               :title_en="single.title_en"
               :title_am_ph="single.am_en_ph"
               :type="single.type"
-            /> -->
+            />-->
           </h1>
-          <div class="nashian">
-            <adsbygoogle :ad-slot="'5950915078'"/>
-          </div>
         </div>
 
         <div class="content-wrapper">
           <!-- The Author Part -->
+          <div class="nashian">
+            <adsbygoogle :ad-slot="'5950915078'"/>
+          </div>
           <div class="author">
             <div class="author-head">
               <a :href="'/single-channel/'+owner.id">
@@ -198,7 +198,8 @@
                 v-if="page > 3"
               >
                 <a href="/">
-                  <button class="btn btn--orange text-center"
+                  <button
+                    class="btn btn--orange text-center"
                     style="margin-left: auto; margin-right: auto;margin-top: 19px; width: 252px;"
                   >Back to Home:-)</button>
                 </a>
@@ -581,7 +582,6 @@ export default {
     //   .post(base_url + "/video_owner/" + this.single.publisher_id)
     //   .then(res => {
     //     this.owner = res.data;
-
     //     axios.post(base_url + "/countSub/" + this.owner.id).then(res => {
     //       this.owner.subs = res.data;
     //     });
@@ -590,13 +590,11 @@ export default {
     //   axios.post(base_url + "/countLike/" + this.single.v_id).then(res => {
     //     return (this.likes = res.data);
     //   });
-
     //   axios.post(base_url + "/fetchComments/" + this.single.v_id).then(res => {
     //     loops(res.data).then(data => {
     //       this.comments = data;
     //     });
     //   });
-
     //   axios.post(base_url + "/countDislike/" + this.single.v_id).then(res => {
     //     return (this.dislikes = res.data);
     //   });
