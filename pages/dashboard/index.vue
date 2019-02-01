@@ -105,7 +105,7 @@
             <div class="col-md-8 col-sm-12 text-center">
               <ul class="nav nav-pills">
                 <li class="nav-item text-center ml-auto mr-auto" :class="tab1Style">
-                  <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(2)">
+                  <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(1)">
                     <span class="d-none d-sm-block">Latest Videos</span>
                     <i
                       class="fa fa-clock-o d-inline-block d-sm-none"
@@ -119,7 +119,7 @@
                   </a>
                 </li>
                 <li class="nav-item text-center ml-auto mr-auto">
-                  <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(1)">
+                  <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(2)">
                     <span class="d-none d-sm-block">Category</span>
                     <i
                       class="fa fa-video-camera d-inline-block d-sm-none"
@@ -178,8 +178,8 @@
         </div>
       </div>
     </div>
-    <!-- <LatestVod :videos="videos" v-if="checkTab(1)"/> -->
-    <CatogVods v-if="checkTab(1)"/>
+    <LatestVod :videos="videos" v-if="checkTab(1)"/>
+    <!-- <CatogVods v-if="checkTab(1)"/> -->
     <!-- <TrendingVods v-if="checkTab(3)"/> -->
     <!-- <Subscription v-if="checkTab(4)"/> -->
   </section>
