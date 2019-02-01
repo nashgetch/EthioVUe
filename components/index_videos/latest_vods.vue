@@ -3,9 +3,9 @@
     <div class="container">
       <FeaturedVideos></FeaturedVideos>
       <!-- <div class="container parentDiv"> -->
-      <div class="nashians">
+      <!-- <div class="nashians">
         <adsbygoogle :ad-slot="'5950915078'"/>
-      </div>
+      </div> -->
       <PopularVideos></PopularVideos>
     </div>
     <div class="container parentDiv">
