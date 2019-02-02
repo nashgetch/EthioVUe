@@ -65,9 +65,7 @@
             </div>
           </div>
         </div>
-        <div style="margin-left: auto; margin-right: auto;" class="nashians">
-          <adsbygoogle :ad-slot="'5950915078'"/>
-        </div>
+
       </div>
     </div>
 
@@ -79,7 +77,7 @@
 </template>
 
 <script>
-import Live from "@/components/single_channel/live";
+import Live from "@/components/single_channel/lives";
 import Vods from "@/components/single_channel/vods";
 import Ivods from "@/components/single_channel/ivod";
 
