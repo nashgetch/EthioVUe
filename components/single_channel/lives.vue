@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row rowDiv">
         <div class="col-lg-8 col-xs-12 col-sm-12">
-          <!-- <div class="video-container">
+          <div class="video-container">
             <iframe
               class="iframe"
               width="720"
@@ -13,8 +13,8 @@
               allowfullscreen
               allow-scripts
             ></iframe>
-          </div> -->
-          <h1 :class="marginTop(channel.owner_id)" class="display-4" style="font-size:1rem">
+          </div>
+          <h1 class="mt-5"  style="font-size:1rem">
             <a>{{channel.tv_name}}</a>
           </h1>
 
@@ -28,7 +28,7 @@
             </div>
             <div class="clearfix"></div>
 
-            <div class="single-v-footer">
+            <!-- <div class="single-v-footer">
               <div class="similar-v single-video video-mobile-02">
                 <div class="row">
                   <div
@@ -75,7 +75,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="col-lg-4 d-none d-lg-block mt-3">
@@ -147,15 +147,15 @@ export default {
     };
   },
   methods: {
-    marginTop(id) {
-      if (id === 12 || id === 14) {
-        return "nashiti";
-      } else if (id === 13) {
-        return "nashitiwa";
-      } else {
-        return "nashiwwa";
-      }
-    }
+    // marginTop(id) {
+    //   if (id === 12 || id === 14) {
+    //     return "nashiti";
+    //   } else if (id === 13) {
+    //     return "nashitiwa";
+    //   } else {
+    //     return "nashiwwa";
+    //   }
+    // }
   },
   mounted: function() {
     axios.post(base_url + "/live_channel").then(res => {
