@@ -17,7 +17,7 @@
 
     <div class="row">
       <div class="container mt-2">
-        <div class="nashians">
+        <div class="nashians" style="margin-left: auto; margin-right: auto;">
           <adsbygoogle :ad-slot="'5950915078'"/>
         </div>
         <div class="row mt-3 display-flex">
