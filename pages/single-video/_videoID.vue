@@ -34,21 +34,21 @@
           <!-- The Author Part -->
           <div class="author">
             <div class="author-head">
-              <a :href="'/single-channel/'+owner.id">
+              <a :href="'/single-channel/'+ single.chan_name.id">
                 <img
-                  :src="'//video2.vixtream.net'+owner.poster_image"
-                  :alt="owner.tv_name"
-                  class="sv-avatar"
+                  :src="'//video2.vixtream.net'+single.chan_name.poster_image"
+                  :alt="single.chan_name.tv_name"
+                  class="sv-avatar kalusha"
                 >
               </a>
               <div class="sv-name ml-auto mr-auto">
                 <div class="mr-2">
                   <a></a>
-                  {{ owner.tv_name }} - Videos
+                  {{ single.chan_name.tv_name }} - Videos
                 </div>
                 <div class="c-sub" @click="subscribe()">
                   <div class="c-f">Subscribe</div>
-                  <div class="c-s">{{owner.subs}}</div>
+                  <div class="c-s">{{single.chan_name.subs}}</div>
                   <div class="clearfix"></div>
                 </div>
               </div>
@@ -198,7 +198,8 @@
                 v-if="page > 3"
               >
                 <a href="/">
-                  <button class="btn btn--orange text-center"
+                  <button
+                    class="btn btn--orange text-center"
                     style="margin-left: auto; margin-right: auto;margin-top: 19px; width: 252px;"
                   >Back to Home:-)</button>
                 </a>
@@ -426,7 +427,13 @@ export default {
     subscribe() {
       if (this.loggedIn) {
         axios
-          .post(base_url + "/subscribe/" + this.user.id + "/" + this.owner.id)
+          .post(
+            base_url +
+              "/subscribe/" +
+              this.user.id +
+              "/" +
+              this.single.chan_name.id
+          )
           .then(res => {
             this.$toast.success("You have Subscibed to this Channel...");
           });
@@ -541,7 +548,7 @@ export default {
       pos_url: "https://video2.vixtream.net",
       cUrl: "https://video2.vixtream.net/vod/v/" + single_data.data.v_id,
       single: single,
-      owner: {},
+
       likes: 0,
       com: "",
       comments: [],
@@ -577,16 +584,13 @@ export default {
       .then(resp => {
         this.owned = resp.data;
       });
-    axios
-      .post(base_url + "/video_owner/" + this.single.publisher_id)
-      .then(res => {
-        this.owner = res.data;
 
-        axios.post(base_url + "/countSub/" + this.owner.id).then(res => {
-          this.owner.subs = res.data;
-        });
-      });
     if (this.loggedIn) {
+      axios
+        .post(base_url + "/countSub/" + this.single.chan_name.id)
+        .then(res => {
+          this.single.chan_name.subs = res.data;
+        });
       axios.post(base_url + "/countLike/" + this.single.v_id).then(res => {
         return (this.likes = res.data);
       });
@@ -751,5 +755,10 @@ async function getUsername(user_id) {
     width: 336px !important;
     height: 280px !important;
   }
+}
+.kalusha {
+  height: 66px;
+  border-radius: 50%;
+  width: 78px !important;
 }
 </style>
