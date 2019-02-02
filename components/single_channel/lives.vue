@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row rowDiv">
         <div class="col-lg-8 col-xs-12 col-sm-12">
-          <div class="video-container">
+          <!-- <div class="video-container">
             <iframe
               class="iframe"
               width="720"
@@ -13,14 +13,14 @@
               allowfullscreen
               allow-scripts
             ></iframe>
-          </div>
+          </div> -->
           <h1 :class="marginTop(channel.owner_id)" class="display-4" style="font-size:1rem">
             <a>{{channel.tv_name}}</a>
           </h1>
 
           <!-- Ads block -->
           <div class="content-wrapper">
-            <div class="rophy nashians">
+            <div class="nashians">
               <adsbygoogle :ad-slot="'5950915078'"/>
             </div>
             <div class="left mb-2">
