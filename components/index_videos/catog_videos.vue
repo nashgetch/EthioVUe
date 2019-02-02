@@ -69,6 +69,9 @@
               </div>
             </div>
           </div>
+          <div style="margin-left: auto; margin-right: auto;" class="nashians">
+            <adsbygoogle :ad-slot="'5950915078'"/>
+          </div>
         </div>
       </div>
       <!-- </div> -->
