@@ -171,7 +171,7 @@
     </div>
     <hr style="border-top: 1px solid rgba(0,0,0,0.6);" class="d-lg-block d-none">
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: .2rem;">
-      <div class="nashians">
+      <div style="margin-left: auto; margin-right: auto;" class="nashians">
         <adsbygoogle :ad-slot="'5950915078'"/>
       </div>
       <div class="row fas">
