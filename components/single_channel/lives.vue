@@ -78,7 +78,7 @@
             </div> -->
           </div>
         </div>
-        <div class="col-lg-4 d-none d-lg-block mt-3">
+        <!-- <div class="col-lg-4 d-none d-lg-block mt-3">
           <div class="nashian" v-if="videos.length < 4">
             <adsbygoogle :ad-slot="'5950915078'"/>
           </div>
@@ -116,7 +116,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -158,21 +158,20 @@ export default {
     // }
   },
   mounted: function() {
-    axios.post(base_url + "/live_channel").then(res => {
-      return (this.tvs = [
-        ...res.data.filter(res => {
-          if (this.channel.category == "2") {
-            return res.owner_id == this.channel.owner_id && res.category == "2";
-          }
-          return (
-            res.tv_name != "test" &&
-            res.owner_id != this.channel.owner_id &&
-            res.category === this.channel.category
-          );
-          // console.log(res);
-        })
-      ]);
-    });
+    // axios.post(base_url + "/live_channel").then(res => {
+    //   return (this.tvs = [
+    //     ...res.data.filter(res => {
+    //       if (this.channel.category == "2") {
+    //         return res.owner_id == this.channel.owner_id && res.category == "2";
+    //       }
+    //       return (
+    //         res.tv_name != "test" &&
+    //         res.owner_id != this.channel.owner_id &&
+    //         res.category === this.channel.category
+    //       );
+    //     })
+    //   ]);
+    // });
   }
 };
 </script>
