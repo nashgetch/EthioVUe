@@ -20,7 +20,7 @@
 
           <!-- Ads block -->
           <div class="content-wrapper">
-            <div class="rophy nashians" v-if="videos.length < 4">
+            <div class="rophy nashians">
               <adsbygoogle :ad-slot="'5950915078'"/>
             </div>
             <div class="left mb-2">
