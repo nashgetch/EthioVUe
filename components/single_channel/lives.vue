@@ -14,7 +14,7 @@
               allow-scripts
             ></iframe>
           </div>
-          <h1 class="mt-5"  style="font-size:1rem">
+          <h1 class="mt-2"  style="font-size:1rem">
             <a>{{channel.tv_name}}</a>
           </h1>
 

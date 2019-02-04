@@ -103,11 +103,7 @@ export default {
           hid: "keywords",
           name: "keywords",
           keywords:
-            "Live Stream, " +
-            this.channel.tv_name +
-            ", " +
-            this.channel.description +
-            ", Bethel TV, Africa TV, Evangelical TV, Africa, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
+            "ethiotv, ethio live tv, ethiopian live tv, travel, sports, documentary, news, religion, bethel"
         },
         {
           hid: "og:title",
