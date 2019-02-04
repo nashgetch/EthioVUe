@@ -1,34 +1,30 @@
 <template>
-  <div>
-    <div class="container">
-      <div class="row rowDiv">
-        <div class="col-lg-8 col-xs-12 col-sm-12">
-          <div class="video-container">
-            <iframe
-              class="iframe"
-              width="720"
-              height="405"
-              :src="'//video2.vixtream.net/tv/v/'+channel.chn"
-              frameborder="0"
-              allowfullscreen
-              allow-scripts
-            ></iframe>
+  <div class="container">
+    <div class="row rowDiv">
+      <div class="col-lg-8 col-xs-12 col-sm-12">
+        <div class="video-container">
+          <iframe
+            class="iframe"
+            width="720"
+            height="405"
+            :src="'//video2.vixtream.net/tv/v/'+channel.chn"
+            frameborder="0"
+            allowfullscreen
+            allow-scripts
+          ></iframe>
+        </div>
+        <h1 class="mt-2" style="font-size:1rem">
+          <a>{{channel.tv_name}}</a>
+        </h1>
+
+        <!-- Ads block -->
+        <div class="content-wrapper">
+          <div class="left mb-2">
+            <a>Similar Videos</a>
           </div>
-          <h1 class="mt-2"  style="font-size:1rem">
-            <a>{{channel.tv_name}}</a>
-          </h1>
+          <div class="clearfix"></div>
 
-          <!-- Ads block -->
-          <div class="content-wrapper">
-            <div class="nashians">
-              <adsbygoogle :ad-slot="'5950915078'"/>
-            </div>
-            <div class="left mb-2">
-              <a>Similar Videos</a>
-            </div>
-            <div class="clearfix"></div>
-
-            <!-- <div class="single-v-footer">
+          <!-- <div class="single-v-footer">
               <div class="similar-v single-video video-mobile-02">
                 <div class="row">
                   <div
@@ -75,10 +71,10 @@
                   </div>
                 </div>
               </div>
-            </div> -->
-          </div>
+          </div>-->
         </div>
-        <!-- <div class="col-lg-4 d-none d-lg-block mt-3">
+      </div>
+      <!-- <div class="col-lg-4 d-none d-lg-block mt-3">
           <div class="nashian" v-if="videos.length < 4">
             <adsbygoogle :ad-slot="'5950915078'"/>
           </div>
@@ -116,8 +112,10 @@
               </div>
             </div>
           </div>
-        </div> -->
-      </div>
+      </div>-->
+    </div>
+    <div class="nashians">
+      <adsbygoogle :ad-slot="'5950915078'"/>
     </div>
   </div>
 </template>
