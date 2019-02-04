@@ -341,21 +341,19 @@ const base_url = "https://ethiov.com/api";
 export default {
   head() {
     return {
-      title: this.single.title,
+      title: this.single.title + "- Ethio TV Stream",
       meta: [
         {
           hid: "description",
           name: "description",
           content:
-            "EthioV - " + this.single.description + ". " + this.single.tags
+            "EthioV - " + this.single.description + ". "
         },
         {
           hid: "keywords",
           name: "keywords",
           keywords:
-            "Video, " +
-            this.single.title_en +
-            ", Bethel TV, Africa TV, Evangelical TV, Ethiopia, politics, Worldwide, live stream, sports, sales, Africa, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
+            "Video, Bethel TV, Africa TV, Evangelical TV, Ethiopia, politics, Worldwide, live stream, sports, sales, Africa, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
         },
         {
           hid: "og:title",
@@ -381,7 +379,7 @@ export default {
           hid: "og:description",
           property: "og:description",
           content:
-            "EthioV - " + this.single.description + ". " + this.single.tags
+            "EthioV - " + this.single.description + ". "
         },
         {
           hid: "twitter:title",
@@ -412,7 +410,7 @@ export default {
           hid: "twitter:description",
           property: "twitter:description",
           content:
-            "EthioV - " + this.single.description + ". " + this.single.tags
+            "EthioV - " + this.single.description + ". "
         }
       ]
     };

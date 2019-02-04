@@ -70,14 +70,13 @@
     </div>
 
     <Live :videos="videos" :channel="channel" v-if="checkTab(1)"/>
-
-    <!-- <Vods :videos="videos" v-else-if="checkTab(2)"/>
-    <Ivods :videos="videos" :channel="channel" v-else/> -->
+    <Vods :videos="videos" v-else-if="checkTab(2)"/>
+    <Ivods :videos="videos" :channel="channel" v-else/>
   </div>
 </template>
 
 <script>
-import Live from "@/components/single_channel/lives";
+import Live from "@/components/single_channel/live";
 import Vods from "@/components/single_channel/vods";
 import Ivods from "@/components/single_channel/ivod";
 
