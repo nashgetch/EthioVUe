@@ -76,7 +76,7 @@
 </template>
 
 <script>
-import Live from "@/components/single_channel/live";
+import Live from "@/components/single_channel/lives";
 import Vods from "@/components/single_channel/vods";
 import Ivods from "@/components/single_channel/ivod";
 

@@ -1,30 +1,36 @@
 <template>
-  <div class="container">
-    <div class="row rowDiv">
-      <div class="col-lg-8 col-xs-12 col-sm-12">
-        <div class="video-container">
-          <iframe
-            class="iframe"
-            width="720"
-            height="405"
-            :src="'//video2.vixtream.net/tv/v/'+channel.chn"
-            frameborder="0"
-            allowfullscreen
-            allow-scripts
-          ></iframe>
-        </div>
-        <h1 class="mt-2" style="font-size:1rem">
-          <a>{{channel.tv_name}}</a>
-        </h1>
-
-        <!-- Ads block -->
-        <div class="content-wrapper">
-          <div class="left mb-2">
-            <a>Similar Videos</a>
+  <div>
+    <div class="container">
+      <div class="row rowDiv" ng-controller="tvController">
+        <div class="col-lg-8 col-xs-12 col-sm-12">
+          <div class="video-container">
+            <iframe
+              class="iframe"
+              width="720"
+              height="405"
+              :src="'//video2.vixtream.net/tv/v/'+channel.chn"
+              frameborder="0"
+              allowfullscreen
+              allow-scripts
+            ></iframe>
           </div>
-          <div class="clearfix"></div>
+          <h1 :class="marginTop(channel.owner_id)" class="display-4" style="font-size:1rem">
+            <a>{{channel.tv_name}}</a>
+          </h1>
 
-          <!-- <div class="single-v-footer">
+          <!-- Ads block -->
+
+
+          <div class="content-wrapper">
+            <div class="rophy nashians">
+              <adsbygoogle :ad-slot="'5950915078'"/>
+            </div>
+            <div class="left mb-2">
+              <a>Similar Videos</a>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="single-v-footer">
               <div class="similar-v single-video video-mobile-02">
                 <div class="row">
                   <div
@@ -71,11 +77,11 @@
                   </div>
                 </div>
               </div>
-          </div>-->
+            </div>
+          </div>
         </div>
-      </div>
-      <!-- <div class="col-lg-4 d-none d-lg-block mt-3">
-          <div class="nashian" v-if="videos.length < 4">
+        <div class="col-lg-4 d-none d-lg-block mt-3">
+          <div class="nashian">
             <adsbygoogle :ad-slot="'5950915078'"/>
           </div>
           <div class>
@@ -112,10 +118,8 @@
               </div>
             </div>
           </div>
-      </div>-->
-    </div>
-    <div class="">
-      <adsbygoogle :ad-slot="'5950915078'"/>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -145,31 +149,32 @@ export default {
     };
   },
   methods: {
-    // marginTop(id) {
-    //   if (id === 12 || id === 14) {
-    //     return "nashiti";
-    //   } else if (id === 13) {
-    //     return "nashitiwa";
-    //   } else {
-    //     return "nashiwwa";
-    //   }
-    // }
+    marginTop(id) {
+      if (id === 12 || id === 14) {
+        return "nashiti";
+      } else if (id === 13) {
+        return "nashitiwa";
+      } else {
+        return "nashiwwa";
+      }
+    }
   },
   mounted: function() {
-    // axios.post(base_url + "/live_channel").then(res => {
-    //   return (this.tvs = [
-    //     ...res.data.filter(res => {
-    //       if (this.channel.category == "2") {
-    //         return res.owner_id == this.channel.owner_id && res.category == "2";
-    //       }
-    //       return (
-    //         res.tv_name != "test" &&
-    //         res.owner_id != this.channel.owner_id &&
-    //         res.category === this.channel.category
-    //       );
-    //     })
-    //   ]);
-    // });
+    axios.post(base_url + "/live_channel").then(res => {
+      return (this.tvs = [
+        ...res.data.filter(res => {
+          if (this.channel.category == "2") {
+            return res.owner_id == this.channel.owner_id && res.category == "2";
+          }
+          return (
+            res.tv_name != "test" &&
+            res.owner_id != this.channel.owner_id &&
+            res.category === this.channel.category
+          );
+          // console.log(res);
+        })
+      ]);
+    });
   }
 };
 </script>

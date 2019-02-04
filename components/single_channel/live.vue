@@ -19,6 +19,8 @@
           </h1>
 
           <!-- Ads block -->
+
+
           <div class="content-wrapper">
             <div class="rophy nashians" v-if="videos.length < 4">
               <adsbygoogle :ad-slot="'5950915078'"/>
