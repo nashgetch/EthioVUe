@@ -114,7 +114,7 @@
           </div>
       </div>-->
     </div>
-    <div class="nashians">
+    <div class="">
       <adsbygoogle :ad-slot="'5950915078'"/>
     </div>
   </div>
