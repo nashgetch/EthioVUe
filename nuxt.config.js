@@ -19,7 +19,12 @@ module.exports = {
       {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1'
-      },
+      }
+    ],
+    link: [{
+      rel: 'canonical',
+      href: 'https://www.ethiov.com'
+    },
     ],
     htmlAttrs: {
       prefix: "og: http://ogp.me/ns#"
@@ -104,7 +109,7 @@ module.exports = {
     },
     {
       src: '~plugins/vue-lazyload'
-    },{
+    }, {
       src: '~plugins/vue-slick',
       ssr: false
     },

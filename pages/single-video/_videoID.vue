@@ -207,19 +207,19 @@
             </div>
           </div>
           <div class="comments" ng-controller="navController">
-            <div class="reply-comment" ng-controller="videoController" v-if="loggedIn">
+            <div class="reply-comment" ng-controller="videoController">
               <div class="rc-header">
                 <i class="cv cvicon-cv-comment"></i>
                 <span class="semibold">All</span>
                 Comments
               </div>
-              <div class="rc-ava">
+              <div class="rc-ava" v-if="loggedIn">
                 <span v-if="loggedIn" class="i-circle">{{user.name.charAt(0)}}</span>
               </div>
               <div class="form-group">
                 <form @submit.prevent="addComments(user.id, single.v_id)">
                   <textarea class="form-control mt-3" name="com" v-model="com" id="grnash" rows="3"></textarea>
-                  <button type="submit" class="btn btn-warning pull-right mt-2">
+                  <button v-if="loggedIn" type="submit" class="btn btn-warning pull-right mt-2">
                     <i class="fa fa-comments-o" aria-hidden="true"></i>
                   </button>
                 </form>
@@ -229,7 +229,7 @@
             <div class="fikir-vids" v-if="!loggedIn">
               <nuxt-link class="descr" to="/login">Sign in to comment!</nuxt-link>
             </div>
-            <div class="comments-list" ng-controller="videoController">
+            <div class="comments-list">
               <div class="cl-comment" v-for="(comment, $index) in comments" :key="$index">
                 <div class="cl-avatar">
                   <a class="i-circle">{{comment.cat_name.charAt(0)}}</a>
@@ -346,15 +346,14 @@ export default {
         {
           hid: "description",
           name: "description",
-          content:
-            "EthioV - " + this.single.description + ". "
+          content: "EthioV - " + this.single.description + ". "
         },
-        {
-          hid: "keywords",
-          name: "keywords",
-          keywords:
-            "Video, Bethel TV, Africa TV, Evangelical TV, Ethiopia, politics, Worldwide, live stream, sports, sales, Africa, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
-        },
+        // {
+        //   hid: "keywords",
+        //   name: "keywords",
+        //   keywords:
+        //     "Video, Bethel TV, Africa TV, Evangelical TV, Ethiopia, politics, Worldwide, live stream, sports, sales, Africa, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
+        // },
         {
           hid: "og:title",
           property: "og:title",
@@ -378,8 +377,7 @@ export default {
         {
           hid: "og:description",
           property: "og:description",
-          content:
-            "EthioV - " + this.single.description + ". "
+          content: "EthioV - " + this.single.description + ". "
         },
         {
           hid: "twitter:title",
@@ -409,8 +407,7 @@ export default {
         {
           hid: "twitter:description",
           property: "twitter:description",
-          content:
-            "EthioV - " + this.single.description + ". "
+          content: "EthioV - " + this.single.description + ". "
         }
       ]
     };
@@ -582,7 +579,11 @@ export default {
       .then(resp => {
         this.owned = resp.data;
       });
-
+    axios.post(base_url + "/fetchComments/" + this.single.v_id).then(res => {
+      loops(res.data).then(data => {
+        this.comments = data;
+      });
+    });
     if (this.loggedIn) {
       axios
         .post(base_url + "/countSub/" + this.single.chan_name.id)
@@ -591,12 +592,6 @@ export default {
         });
       axios.post(base_url + "/countLike/" + this.single.v_id).then(res => {
         return (this.likes = res.data);
-      });
-
-      axios.post(base_url + "/fetchComments/" + this.single.v_id).then(res => {
-        loops(res.data).then(data => {
-          this.comments = data;
-        });
       });
 
       axios.post(base_url + "/countDislike/" + this.single.v_id).then(res => {
@@ -631,15 +626,15 @@ async function loops(params) {
     main_array.push(temp);
   }
   return main_array;
-
-  async function get_single_comment(params) {
-    let temp = {};
-    temp = params;
-    let cat = await getUsername(params.user_id);
-    temp.cat_name = cat.name;
-    return temp;
-  }
 }
+async function get_single_comment(params) {
+  let temp = {};
+  temp = params;
+  let cat = await getUsername(params.user_id);
+  temp.cat_name = cat.name;
+  return temp;
+}
+
 // async function getCatname(v_id) {
 //   let t_resp = await axios.post(base_url + "/return_cat/" + v_id);
 //   return t_resp.data[0];
