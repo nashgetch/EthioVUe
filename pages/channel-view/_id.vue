@@ -86,17 +86,17 @@ const base_url = "https://ethiov.com/api";
 export default {
   head() {
     return {
-      title: this.channel.tv_name,
+      title: "Live Television",
       meta: [
         {
           hid: "description",
           name: "description",
           content:
             "EthioV - Live Stream of " +
-            this.channel.description +
+            // this.channel.description +
             "." +
             " You can catch up to your favorite programs of " +
-            this.channel.tv_name +
+            // this.channel.tv_name +
             " here."
         },
         {
@@ -108,12 +108,12 @@ export default {
         {
           hid: "og:title",
           property: "og:title",
-          content: this.channel.tv_name
+          content: "live television"
         },
         {
           hid: "og:url",
           property: "og:url",
-          content: "https://www.ethiov.com/single-channel/" + this.channel.id
+          // content: "https://www.ethiov.com/single-channel/" + this.channel.id
         },
         {
           hid: "og:image",
@@ -130,26 +130,26 @@ export default {
           property: "og:description",
           content:
             "EthioV - Live Stream of " +
-            this.channel.description +
+            // this.channel.description +
             "." +
             " You can catch up to your favorite programs of " +
-            this.channel.tv_name +
+            // this.channel.tv_name +
             " here."
         },
         {
           hid: "twitter:title",
           property: "twitter:title",
-          content: this.channel.tv_name
+          // content: this.channel.tv_name
         },
         {
           hid: "twitter:url",
           property: "twitter:url",
-          content: "https://www.ethiov.com/single-channel/" + this.channel.id
+          // content: "https://www.ethiov.com/single-channel/" + this.channel.id
         },
         {
           hid: "twitter:image",
           property: "twitter:image",
-          content: "//video2.vixtream.net" + this.channel.poster_image
+          // content: "//video2.vixtream.net" + this.channel.poster_image
         },
         {
           hid: "twitter:type",
@@ -166,10 +166,10 @@ export default {
           property: "twitter:description",
           content:
             "EthioV - Live Stream of " +
-            this.channel.description +
+            // this.channel.description +
             "." +
             " You can catch up to your favorite programs of " +
-            this.channel.tv_name +
+            // this.channel.tv_name +
             " here."
         }
       ]
