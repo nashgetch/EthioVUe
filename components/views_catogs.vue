@@ -2,14 +2,14 @@
   <div>
     <div v-if="isIndex">
       <i class="fa fa-language" @click="show_en=!show_en" style="font-size: 19px;color: #d59541;"></i>
-      <h1 v-show="show_en" style="font-size: 10px !important;">
+      <!-- <h1 v-show="show_en" style="font-size: 10px !important;">
         <a
           :href="'/single-video/' + vid"
           class="hideOverflow"
           :aria-label="title_en"
           :title="title_en"
         >{{title_en}}</a>
-      </h1>
+      </h1> -->
       <!-- <small style="font-size: 12px; color: white;">
         <i class="fa fa-angle-double-right" style="color: #d59541;"></i>
         <span
@@ -29,11 +29,11 @@
     <div v-if="isSingle">
       <i class="fa fa-language fa-2x mt-2" style="color: #d59541" @click="show_en=!show_en"></i>
       <h1 v-show="show_en" style="font-size: 14px !important;">
-        <a
+        <!-- <a
           class="hideOverflow"
           :aria-label="title_en+' '+title_am_ph"
           :title="title_en + ' '+ title_am_ph"
-        >{{title_en+" || " +title_am_ph}}</a>
+        >{{title_en+" || " +title_am_ph}}</a> -->
       </h1>
     </div>
 

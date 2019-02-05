@@ -219,7 +219,7 @@
               <div class="form-group">
                 <form @submit.prevent="addComments(user.id, single.v_id)">
                   <textarea class="form-control mt-3" name="com" v-model="com" id="grnash" rows="3"></textarea>
-                  <button v-if="loggedIn" type="submit" class="btn btn-warning pull-right mt-2">
+                  <button type="submit" class="btn btn-warning pull-right mt-2">
                     <i class="fa fa-comments-o" aria-hidden="true"></i>
                   </button>
                 </form>
@@ -506,18 +506,21 @@ export default {
       }
     },
     addComments(user_id, v_id) {
-      axios
-        .post(base_url + "/comment/" + user_id + "/" + v_id, {
-          com: this.com,
-          headers: {
-            "Content-type": "application/json"
-          }
-        })
-        .then(res => {
-          get_single_comment(res.data).then(res => this.comments.push(res));
-          this.com = "";
-          this.$toast.success("You Commented on this Video.");
-        });
+      if (!this.loggedIn) {
+         this.$toast.success("You Commented on this Video.");
+      }
+        axios
+          .post(base_url + "/comment/" + user_id + "/" + v_id, {
+            com: this.com,
+            headers: {
+              "Content-type": "application/json"
+            }
+          })
+          .then(res => {
+            get_single_comment(res.data).then(res => this.comments.push(res));
+            this.com = "";
+            this.$toast.success("You Commented on this Video.");
+          });
     }
   },
   async asyncData(context) {
