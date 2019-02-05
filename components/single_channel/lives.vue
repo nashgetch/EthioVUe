@@ -15,18 +15,41 @@
             ></iframe>
           </div>
           <h1 :class="marginTop(channel.owner_id)" class="display-4" style="font-size:1rem">
-            <a>{{channel.tv_name}}</a>
+            <a style="font-weight: bold; font-family: sans-serif;">
+              <strong>{{channel.tv_name}} | {{channel.description}}</strong>
+            </a>
           </h1>
+          <div class="card p-1" style="font-family: monospace">
+            <span>
+              Live Stream of {{channel.tv_name}}. Videos On Demand of {{channel.tv_name}}
+              <br>are found on the
+              next tab.
+            </span>
+            <span>
+              You can also watch your favorite tv shows and all the things you have
+              <br>
+              missed on
+              {{channel.tv_name}} on the instant VoDs Tab.
+            </span>
+          </div>
 
           <!-- Ads block -->
-
-
           <div class="content-wrapper">
             <!-- <div class="rophy nashians">
               <adsbygoogle :ad-slot="'5950915078'"/>
-            </div> -->
+            </div>-->
             <div class="left mb-2">
               <a>Similar Videos</a>
+              <small>
+                <br>
+                Latest Videos on Demand posted by {{channel.tv_name}}...
+              </small>
+              <div class="card p-1 d-inline pull-right mb-2">
+                <span class="label">News</span>
+                <span class="label">Drama</span>
+                <span class="label">Entertainment</span>
+                <span class="label">Movies</span>
+              </div>
             </div>
             <div class="clearfix"></div>
 
@@ -64,13 +87,22 @@
                           >{{video.title}}</a>
                         </div>
                         <a style="text-decoration: none;">
-                          <ViewCatogs
+                          <!-- <ViewCatogs
                             :vid="video.v_id"
                             :cat_id="video.category_id"
                             :view_count="video.view_count"
                             :created_at="video.created_at"
                             :type="video.type"
-                          />
+                          />-->
+                          <small style="color: #7e7e7e; font-size: 12px; font-weight: 300">
+                            <i class="fa fa-eye" style="color: #d59541"></i>
+                            {{video.view_count}} views
+                            <i
+                              class="fa fa-dot-circle-o"
+                              style="color: #d59541"
+                            ></i>
+                            {{video.created_at | moment("from", "now")}}
+                          </small>
                         </a>
                       </div>
                     </div>
@@ -78,12 +110,15 @@
                 </div>
               </div>
             </div>
+            <span class="card p-1 mr-auto ml-auto">EthioV - Ethiopian Live Channels and Videos on Demand.
+              <br>Ethiopia's Reliable TVs and Videos Archive. All Your Favorite TV Channels
+            </span>
           </div>
         </div>
         <div class="col-lg-4 d-none d-lg-block mt-3">
           <!-- <div class="nashian">
             <adsbygoogle :ad-slot="'5950915078'"/>
-          </div> -->
+          </div>-->
           <div class>
             <div class="caption">
               <div class="left">

@@ -1381,3 +1381,17 @@ a {
     height: 90px !important;
   }
 }
+.label-status{
+  background-color:#fbe651;
+  color: #111;
+}
+
+.label {
+  background-color: #fbe651;
+  color: #5e5e5e;
+  font-family: 'Open Sans';
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  text-shadow: none;
+}
