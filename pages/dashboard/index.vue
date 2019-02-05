@@ -171,9 +171,7 @@
     </div>
     <hr style="border-top: 1px solid rgba(0,0,0,0.6);" class="d-lg-block d-none">
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: .2rem;">
-      <!-- <div style="margin-left: auto; margin-right: auto;">
-       <wideads />
-      </div> -->
+      
       <div class="row fas">
         <div class="col-lg-10 offset-lg-2">
           <div class="row">
@@ -284,12 +282,12 @@ export default {
           content:
             "All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
         },
-        // {
-        //   hid: "keywords",
-        //   name: "keywords",
-        //   keywords:
-        //     "Bethel TV, Africa TV, Evangelical TV, Live Channels, Zena, ዜና, Entertainment, Sport, News, Current Afairs, Documentary, IPTV, videos, Africa"
-        // },
+        {
+          hid: "keywords",
+          name: "keywords",
+          keywords:
+            "Bethel, Africa, Evangelical, Live Channels, Zena, ዜና, Entertainment, Sport, News, Current Affairs, Documentary, IPTV, videos, travel, Ethiopia, USA, UK"
+        },
         {
           hid: "og:title",
           property: "og:title",
@@ -344,7 +342,7 @@ export default {
   components: {
     LatestVod,
     CatogVods,
-    wideads,
+
     TrendingVods,
     Subscription
   },
