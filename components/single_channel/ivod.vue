@@ -20,7 +20,19 @@
               Active {{time}} Hours Ago!
             </a>
           </h1>
-
+          <div class="card p-1" style="font-family: monospace">
+            <span>
+              Live Stream of {{channel.tv_name}}. Videos On Demand of {{channel.tv_name}}
+              <br>are found on the
+              next tab.
+            </span>
+            <span>
+              You can also watch your favorite tv shows and all the things you have
+              <br>
+              missed on
+              {{channel.tv_name}} on the instant VoDs Tab.
+            </span>
+          </div>
           <div class="content-wrapper">
             <div class="left mb-2">
               <a style="color: black; font-family: sans-serif; font-weight: 500;">
@@ -55,6 +67,12 @@
                 <a>Similar Videos</a>
               </div>
               <div class="clearfix"></div>
+              <div class="card p-1 d-inline pull-right mb-2">
+                <span class="label">News</span>
+                <span class="label">Drama</span>
+                <span class="label">Entertainment</span>
+                <span class="label">Movies</span>
+              </div>
 
               <div class="single-v-footer">
                 <div class="similar-v single-video video-mobile-02" ng-controller="videoController">
@@ -74,9 +92,7 @@
                                 :alt="video.title"
                               ></video>
                               <div class="time">{{video.duration}}</div>
-
                             </a>
-
                           </div>
                         </div>
                         <div class="col-12 col-sm-12">
@@ -109,6 +125,11 @@
                   </div>
                 </div>
               </div>
+              <span
+                class="card p-1 mr-auto ml-auto"
+              >EthioV - Ethiopian Live Channels and Videos on Demand.
+                <br>Ethiopia's Reliable TVs and Videos Archive. All Your Favorite TV Channels
+              </span>
             </div>
           </div>
         </div>
@@ -121,9 +142,9 @@
                   <h5 style="font-size: 22px;font-weight: 300;">Other Channels</h5>
                 </a>
               </div>
-               <div class="rophy nashian">
-              <adsbygoogle :ad-slot="'5950915078'"/>
-            </div>
+              <div class="rophy nashian">
+                <adsbygoogle :ad-slot="'5950915078'"/>
+              </div>
               <!-- <div data-ads2></div> -->
               <div class="clearfix"></div>
             </div>
