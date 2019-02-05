@@ -19,13 +19,13 @@
               <strong>{{channel.tv_name}} | {{channel.description}}</strong>
             </a>
           </h1>
-         
 
           <!-- Ads block -->
           <div class="content-wrapper">
-            <!-- <div class="rophy nashians">
-              <adsbygoogle :ad-slot="'5950915078'"/>
-            </div>-->
+            <div>
+              <WideAds />
+            </div>
+
             <div class="left mb-2">
               <a>Similar Videos</a>
               <small>
@@ -98,7 +98,9 @@
                 </div>
               </div>
             </div>
-            <span class="card p-1 mr-auto ml-auto">EthioV - Ethiopian Live Channels and Videos on Demand.
+            <span
+              class="card p-1 mr-auto ml-auto"
+            >EthioV - Ethiopian Live Channels and Videos on Demand.
               <br>Ethiopia's Reliable TVs and Videos Archive. All Your Favorite TV Channels
             </span>
           </div>
@@ -150,11 +152,13 @@
 <script>
 import axios from "axios";
 import ViewCatogs from "@/components/views_catogs";
+import WideAds from "@/components/adsComponents/wide_ads";
 
 const base_url = "https://ethiov.com/api";
 export default {
   components: {
-    ViewCatogs
+    ViewCatogs,
+    WideAds
   },
   props: {
     videos: {
