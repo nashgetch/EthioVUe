@@ -186,7 +186,7 @@ import ViewCatogs from "@/components/views_catogs";
 import CatogVods from "@/components/index_videos/catog_videos";
 import TrendingVods from "@/components/index_videos/trend_videos";
 import Subscription from "@/components/index_videos/subscription";
-// import wideads from "@/components/adsComponents/wide_ads"
+import wideads from "@/components/adsComponents/wide_ads"
 import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
@@ -261,7 +261,7 @@ middleware: "red",
   components: {
     LatestVod,
     CatogVods,
-    // wideads,
+    wideads,
     TrendingVods,
     Subscription
   },

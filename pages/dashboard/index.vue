@@ -171,8 +171,8 @@
     </div>
     <hr style="border-top: 1px solid rgba(0,0,0,0.6);" class="d-lg-block d-none">
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: .2rem;">
-      <div style="margin-left: auto; margin-right: auto;" class="nashians">
-        <adsbygoogle :ad-slot="'5950915078'"/>
+      <div style="margin-left: auto; margin-right: auto;">
+       <wideads />
       </div>
       <div class="row fas">
         <div class="col-lg-10 offset-lg-2">
@@ -270,7 +270,7 @@ import ViewCatogs from "@/components/views_catogs";
 import CatogVods from "@/components/index_videos/catog_videos";
 import TrendingVods from "@/components/index_videos/trend_videos";
 import Subscription from "@/components/index_videos/subscription";
-// import wideads from "@/components/adsComponents/wide_ads"
+import wideads from "@/components/adsComponents/wide_ads"
 import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
@@ -344,7 +344,7 @@ export default {
   components: {
     LatestVod,
     CatogVods,
-    // wideads,
+    wideads,
     TrendingVods,
     Subscription
   },
