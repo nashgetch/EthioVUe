@@ -1,6 +1,9 @@
 <template>
   <div>
     <div ng-show="isSet(2)" class="container parentDiv" ng-style="hidden2">
+      <div class="nashians" style="margin-left: auto; margin-right: auto;">
+        <adsbygoogle :ad-slot="'5950915078'"/>
+      </div>
       <div class="row rowDiv" ng-controller="videoController">
         <div
           class="col-12 col-sm-6 col-md-3 col-lg-2 videoitem kygo"
@@ -15,11 +18,8 @@
                     slot="placeholder"
                     class="bg-inverse"
                     style="background-color: black; height:102px;"
-                  ></div> -->
-                  <video
-                    :poster="'https://video2.vixtream.net/'+video.filename2"
-                    :alt="video.title"
-                  ></video>
+                ></div>-->
+                <video :poster="'https://video2.vixtream.net/'+video.filename2" :alt="video.title"></video>
                 <!-- </clazy-load> -->
                 <div ng-click="viewVideo(video.v_id)" class="play">
                   <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
@@ -51,7 +51,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
