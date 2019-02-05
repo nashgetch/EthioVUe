@@ -19,19 +19,7 @@
               <strong>{{channel.tv_name}} | {{channel.description}}</strong>
             </a>
           </h1>
-          <div class="card p-1" style="font-family: monospace">
-            <span>
-              Live Stream of {{channel.tv_name}}. Videos On Demand of {{channel.tv_name}}
-              <br>are found on the
-              next tab.
-            </span>
-            <span>
-              You can also watch your favorite tv shows and all the things you have
-              <br>
-              missed on
-              {{channel.tv_name}} on the instant VoDs Tab.
-            </span>
-          </div>
+         
 
           <!-- Ads block -->
           <div class="content-wrapper">

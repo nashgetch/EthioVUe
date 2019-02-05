@@ -17,16 +17,36 @@
           <h1 :class="marginTop(channel.owner_id)" class="display-4" style="font-size:1rem">
             <a>{{channel.tv_name}}</a>
           </h1>
-
+          <div class="card p-1" style="font-family: monospace">
+            <span>
+              Live Stream of {{channel.tv_name}}. Videos On Demand of {{channel.tv_name}}
+              <br>are found on the
+              next tab.
+            </span>
+            <span>
+              You can also watch your favorite tv shows and all the things you have
+              <br>
+              missed on
+              {{channel.tv_name}} on the instant VoDs Tab.
+            </span>
+          </div>
           <!-- Ads block -->
-
-
           <div class="content-wrapper">
             <div class="rophy nashians" v-if="videos.length < 4">
               <adsbygoogle :ad-slot="'5950915078'"/>
             </div>
             <div class="left mb-2">
               <a>Similar Videos</a>
+              <small>
+                <br>
+                Latest Videos on Demand posted by {{channel.tv_name}}...
+              </small>
+              <div class="card p-1 d-inline pull-right mb-2">
+                <span class="label">News</span>
+                <span class="label">Drama</span>
+                <span class="label">Entertainment</span>
+                <span class="label">Movies</span>
+              </div>
             </div>
             <div class="clearfix"></div>
 
