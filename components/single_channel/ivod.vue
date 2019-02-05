@@ -143,9 +143,9 @@
                   <h5 style="font-size: 22px;font-weight: 300;">Other Channels</h5>
                 </a>
               </div>
-              <div class="rophy nashian">
+              <!-- <div class="rophy nashian">
                 <adsbygoogle :ad-slot="'5950915078'"/>
-              </div>
+              </div> -->
               <!-- <div data-ads2></div> -->
               <div class="clearfix"></div>
             </div>
