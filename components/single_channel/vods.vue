@@ -1,9 +1,13 @@
+
 <template>
   <div>
     <div ng-show="isSet(2)" class="container parentDiv" ng-style="hidden2">
-      <div class="nashians" style="margin-left: auto; margin-right: auto;">
-        <adsbygoogle :ad-slot="'5950915078'"/>
-      </div>
+      <no-ssr>
+        <div class="nashians" style="margin-left: auto; margin-right: auto;">
+          <adsbygoogle :ad-slot="'5950915078'"/>
+        </div>
+      </no-ssr>
+
       <div class="row rowDiv" ng-controller="videoController">
         <div
           class="col-12 col-sm-6 col-md-3 col-lg-2 videoitem kygo"
