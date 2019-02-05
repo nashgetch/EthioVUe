@@ -65,14 +65,15 @@
             <div class="content-wrapper">
               <div class="left mb-2">
                 <a>Similar Videos</a>
-              </div>
-              <div class="clearfix"></div>
-              <div class="card p-1 d-inline pull-right mb-2">
+                 <div class="card p-1 d-inline pull-right mb-2">
                 <span class="label">News</span>
                 <span class="label">Drama</span>
                 <span class="label">Entertainment</span>
                 <span class="label">Movies</span>
               </div>
+              </div>
+              <div class="clearfix"></div>
+
 
               <div class="single-v-footer">
                 <div class="similar-v single-video video-mobile-02" ng-controller="videoController">
