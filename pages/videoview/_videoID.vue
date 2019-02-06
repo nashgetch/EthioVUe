@@ -16,7 +16,7 @@
         </div>
         <div class="content-wrapper" style="margin: 0 !important;">
           <h1 style="font-size: 15px !important; padding-top: 7px;">
-            {{ single.title }}
+            {{ single.title_en }}
             <ViewCatogs
               :isSingle="true"
               :vid="single.v_id"
@@ -140,11 +140,11 @@
           </div>
           <!-- End of The Author Part -->
           <div class="info">
-            <div>
+            <!-- <div>
               <p>{{ single.cat_name }} | {{single.tags}}</p>
               <h4>About :</h4>
               <p>{{single.description}}</p>
-            </div>
+            </div> -->
           </div>
           <div class="fikir-vids">
             <div class="row">
@@ -158,7 +158,7 @@
                           class="bg-inverse"
                           style="background-color: black; height:200px;"
                       ></div>-->
-                      <video class="imgur" :poster="pos_url+'/'+pub.filename2" :alt="pub.title"></video>
+                      <img class="imgur" :src="pos_url+'/'+pub.filename2" :alt="pub.title">
                       <!-- </clazy-load> -->
                       <a :href="'/single-video/'+pub.v_id">
                         <div ng-click="viewVideo(pub.v_id)" class="play">
@@ -174,9 +174,9 @@
                         <a
                           style="text-decoration: none;"
                           class="text"
-                          :aria-label="pub.title"
-                          :title="pub.title"
-                        >{{pub.title}}</a>
+                          :aria-label="pub.title_en"
+                          :title="pub.title_en"
+                        >{{pub.title_en}}</a>
                       </h1>
                     </div>
                     <a :href="'/single-video/'+pub.v_id" style="text-decoration: none;">
@@ -266,7 +266,7 @@
               <adsbygoogle :ad-slot="'5950915078'"/>
             </div>
             <a>
-              <h5 style="font-size: 19px;font-weight: 700; margin-bottom: 15px;">Other Videos</h5>
+              <h5 style="font-size: 19px;font-weight: 700; margin-bottom: 15px;">Recommended</h5>
             </a>
           </div>
           <div class="clearfix"></div>
@@ -274,13 +274,13 @@
             <div class="thumb row" v-for="(re,$index) in recommended" :key="$index">
               <div class="col-lg-6 col-sm-6" ng-click="viewVideo(re.v_id)">
                 <div class="Vimg itemContainer" style="background-color: #0c0c0c">
-                  <video
+                  <img
                     class="imgur"
                     height="400"
                     width="400"
-                    :poster="pos_url + '/'+re.filename2"
+                    :src="pos_url + '/'+re.filename2"
                     :alt="re.title"
-                  ></video>
+                  >
                   <a :href="'/single-video/'+re.v_id">
                     <div ng-click="viewVideo(re.v_id)" class="play">
                       <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
@@ -296,9 +296,9 @@
                       class="text"
                       style="text-decoration: none;"
                       :href="'/single-video/'+re.v_id"
-                      :aria-label="re.title"
-                      :title="re.title"
-                    >{{re.title}}</a>
+                      :aria-label="re.title_en"
+                      :title="re.title_en"
+                    >{{re.title_en}}</a>
                   </h1>
                 </div>
                 <a :href="'/single-video/'+re.v_id" style="text-decoration: none;">
@@ -360,9 +360,7 @@ export default {
           hid: "keywords",
           name: "keywords",
           keywords:
-            "Video, " +
-            this.single.title_en +
-            ", Bethel TV, Africa TV, Evangelical TV, Ethiopia, politics, Worldwide, live stream, sports, sales, Africa, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
+            "Bethel TV, Africa TV, Evangelical TV, Ethiopia, politics, Worldwide, live stream, sports, sales, Africa, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
         },
         {
           hid: "og:title",
