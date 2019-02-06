@@ -38,18 +38,18 @@
           <!-- The Author Part -->
           <div class="author">
             <div class="author-head">
-              <a :href="'/single-channel/'+owner.id">
+              <!-- <a :href="'/single-channel/'+owner.id">
                 <img
                   :src="'//video2.vixtream.net'+owner.poster_image"
                   :alt="owner.tv_name"
                   class="sv-avatar"
                 >
-              </a>
+              </a> -->
               <div class="sv-name ml-auto mr-auto">
-                <div class="mr-2">
+                <!-- <div class="mr-2">
                   <a></a>
                   {{ owner.tv_name }} - Videos
-                </div>
+                </div> -->
                 <div class="c-sub" @click="subscribe()">
                   <div class="c-f">Subscribe</div>
                   <div class="c-s">{{owner.subs}}</div>
