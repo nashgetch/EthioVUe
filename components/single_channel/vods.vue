@@ -2,11 +2,11 @@
 <template>
   <div>
     <div ng-show="isSet(2)" class="container parentDiv" ng-style="hidden2">
-      <no-ssr>
+      <!-- <no-ssr>
         <div class="nashians" style="margin-left: auto; margin-right: auto;">
           <adsbygoogle :ad-slot="'5950915078'"/>
         </div>
-      </no-ssr>
+      </no-ssr> -->
 
       <div class="row rowDiv" ng-controller="videoController">
         <div
