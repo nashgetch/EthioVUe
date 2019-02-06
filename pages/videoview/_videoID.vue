@@ -346,82 +346,82 @@ import Replies from "@/components/replies/replies";
 import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
-  head() {
-    return {
-      title: this.single.title,
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content:
-            "EthioV - " + this.single.description + ". " + this.single.tags
-        },
-        {
-          hid: "keywords",
-          name: "keywords",
-          keywords:
-            "Bethel TV, Africa TV, Evangelical TV, Ethiopia, politics, Worldwide, live stream, sports, sales, Africa, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
-        },
-        {
-          hid: "og:title",
-          property: "og:title",
-          content: this.single.title
-        },
-        {
-          hid: "og:url",
-          property: "og:url",
-          content: "https://ethiov.com/single-video/" + this.single.v_id
-        },
-        {
-          hid: "og:image",
-          property: "og:image",
-          content: "https://video2.vixtream.net/" + this.single.filename
-        },
-        {
-          hid: "og:type",
-          property: "og:type",
-          content: "video.movie"
-        },
-        {
-          hid: "og:description",
-          property: "og:description",
-          content:
-            "EthioV - " + this.single.description + ". " + this.single.tags
-        },
-        {
-          hid: "twitter:title",
-          property: "twitter:title",
-          content: this.single.title
-        },
-        {
-          hid: "twitter:url",
-          property: "twiiter:url",
-          content: "https://www.ethiov.com/single-video/" + this.single.v_id
-        },
-        {
-          hid: "twitter:image",
-          property: "twitter:image",
-          content: "https://video2.vixtream.net/" + this.single.filename
-        },
-        {
-          hid: "twitter:type",
-          property: "twitter:type",
-          content: "video.movie"
-        },
-        {
-          hid: "twitter:card",
-          property: "twitter:card",
-          content: "summary_large_image"
-        },
-        {
-          hid: "twitter:description",
-          property: "twitter:description",
-          content:
-            "EthioV - " + this.single.description + ". " + this.single.tags
-        }
-      ]
-    };
-  },
+  // head() {
+  //   return {
+  //     title: this.single.title_en,
+  //     meta: [
+  //       {
+  //         hid: "description",
+  //         name: "description",
+  //         content:
+  //           "EthioV - " + this.single.description + ". " + this.single.tags
+  //       },
+  //       {
+  //         hid: "keywords",
+  //         name: "keywords",
+  //         keywords:
+  //           "Bethel TV, Africa TV, Evangelical TV, Ethiopia, politics, Worldwide, live stream, sports, sales, Africa, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
+  //       },
+  //       {
+  //         hid: "og:title",
+  //         property: "og:title",
+  //         content: this.single.title
+  //       },
+  //       {
+  //         hid: "og:url",
+  //         property: "og:url",
+  //         content: "https://ethiov.com/single-video/" + this.single.v_id
+  //       },
+  //       {
+  //         hid: "og:image",
+  //         property: "og:image",
+  //         content: "https://video2.vixtream.net/" + this.single.filename
+  //       },
+  //       {
+  //         hid: "og:type",
+  //         property: "og:type",
+  //         content: "video.movie"
+  //       },
+  //       {
+  //         hid: "og:description",
+  //         property: "og:description",
+  //         content:
+  //           "EthioV - " + this.single.description + ". " + this.single.tags
+  //       },
+  //       {
+  //         hid: "twitter:title",
+  //         property: "twitter:title",
+  //         content: this.single.title
+  //       },
+  //       {
+  //         hid: "twitter:url",
+  //         property: "twiiter:url",
+  //         content: "https://www.ethiov.com/single-video/" + this.single.v_id
+  //       },
+  //       {
+  //         hid: "twitter:image",
+  //         property: "twitter:image",
+  //         content: "https://video2.vixtream.net/" + this.single.filename
+  //       },
+  //       {
+  //         hid: "twitter:type",
+  //         property: "twitter:type",
+  //         content: "video.movie"
+  //       },
+  //       {
+  //         hid: "twitter:card",
+  //         property: "twitter:card",
+  //         content: "summary_large_image"
+  //       },
+  //       {
+  //         hid: "twitter:description",
+  //         property: "twitter:description",
+  //         content:
+  //           "EthioV - " + this.single.description + ". " + this.single.tags
+  //       }
+  //     ]
+  //   };
+  // },
   components: {
     ViewCatogs,
     Replies
