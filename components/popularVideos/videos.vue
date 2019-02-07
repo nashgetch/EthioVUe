@@ -1,6 +1,10 @@
 <template>
   <div>
-    <span class="title">Most Popular Videos Right Now...</span>
+    <span class="title">Most Popular Videos Right Now...
+      <small>
+        Recent and Most viewed Videos on demand from Fana, Walta, Amhara, OBN, Bethel and other Religious and Educational Channels. Ethiopia.
+      </small>
+    </span>
     <hr class="guetta">
     <div class="row display-flex" style="background-color: #F6FBFF; margin-top: 2px;">
       <div

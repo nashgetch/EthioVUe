@@ -5,7 +5,7 @@
       <!-- <div class="container parentDiv"> -->
       <!-- <div class="nashians">
         <adsbygoogle :ad-slot="'5950915078'"/>
-      </div> -->
+      </div>-->
       <PopularVideos></PopularVideos>
     </div>
     <div class="container parentDiv">
@@ -13,6 +13,17 @@
         <adsbygoogle/>
       </div>-->
       <span class="title">Other Recommended Videos...</span>
+      <div class="card p-1 d-inline pull-right mb-2">
+        <span class="label">Fana</span>
+        <span class="label">Bethel</span>
+        <span class="label">Africa</span>
+        <span class="label">Evangelical</span>
+        <span class="label">Sports</span>
+        <span class="label">News</span>
+        <span class="label">Travel</span>
+
+
+      </div>
       <hr class="guetta">
       <div class="row display-flex">
         <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3 ml-auto mr-auto mb-3">

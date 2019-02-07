@@ -1,6 +1,8 @@
 <template>
   <div>
-    <span class="title">Recent Videos from Our Featured Channels...</span>
+    <span class="title">Recent Videos from Our Featured Channels...
+<small>Up-to-Date News, Sports, Documentary, Current Affairs, Religious, Travel and Other Topics From all Ethiopian Channels</small>
+    </span>
     <hr class="guetta">
     <div class="row display-flex" style="background-color: #fff6e8; margin-top: 2px;">
       <div
