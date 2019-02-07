@@ -17,7 +17,7 @@ export default {
     //  (windowadsbygoogle= window.adsbygoogle || []).push({});
     this.$nextTick(()=>{
       //  (window.adsbygoogle= window.adsbygoogle || []).push({});
-         setTimeout(() => (window.adsbygoogle= window.adsbygoogle || []).push({}), 500)
+         setTimeout(() => (window.adsbygoogle= window.adsbygoogle || []).push({}), 1100)
     });
   }
 };
