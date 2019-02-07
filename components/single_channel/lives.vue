@@ -22,7 +22,7 @@
 
           <!-- Ads block -->
           <div class="content-wrapper">
-            <div>
+            <div class="nashians"
               <WideAds />
             </div>
 
