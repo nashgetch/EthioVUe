@@ -22,7 +22,9 @@
 
           <!-- Ads block -->
           <div class="content-wrapper">
-
+            <div>
+              <WideAds />
+            </div>
 
             <div class="left mb-2">
               <a>Similar Videos</a>
