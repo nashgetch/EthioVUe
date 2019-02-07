@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg fixed-top p-0 p-sm-2">
       <div class="d-inline-flex">
         <div class="float-left ml-md-auto ml-lg-auto d-block d--none mt-auto ml-2">
-          <a href="/dashboard" class style="font-size: 1.4rem;" id="menu-toggler">
+          <a href="/" class style="font-size: 1.4rem;" id="menu-toggler">
             <!-- <i class="fa fa-youtube-play fa-2x d-none d-lg-none" style="color: #fbe631;"></i> -->
           </a>
         </div>
@@ -45,13 +45,13 @@
         </div>
         <div class="container p-0 ml-4 mr-auto mt-auto mb-auto text-dark">
           <div class="row">
-            <nuxt-link to="/dashboard" class="d-none d-lg-block">
+            <nuxt-link to="/" class="d-none d-lg-block">
               <div class="text-center ethiov_logo">
                 <img src="/img/EthioV_LOGO3.png" alt>
               </div>
             </nuxt-link>
             <div class="d-block d-lg-none">
-              <a href="/dashboard" style="color: black;">e</a>
+              <a href="/" style="color: black;">e</a>
               <span style="color: white; font-weight: bold; font-size: 17px;">EthioV</span>
               <!-- <nuxt-link
                 to="/"
@@ -59,7 +59,7 @@
               >{{active_route==="index" ? "Home" : active_route==="live-channels"? active_route :"EthioV"}}</nuxt-link>-->
             </div>
             <div class="navbar-nav flex-row mr-auto mt-1 d-none d-lg-flex">
-              <a href="/dashboard" class="nav-item nav-link" style="font-weight: bold;">
+              <a href="/" class="nav-item nav-link" style="font-weight: bold;">
                 Home
                 <span class="sr-only">(current)</span>
               </a>
@@ -295,7 +295,7 @@ export default {
       menulinks: [
         {
           isLink: true,
-          url: "/dashboard",
+          url: "/",
           header: "Home"
         },
 
