@@ -22,9 +22,7 @@
 
           <!-- Ads block -->
           <div class="content-wrapper">
-            <div class="nashians"
-              <WideAds />
-            </div>
+
 
             <div class="left mb-2">
               <a>Similar Videos</a>
