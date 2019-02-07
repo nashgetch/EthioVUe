@@ -7,6 +7,88 @@
      });
     </script>-->
     <!-- <a href="/ads-test">Test Ads</a> -->
+    <!--
+    <div class="content-wrapper text-center">
+
+      <span class="martin">Featured Live TV Channels</span>
+      <hr>
+      <div class="row" style="background-color:#fafafc;">
+        <div class="col-lg-2 col-sm-12 col-12"></div>
+        <div class="col-lg-8 col-sm-12 col-12 text-center">
+          <div class="row">
+            <div class="col-lg-2 col-sm-3 col-3">
+              <a href="/single-channel/114">
+                <div class="chn-image-container index m-0">
+                  <img class="avicii" src="/img/fbctv_poster.jpg" alt="Fana TV">
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-2 col-sm-3 col-3">
+              <a href="/single-channel/113">
+                <div class="chn-image-container index m-0">
+                  <img class="avicii" src="/img/amma_poster.jpg" alt="Amhara TV">
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-2 col-sm-3 col-3">
+              <a href="/single-channel/567">
+                <div class="chn-image-container index m-0">
+                  <img class="avicii" src="/img/walta_posters.jpg" alt="Walta TV">
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-2 col-sm-3 col-3">
+              <a href="/single-channel/126">
+                <div class="chn-image-container index m-0">
+                  <img class="avicii" src="/img/obm_poster.jpg" alt="OBN TV">
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-4 d-lg-block d-none">
+              <div class="ch-social-links walker">
+                <div class="social-icons-container mt-2 ml-4 d-flex">
+                  <span class="mt-3" style="color:black; font-size:1rem;">Social</span>
+
+                  <social-sharing
+                    url="https://ethiov.com"
+                    title="EthioV - Ethiopian Videos and Live channels"
+                    description="All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
+                    quote="EthioV - Ethiopian Videos and Live channels"
+                    hashtags="#EthioV, #ETHIOPIAN_LIVE_TV_CHANNELS, #FANA, #AMHARA, #WALTA, #OBN"
+                    inline-template
+                  >
+                    <div>
+                      <network network="facebook">
+                        <i
+                          class="fa fa-fw fa-facebook fa-2x"
+                          style="color: #3b5998; padding-left: 5px; margin-top: 10px;"
+                        ></i>
+                      </network>
+
+                      <network network="twitter">
+                        <i
+                          class="fa fa-fw fa-twitter fa-2x"
+                          style="color: #55acee; padding-left: 5px; margin-top: 10px;"
+                        ></i>
+                      </network>
+                      <network network="telegram">
+                        <i
+                          class="fa fa-telegram fa-2x"
+                          style="color: #00405d; padding-left: 5px; margin-top: 10px;"
+                        ></i>
+                      </network>
+                    </div>
+                  </social-sharing>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>-->
     <div class="content-wrapper text-center">
       <span class="martin">Featured Live TV Channels</span>
       <hr>
@@ -87,7 +169,6 @@
         </div>
       </div>
     </div>
-
     <hr style="border-top: 1px solid rgba(0,0,0,0.6);" class="d-lg-block d-none">
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: .2rem;">
       <div class="row fas">
@@ -190,7 +271,6 @@ import wideads from "@/components/adsComponents/wide_ads"
 import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
-middleware: "red",
   head() {
     return {
       title: "EthioV - Ethiopian Videos and Live channels",
@@ -201,12 +281,12 @@ middleware: "red",
           content:
             "All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
         },
-        // {
-        //   hid: "keywords",
-        //   name: "keywords",
-        //   keywords:
-        //     "Bethel TV, Africa TV, Evangelical TV, Live Channels, Zena, ዜና, Entertainment, Sport, News, Current Afairs, Documentary, IPTV, videos, Africa"
-        // },
+        {
+          hid: "keywords",
+          name: "keywords",
+          keywords:
+            "Bethel, Africa, Evangelical, Live Channels, Zena, ዜና, Entertainment, Sport, News, Current Affairs, Documentary, IPTV, videos, travel, Ethiopia, USA, UK"
+        },
         {
           hid: "og:title",
           property: "og:title",
@@ -261,7 +341,7 @@ middleware: "red",
   components: {
     LatestVod,
     CatogVods,
-    wideads,
+
     TrendingVods,
     Subscription
   },
