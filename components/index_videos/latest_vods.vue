@@ -13,7 +13,7 @@
         <adsbygoogle/>
       </div>-->
       <span class="title">Other Recommended Videos...</span>
-        
+
       <hr class="guetta">
       <div class="row display-flex">
         <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3 ml-auto mr-auto mb-3">
@@ -93,6 +93,12 @@
             <div class="descr main" ng-click="viewVideo(video.v_id)">
               <h1 style="font-size: 14px !important;">
                 <a class="text" :aria-label="video.title" :title="video.title">{{video.title}}</a>
+                <a
+                  class="text smallFont"
+                  :href="'/single-video/' + video.v_id"
+                  :aria-label="video.title_en"
+                  :title="video.title_en"
+                >{{video.title_en}}</a>
               </h1>
               <!-- <h1 v-show="engshow(video.v_id)" style="font-size: 14px !important;"><a
                   class="hideOverflow"
@@ -217,6 +223,12 @@ export default {
   max-height: 25px; /* fallback */
   -webkit-line-clamp: 2; /* number of lines to show */
   -webkit-box-orient: vertical;
+  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: #676a6c;
+}
+.small {
+  font-size: 12px;
 }
 .nashians {
   width: 320px !important;

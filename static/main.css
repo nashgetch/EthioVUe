@@ -1,3 +1,25 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,300,500,700");
+
+
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(fonts/DXI1ORHCpsQm3Vp6mXoaTa-j2U0lmluP9RWlSytm3ho.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* cyrillic */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(fonts/DXI1ORHCpsQm3Vp6mXoaTZX5f-9o1vgP2EXwfjgl7AY.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
 .parentDiv {
   margin-top: 3rem;
 }
@@ -527,7 +549,8 @@ small {
   background-color: black;
 
 }
-.navbar > ul{
+
+.navbar>ul {
   list-style-type: none !important;
 }
 
@@ -1184,7 +1207,9 @@ small {
 }
 
 body {
-  font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace !important;
+  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: #676a6c;
 }
 
 html,
@@ -1381,8 +1406,9 @@ a {
     height: 90px !important;
   }
 }
-.label-status{
-  background-color:#fbe651;
+
+.label-status {
+  background-color: #fbe651;
   color: #111;
 }
 
@@ -1394,4 +1420,10 @@ a {
   font-weight: 600;
   padding: 3px 8px;
   text-shadow: none;
+}
+
+.smallFont {
+  margin-top: 7px;
+  font-size: 12px !important;
+  font-weight: 200;
 }

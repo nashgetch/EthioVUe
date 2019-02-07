@@ -65,15 +65,14 @@
             <div class="content-wrapper">
               <div class="left mb-2">
                 <a>Similar Videos</a>
-                 <div class="card p-1 d-inline pull-right mb-2">
-                <span class="label">News</span>
-                <span class="label">Drama</span>
-                <span class="label">Entertainment</span>
-                <span class="label">Movies</span>
-              </div>
+                <div class="card p-1 d-inline pull-right mb-2">
+                  <span class="label">News</span>
+                  <span class="label">Drama</span>
+                  <span class="label">Entertainment</span>
+                  <span class="label">Movies</span>
+                </div>
               </div>
               <div class="clearfix"></div>
-
 
               <div class="single-v-footer">
                 <div class="similar-v single-video video-mobile-02" ng-controller="videoController">
@@ -107,6 +106,12 @@
                                 tooltip
                                 data-animation="false"
                               >{{video.title}}</a>
+                              <a
+                                class="text smallFont"
+                                :href="'/single-video/' + video.v_id"
+                                :aria-label="video.title_en"
+                                :title="video.title_en"
+                              >{{video.title_en}}</a>
                             </h1>
                           </div>
                           <a style="text-decoration: none;" :href="'/single-video/' + video.v_id">
@@ -145,7 +150,7 @@
               </div>
               <!-- <div class="rophy nashian">
                 <adsbygoogle :ad-slot="'5950915078'"/>
-              </div> -->
+              </div>-->
               <!-- <div data-ads2></div> -->
               <div class="clearfix"></div>
             </div>
@@ -304,6 +309,9 @@ export default {
   max-height: 32px; /* fallback */
   -webkit-line-clamp: 2; /* number of lines to show */
   -webkit-box-orient: vertical;
+  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: #676a6c;
 }
 @media (max-width: 500px) {
   .nashiwa {

@@ -1,9 +1,8 @@
 <template>
   <div>
-    <span class="title">Most Popular Videos Right Now...
-      <small>
-        Recent and Most viewed Videos on demand from Fana, Walta, Amhara, OBN, Bethel and other Religious and Educational Channels. Ethiopia.
-      </small>
+    <span class="title">
+      Most Popular Videos Right Now...
+      <small>Recent and Most viewed Videos on demand from Fana, Walta, Amhara, OBN, Bethel and other Religious and Educational Channels. Ethiopia.</small>
     </span>
     <hr class="guetta">
     <div class="row display-flex" style="background-color: #F6FBFF; margin-top: 2px;">
@@ -43,6 +42,13 @@
           <div class="descr main" ng-click="viewVideo(video.v_id)">
             <h1 style="font-size: 14px !important;">
               <a class="text" :aria-label="video.title" :title="video.title">{{video.title}}</a>
+              <a
+                class="text smallFont"
+                :href="'/single-video/' + video.v_id"
+                :aria-label="video.title_en"
+                :title="video.title_en"
+
+              >{{video.title_en}}</a>
             </h1>
             <!-- <h1 v-show="engshow(video.v_id)" style="font-size: 14px !important;"><a
                   class="hideOverflow"
@@ -107,6 +113,9 @@ export default {
   max-height: 25px; /* fallback */
   -webkit-line-clamp: 2; /* number of lines to show */
   -webkit-box-orient: vertical;
+  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: #676a6c;
 }
 .kygo {
   padding-left: 4px;

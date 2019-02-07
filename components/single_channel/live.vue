@@ -82,6 +82,12 @@
                             :aria-label="video.title"
                             :title="video.title"
                           >{{video.title}}</a>
+                          <a
+                            class="text smallFont"
+                            :href="'/single-video/' + video.v_id"
+                            :aria-label="video.title_en"
+                            :title="video.title_en"
+                          >{{video.title_en}}</a>
                         </div>
                         <a style="text-decoration: none;">
                           <ViewCatogs
@@ -278,6 +284,10 @@ export default {
   max-height: 32px; /* fallback */
   -webkit-line-clamp: 2; /* number of lines to show */
   -webkit-box-orient: vertical;
+  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: #676a6c;
+
 }
 @media (max-width: 500px) {
   .nashiwwa {

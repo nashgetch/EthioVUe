@@ -17,6 +17,12 @@
         <div class="content-wrapper" style="margin: 0 !important;">
           <h1 style="font-size: 15px !important; padding-top: 7px;">
             {{ single.title }}
+            <a
+              class="text smallFont"
+              :href="'/single-video/' + single.v_id"
+              :aria-label="single.title_en"
+              :title="single.title_en"
+            >{{single.title_en}}</a>
             <ViewCatogs
               :isSingle="true"
               :vid="single.v_id"
@@ -173,6 +179,12 @@
                           :aria-label="pub.title"
                           :title="pub.title"
                         >{{pub.title}}</a>
+                        <a
+                          style="text-decoration: none;"
+                          class="text smallFont"
+                          :aria-label="pub.title_en"
+                          :title="pub.title_en"
+                        >{{pub.title_en}}</a>
                       </h1>
                     </div>
                     <a :href="'/single-video/'+pub.v_id" style="text-decoration: none;">
@@ -292,6 +304,12 @@
                       :aria-label="re.title"
                       :title="re.title"
                     >{{re.title}}</a>
+                    <a
+                      class="text smallFont"
+                      :href="'/single-video/' + re.v_id"
+                      :aria-label="re.title_en"
+                      :title="re.title_en"
+                    >{{re.title_en}}</a>
                   </h1>
                 </div>
                 <a :href="'/single-video/'+re.v_id" style="text-decoration: none;">
@@ -507,20 +525,20 @@ export default {
     },
     addComments(user_id, v_id) {
       if (!this.loggedIn) {
-         this.$toast.success("You Commented on this Video.");
+        this.$toast.success("You Commented on this Video.");
       }
-        axios
-          .post(base_url + "/comment/" + user_id + "/" + v_id, {
-            com: this.com,
-            headers: {
-              "Content-type": "application/json"
-            }
-          })
-          .then(res => {
-            get_single_comment(res.data).then(res => this.comments.push(res));
-            this.com = "";
-            this.$toast.success("You Commented on this Video.");
-          });
+      axios
+        .post(base_url + "/comment/" + user_id + "/" + v_id, {
+          com: this.com,
+          headers: {
+            "Content-type": "application/json"
+          }
+        })
+        .then(res => {
+          get_single_comment(res.data).then(res => this.comments.push(res));
+          this.com = "";
+          this.$toast.success("You Commented on this Video.");
+        });
     }
   },
   async asyncData(context) {
@@ -728,6 +746,9 @@ async function getUsername(user_id) {
   max-height: 32px; /* fallback */
   -webkit-line-clamp: 2; /* number of lines to show */
   -webkit-box-orient: vertical;
+  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: #676a6c;
 }
 @media (max-width: 800px) {
   .text {
