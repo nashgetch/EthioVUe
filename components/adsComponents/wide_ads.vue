@@ -3,7 +3,7 @@
  <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-5001725934888164"
-     data-ad-slot="5628270393"
+     data-ad-slot="5950915078"
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
  <!-- <adsbygoogle class="nashians" ad-slot="5950915078" /> -->
