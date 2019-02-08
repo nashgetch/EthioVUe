@@ -103,7 +103,7 @@ export default {
         {
           hid: "keywords",
           name: "keywords",
-          keywords: "Fana TV, Walta, EBC, Bethel TV, Ethiopian TV Channels, Religion, Politics, Ethiopia, Social Media, Live Stream, Africa"
+          keywords: "Bethel TV, Ethiopian TV Channels, Religion, Politics, Ethiopia, Social Media, Live Stream, Africa"
         },
         {
           hid: "og:title",
