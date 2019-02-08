@@ -48,10 +48,11 @@
                 <span class="label">Movies</span>
               </div>
             </div>
-            <div class="clearfix"></div>
             <div class="nashians" style="margin-left: auto; margin-right: auto;">
               <adsbygoogle :ad-slot="'5950915078'"/>
             </div>
+            <div class="clearfix"></div>
+
             <div class="single-v-footer">
               <div class="similar-v single-video video-mobile-02">
                 <div class="row">
