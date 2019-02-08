@@ -37,6 +37,9 @@
         </div>
 
         <div class="content-wrapper">
+          <div class="rophy nashians">
+            <adsbygoogle :ad-slot="'5950915078'"/>
+          </div>
           <!-- The Author Part -->
           <div class="author">
             <div class="author-head">
@@ -268,6 +271,9 @@
         <!-- right column -->
       </div>
       <div class="col-sm-12 col-lg-4 d-none d-lg-block">
+        <div class="nashian">
+          <adsbygoogle :ad-slot="'5950915078'"/>
+        </div>
         <div class="caption">
           <div class="left">
             <a>

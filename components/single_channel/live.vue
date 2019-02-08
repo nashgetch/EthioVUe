@@ -32,7 +32,7 @@
           </div>
           <!-- Ads block -->
           <div class="content-wrapper">
-            <div class="rophy nashians" v-if="videos.length < 4">
+            <div class="rophy nashians">
               <adsbygoogle :ad-slot="'5950915078'"/>
             </div>
             <div class="left mb-2">
@@ -107,7 +107,7 @@
           </div>
         </div>
         <div class="col-lg-4 d-none d-lg-block mt-3">
-          <div class="nashian" v-if="videos.length < 4">
+          <div class="nashian">
             <adsbygoogle :ad-slot="'5950915078'"/>
           </div>
           <div class>

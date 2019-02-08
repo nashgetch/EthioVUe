@@ -7,6 +7,9 @@
           <adsbygoogle :ad-slot="'5950915078'"/>
         </div>
       </no-ssr>-->
+      <div class="rophy nashians">
+              <adsbygoogle :ad-slot="'5950915078'"/>
+            </div>
       <div class="row rowDiv" ng-controller="videoController">
         <div
           class="col-12 col-sm-6 col-md-3 col-lg-2 videoitem kygo"

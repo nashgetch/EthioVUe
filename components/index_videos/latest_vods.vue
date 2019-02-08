@@ -12,6 +12,9 @@
       <!-- <div class="nashians">
         <adsbygoogle/>
       </div>-->
+      <div class="rophy nashians">
+        <adsbygoogle :ad-slot="'5950915078'"/>
+      </div>
       <span class="title">Other Recommended Videos...</span>
 
       <hr class="guetta">

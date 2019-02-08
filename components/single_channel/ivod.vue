@@ -63,6 +63,9 @@
               </div>
             </div>
             <div class="content-wrapper">
+              <div class="rophy nashians">
+              <adsbygoogle :ad-slot="'5950915078'"/>
+            </div>
               <div class="left mb-2">
                 <a>Similar Videos</a>
                 <div class="card p-1 d-inline pull-right mb-2">
@@ -140,6 +143,9 @@
           </div>
         </div>
         <div class="col-lg-4 d-none d-lg-block mt-3">
+          <div class="nashian">
+            <adsbygoogle :ad-slot="'5950915078'"/>
+          </div>
           <!-- up next -->
           <div class>
             <div class="caption">
