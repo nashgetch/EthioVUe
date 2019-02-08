@@ -32,7 +32,8 @@
           </div>
           <!-- Ads block -->
           <div class="content-wrapper">
-            <div class="rophy nashians" v-if="videos.length < 4">
+
+            <div class="rophy nashians">
               <adsbygoogle :ad-slot="'5950915078'"/>
             </div>
             <div class="left mb-2">
@@ -47,10 +48,7 @@
                 <span class="label">Entertainment</span>
                 <span class="label">Movies</span>
               </div>
-            </div>
-            <div class="nashians" style="margin-left: auto; margin-right: auto;">
-              <adsbygoogle :ad-slot="'5950915078'"/>
-            </div>
+
             <div class="clearfix"></div>
 
             <div class="single-v-footer">
