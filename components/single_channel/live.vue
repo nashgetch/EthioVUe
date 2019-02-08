@@ -18,25 +18,25 @@
             <a>{{channel.tv_name}}</a>
           </h1>
           <div class="nashians">
-              <adsbygoogle :ad-slot="'5950915078'"/>
-            </div>
-          <div class="card mt-2 p-1" style="font-family: monospace">
-            <span>
-              Live Stream of {{channel.tv_name}}. Videos On Demand of {{channel.tv_name}}
-              <br>are found on the
-              next tab.
-            </span>
-            <span>
-              You can also watch your favorite tv shows and all the things you have
-              <br>
-              missed on
-              {{channel.tv_name}} on the instant VoDs Tab.
-            </span>
+            <adsbygoogle :ad-slot="'5950915078'"/>
           </div>
+
           <!-- Ads block -->
           <div class="content-wrapper">
-
             <div class="left mb-2">
+              <div class="card mt-2 p-1" style="font-family: monospace">
+                <span>
+                  Live Stream of {{channel.tv_name}}. Videos On Demand of {{channel.tv_name}}
+                  <br>are found on the
+                  next tab.
+                </span>
+                <span>
+                  You can also watch your favorite tv shows and all the things you have
+                  <br>
+                  missed on
+                  {{channel.tv_name}} on the instant VoDs Tab.
+                </span>
+              </div>
               <a>Similar Videos</a>
               <small>
                 <br>
@@ -288,7 +288,6 @@ export default {
   font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   color: #676a6c;
-
 }
 @media (max-width: 500px) {
   .nashiwwa {
