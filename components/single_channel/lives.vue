@@ -15,17 +15,26 @@
             ></iframe>
           </div>
           <h1 :class="marginTop(channel.owner_id)" class="display-4" style="font-size:1rem">
-            <a style="font-weight: bold; font-family: sans-serif;">
-              <strong>{{channel.tv_name}} | {{channel.description}}</strong>
-            </a>
+            <a>{{channel.tv_name}}</a>
           </h1>
-
+          <div class="card p-1" style="font-family: monospace">
+            <span>
+              Live Stream of {{channel.tv_name}}. Videos On Demand of {{channel.tv_name}}
+              <br>are found on the
+              next tab.
+            </span>
+            <span>
+              You can also watch your favorite tv shows and all the things you have
+              <br>
+              missed on
+              {{channel.tv_name}} on the instant VoDs Tab.
+            </span>
+          </div>
           <!-- Ads block -->
           <div class="content-wrapper">
-            <div>
-              <WideAds />
+            <div class="rophy nashians" v-if="videos.length < 4">
+              <adsbygoogle :ad-slot="'5950915078'"/>
             </div>
-
             <div class="left mb-2">
               <a>Similar Videos</a>
               <small>
@@ -40,7 +49,9 @@
               </div>
             </div>
             <div class="clearfix"></div>
-
+            <div class="nashians" style="margin-left: auto; margin-right: auto;">
+              <adsbygoogle :ad-slot="'5950915078'"/>
+            </div>
             <div class="single-v-footer">
               <div class="similar-v single-video video-mobile-02">
                 <div class="row">
@@ -73,24 +84,21 @@
                             :aria-label="video.title"
                             :title="video.title"
                           >{{video.title}}</a>
+                          <a
+                            class="text smallFont"
+                            :href="'/single-video/' + video.v_id"
+                            :aria-label="video.title_en"
+                            :title="video.title_en"
+                          >{{video.title_en}}</a>
                         </div>
                         <a style="text-decoration: none;">
-                          <!-- <ViewCatogs
+                          <ViewCatogs
                             :vid="video.v_id"
                             :cat_id="video.category_id"
                             :view_count="video.view_count"
                             :created_at="video.created_at"
                             :type="video.type"
-                          />-->
-                          <small style="color: #7e7e7e; font-size: 12px; font-weight: 300">
-                            <i class="fa fa-eye" style="color: #d59541"></i>
-                            {{video.view_count}} views
-                            <i
-                              class="fa fa-dot-circle-o"
-                              style="color: #d59541"
-                            ></i>
-                            {{video.created_at | moment("from", "now")}}
-                          </small>
+                          />
                         </a>
                       </div>
                     </div>
@@ -98,17 +106,12 @@
                 </div>
               </div>
             </div>
-            <span
-              class="card p-1 mr-auto ml-auto"
-            >EthioV - Ethiopian Live Channels and Videos on Demand.
-              <br>Ethiopia's Reliable TVs and Videos Archive. All Your Favorite TV Channels
-            </span>
           </div>
         </div>
         <div class="col-lg-4 d-none d-lg-block mt-3">
-          <!-- <div class="nashian">
+          <div class="nashian" v-if="videos.length < 4">
             <adsbygoogle :ad-slot="'5950915078'"/>
-          </div>-->
+          </div>
           <div class>
             <div class="caption">
               <div class="left">
@@ -152,13 +155,11 @@
 <script>
 import axios from "axios";
 import ViewCatogs from "@/components/views_catogs";
-import WideAds from "@/components/adsComponents/wide_ads";
 
 const base_url = "https://ethiov.com/api";
 export default {
   components: {
-    ViewCatogs,
-    WideAds
+    ViewCatogs
   },
   props: {
     videos: {
@@ -285,6 +286,9 @@ export default {
   max-height: 32px; /* fallback */
   -webkit-line-clamp: 2; /* number of lines to show */
   -webkit-box-orient: vertical;
+  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: #676a6c;
 }
 @media (max-width: 500px) {
   .nashiwwa {
