@@ -121,7 +121,7 @@
               <div class="clearfix"></div>
             </div>
             <div class="list">
-              <div class="thumb row" v-for="(tv,$index) in tvs.slice(0,7)" :key="$index">
+              <div class="thumb row" v-for="(tv,$index) in tvs.slice(0,20)" :key="$index">
                 <div class="col-lg-6 col-sm-6" ng-click="viewTV(tv.id)">
                   <div class="Vimg" style="background-color: black;">
                     <a :href="'/single-channel/'+tv.id">
@@ -189,7 +189,7 @@ export default {
   mounted: function() {
     axios.post(base_url + "/live_channel").then(res => {
       return (this.tvs = [
-        ...res.data.filter(res => {
+        ...res.data
           // if (this.channel.category == "2") {
           //   return res.owner_id == this.channel.owner_id && res.category == "2";
           // }
@@ -198,8 +198,6 @@ export default {
           //   res.owner_id != this.channel.owner_id &&
           //   res.category === this.channel.category
           // );
-          // console.log(res);
-        })
       ]);
     });
   }
