@@ -34,7 +34,7 @@
           <div class="content-wrapper">
 
             <div class="rophy nashians">
-              <adsbygoogle :ad-slot="'5950915078'"/>
+              <adsbygoogle :ad-slot="'5628270393'"/>
             </div>
             <div class="left mb-2">
               <a>Similar Videos</a>
