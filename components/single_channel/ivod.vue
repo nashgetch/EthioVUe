@@ -360,4 +360,9 @@ export default {
     max-height: 232px;
   }
 }
+@media (max-width: 500px) {
+  .rophy {
+    margin-bottom: 214px;
+  }
+}
 </style>
