@@ -24,19 +24,7 @@
           <!-- Ads block -->
           <div class="content-wrapper">
             <div class="left mb-2">
-              <div class="card mt-2 p-1" style="font-family: monospace">
-                <span>
-                  Live Stream of {{channel.tv_name}}. Videos On Demand of {{channel.tv_name}}
-                  <br>are found on the
-                  next tab.
-                </span>
-                <span>
-                  You can also watch your favorite tv shows and all the things you have
-                  <br>
-                  missed on
-                  {{channel.tv_name}} on the instant VoDs Tab.
-                </span>
-              </div>
+             
               <a>Similar Videos</a>
               <small>
                 <br>

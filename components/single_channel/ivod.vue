@@ -26,7 +26,7 @@
 
           <div class="content-wrapper">
             <div class="left mb-2">
-              <div class="card mt-2 p-1" style="font-family: monospace">
+              <!-- <div class="card mt-2 p-1" style="font-family: monospace">
                 <span>
                   Live Stream of {{channel.tv_name}}. Videos On Demand of {{channel.tv_name}}
                   <br>are found on the
@@ -38,7 +38,7 @@
                   missed on
                   {{channel.tv_name}} on the instant VoDs Tab.
                 </span>
-              </div>
+              </div> -->
               <a style="color: black; font-family: sans-serif; font-weight: 500;">
                 Instant VoDs --
                 <small style="color: gray;">
