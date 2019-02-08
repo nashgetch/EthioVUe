@@ -23,7 +23,7 @@
             <div class="nashians">
               <adsbygoogle :ad-slot="'5950915078'"/>
             </div>
-          <div class="card p-1" style="font-family: monospace">
+          <div class="card mt-2 p-1" style="font-family: monospace">
             <span>
               Live Stream of {{channel.tv_name}}. Videos On Demand of {{channel.tv_name}}
               <br>are found on the
