@@ -17,6 +17,9 @@
           <h1 :class="marginTop(channel.owner_id)" class="display-4" style="font-size:1rem">
             <a>{{channel.tv_name}}</a>
           </h1>
+          <div class="nashians">
+              <adsbygoogle :ad-slot="'5950915078'"/>
+            </div>
           <div class="card p-1" style="font-family: monospace">
             <span>
               Live Stream of {{channel.tv_name}}. Videos On Demand of {{channel.tv_name}}
@@ -32,9 +35,7 @@
           </div>
           <!-- Ads block -->
           <div class="content-wrapper">
-            <div class="rophy nashians">
-              <adsbygoogle :ad-slot="'5950915078'"/>
-            </div>
+
             <div class="left mb-2">
               <a>Similar Videos</a>
               <small>

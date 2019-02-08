@@ -20,6 +20,9 @@
               Active {{time}} Hours Ago!
             </a>
           </h1>
+            <div class="nashians">
+              <adsbygoogle :ad-slot="'5950915078'"/>
+            </div>
           <div class="card p-1" style="font-family: monospace">
             <span>
               Live Stream of {{channel.tv_name}}. Videos On Demand of {{channel.tv_name}}
@@ -63,9 +66,7 @@
               </div>
             </div>
             <div class="content-wrapper">
-              <div class="rophy nashians">
-              <adsbygoogle :ad-slot="'5950915078'"/>
-            </div>
+
               <div class="left mb-2">
                 <a>Similar Videos</a>
                 <div class="card p-1 d-inline pull-right mb-2">

@@ -34,12 +34,13 @@
           <!-- <div class="nashian">
             <adsbygoogle :ad-slot="'5950915078'"/>
           </div>-->
+          <div class="nashians">
+            <adsbygoogle :ad-slot="'5950915078'"/>
+          </div>
         </div>
 
         <div class="content-wrapper">
-          <div class="rophy nashians">
-            <adsbygoogle :ad-slot="'5950915078'"/>
-          </div>
+
           <!-- The Author Part -->
           <div class="author">
             <div class="author-head">
