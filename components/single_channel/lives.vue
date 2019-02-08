@@ -108,8 +108,8 @@
           </div>
         </div>
         <div class="col-lg-4 d-none d-lg-block mt-3">
-          <div class="nashian" v-if="videos.length < 4">
-            <adsbygoogle :ad-slot="'5950915078'"/>
+          <div class="nashian">
+            <adsbygoogle :ad-slot="'5628270393'"/>
           </div>
           <div class>
             <div class="caption">
