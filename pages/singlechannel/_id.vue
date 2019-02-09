@@ -70,7 +70,7 @@
     </div>
 
     <Live :videos="videos" :channel="channel" v-if="checkTab(1)"/>
-    <Vods :videos="videos" v-else-if="checkTab(2)"/>
+    <!-- <Vods :videos="videos" v-else-if="checkTab(2)"/> -->
     <Ivods :videos="videos" :channel="channel" v-else/>
   </div>
 </template>
