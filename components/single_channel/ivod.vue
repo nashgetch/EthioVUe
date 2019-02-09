@@ -78,7 +78,7 @@
               </div>
               <div class="clearfix"></div>
 
-              <!-- <div class="single-v-footer">
+              <div class="single-v-footer">
                 <div class="similar-v single-video video-mobile-02">
                   <div class="row">
                     <div
@@ -134,7 +134,7 @@
                     </div>
                   </div>
                 </div>
-              </div> -->
+              </div>
               <span
                 class="card p-1 mr-auto ml-auto"
               >EthioV - Ethiopian Live Channels and Videos on Demand.
@@ -197,10 +197,10 @@ export default {
       type: Object,
       required: true
     },
-    // videos: {
-    //   type: Array,
-    //   required: true
-    // }
+    videos: {
+      type: Array,
+      required: true
+    }
   },
   components: {
     ViewCatogs
