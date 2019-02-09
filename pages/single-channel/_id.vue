@@ -84,7 +84,7 @@ const base_url = "https://ethiov.com/api";
 export default {
   head() {
     return {
-      title: this.channel.tv_name,
+      title: this.channel.tv_name + "Live Stream",
       meta: [
         {
           hid: "description",
@@ -101,11 +101,7 @@ export default {
           hid: "keywords",
           name: "keywords",
           keywords:
-            "Live Stream, " +
-            this.channel.tv_name +
-            ", " +
-            this.channel.description +
-            ", Bethel TV, Africa TV, Evangelical TV, Africa, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
+            "Live Stream, Bethel TV, Africa TV, Evangelical TV, Africa, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
         },
         {
           hid: "og:title",

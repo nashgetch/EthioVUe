@@ -373,12 +373,11 @@ export default {
           name: "description",
           content: "EthioV - " + this.single.description + ". "
         },
-        // {
-        //   hid: "keywords",
-        //   name: "keywords",
-        //   keywords:
-        //     "Video, Bethel TV, Africa TV, Evangelical TV, Ethiopia, politics, Worldwide, live stream, sports, sales, Africa, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
-        // },
+        {
+          hid: "keywords",
+          name: "keywords",
+          keywords: "Bethel TV, Evangelical TV, politics, Worldwide, live stream, sports, sales, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
+        },
         {
           hid: "og:title",
           property: "og:title",

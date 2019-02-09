@@ -106,7 +106,7 @@ export default {
         {
           hid: "og:url",
           property: "og:url",
-          // content: "https://www.ethiov.com/single-channel/" + this.channel.id
+          content: "https://www.ethiov.com/single-channel/" + this.channel.id
         },
         {
           hid: "og:image",
