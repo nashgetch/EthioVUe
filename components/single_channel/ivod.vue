@@ -78,8 +78,8 @@
               </div>
               <div class="clearfix"></div>
 
-              <div class="single-v-footer">
-                <div class="similar-v single-video video-mobile-02" ng-controller="videoController">
+              <!-- <div class="single-v-footer">
+                <div class="similar-v single-video video-mobile-02">
                   <div class="row">
                     <div
                       class="col-12 col-sm-6 col-lg-3"
@@ -128,13 +128,13 @@
                             />
                           </a>
 
-                          <!-- <div class="percent"><span class="circle"></span> 83%</div> -->
+
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
               <span
                 class="card p-1 mr-auto ml-auto"
               >EthioV - Ethiopian Live Channels and Videos on Demand.
@@ -197,10 +197,10 @@ export default {
       type: Object,
       required: true
     },
-    videos: {
-      type: Array,
-      required: true
-    }
+    // videos: {
+    //   type: Array,
+    //   required: true
+    // }
   },
   components: {
     ViewCatogs
