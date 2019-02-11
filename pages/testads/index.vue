@@ -171,89 +171,7 @@
     </div>
     <hr style="border-top: 1px solid rgba(0,0,0,0.6);" class="d-lg-block d-none">
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: .2rem;">
-      <div class="row fas">
-        <div class="col-lg-10 offset-lg-2">
-          <div class="row">
-            <div class="col-md-2 col-sm-12 mt-2 channel-name d-none d-sm-block">
-              <a href="/">Videos</a> |
-              <a href="/live-channels">Live TVs</a>
-            </div>
 
-            <div class="col-md-8 col-sm-12 text-center">
-              <ul class="nav nav-pills">
-                <li class="nav-item text-center ml-auto mr-auto" :class="tab1Style">
-                  <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(1)">
-                    <span class="d-none d-sm-block">Latest Videos</span>
-                    <i
-                      class="fa fa-clock-o d-inline-block d-sm-none"
-                      style="font-size: 15px;"
-                      :class="{'active_route':(1===tab)}"
-                    ></i>
-                    <span
-                      class="d-inline-block d-sm-none"
-                      style="font-size: 10px; font-weight: bold;"
-                    >Latest</span>
-                  </a>
-                </li>
-                <li class="nav-item text-center ml-auto mr-auto">
-                  <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(2)">
-                    <span class="d-none d-sm-block">Category</span>
-                    <i
-                      class="fa fa-video-camera d-inline-block d-sm-none"
-                      style="font-size: 15px;"
-                      :class="{'active_route':(2===tab)}"
-                    ></i>
-                    <span
-                      class="d-inline-block d-sm-none"
-                      style="font-size: 10px; font-weight: bold;"
-                    >Category</span>
-                  </a>
-                </li>
-                <li class="nav-item text-center ml-auto mr-auto">
-                  <a class="nav-link" data-toggle="pill" @click.prevent="setTabs(3)">
-                    <span class="d-none d-sm-block">Trending</span>
-                    <i
-                      class="fa fa-fire d-inline-block d-sm-none"
-                      style="font-size: 15px;"
-                      :class="{'active_route':(3===tab)}"
-                    ></i>
-                    <span
-                      style="font-size: 10px; font-weight: bold;"
-                      class="d-inline-block d-sm-none"
-                    >Trending</span>
-                  </a>
-                </li>
-                <li class="nav-item text-center ml-auto mr-auto">
-                  <a
-                    v-if="loggedIn"
-                    class="nav-link"
-                    data-toggle="pill"
-                    @click.prevent="setTabs(4)"
-                  >
-                    <span class="d-none d-sm-block">Subscription</span>
-                    <i
-                      class="fa fa-envelope-open d-inline-block d-sm-none"
-                      style="font-size: 15px;"
-                      :class="{'active_route':(4===tab)}"
-                    ></i>
-                    <span
-                      style="font-size: 10px; font-weight: bold;"
-                      class="d-inline-block d-sm-none"
-                    >Subscription</span>
-                  </a>
-                </li>
-                <!-- <li class="nav-item text-center ml-auto mr-auto">
-                  <a v-if="loggedIn" class="nav-link" data-toggle="pill" @click.prevent="setTabs(5)">
-                    <span class="d-none d-sm-block">Account</span>
-                      <i class="fa fa-user fa-2x d-inline-block d-sm-none"></i>
-                  </a>
-                </li>-->
-              </ul>
-              <!-- <hr class="fas"> -->
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     <!-- <LatestVod :videos="videos" v-if="checkTab(1)"/> -->
      <div class="container parentDiv">
@@ -304,70 +222,29 @@
             </div>
           </div>
         </div>-->
-        <div
-          class="col-12 col-sm-6 col-md-3 col-lg-2 videoitem kygo"
-          v-for="(video,$index) in videos"
-          :key="$index"
-        >
-          <div class="kaleb-vids">
-            <div class="Vimg itemContainer" style="background-color: black;">
-              <a :href="'/single-video/'+video.v_id">
-                <!-- <clazy-load :src="'//video2.vixtream.net/'+video.filename">
-                  <div
-                        slot="placeholder"
-                        class="bg-inverse"
-                        style="background-color: black; height:145px;"
-                      >
-                You can put any component you want in here.-->
-                <!-- </div> -->
-                <img :src="'//video2.vixtream.net/'+video.filename" :alt="video.title"/>
-                <div ng-click="viewVideo(video.v_id)" class="play">
-                  <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
-                </div>
-                <!-- </clazy-load> -->
-              </a>
-              <div class="time">{{video.duration}}</div>
-              <div
-                ng-style="hiddenPlus"
-                v-if="loggedIn"
-                class="nashh"
-                @click="add_to_watchlist(user.id, video.v_id)"
-              >
-                <i class="fa fa-plus"></i>
-              </div>
-              <div class="nashhh">{{video.type.toUpperCase()}}</div>
-            </div>
-            <div class="descr main" ng-click="viewVideo(video.v_id)">
-              <h1 style="font-size: 14px !important;">
-                <a class="text" :aria-label="video.title" :title="video.title">{{video.title}}</a>
-                <a
-                  class="text smallFont"
-                  :href="'/single-video/' + video.v_id"
-                  :aria-label="video.title_en"
-                  :title="video.title_en"
-                >{{video.title_en}}</a>
-              </h1>
-              <!-- <h1 v-show="engshow(video.v_id)" style="font-size: 14px !important;"><a
-                  class="hideOverflow"
-                  :aria-label="video.title"
-                  :title="video.title_en"
-              >{{video.title_en}}</a></h1>-->
-            </div>
-            <!-- <div class="views calvin"> -->
-            <ViewCatogs
-              :vid="video.v_id"
-              :cat_id="video.category_id"
-              :isIndex="true"
-              :title_en="video.title_en"
-              :created_at="video.created_at"
-              :view_count="video.view_count"
-              :type="video.type"
-            ></ViewCatogs>
+      <div
+            class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
+            v-for="(tv,$index) in tvs"
+            :key="$index"
+          >
+            <a :href="'/single-channel/' + tv.id">
+              <div class="chn-image-container">
+                <img class="imgur" :src="turl + tv.poster_image" :alt="tv.tv_name">
 
-            <!-- </div> -->
+                <div class="small-logo">
+                  <img :src="turl + tv.poster_image" :alt="tv.tv_name">
+                </div>
+
+                <div class="text-center mt-5">
+                  <div class="chan-descrip">
+                    <strong class="chan-title">{{tv.tv_name}}</strong>
+                    <small style="font-size:10px">[{{tv.description}}]</small>
+                    <!-- <span class="hideOverflow">{{tv.description}}</span> -->
+                  </div>
+                </div>
+              </div>
+            </a>
           </div>
-          <!-- <hr> -->
-        </div>
       </div>
     </div>
 
@@ -516,26 +393,58 @@ export default {
       turl: "https://video2.vixtream.net"
     };
   },
-  async asyncData() {
-    // let tvse = await axios.post(base_url + "/live_channel");
-    let { data } = await axios.post(base_url + "/loadmore", {
-      page: 1,
-      headers: {
-        "Content-type": "application/x-www-form-urlencoded"
-      }
-    });
-    return {
-      vid: "",
-      videos: [...data.data],
-      tab: 1,
-      page: 1,
-      tab1Style: {
-        active: true,
-        show: true
-      }
-    };
-  },
+  // async asyncData() {
+  //   // let tvse = await axios.post(base_url + "/live_channel");
+  //   let { data } = await axios.post(base_url + "/loadmore", {
+  //     page: 1,
+  //     headers: {
+  //       "Content-type": "application/x-www-form-urlencoded"
+  //     }
+  //   });
+  //   return {
+  //     vid: "",
+  //     videos: [...data.data],
+  //     tab: 1,
+  //     page: 1,
+  //     tab1Style: {
+  //       active: true,
+  //       show: true
+  //     }
+  //   };
+  // },
 
+  asyncData() {
+    return axios.post(base_url + "/live_channel").then(resp => {
+      return {
+        tvsss: [...resp.data],
+        turl: "https://video2.vixtream.net"
+      };
+    });
+  },
+  computed: {
+    tvs() {
+      let searchString = this.searchString;
+      if (!searchString) {
+        return this.tvsss.filter(ref => {
+          // console.log(ref);
+          return (
+            ref.category === "1" &&
+            ref.chn !== "ammas" &&
+            ref.chn !== "fanas" &&
+            ref.chn !== "waltas"
+          );
+        });
+      } else {
+        searchString = searchString.trim().toLowerCase();
+        // console.log(searchString);
+        return this.tvsss.filter(ref => {
+          if (ref.tv_name.toLowerCase().indexOf(searchString) !== -1) {
+            return ref;
+          }
+        });
+      }
+    }
+  },
   methods: {
      infiniteHandler($state) {
       axios
@@ -567,13 +476,7 @@ export default {
           this.$toast.success("The Video is added to Watch Later");
         });
     },
-    setTabs(tab) {
-      this.tab = tab;
-      this.tab1Style = {};
-    },
-    checkTab(tab) {
-      return this.tab === tab;
-    },
+
     infiniteHandler($state) {
       axios
         .post(base_url + "/loadmore", {
