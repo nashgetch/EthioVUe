@@ -372,7 +372,7 @@
     </div>
 
     <!-- </div> -->
-    <infinite-loading @infinite="infiniteHandler"></infinite-loading>
+    <!-- <infinite-loading @infinite="infiniteHandler"></infinite-loading> -->
     <!-- <CatogVods v-if="checkTab(2)"/> -->
     <!-- <TrendingVods v-if="checkTab(3)"/> -->
     <!-- <Subscription v-if="checkTab(4)"/> -->
