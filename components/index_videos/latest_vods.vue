@@ -117,7 +117,9 @@
               :view_count="video.view_count"
               :type="video.type"
             ></ViewCatogs>
+            <div class="mb-1">
 
+            </div>
             <!-- </div> -->
           </div>
           <!-- <hr> -->
