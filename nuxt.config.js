@@ -24,8 +24,7 @@ module.exports = {
     link: [{
       rel: 'canonical',
       href: 'https://www.ethiov.com'
-    },
-    ],
+    }, ],
     htmlAttrs: {
       prefix: "og: http://ogp.me/ns#"
     },
@@ -40,10 +39,10 @@ module.exports = {
         src: "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js",
 
       },
-      // {
-      //   src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
-      //   async: true
-      // },
+      {
+        src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+        async: true
+      },
 
 
       // {
@@ -53,7 +52,7 @@ module.exports = {
       //      });`
       // }
     ],
-    //  __dangerouslyDisableSanitizers: ['script'],
+    __dangerouslyDisableSanitizers: ['script'],
     link: [{
         rel: 'icon',
         type: 'image/x-icon',
@@ -140,15 +139,15 @@ module.exports = {
     '@nuxtjs/auth',
     '@nuxtjs/toast',
     '@nuxtjs/axios',
-    '@nuxtjs/google-adsense'
+    // '@nuxtjs/google-adsense'
   ],
   /*
    ** Axios module configuration
    */
-  'google-adsense': {
-    id: 'ca-pub-5001725934888164',
-    pageLevelAds: true
-  },
+  // 'google-adsense': {
+  //   id: 'ca-pub-5001725934888164',
+  //   pageLevelAds: true
+  // },
   toast: {
     position: 'top-center',
     duration: 2000

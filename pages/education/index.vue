@@ -1,6 +1,5 @@
 <template>
   <div style="padding-top: 6rem;" class="content-wrapper">
-
     <div class="nash">
       <input
         type="text"
@@ -15,9 +14,7 @@
         <span style="font-size: 17px;">Search for your Favorite Channel here.</span>
       </label>
     </div>
-    <div>
-      <adsbygoogle :ad-slot="'5950915078'" />
-    </div>
+  
     <div class="row">
       <div class="container mt-2">
         <div class="row mt-3 display-flex">
@@ -119,7 +116,8 @@ export default {
         {
           hid: "keywords",
           name: "keywords",
-          keywords: "Fana TV, Walta, EBC, Bethel TV, Ethiopian TV Channels, Africa, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
+          keywords:
+            "Fana TV, Walta, EBC, Bethel TV, Ethiopian TV Channels, Africa, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
         },
         {
           hid: "og:title",
@@ -165,6 +163,16 @@ export default {
           hid: "twitter:image",
           property: "twitter:image",
           content: "/img/EthioV_LOGO_Black.png"
+        }
+      ],
+      script: [
+        {
+          innerHTML: `
+               (adsbygoogle = window.adsbygoogle || []).push({
+                  google_ad_client: "ca-pub-5001725934888164",
+                  enable_page_level_ads: true
+              });
+        `
         }
       ]
     };

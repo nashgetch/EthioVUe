@@ -17,9 +17,7 @@
 
     <div class="row">
       <div class="container mt-2">
-        <div class="nashians" style="margin-left: auto; margin-right: auto;">
-          <adsbygoogle :ad-slot="'5950915078'"/>
-        </div>
+     
         <div class="row mt-3 display-flex">
           <div
             class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
@@ -103,7 +101,8 @@ export default {
         {
           hid: "keywords",
           name: "keywords",
-          keywords: "Bethel TV, Ethiopian TV Channels, Religion, Politics, Ethiopia, Social Media, Live Stream, Africa"
+          keywords:
+            "Bethel TV, Ethiopian TV Channels, Religion, Politics, Ethiopia, Social Media, Live Stream, Africa"
         },
         {
           hid: "og:title",
@@ -149,6 +148,16 @@ export default {
           hid: "twitter:image",
           property: "twitter:image",
           content: "/img/EthioV_LOGO_Black.png"
+        }
+      ],
+      script: [
+        {
+          innerHTML: `
+               (adsbygoogle = window.adsbygoogle || []).push({
+                  google_ad_client: "ca-pub-5001725934888164",
+                  enable_page_level_ads: true
+              });
+        `
         }
       ]
     };
