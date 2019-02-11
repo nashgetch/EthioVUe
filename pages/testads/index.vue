@@ -370,9 +370,7 @@
         </div>
       </div>
     </div>
-    <div class="nashian">
-        <wideads />
-      </div>
+
     <!-- </div> -->
     <infinite-loading @infinite="infiniteHandler"></infinite-loading>
     <!-- <CatogVods v-if="checkTab(2)"/> -->

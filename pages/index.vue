@@ -285,7 +285,7 @@ export default {
           hid: "keywords",
           name: "keywords",
           keywords:
-            "Bethel, Africa, Evangelical, Live Channels, Entertainment, Sport, News, Current Affairs, Documentary, IPTV, videos, travel"
+            "Bethel TV, Africa, Evangelical, Religion, Politics, Ethiopia, Entertainment, Sports, Social Media, travel"
         },
         {
           hid: "og:title",
