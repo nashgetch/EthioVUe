@@ -94,12 +94,12 @@
             <div class="descr main" ng-click="viewVideo(video.v_id)">
               <h1 style="font-size: 14px !important;">
                 <a class="text" :aria-label="video.title" :title="video.title">{{video.title}}</a>
-                <a
+                <!-- <a
                   class="text smallFont"
                   :href="'/single-video/' + video.v_id"
                   :aria-label="video.title_en"
                   :title="video.title_en"
-                >{{video.title_en}}</a>
+                >{{video.title_en}}</a> -->
               </h1>
               <!-- <h1 v-show="engshow(video.v_id)" style="font-size: 14px !important;"><a
                   class="hideOverflow"
