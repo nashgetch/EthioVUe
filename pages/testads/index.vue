@@ -257,9 +257,7 @@
     </div>
     <!-- <LatestVod :videos="videos" v-if="checkTab(1)"/> -->
      <div class="container parentDiv">
-      <div class="nashians">
-        <wideads />
-      </div>
+
 
       <span class="title">Other Recommended Videos...</span>
 
@@ -372,6 +370,9 @@
         </div>
       </div>
     </div>
+    <div class="nashian">
+        <wideads />
+      </div>
     <!-- </div> -->
     <infinite-loading @infinite="infiniteHandler"></infinite-loading>
     <!-- <CatogVods v-if="checkTab(2)"/> -->
