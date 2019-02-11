@@ -285,7 +285,7 @@ export default {
           hid: "keywords",
           name: "keywords",
           keywords:
-            "Bethel, Africa, Evangelical, Live Channels, Zena, ዜና, Entertainment, Sport, News, Current Affairs, Documentary, IPTV, videos, travel, Ethiopia, USA, UK"
+            "Bethel, Africa, Evangelical, Live Channels, Entertainment, Sport, News, Current Affairs, Documentary, IPTV, videos, travel"
         },
         {
           hid: "og:title",
@@ -334,6 +334,16 @@ export default {
           property: "twitter:description",
           content:
             "EthioV - All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here."
+        }
+      ],
+      script: [
+        {
+          innerHTML: `
+               (adsbygoogle = window.adsbygoogle || []).push({
+                  google_ad_client: "ca-pub-5001725934888164",
+                  enable_page_level_ads: true
+              });
+        `
         }
       ]
     };

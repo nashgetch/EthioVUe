@@ -67,6 +67,7 @@
 <script>
 import ViewCatogs from "@/components/views_catogs";
 export default {
+
   components: {
     ViewCatogs
   },
