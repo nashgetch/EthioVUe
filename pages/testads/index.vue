@@ -257,9 +257,9 @@
     </div>
     <!-- <LatestVod :videos="videos" v-if="checkTab(1)"/> -->
      <div class="container parentDiv">
-      <!-- <div class="nashians">
-        <adsbygoogle/>
-      </div>-->
+      <div class="nashians">
+        <wideads />
+      </div>
 
       <span class="title">Other Recommended Videos...</span>
 
@@ -472,7 +472,8 @@ export default {
     CatogVods,
     ViewCatogs,
     TrendingVods,
-    Subscription
+    Subscription,
+    wideads
   },
   data() {
     return {
