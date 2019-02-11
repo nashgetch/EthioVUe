@@ -34,13 +34,9 @@
           <!-- <div class="nashian">
             <adsbygoogle :ad-slot="'5950915078'"/>
           </div>-->
-          <div class="nashians">
-            <adsbygoogle :ad-slot="'5950915078'"/>
-          </div>
         </div>
 
         <div class="content-wrapper">
-
           <!-- The Author Part -->
           <div class="author">
             <div class="author-head">
@@ -164,7 +160,7 @@
                           class="bg-inverse"
                           style="background-color: black; height:200px;"
                       ></div>-->
-                      <video class="imgur" :poster="pos_url+'/'+pub.filename2" :alt="pub.title"></video>
+                      <img class="imgur" :src="pos_url+'/'+pub.filename2" :alt="pub.title">
                       <!-- </clazy-load> -->
                       <a :href="'/single-video/'+pub.v_id">
                         <div ng-click="viewVideo(pub.v_id)" class="play">
@@ -272,9 +268,6 @@
         <!-- right column -->
       </div>
       <div class="col-sm-12 col-lg-4 d-none d-lg-block">
-        <div class="nashian">
-          <adsbygoogle :ad-slot="'5950915078'"/>
-        </div>
         <div class="caption">
           <div class="left">
             <a>
@@ -286,13 +279,13 @@
             <div class="thumb row" v-for="(re,$index) in recommended" :key="$index">
               <div class="col-lg-6 col-sm-6" ng-click="viewVideo(re.v_id)">
                 <div class="Vimg itemContainer" style="background-color: #0c0c0c">
-                  <video
+                  <img
                     class="imgur"
                     height="400"
                     width="400"
-                    :poster="pos_url + '/'+re.filename2"
+                    :src="pos_url + '/'+re.filename2"
                     :alt="re.title"
-                  ></video>
+                  >
                   <a :href="'/single-video/'+re.v_id">
                     <div ng-click="viewVideo(re.v_id)" class="play">
                       <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
@@ -376,7 +369,8 @@ export default {
         {
           hid: "keywords",
           name: "keywords",
-          keywords: "Bethel TV, Evangelical TV, politics, Worldwide, live stream, sports, sales, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
+          keywords:
+            "Bethel TV, Evangelical TV, politics, Worldwide, live stream, sports, sales, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
         },
         {
           hid: "og:title",

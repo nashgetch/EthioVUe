@@ -17,9 +17,6 @@
           <h1 :class="marginTop(channel.owner_id)" class="display-4" style="font-size:1rem">
             <a>{{channel.tv_name}}</a>
           </h1>
-          <div class="rophy nashians">
-            <adsbygoogle :ad-slot="'5950915078'"/>
-          </div>
 
           <!-- Ads block -->
           <div class="content-wrapper">
@@ -108,9 +105,6 @@
           </div>
         </div>
         <div class="col-lg-4 d-none d-lg-block mt-3">
-          <div class="nashian">
-            <adsbygoogle :ad-slot="'5950915078'"/>
-          </div>
           <div class>
             <div class="caption">
               <div class="left">

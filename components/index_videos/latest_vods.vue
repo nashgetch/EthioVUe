@@ -76,7 +76,7 @@
                       >
                 You can put any component you want in here.-->
                 <!-- </div> -->
-                <video :poster="'//video2.vixtream.net/'+video.filename2" :alt="video.title"/>
+                <img :src="'//video2.vixtream.net/'+video.filename" :alt="video.title"/>
                 <div ng-click="viewVideo(video.v_id)" class="play">
                   <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                 </div>

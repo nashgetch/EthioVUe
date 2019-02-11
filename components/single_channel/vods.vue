@@ -7,9 +7,6 @@
           <adsbygoogle :ad-slot="'5950915078'"/>
         </div>
       </no-ssr>-->
-      <div class="rophy nashians">
-              <adsbygoogle :ad-slot="'5950915078'"/>
-            </div>
       <div class="row rowDiv" ng-controller="videoController">
         <div
           class="col-12 col-sm-6 col-md-3 col-lg-2 videoitem kygo"
@@ -25,7 +22,7 @@
                     class="bg-inverse"
                     style="background-color: black; height:102px;"
                 ></div>-->
-                <video :poster="'https://video2.vixtream.net/'+video.filename2" :alt="video.title"></video>
+                <img :src="'https://video2.vixtream.net/'+video.filename" :alt="video.title">
                 <!-- </clazy-load> -->
                 <div ng-click="viewVideo(video.v_id)" class="play">
                   <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>

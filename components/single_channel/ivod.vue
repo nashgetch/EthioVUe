@@ -20,9 +20,6 @@
               Active {{time}} Hours Ago!
             </a>
           </h1>
-          <div class="rophy nashians">
-            <adsbygoogle :ad-slot="'5950915078'"/>
-          </div>
 
           <div class="content-wrapper">
             <div class="left mb-2">
@@ -144,9 +141,6 @@
           </div>
         </div>
         <div class="col-lg-4 d-none d-lg-block mt-3">
-          <div class="nashian">
-            <adsbygoogle :ad-slot="'5950915078'"/>
-          </div>
           <!-- up next -->
           <div class>
             <div class="caption">

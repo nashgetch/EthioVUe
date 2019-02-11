@@ -13,18 +13,18 @@
             <div class="kaleb-vids">
               <div class="Vimg itemContainer" style="background-color: black;">
                 <a :href="'/single-video/'+video.v_id">
-                  <clazy-load :src="'//video2.vixtream.net/'+video.filename">
+                  <!-- <clazy-load :src="'//video2.vixtream.net/'+video.filename"> -->
                     <!-- The image slot renders after the image loads. -->
-                    <div
+                    <!-- <div
                       slot="placeholder"
                       class="bg-inverse"
                       style="background-color: black; height:102px;"
-                    >
+                    > -->
                       <!-- You can put any component you want in here. -->
-                    </div>
-                    <video :poster="'//video2.vixtream.net/'+video.filename2" :alt="video.title"></video>
+                    <!-- </div> -->
+                    <img :src="'//video2.vixtream.net/'+video.filename2" :alt="video.title">
                     <!-- The placeholder slot displays while the image is loading. -->
-                  </clazy-load>
+                  <!-- </clazy-load> -->
                   <div ng-click="viewVideo(video.v_id)" class="play">
                     <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                   </div>
