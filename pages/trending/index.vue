@@ -1,5 +1,6 @@
 <template>
   <section style="padding-top:4rem;">
+
     <div class="content-wrapper text-center">
       <span class="martin">Featured Live TV Channels</span>
       <hr>
@@ -89,14 +90,16 @@
               <a href="/">Videos</a> |
               <a href="/live-channels">Live TVs</a>
             </div>
+
             <div class="col-md-8 col-sm-12 text-center">
               <ul class="nav nav-pills">
-                <li class="nav-item text-center ml-auto mr-auto active">
-                  <a class="nav-link active" href="/">
+                <li class="nav-item text-center ml-auto mr-auto">
+                  <a class="nav-link" href="/">
                     <span class="d-none d-sm-block">Latest Videos</span>
                     <i
-                      class="active_route fa fa-clock-o d-inline-block d-sm-none"
+                      class="fa fa-clock-o d-inline-block d-sm-none"
                       style="font-size: 15px;"
+
                     ></i>
                     <span
                       class="d-inline-block d-sm-none"
@@ -105,21 +108,27 @@
                   </a>
                 </li>
                 <li class="nav-item text-center ml-auto mr-auto">
-                  <a class="nav-link" href="/category">
+                  <a class="nav-link"  href="/category">
                     <span class="d-none d-sm-block">Category</span>
-                    <i class="fa fa-video-camera d-inline-block d-sm-none" style="font-size: 15px;"></i>
+                    <i
+                      class="fa fa-video-camera d-inline-block d-sm-none"
+                      style="font-size: 15px;"
+
+                    ></i>
                     <span
                       class="d-inline-block d-sm-none"
                       style="font-size: 10px; font-weight: bold;"
                     >Category</span>
                   </a>
                 </li>
-                <li class="nav-item text-center ml-auto mr-auto">
-                  <a class="nav-link" href="/trending">
+                <li class="nav-item text-center ml-auto mr-auto active">
+                  <a class="nav-link active" href="/trending">
+                    <span class="d-none d-sm-block">Trending</span>
+                    <i
+                      class="active_route fa fa-fire d-inline-block d-sm-none"
+                      style="font-size: 15px;"
 
-                      <span class="d-none d-sm-block">Trending</span>
-
-                    <i class="fa fa-fire d-inline-block d-sm-none" style="font-size: 15px;"></i>
+                    ></i>
                     <span
                       style="font-size: 10px; font-weight: bold;"
                       class="d-inline-block d-sm-none"
@@ -130,8 +139,8 @@
                   <a
                     v-if="loggedIn"
                     class="nav-link"
-                    data-toggle="pill"
-                    href="/subscription"
+
+                   href="/subscription"
                   >
                     <span class="d-none d-sm-block">Subscription</span>
                     <i
@@ -144,7 +153,7 @@
                       class="d-inline-block d-sm-none"
                     >Subscription</span>
                   </a>
-                </li>-->
+                </li> -->
                 <!-- <li class="nav-item text-center ml-auto mr-auto">
                   <a v-if="loggedIn" class="nav-link" data-toggle="pill" @click.prevent="setTabs(5)">
                     <span class="d-none d-sm-block">Account</span>
@@ -158,10 +167,10 @@
         </div>
       </div>
     </div>
-    <LatestVod :videos="videos"/>
-    <!-- <CatogVods v-if="checkTab(2)"/> -->
-    <!-- <TrendingVods v-if="checkTab(3)"/> -->
-    <!-- <Subscription v-if="checkTab(4)"/> -->
+    <!-- <LatestVod :videos="videos"/> -->
+    <!-- <CatogVods  /> -->
+    <TrendingVods />
+    <!-- <Subscription /> -->
   </section>
 </template>
 <script>
@@ -170,7 +179,7 @@ import ViewCatogs from "@/components/views_catogs";
 import CatogVods from "@/components/index_videos/catog_videos";
 import TrendingVods from "@/components/index_videos/trend_videos";
 import Subscription from "@/components/index_videos/subscription";
-import wideads from "@/components/adsComponents/wide_ads";
+import wideads from "@/components/adsComponents/wide_ads"
 import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
