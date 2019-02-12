@@ -1,118 +1,179 @@
-<template>
-  <div style="padding-top: 6rem;" class="content-wrapper">
-    <div class="nash">
-      <input
-        type="text"
-        v-model="searchString"
-        name="name"
-        class="question"
-        id="name"
-        required
-        autocomplete="off"
-      >
-      <label for="name">
-        <span style="font-size: 17px;">Search for your Favorite Channel here.</span>
-      </label>
-    </div>
-
-    <div class="row">
-      <div class="container mt-2">
-
-        <div class="row mt-3 display-flex">
-          <div
-            class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
-            v-for="(tv,$index) in tvs"
-            :key="$index"
-          >
-            <a :href="'/single-channel/' + tv.id">
-              <div class="chn-image-container">
-                <img class="imgur" :src="turl + tv.poster_image" :alt="tv.tv_name">
-
-                <div class="small-logo">
-                  <img :src="turl + tv.poster_image" :alt="tv.tv_name">
+ <template>
+  <section style="padding-top:6rem;">
+    <div class="content-wrapper text-center">
+      <span class="martin">Featured Live TV Channels</span>
+      <hr>
+      <div class="row" style="background-color:#fafafc;">
+        <div class="col-lg-2 col-sm-12 col-12"></div>
+        <div class="col-lg-8 col-sm-12 col-12 text-center">
+          <div class="row">
+            <div class="col-lg-2 col-sm-3 col-3">
+              <a href="/single-channel/114">
+                <div class="chn-image-container index m-0">
+                  <img class="avicii" src="/img/fbctv_poster.jpg" alt="Fana TV">
                 </div>
+              </a>
+            </div>
 
-                <div class="text-center mt-5">
-                  <div class="chan-descrip">
-                    <strong class="chan-title">{{tv.tv_name}}</strong>
-                    <small style="font-size:10px">[{{tv.description}}]</small>
-                    <!-- <span class="hideOverflow">{{tv.description}}</span> -->
-                  </div>
+            <div class="col-lg-2 col-sm-3 col-3">
+              <a href="/single-channel/113">
+                <div class="chn-image-container index m-0">
+                  <img class="avicii" src="/img/amma_poster.jpg" alt="Amhara TV">
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-2 col-sm-3 col-3">
+              <a href="/single-channel/567">
+                <div class="chn-image-container index m-0">
+                  <img class="avicii" src="/img/walta_posters.jpg" alt="Walta TV">
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-2 col-sm-3 col-3">
+              <a href="/single-channel/126">
+                <div class="chn-image-container index m-0">
+                  <img class="avicii" src="/img/obm_poster.jpg" alt="OBN TV">
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-4 d-lg-block d-none">
+              <div class="ch-social-links walker">
+                <div class="social-icons-container mt-2 ml-4 d-flex">
+                  <span class="mt-3" style="color:black; font-size:1rem;">Social</span>
+
+                  <social-sharing
+                    url="https://ethiov.com"
+                    title="EthioV - Ethiopian Videos and Live channels"
+                    description="All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
+                    quote="EthioV - Ethiopian Videos and Live channels"
+                    hashtags="#EthioV, #ETHIOPIAN_LIVE_TV_CHANNELS, #FANA, #AMHARA, #WALTA, #OBN"
+                    inline-template
+                  >
+                    <div>
+                      <network network="facebook">
+                        <i
+                          class="fa fa-fw fa-facebook fa-2x"
+                          style="color: #3b5998; padding-left: 5px; margin-top: 10px;"
+                        ></i>
+                      </network>
+
+                      <network network="twitter">
+                        <i
+                          class="fa fa-fw fa-twitter fa-2x"
+                          style="color: #55acee; padding-left: 5px; margin-top: 10px;"
+                        ></i>
+                      </network>
+                      <network network="telegram">
+                        <i
+                          class="fa fa-telegram fa-2x"
+                          style="color: #00405d; padding-left: 5px; margin-top: 10px;"
+                        ></i>
+                      </network>
+                    </div>
+                  </social-sharing>
                 </div>
               </div>
-            </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+    <hr style="border-top: 1px solid rgba(0,0,0,0.6);" class="d-lg-block d-none">
+    <div class="container-fluid top-margin-bn-sm-md" style="padding-top: .2rem;">
+      <div class="row fas">
+        <div class="col-lg-10 offset-lg-2">
+          <div class="row">
+            <div class="col-md-2 col-sm-12 mt-2 channel-name d-none d-sm-block">
+              <a href="/">Videos</a> |
+              <a href="/live-channels">Live TVs</a>
+            </div>
+            <div class="col-md-8 col-sm-12 text-center">
+              <ul class="nav nav-pills">
+                <li class="nav-item text-center ml-auto mr-auto active">
+                  <a class="nav-link active" href="/">
+                    <span class="d-none d-sm-block">Latest Videos</span>
+                    <i
+                      class="active_route fa fa-clock-o d-inline-block d-sm-none"
+                      style="font-size: 15px;"
+                    ></i>
+                    <span
+                      class="d-inline-block d-sm-none"
+                      style="font-size: 10px; font-weight: bold;"
+                    >Latest</span>
+                  </a>
+                </li>
+                <li class="nav-item text-center ml-auto mr-auto">
+                  <a class="nav-link" href="/category">
+                    <span class="d-none d-sm-block">Category</span>
+                    <i class="fa fa-video-camera d-inline-block d-sm-none" style="font-size: 15px;"></i>
+                    <span
+                      class="d-inline-block d-sm-none"
+                      style="font-size: 10px; font-weight: bold;"
+                    >Category</span>
+                  </a>
+                </li>
+                <li class="nav-item text-center ml-auto mr-auto">
+                  <a class="nav-link" href="/trending">
+
+                      <span class="d-none d-sm-block">Trending</span>
+
+                    <i class="fa fa-fire d-inline-block d-sm-none" style="font-size: 15px;"></i>
+                    <span
+                      style="font-size: 10px; font-weight: bold;"
+                      class="d-inline-block d-sm-none"
+                    >Trending</span>
+                  </a>
+                </li>
+
+              </ul>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <LatestVod :videos="videos"/>
+
+  </section>
 </template>
-
-<style scoped>
-.row.display-flex {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.row.display-flex > [class*="col-"] {
-  display: flex;
-  flex-direction: column;
-}
-
-.thumbnail.display-flex {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.row.display-flex > [class*="blog-"] {
-  display: flex;
-  flex-direction: column;
-}
-
-.hideOverflow {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  width: 100%;
-  display: block;
-}
-</style>
-
-
-
 <script>
+import LatestVod from "@/components/index_videos/latest_vods";
+import ViewCatogs from "@/components/views_catogs";
+import CatogVods from "@/components/index_videos/catog_videos";
+import TrendingVods from "@/components/index_videos/trend_videos";
+import Subscription from "@/components/index_videos/subscription";
+import wideads from "@/components/adsComponents/wide_ads";
 import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
-  data() {
-    return {
-      searchString: ""
-    };
-  },
   head() {
     return {
-      title: "EthioV Live Ethiopian TV Channels",
+      title: "EthioV - Ethiopian Videos and Live channels",
       meta: [
         {
           hid: "description",
           name: "description",
-          content: "EthioV - All Ethiopian Live Channels at one place."
+          content:
+            "All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
         },
         {
           hid: "keywords",
           name: "keywords",
           keywords:
-            "Bethel TV, Ethiopian TV Channels, Religion, Politics, Ethiopia, Social Media, Africa"
+            "Bethel TV, Africa, Evangelical, Religion, Politics, Ethiopia, Entertainment, Sports, Social Media, travel"
         },
         {
           hid: "og:title",
           property: "og:title",
-          content: "EthioV - Ethiopian Live Channels"
+          content:
+            "EthioV - Ethiopian Live Channels and Videos on Demand. Ethiopia's Reliable TVs and Videos Archive. All Your Favorite TV Channels"
         },
         {
           hid: "og:url",
           property: "og:url",
-          content: "https://ethiov.com/live_channels"
+          content: "https://ethiov.com"
         },
         {
           hid: "og:image",
@@ -122,22 +183,23 @@ export default {
         {
           hid: "og:description",
           property: "og:description",
-          content: "EthioV - All Ethiopian Live Channels at one place."
+          content:
+            "All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
         },
         {
           hid: "twitter:title",
           property: "twitter:title",
-          content: "EthioV - All Ethiopian Live Channels at one place."
+          content: "EthioV - Ethiopian Live Channels and Videos on Demand"
         },
         {
-          hid: "twitter:title",
-          property: "twitter:title",
-          content: "EthioV - Ethiopian Live Channels"
+          hid: "twitter:url",
+          property: "twitter:url",
+          content: "https://ethiov.com"
         },
         {
-          hid: "twitter:description",
-          property: "twitter:description",
-          content: "EthioV - All Ethiopian Live Channels at one place."
+          hid: "twitter:image",
+          property: "twitter:image",
+          content: "/img/EthioV_LOGO_Black.png"
         },
         {
           hid: "twitter:card",
@@ -145,9 +207,10 @@ export default {
           content: "summary_large_image"
         },
         {
-          hid: "twitter:image",
-          property: "twitter:image",
-          content: "/img/EthioV_LOGO_Black.png"
+          hid: "twitter:description",
+          property: "twitter:description",
+          content:
+            "EthioV - All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here."
         }
       ],
       script: [
@@ -162,188 +225,119 @@ export default {
       ]
     };
   },
-  asyncData() {
-    return axios.post(base_url + "/live_channel").then(resp => {
-      return {
-        tvsss: [...resp.data],
-        turl: "https://video2.vixtream.net"
-      };
-    });
+  components: {
+    LatestVod,
+    CatogVods,
+
+    TrendingVods,
+    Subscription
   },
-  computed: {
-    tvs() {
-      let searchString = this.searchString;
-      if (!searchString) {
-        return this.tvsss.filter(ref => {
-          // console.log(ref);
-          return (
-            ref.category === "1" &&
-            ref.chn !== "ammas" &&
-            ref.chn !== "fanas" &&
-            ref.chn !== "waltas"
-          );
-        });
-      } else {
-        searchString = searchString.trim().toLowerCase();
-        // console.log(searchString);
-        return this.tvsss.filter(ref => {
-          if (ref.tv_name.toLowerCase().indexOf(searchString) !== -1) {
-            return ref;
-          }
-        });
+  data() {
+    return {
+
+      turl: "https://video2.vixtream.net"
+    };
+  },
+  async asyncData() {
+
+    let { data } = await axios.post(base_url + "/loadmore", {
+      page: 1,
+      headers: {
+        "Content-type": "application/x-www-form-urlencoded"
       }
+    });
+    return {
+      videos: [...data.data],
+      tab: 1,
+      page: 1,
+      tab1Style: {
+        active: true,
+        show: true
+      }
+    };
+  },
+
+  methods: {
+    setTabs(tab) {
+      this.tab = tab;
+      this.tab1Style = {};
+    },
+    checkTab(tab) {
+      return this.tab === tab;
+    },
+
+    add_to_watchlist(user_id, v_id) {
+      axios
+        .post(base_url + "/add_to_watchlist/" + user_id + "/" + v_id)
+        .then(res => {
+          this.$toast.success("The Video is added to Watch Later");
+        });
     }
+  },
+  mounted: function() {
+    this.active_route = this.tab;
   }
 };
 </script>
-<style>
-.imgur {
-  display: block;
-  max-width: 274px;
-  max-height: 115px;
-  width: auto;
-  height: auto;
-  margin-right: auto;
-  margin-left: auto;
-}
-.bars {
-  background-color: #a9a9a9;
 
-  background-image: -webkit-linear-gradient(top, #a9a9a9, #5392ad);
-  background-image: -moz-linear-gradient(top, #a9a9a9, #5392ad);
-  background-image: linear-gradient(top, #a9a9a9, #5392ad);
 
-  box-shadow: 0 1px 1px #ccc;
-  border-radius: 2px;
-  width: 400px;
-  padding: 14px;
-  margin: 45px auto 20px;
-  position: relative;
-}
-
-.bars input {
-  background: #fff no-repeat 13px 13px;
-  border: none;
+<style scoped>
+.wrapper {
   width: 100%;
-  line-height: 19px;
-  padding: 11px 0;
-
-  border-radius: 2px;
-  box-shadow: 0 2px 8px #c4c4c4 inset;
-  text-align: left;
-  font-size: 14px;
-  font-family: inherit;
-  color: #738289;
-  font-weight: bold;
-  outline: none;
-  text-indent: 40px;
 }
-.nash {
+.nashians {
+  width: 320px !important;
+  height: 100px !important;
 }
-.nash > input,
-span,
-label {
-  font-family: "Ubuntu", sans-serif;
-  display: block;
-  margin: 10px;
-  padding: 5px;
-  border: none;
-  font-size: 12px;
-}
-.nash > input:focus {
-  outline: 0;
-}
-/* Question */
-.nash > input.question {
-  font-size: 18px;
-  font-weight: 300;
-  border-radius: 2px;
-  margin: 0;
-  border: none;
-  width: 80%;
-  background: rgba(0, 0, 0, 0);
-  transition: padding-top 0.2s ease, margin-top 0.2s ease;
-  overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
-}
-/* Underline and Placeholder */
-.nash > input.question + label {
-  display: block;
-  position: relative;
-  white-space: nowrap;
-  padding: 0;
-  margin: 0;
-  width: 10%;
-  border-top: 1px solid red;
-  -webkit-transition: width 0.4s ease;
-  transition: width 0.4s ease;
-  height: 0px;
-  text-align: left;
-}
-.nash > input.question:focus + label {
-  width: 80%;
-}
-.nash > input.question:focus,
-input.question:valid {
-  padding-top: 15px;
-}
-.nash > input.question:focus + label > span,
-input.question:valid + label > span {
-  top: -90px;
-  font-size: 22px;
-  color: #333;
-}
-.nash > input.question:valid + label {
-  border-color: green;
-}
-.nash > input.question:invalid {
-  box-shadow: none;
-}
-.nash > input.question + label > span {
-  font-weight: 300;
-  margin: 0;
-  position: absolute;
-  color: #8f8f8f;
-  font-size: 48px;
-  top: -66px;
-  left: 0px;
-  z-index: -1;
-  -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
-  transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
-}
-.nash > input[type="submit"] {
-  -webkit-transition: opacity 0.2s ease, background 0.2s ease;
-  transition: opacity 0.2s ease, background 0.2s ease;
-  display: block;
-  opacity: 0;
-  margin: 10px 0 0 0;
-  padding: 10px;
-  cursor: pointer;
-}
-.nash > input[type="submit"]:hover {
-  background: #eee;
-}
-.nash > input[type="submit"]:active {
-  background: #999;
-}
-.nash > input.question:valid ~ input[type="submit"],
-textarea.question:valid ~ input[type="submit"] {
-  -webkit-animation: appear 1s forwards;
-  animation: appear 1s forwards;
-}
-.nash > input.question:invalid ~ input[type="submit"],
-textarea.question:invalid ~ input[type="submit"] {
-  display: none;
-}
-
-@-webkit-keyframes appear {
-  100% {
-    opacity: 1;
+@media (min-width: 500px) {
+  .nashians {
+    width: 468px !important;
+    height: 60px !important;
   }
 }
-
-@keyframes appear {
-  100% {
-    opacity: 1;
+@media (min-width: 800px) {
+  .nashians {
+    width: 728px !important;
+    height: 90px !important;
   }
+}
+@media (max-width: 990px) {
+  .fas {
+    display: block;
+    color: #fbe631;
+    box-shadow: 1px 0px 0px 0px rgba(18, 10, 32, 1),
+      0 0px 3px 0 rgba(0, 0, 0, 1);
+  }
+}
+.active_route {
+  border-bottom-style: solid;
+  border-bottom-color: #111;
+  box-shadow: 0 5px 18px 0 rgba(0, 0, 0, -7.84),
+    3px 11px 19px 10px rgba(0, 0, 0, 0.45);
+}
+.avicii {
+  display: block;
+  width: 83px;
+  height: 72px;
+  border-radius: 50%;
+  box-shadow: 0 5px 18px 0 rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 300px) and (max-width: 768px) {
+  .avicii {
+    width: 63px;
+    height: 49px;
+  }
+}
+.martin {
+  font-weight: 200;
+  color: black;
+
+  margin-bottom: 2px;
+}
+.ch-social-links.walker {
+  right: 0rem;
+  background-color: #fafafc;
 }
 </style>
+
