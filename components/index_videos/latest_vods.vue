@@ -62,7 +62,7 @@
           v-for="(video,$index) in videos"
           :key="$index"
         >
-          <div class="kaleb-vids">
+          <div class="card kaleb-vids m-2">
             <div class="Vimg itemContainer" style="background-color: black;">
               <a :href="'/single-video/'+video.v_id">
                 <!-- <clazy-load :src="'//video2.vixtream.net/'+video.filename">
