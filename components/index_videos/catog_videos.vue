@@ -11,7 +11,6 @@
     </div>
     <div class="mb-2">
       <div class="container parentDiv">
-
         <div class="row display-flex" ng-controller="navController">
           <div
             class="col-12 col-sm-6 col-md-3 col-lg-2 videoitem kygo"
@@ -45,7 +44,7 @@
                   @click="add_to_watchlist(user.id, video.v_id)"
                 >
                   <i class="fa fa-plus"></i>
-                </div> -->
+                </div>-->
                 <div class="nashhh">{{video.type.toUpperCase()}}</div>
               </div>
               <div class="descr" ng-click="viewVideo(video.v_id)">
@@ -79,7 +78,9 @@
         </div>
       </div>
       <!-- </div> -->
-      <infinite-loading @infinite="catogHandler" spinner="wavedots"></infinite-loading>
+      <div class="text-center">
+        <button class="btn btn--orange text-center kalusha" @click="loadmore()">Show More...</button>
+      </div>
     </div>
   </div>
 </template>
@@ -124,7 +125,7 @@ export default {
       });
   },
   methods: {
-    catogHandler($state) {
+    catogHandler() {
       this.page += 1;
       axios
         .post(base_url + "/cat_load", {
@@ -137,9 +138,26 @@ export default {
         .then(res => {
           if (res.data.data.length) {
             this.videos.push(...res.data.data);
-            $state.loaded();
-          } else {
-            $state.loaded();
+          }
+        });
+    },
+    loadmore() {
+      axios
+        .post(base_url + "/cat_load", {
+          page: this.page,
+          cat: this.cat_id,
+          headers: {
+            "Content-type": "application/x-www-form-urlencoded"
+          }
+        })
+        .then(({ data }) => {
+          this.page += 1;
+          if (data.data.length) {
+            data.data.forEach(element => {
+              let temp = {};
+              temp = element;
+              this.videos.push(temp);
+            });
           }
         });
     },

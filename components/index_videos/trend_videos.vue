@@ -4,7 +4,7 @@
       <span class="d-inline-block d-sm-none title">Trending Videos...</span>
       <!-- <div class="container parentDiv"> -->
       <div class="container parentDiv">
-        <div class="row display-flex" ng-controller="navController">
+        <div class="row display-flex">
           <div
             class="col-12 col-sm-6 col-md-3 col-lg-2 videoitem kygo"
             v-for="(video,$index) in videos"
@@ -72,7 +72,9 @@
       </div>
       <!-- </div> -->
     </div>
-    <infinite-loading @infinite="infiniteHandler" spinner="wavedots"></infinite-loading>
+   <div class="text-center">
+      <button class="btn btn--orange text-center kalusha" @click="infiniteHandler()">Show More...</button>
+    </div>
   </div>
 </template>
 <script>
@@ -108,7 +110,7 @@ export default {
       });
   },
   methods: {
-    infiniteHandler($state) {
+    infiniteHandler() {
       axios
         .post(base_url + "/trending", {
           page: this.page,
@@ -125,9 +127,7 @@ export default {
               temp = element;
               this.videos.push(temp);
             });
-            $state.loaded();
-          } else {
-            $state.complete();
+
           }
         });
     },

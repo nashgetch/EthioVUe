@@ -1,18 +1,17 @@
 <template>
   <div>
     <!-- <div class="container"> -->
-      <!-- <FeaturedVideos></FeaturedVideos> -->
-      <!-- <div class="container parentDiv"> -->
-      <!-- <div class="nashians">
+    <!-- <FeaturedVideos></FeaturedVideos> -->
+    <!-- <div class="container parentDiv"> -->
+    <!-- <div class="nashians">
         <adsbygoogle :ad-slot="'5950915078'"/>
-      </div>-->
-      <!-- <PopularVideos></PopularVideos> -->
+    </div>-->
+    <!-- <PopularVideos></PopularVideos> -->
     <!-- </div> -->
     <div class="container parentDiv">
       <!-- <div class="nashians">
         <adsbygoogle/>
       </div>-->
-
       <span class="title">Other Recommended Videos...</span>
 
       <hr class="guetta">
@@ -74,7 +73,7 @@
                       >
                 You can put any component you want in here.-->
                 <!-- </div> -->
-                <img :src="'//video2.vixtream.net/'+video.filename" :alt="video.title"/>
+                <img :src="'//video2.vixtream.net/'+video.filename" :alt="video.title">
                 <div ng-click="viewVideo(video.v_id)" class="play">
                   <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                 </div>
@@ -88,7 +87,7 @@
                 @click="add_to_watchlist(user.id, video.v_id)"
               >
                 <i class="fa fa-plus"></i>
-              </div> -->
+              </div>-->
               <div class="nashhh">{{video.type.toUpperCase()}}</div>
             </div>
             <div class="descr main" ng-click="viewVideo(video.v_id)">
@@ -108,18 +107,16 @@
               >{{video.title_en}}</a></h1>-->
             </div>
             <!-- <div class="views calvin"> -->
-            <ViewCatogs
-              :vid="video.v_id"
-              :cat_id="video.category_id"
-              :isIndex="true"
-              :title_en="video.title_en"
-              :created_at="video.created_at"
-              :view_count="video.view_count"
-              :type="video.type"
-            ></ViewCatogs>
-            <div class="mb-1">
-
-            </div>
+            <small style="font-weight: bold; color: #7e7e7e; font-size: 12px; margin-left: 4px">
+              <i class="fa fa-eye" style="color: #d59541;"></i>
+              {{video.view_count}} views
+              <i
+                class="fa fa-dot-circle-o"
+                style="color: #d59541;"
+              ></i>
+              {{video.created_at | moment("from", "now")}}
+            </small>
+            <div class="mb-1"></div>
             <!-- </div> -->
           </div>
           <!-- <hr> -->
@@ -127,20 +124,22 @@
       </div>
     </div>
     <!-- </div> -->
-    <infinite-loading @infinite="infiniteHandler"></infinite-loading>
+    <div class="text-center">
+      <button class="btn btn--orange text-center kalusha" @click="loadmore()">Show More...</button>
+    </div>
   </div>
 </template>
 
 <script>
 import FeaturedVideos from "@/components/featureVideos/videos";
-import ViewCatogs from "@/components/views_catogs";
+// import ViewCatogs from "@/components/views_catogs";
 import PopularVideos from "@/components/popularVideos/videos";
 import axios from "axios";
 
 const base_url = "https://ethiov.com/api";
 export default {
   components: {
-    ViewCatogs,
+    // ViewCatogs,
     FeaturedVideos,
     PopularVideos
   },
@@ -157,7 +156,7 @@ export default {
     };
   },
   methods: {
-    infiniteHandler($state) {
+    loadmore() {
       axios
         .post(base_url + "/loadmore", {
           page: this.page,
@@ -166,7 +165,6 @@ export default {
           }
         })
         .then(({ data }) => {
-          // console.log(data.data);
           this.page += 1;
           if (data.data.length) {
             data.data.forEach(element => {
@@ -174,9 +172,6 @@ export default {
               temp = element;
               this.videos.push(temp);
             });
-            $state.loaded();
-          } else {
-            $state.complete();
           }
         });
     },
@@ -255,5 +250,23 @@ export default {
 }
 .views.calvin {
   padding-top: 0px;
+}
+.kalusha {
+  background-color: #1b1c1d;
+  color: #fbe631;
+  padding: 15px 65px;
+  border: solid 1px #eceff0;
+  height: 48px;
+  border-radius: 24px;
+  font-weight: normal;
+}
+.kalusha:hover {
+  color: #b9a708 !important;
+  border-color: #b9a708;
+}
+@media (min-width: 500px) {
+ .kalusha{
+   padding: 15px 85px;
+ }
 }
 </style>

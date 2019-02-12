@@ -1,5 +1,5 @@
 <template>
-  <section style="padding-top:4rem;">
+  <section style="padding-top:6rem;">
     <div class="content-wrapper text-center">
       <span class="martin">Featured Live TV Channels</span>
       <hr>
@@ -327,29 +327,29 @@ export default {
     checkTab(tab) {
       return this.tab === tab;
     },
-    infiniteHandler($state) {
-      axios
-        .post(base_url + "/loadmore", {
-          page: this.page,
-          headers: {
-            "Content-type": "application/x-www-form-urlencoded"
-          }
-        })
-        .then(({ data }) => {
-          console.log(data.data);
-          this.page += 1;
-          if (data.data.length) {
-            data.data.forEach(element => {
-              let temp = {};
-              temp = element;
-              this.videos.push(temp);
-            });
-            $state.loaded();
-          } else {
-            $state.complete();
-          }
-        });
-    },
+    // infiniteHandler($state) {
+    //   axios
+    //     .post(base_url + "/loadmore", {
+    //       page: this.page,
+    //       headers: {
+    //         "Content-type": "application/x-www-form-urlencoded"
+    //       }
+    //     })
+    //     .then(({ data }) => {
+    //       console.log(data.data);
+    //       this.page += 1;
+    //       if (data.data.length) {
+    //         data.data.forEach(element => {
+    //           let temp = {};
+    //           temp = element;
+    //           this.videos.push(temp);
+    //         });
+    //         $state.loaded();
+    //       } else {
+    //         $state.complete();
+    //       }
+    //     });
+    // },
     add_to_watchlist(user_id, v_id) {
       axios
         .post(base_url + "/add_to_watchlist/" + user_id + "/" + v_id)
