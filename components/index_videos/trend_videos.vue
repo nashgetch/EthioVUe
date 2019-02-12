@@ -3,7 +3,7 @@
     <div class="mb-2">
       <span class="d-inline-block d-sm-none title">Trending Videos...</span>
       <!-- <div class="container parentDiv"> -->
-      <div class="container parentDiv">
+      <div class="container">
         <div class="row display-flex">
           <div
             class="col-12 col-sm-6 col-md-3 col-lg-2 videoitem kygo"

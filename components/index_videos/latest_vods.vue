@@ -8,7 +8,7 @@
     </div>-->
     <!-- <PopularVideos></PopularVideos> -->
     <!-- </div> -->
-    <div class="container parentDiv">
+    <div class="container">
       <!-- <div class="nashians">
         <adsbygoogle/>
       </div>-->

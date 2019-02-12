@@ -10,7 +10,7 @@
       ></v-select>
     </div>
     <div class="mb-2">
-      <div class="container parentDiv">
+      <div class="container">
         <div class="row display-flex" ng-controller="navController">
           <div
             class="col-12 col-sm-6 col-md-3 col-lg-2 videoitem kygo"
