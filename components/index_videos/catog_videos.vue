@@ -17,8 +17,8 @@
             v-for="(video,$index) in videos"
             :key="$index"
           >
-            <div class="card kaleb-vids m-2">
-              <div class="Vimg itemContainer" style="background-color: black;">
+            <div class="kaleb-vids m-2">
+              <div class="card Vimg itemContainer" style="background-color: black;">
                 <a :href="'/single-video/'+video.v_id">
                   <!-- <clazy-load :src="'//video2.vixtream.net/'+video.filename"> -->
                     <!-- The image slot renders after the image loads. -->
