@@ -59,15 +59,15 @@
                 </h1>
               </div>
               <div class>
-                <ViewCatogs
-                  :vid="video.v_id"
-                  :cat_id="video.category_id"
-                  :created_at="video.created_at"
-                  :isIndex="true"
-                  :title_en="video.title_en"
-                  :view_count="video.view_count"
-                  :type="video.type"
-                />
+                <small style="font-weight: bold; color: #7e7e7e; font-size: 12px; margin-left: 4px">
+                  <i class="fa fa-eye" style="color: #d59541;"></i>
+                  {{video.view_count}} views
+                  <i
+                    class="fa fa-dot-circle-o"
+                    style="color: #d59541;"
+                  ></i>
+                  {{video.created_at | moment("from", "now")}}
+                </small>
                 <!-- <span class="percent">
                     <span class="circle"></span>
                     {{video.created_at}}

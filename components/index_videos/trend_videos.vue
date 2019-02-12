@@ -14,16 +14,16 @@
               <div class="Vimg itemContainer" style="background-color: black;">
                 <a :href="'/single-video/'+video.v_id">
                   <!-- <clazy-load :src="'//video2.vixtream.net/'+video.filename"> -->
-                    <!-- The image slot renders after the image loads. -->
-                    <!-- <div
+                  <!-- The image slot renders after the image loads. -->
+                  <!-- <div
                       slot="placeholder"
                       class="bg-inverse"
                       style="background-color: black; height:102px;"
-                    > -->
-                      <!-- You can put any component you want in here. -->
-                    <!-- </div> -->
-                    <img :src="'//video2.vixtream.net/'+video.filename2" :alt="video.title">
-                    <!-- The placeholder slot displays while the image is loading. -->
+                  >-->
+                  <!-- You can put any component you want in here. -->
+                  <!-- </div> -->
+                  <img :src="'//video2.vixtream.net/'+video.filename2" :alt="video.title">
+                  <!-- The placeholder slot displays while the image is loading. -->
                   <!-- </clazy-load> -->
                   <div ng-click="viewVideo(video.v_id)" class="play">
                     <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
@@ -37,7 +37,7 @@
                   @click="add_to_watchlist(user.id, video.v_id)"
                 >
                   <i class="fa fa-plus"></i>
-                </div> -->
+                </div>-->
                 <div class="nashhh">{{video.type.toUpperCase()}}</div>
               </div>
               <div class="descr" ng-click="viewVideo(video.v_id)">
@@ -52,15 +52,15 @@
                 </h1>
               </div>
               <!-- <div class="views"> -->
-              <ViewCatogs
-                :vid="video.v_id"
-                :created_at="video.created_at"
-                :cat_id="video.category_id"
-                :isIndex="true"
-                :title_en="video.title_en"
-                :view_count="video.view_count"
-                :type="video.type"
-              />
+              <small style="font-weight: bold; color: #7e7e7e; font-size: 12px; margin-left: 4px">
+                <i class="fa fa-eye" style="color: #d59541;"></i>
+                {{video.view_count}} views
+                <i
+                  class="fa fa-dot-circle-o"
+                  style="color: #d59541;"
+                ></i>
+                {{video.created_at | moment("from", "now")}}
+              </small>
               <!-- <span class="percent">
                     <span class="circle"></span>
                     {{video.created_at}}
@@ -72,7 +72,7 @@
       </div>
       <!-- </div> -->
     </div>
-   <div class="text-center">
+    <div class="text-center">
       <button class="btn btn--orange text-center kalusha" @click="infiniteHandler()">Show More...</button>
     </div>
   </div>
@@ -127,7 +127,6 @@ export default {
               temp = element;
               this.videos.push(temp);
             });
-
           }
         });
     },
