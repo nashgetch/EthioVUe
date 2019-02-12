@@ -1,5 +1,5 @@
 <template>
-  <div  class="content-wrapper">
+  <div>
     <div class="mb-2">
       <span class="d-inline-block d-sm-none title">Trending Videos...</span>
       <!-- <div class="container parentDiv"> -->
