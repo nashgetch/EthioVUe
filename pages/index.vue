@@ -132,16 +132,82 @@
         </div>
       </div>
     </div>
-    <LatestVod :videos="videos"/>
+     <div class="content-wrapper">
+      <span class="d-inline-block d-sm-none title" style="font-weight: bold">Latest Videos On Demand...</span>
+      <!-- <div class="bars">
+      <input type="text" v-model="searchString" placeholder="Search Channels here...">
+      </div>-->
+      <div class="row">
+        <div class="container mt-2">
+          <div class="row mt-3 display-flex">
+            <div
+              class="col-12 col-sm-6 col-md-3 col-lg-2 mb-4 kygo"
+              v-for="(video,$index) in videos"
+              :key="$index"
+            >
+              <div class="chn-image-container">
+                <a :href="'/single-video/'+video.v_id">
+                  <div class="Vimg" style="background-color: black;">
+                    <img :src="'//video2.vixtream.net/' + video.filename" :alt="video.title">
+                    <div ng-click="viewVideo(video.v_id)" class="play">
+                      <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
+                    </div>
+
+                    <div class="time">{{video.duration}}</div>
+
+                    <div class="nashhh">{{video.type.toUpperCase()}}</div>
+                  </div>
+                </a>
+
+                <div class="mt-1">
+                  <div class="descr main" ng-click="viewVideo(video.v_id)">
+                    <h1 style="font-size: 14px !important;">
+                      <a
+                        :href="'/single-video/' + video.v_id"
+                        class="text"
+                        :aria-label="video.title"
+                        :title="video.title"
+                      >{{video.title}}</a>
+                      <a
+                        class="text smallFont"
+                        :href="'/single-video/' + video.v_id"
+                        :aria-label="video.title_en"
+                        :title="video.title_en"
+                      >{{video.title_en}}</a>
+                    </h1>
+                    <!-- <h1 v-show="engshow(video.v_id)" style="font-size: 14px !important;"><a
+                  class="hideOverflow"
+                  :aria-label="video.title"
+                  :title="video.title_en"
+                    >{{video.title_en}}</a></h1>-->
+                  </div>
+                  <!-- <div class="views calvin"> -->
+                  <small
+                    class="text-center"
+                    style="font-weight: bold; color: #7e7e7e; font-size: 12px; margin-left: 4px"
+                  >
+                    <i class="fa fa-eye" style="color: #d59541;"></i>
+                    {{video.view_count}} views
+                    <i
+                      class="fa fa-dot-circle-o"
+                      style="color: #d59541;"
+                    ></i>
+                    {{video.created_at | moment("from", "now")}}
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn--orange text-center kalusha" @click="loadmore()">Show More...</button>
+      </div>
+    </div>
   </section>
 </template>
 <script>
-import LatestVod from "@/components/index_videos/latest_vods";
-import ViewCatogs from "@/components/views_catogs";
-import CatogVods from "@/components/index_videos/catog_videos";
-import TrendingVods from "@/components/index_videos/trend_videos";
-import Subscription from "@/components/index_videos/subscription";
-import wideads from "@/components/adsComponents/wide_ads";
+
 import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
@@ -222,13 +288,6 @@ export default {
       ]
     };
   },
-  components: {
-    LatestVod,
-    CatogVods,
-
-    TrendingVods,
-    Subscription
-  },
   data() {
     return {
       turl: "https://video2.vixtream.net"
@@ -244,7 +303,7 @@ export default {
     return {
       videos: [...data.data],
       tab: 1,
-      page: 1,
+      page: 2,
       tab1Style: {
         active: true,
         show: true
@@ -253,6 +312,25 @@ export default {
   },
 
   methods: {
+     loadmore() {
+      axios
+        .post(base_url + "/loadmore", {
+          page: this.page,
+          headers: {
+            "Content-type": "application/x-www-form-urlencoded"
+          }
+        })
+        .then(({ data }) => {
+          this.page += 1;
+          if (data.data.length) {
+            data.data.forEach(element => {
+              let temp = {};
+              temp = element;
+              this.videos.push(temp);
+            });
+          }
+        });
+    },
     setTabs(tab) {
       this.tab = tab;
       this.tab1Style = {};
@@ -333,6 +411,115 @@ export default {
 .ch-social-links.walker {
   right: 0rem;
   background-color: #fafafc;
+}
+
+.Vimg {
+  /* border-radius: 2px; */
+  position: relative;
+  height: 122px;
+}
+
+.Vimg .time {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #373933;
+  border-bottom-right-radius: 2px;
+  border-top-left-radius: 2px;
+  color: #fff;
+  font-size: 14px;
+  padding: 6px 9px 1px;
+  line-height: 14px;
+  font-weight: 500;
+}
+
+.Vimg .nashh {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #fbe631;
+  border-bottom-right-radius: 2px;
+  border-top-left-radius: 2px;
+  color: #000;
+  font-size: 14px;
+  padding: 6px 9px 1px;
+  line-height: 14px;
+  font-weight: 500;
+  z-index: 100;
+}
+
+.Vimg .nashhh {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #e42b3b;
+  border-bottom-right-radius: 2px;
+  border-top-left-radius: 2px;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 6px 9px 5px;
+  line-height: 14px;
+  font-weight: 500;
+  z-index: 100;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.Vimg img {
+  width: 100%;
+  height: 122px;
+}
+
+.Vimg video {
+  width: 100%;
+  height: 122px;
+}
+
+@media (max-width: 768px) {
+  .Vimg img {
+    height: 100px;
+  }
+
+  .Vimg video {
+    height: 100px;
+  }
+
+  .Vimg {
+    height: 102px;
+  }
+
+  .Vimg .time {
+    bottom: 0;
+  }
+
+  .descr {
+    margin-top: 0;
+  }
+}
+.text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 12px; /* fallback */
+  max-height: 25px; /* fallback */
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: #676a6c;
+}
+@media (max-width: 600px) {
+  .Vimg img {
+    height: 230px;
+  }
+
+  .Vimg video {
+    height: 230px;
+  }
+
+  .Vimg {
+    height: 230px;
+  }
 }
 </style>
 

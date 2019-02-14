@@ -1,76 +1,150 @@
 <template>
-  <div style="padding-top: 6rem;" class="content-wrapper">
-    <!-- <div class="bars">
-      <input type="text" v-model="searchString" placeholder="Search Channels here...">
-    </div>-->
-    <div class="row">
-      <div class="container mt-2">
-        <div class="row mt-3 display-flex">
-          <div
-            class="col-12 col-sm-6 col-md-3 col-lg-2 mb-4 kygo"
-            v-for="(video,$index) in videos"
-            :key="$index"
-          >
-            <a :href="'/single-video/'+video.v_id">
-              <div class="chn-image-container">
-                <div class="Vimg" style="background-color: black;">
-                  <img
+  <section style="padding-top: 6rem;">
+    <div class="container-fluid top-margin-bn-sm-md" style="padding-top: .2rem;">
+      <div class="row fas">
+        <div class="col-lg-10 offset-lg-2">
+          <div class="row">
+            <div class="col-md-2 col-sm-12 mt-2 channel-name d-none d-sm-block">
+              <a href="/">Videos</a> |
+              <a href="/live-channels">Live TVs</a>
+            </div>
 
-                    :src="'//video2.vixtream.net/' + video.filename"
-                    :alt="video.title"
+            <div class="col-md-8 col-sm-12 text-center">
+              <ul class="nav nav-pills">
+                <li class="tab1Style nav-item text-center ml-auto mr-auto">
+                  <a href="/" class="nav-link">
+                    <span class="d-none d-sm-block">Latest Videos</span>
+                    <i class="fa fa-clock-o d-inline-block d-sm-none" style="font-size: 15px;"></i>
+                    <span
+                      class="d-inline-block d-sm-none"
+                      style="font-size: 10px; font-weight: bold;"
+                    >Latest</span>
+                  </a>
+                </li>
+                <li class="nav-item text-center ml-auto mr-auto active">
+                  <a class="nav-link active" href="/category">
+                    <span class="d-none d-sm-block">Category</span>
+                    <i
+                      class="active_route fa fa-video-camera d-inline-block d-sm-none"
+                      style="font-size: 15px;"
+                    ></i>
+                    <span
+                      class="d-inline-block d-sm-none"
+                      style="font-size: 10px; font-weight: bold;"
+                    >Category</span>
+                  </a>
+                </li>
+                <li class="nav-item text-center ml-auto mr-auto">
+                  <a class="nav-link" href="/trending">
+                    <span class="d-none d-sm-block">Trending</span>
+                    <i class="fa fa-fire d-inline-block d-sm-none" style="font-size: 15px;"></i>
+                    <span
+                      style="font-size: 10px; font-weight: bold;"
+                      class="d-inline-block d-sm-none"
+                    >Trending</span>
+                  </a>
+                </li>
+                <!-- <li class="nav-item text-center ml-auto mr-auto">
+                  <a
+                    v-if="loggedIn"
+                    class="nav-link"
+                    data-toggle="pill"
+                    href="/subscription"
                   >
-                  <div ng-click="viewVideo(video.v_id)" class="play">
-                    <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
-                  </div>
+                    <span class="d-none d-sm-block">Subscription</span>
+                    <i
+                      class="fa fa-envelope-open d-inline-block d-sm-none"
+                      style="font-size: 15px;"
 
-                  <div class="time">{{video.duration}}</div>
-
-                  <div class="nashhh">{{video.type.toUpperCase()}}</div>
-                </div>
-
-                <div class="mt-1">
-
-                    <div class="descr main" ng-click="viewVideo(video.v_id)">
-                      <h1 style="font-size: 14px !important;">
-                        <a
-                          class="text"
-                          :aria-label="video.title"
-                          :title="video.title"
-                        >{{video.title}}</a>
-                        <a
-                          class="text smallFont"
-                          :href="'/single-video/' + video.v_id"
-                          :aria-label="video.title_en"
-                          :title="video.title_en"
-                        >{{video.title_en}}</a>
-                      </h1>
-                      <!-- <h1 v-show="engshow(video.v_id)" style="font-size: 14px !important;"><a
-                  class="hideOverflow"
-                  :aria-label="video.title"
-                  :title="video.title_en"
-                      >{{video.title_en}}</a></h1>-->
-                    </div>
-                    <!-- <div class="views calvin"> -->
-                    <small class="text-center"
-                      style="font-weight: bold; color: #7e7e7e; font-size: 12px; margin-left: 4px"
-                    >
-                      <i class="fa fa-eye" style="color: #d59541;"></i>
-                      {{video.view_count}} views
-                      <i
-                        class="fa fa-dot-circle-o"
-                        style="color: #d59541;"
-                      ></i>
-                      {{video.created_at | moment("from", "now")}}
-                    </small>
-
-                </div>
-              </div>
-            </a>
+                    ></i>
+                    <span
+                      style="font-size: 10px; font-weight: bold;"
+                      class="d-inline-block d-sm-none"
+                    >Subscription</span>
+                  </a>
+                </li>-->
+                <!-- <li class="nav-item text-center ml-auto mr-auto">
+                  <a v-if="loggedIn" class="nav-link" data-toggle="pill" @click.prevent="setTabs(5)">
+                    <span class="d-none d-sm-block">Account</span>
+                      <i class="fa fa-user fa-2x d-inline-block d-sm-none"></i>
+                  </a>
+                </li>-->
+              </ul>
+              <!-- <hr class="fas"> -->
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+    <div class="content-wrapper">
+      <div class="row">
+        <div class="container mt-2">
+          <div class="row mt-3 display-flex">
+            <div
+              class="col-12 col-sm-6 col-md-3 col-lg-2 mb-4 kygo"
+              v-for="(video,$index) in videos"
+              :key="$index"
+            >
+              <div class="chn-image-container">
+                <a :href="'/single-video/'+video.v_id">
+                  <div class="Vimg" style="background-color: black;">
+                    <img :src="'//video2.vixtream.net/' + video.filename" :alt="video.title">
+                    <div ng-click="viewVideo(video.v_id)" class="play">
+                      <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
+                    </div>
+
+                    <div class="time">{{video.duration}}</div>
+
+                    <div class="nashhh">{{video.type.toUpperCase()}}</div>
+                  </div>
+                </a>
+                <div class="mt-1">
+                  <div class="descr main" ng-click="viewVideo(video.v_id)">
+                    <h1 style="font-size: 14px !important;">
+                      <a
+                        :href="'/single-video/' + video.v_id"
+                        style="color: #2e2e2e; text-decoration: none;"
+                        class="text"
+                        :aria-label="video.title"
+                        :title="video.title"
+                      >{{video.title}}</a>
+                      <a
+                        class="text smallFont"
+                        :href="'/single-video/' + video.v_id"
+                        :aria-label="video.title_en"
+                        :title="video.title_en"
+                      >{{video.title_en}}</a>
+                    </h1>
+                    <!-- <h1 v-show="engshow(video.v_id)" style="font-size: 14px !important;"><a
+                  class="hideOverflow"
+                  :aria-label="video.title"
+                  :title="video.title_en"
+                    >{{video.title_en}}</a></h1>-->
+                  </div>
+                  <!-- <div class="views calvin"> -->
+                  <small
+                    class="text-center"
+                    style="font-weight: bold; color: #7e7e7e; font-size: 12px; margin-left: 4px"
+                  >
+                    <i class="fa fa-eye" style="color: #d59541;"></i>
+                    {{video.view_count}} views
+                    <i
+                      class="fa fa-dot-circle-o"
+                      style="color: #d59541;"
+                    ></i>
+                    {{video.created_at | moment("from", "now")}}
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn--orange text-center kalusha" @click="infiniteHandler()">Show More...</button>
+      </div>
+    </div>
+  </section>
 </template>
 <script>
 import axios from "axios";
@@ -381,7 +455,7 @@ export default {
   height: 122px;
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   .Vimg img {
     height: 100px;
   }
@@ -403,7 +477,7 @@ export default {
   }
 }
 
-@media(max-width: 600px) {
+@media (max-width: 600px) {
   .Vimg img {
     height: 230px;
   }

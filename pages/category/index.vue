@@ -98,8 +98,8 @@
               v-for="(video,$index) in videos"
               :key="$index"
             >
-              <a :href="'/single-video/'+video.v_id">
-                <div class="chn-image-container">
+              <div class="chn-image-container">
+                <a :href="'/single-video/'+video.v_id">
                   <div class="Vimg" style="background-color: black;">
                     <img :src="'//video2.vixtream.net/' + video.filename" :alt="video.title">
                     <div ng-click="viewVideo(video.v_id)" class="play">
@@ -110,44 +110,45 @@
 
                     <div class="nashhh">{{video.type.toUpperCase()}}</div>
                   </div>
+                </a>
 
-                  <div class="mt-1">
-                    <div class="descr main" ng-click="viewVideo(video.v_id)">
-                      <h1 style="font-size: 14px !important;">
-                        <a
-                          class="text"
-                          :aria-label="video.title"
-                          :title="video.title"
-                        >{{video.title}}</a>
-                        <a
-                          class="text smallFont"
-                          :href="'/single-video/' + video.v_id"
-                          :aria-label="video.title_en"
-                          :title="video.title_en"
-                        >{{video.title_en}}</a>
-                      </h1>
-                      <!-- <h1 v-show="engshow(video.v_id)" style="font-size: 14px !important;"><a
+                <div class="mt-1">
+                  <div class="descr main" ng-click="viewVideo(video.v_id)">
+                    <h1 style="font-size: 14px !important;">
+                      <a
+                        :href="'/single-video/' + video.v_id"
+                        class="text"
+                        :aria-label="video.title"
+                        :title="video.title"
+                      >{{video.title}}</a>
+                      <a
+                        class="text smallFont"
+                        :href="'/single-video/' + video.v_id"
+                        :aria-label="video.title_en"
+                        :title="video.title_en"
+                      >{{video.title_en}}</a>
+                    </h1>
+                    <!-- <h1 v-show="engshow(video.v_id)" style="font-size: 14px !important;"><a
                   class="hideOverflow"
                   :aria-label="video.title"
                   :title="video.title_en"
-                      >{{video.title_en}}</a></h1>-->
-                    </div>
-                    <!-- <div class="views calvin"> -->
-                    <small
-                      class="text-center"
-                      style="font-weight: bold; color: #7e7e7e; font-size: 12px; margin-left: 4px"
-                    >
-                      <i class="fa fa-eye" style="color: #d59541;"></i>
-                      {{video.view_count}} views
-                      <i
-                        class="fa fa-dot-circle-o"
-                        style="color: #d59541;"
-                      ></i>
-                      {{video.created_at | moment("from", "now")}}
-                    </small>
+                    >{{video.title_en}}</a></h1>-->
                   </div>
+                  <!-- <div class="views calvin"> -->
+                  <small
+                    class="text-center"
+                    style="font-weight: bold; color: #7e7e7e; font-size: 12px; margin-left: 4px"
+                  >
+                    <i class="fa fa-eye" style="color: #d59541;"></i>
+                    {{video.view_count}} views
+                    <i
+                      class="fa fa-dot-circle-o"
+                      style="color: #d59541;"
+                    ></i>
+                    {{video.created_at | moment("from", "now")}}
+                  </small>
                 </div>
-              </a>
+              </div>
             </div>
           </div>
         </div>
@@ -377,6 +378,18 @@ export default {
 .wrapper {
   width: 100%;
 }
+.text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 12px; /* fallback */
+  max-height: 25px; /* fallback */
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: #676a6c;
+}
 .nashians {
   width: 320px !important;
   height: 100px !important;
@@ -493,7 +506,7 @@ export default {
   height: 122px;
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   .Vimg img {
     height: 100px;
   }
@@ -515,7 +528,7 @@ export default {
   }
 }
 
-@media(max-width: 600px) {
+@media (max-width: 600px) {
   .Vimg img {
     height: 230px;
   }
