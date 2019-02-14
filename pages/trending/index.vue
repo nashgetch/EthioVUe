@@ -1,6 +1,5 @@
 <template>
   <section style="padding-top:6rem;">
-
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: .2rem;">
       <div class="row fas">
         <div class="col-lg-10 offset-lg-2">
@@ -15,11 +14,7 @@
                 <li class="nav-item text-center ml-auto mr-auto">
                   <a class="nav-link" href="/">
                     <span class="d-none d-sm-block">Latest Videos</span>
-                    <i
-                      class="fa fa-clock-o d-inline-block d-sm-none"
-                      style="font-size: 15px;"
-
-                    ></i>
+                    <i class="fa fa-clock-o d-inline-block d-sm-none" style="font-size: 15px;"></i>
                     <span
                       class="d-inline-block d-sm-none"
                       style="font-size: 10px; font-weight: bold;"
@@ -27,13 +22,9 @@
                   </a>
                 </li>
                 <li class="nav-item text-center ml-auto mr-auto">
-                  <a class="nav-link"  href="/category">
+                  <a class="nav-link" href="/category">
                     <span class="d-none d-sm-block">Category</span>
-                    <i
-                      class="fa fa-video-camera d-inline-block d-sm-none"
-                      style="font-size: 15px;"
-
-                    ></i>
+                    <i class="fa fa-video-camera d-inline-block d-sm-none" style="font-size: 15px;"></i>
                     <span
                       class="d-inline-block d-sm-none"
                       style="font-size: 10px; font-weight: bold;"
@@ -46,7 +37,6 @@
                     <i
                       class="active_route fa fa-fire d-inline-block d-sm-none"
                       style="font-size: 15px;"
-
                     ></i>
                     <span
                       style="font-size: 10px; font-weight: bold;"
@@ -72,7 +62,7 @@
                       class="d-inline-block d-sm-none"
                     >Subscription</span>
                   </a>
-                </li> -->
+                </li>-->
                 <!-- <li class="nav-item text-center ml-auto mr-auto">
                   <a v-if="loggedIn" class="nav-link" data-toggle="pill" @click.prevent="setTabs(5)">
                     <span class="d-none d-sm-block">Account</span>
@@ -89,91 +79,91 @@
     <!-- <LatestVod :videos="videos"/> -->
     <!-- <CatogVods  /> -->
     <div>
-    <div class="mb-2">
-      <span class="d-inline-block d-sm-none title">Trending Videos...</span>
-      <!-- <div class="container parentDiv"> -->
-      <div class="container">
-        <div class="row display-flex">
-          <div
-            class="col-12 col-sm-6 col-md-3 col-lg-2 mb-4 kygo"
-            v-for="(video,$index) in videos"
-            :key="$index"
-          >
-            <div class="kaleb-vids m-2">
-              <div class="Vimg itemContainer" style="background-color: black;">
-                <a :href="'/single-video/'+video.v_id">
-                  <!-- <clazy-load :src="'//video2.vixtream.net/'+video.filename"> -->
-                  <!-- The image slot renders after the image loads. -->
-                  <!-- <div
+      <div class="mb-2">
+        <span class="d-inline-block d-sm-none title">Trending Videos...</span>
+        <!-- <div class="container parentDiv"> -->
+        <div class="container mt-2">
+          <div class="row mt-3 display-flex">
+            <div
+              class="col-12 col-sm-6 col-md-3 col-lg-2 mb-4 kygo"
+              v-for="(video,$index) in videos"
+              :key="$index"
+            >
+              <div class="kaleb-vids m-2">
+                <div class="Vimg itemContainer" style="background-color: black;">
+                  <a :href="'/single-video/'+video.v_id">
+                    <!-- <clazy-load :src="'//video2.vixtream.net/'+video.filename"> -->
+                    <!-- The image slot renders after the image loads. -->
+                    <!-- <div
                       slot="placeholder"
                       class="bg-inverse"
                       style="background-color: black; height:102px;"
-                  >-->
-                  <!-- You can put any component you want in here. -->
-                  <!-- </div> -->
-                  <img :src="'//video2.vixtream.net/'+video.filename2" :alt="video.title">
-                  <!-- The placeholder slot displays while the image is loading. -->
-                  <!-- </clazy-load> -->
-                  <div ng-click="viewVideo(video.v_id)" class="play">
-                    <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
-                  </div>
-                </a>
-                <div class="time">{{video.duration}}</div>
-                <!-- <div
+                    >-->
+                    <!-- You can put any component you want in here. -->
+                    <!-- </div> -->
+                    <img :src="'//video2.vixtream.net/'+video.filename2" :alt="video.title">
+                    <!-- The placeholder slot displays while the image is loading. -->
+                    <!-- </clazy-load> -->
+                    <div ng-click="viewVideo(video.v_id)" class="play">
+                      <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
+                    </div>
+                  </a>
+                  <div class="time">{{video.duration}}</div>
+                  <!-- <div
                   ng-style="hiddenPlus"
                   v-if="loggedIn"
                   class="nashh"
                   @click="add_to_watchlist(user.id, video.v_id)"
                 >
                   <i class="fa fa-plus"></i>
-                </div>-->
-                <div class="nashhh">{{video.type.toUpperCase()}}</div>
-              </div>
-              <div class="descr" ng-click="viewVideo(video.v_id)">
-                <h1 style="font-size: 14px !important;">
-                  <a class="text" :aria-label="video.title" :title="video.title">{{video.title}}</a>
-                  <a
-                    class="text smallFont"
-                    :href="'/single-video/' + video.v_id"
-                    :aria-label="video.title_en"
-                    :title="video.title_en"
-                  >{{video.title_en}}</a>
-                </h1>
-              </div>
-              <!-- <div class="views"> -->
-              <small style="font-weight: bold; color: #7e7e7e; font-size: 12px; margin-left: 4px">
-                <i class="fa fa-eye" style="color: #d59541;"></i>
-                {{video.view_count}} views
-                <i
-                  class="fa fa-dot-circle-o"
-                  style="color: #d59541;"
-                ></i>
-                {{video.created_at | moment("from", "now")}}
-              </small>
-              <!-- <span class="percent">
+                  </div>-->
+                  <div class="nashhh">{{video.type.toUpperCase()}}</div>
+                </div>
+                <div class="descr" ng-click="viewVideo(video.v_id)">
+                  <h1 style="font-size: 14px !important;">
+                    <a class="text" :aria-label="video.title" :title="video.title">{{video.title}}</a>
+                    <a
+                      class="text smallFont"
+                      :href="'/single-video/' + video.v_id"
+                      :aria-label="video.title_en"
+                      :title="video.title_en"
+                    >{{video.title_en}}</a>
+                  </h1>
+                </div>
+                <!-- <div class="views"> -->
+                <small style="font-weight: bold; color: #7e7e7e; font-size: 12px; margin-left: 4px">
+                  <i class="fa fa-eye" style="color: #d59541;"></i>
+                  {{video.view_count}} views
+                  <i
+                    class="fa fa-dot-circle-o"
+                    style="color: #d59541;"
+                  ></i>
+                  {{video.created_at | moment("from", "now")}}
+                </small>
+                <!-- <span class="percent">
                     <span class="circle"></span>
                     {{video.created_at}}
-              </span>-->
-              <!-- </div> -->
+                </span>-->
+                <!-- </div> -->
+              </div>
             </div>
           </div>
         </div>
+        <!-- </div> -->
       </div>
-      <!-- </div> -->
+      <div class="text-center">
+        <button
+          class="btn btn--orange text-center kalusha"
+          @click="infiniteHandler()"
+          :disabled="nomoredata"
+        >{{LoadmoreText}}</button>
+      </div>
     </div>
-    <div class="text-center">
-      <button class="btn btn--orange text-center kalusha" @click="infiniteHandler()" :disabled="nomoredata">{{LoadmoreText}}</button>
-    </div>
-  </div>
     <!-- <Subscription /> -->
   </section>
 </template>
 <script>
-import LatestVod from "@/components/index_videos/latest_vods";
-import ViewCatogs from "@/components/views_catogs";
-import CatogVods from "@/components/index_videos/catog_videos";
-import Subscription from "@/components/index_videos/subscription";
-import wideads from "@/components/adsComponents/wide_ads"
+
 import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
@@ -254,11 +244,6 @@ export default {
       ]
     };
   },
-  components: {
-    LatestVod,
-    CatogVods,
-    Subscription
-  },
   async asyncData() {
     // let tvse = await axios.post(base_url + "/live_channel");
     let { data } = await axios.post(base_url + "/trending", {
@@ -274,9 +259,10 @@ export default {
       tab1Style: {
         active: true,
         show: true
-      }, turl: "https://video2.vixtream.net",
-      nomoredata:false,
-      LoadmoreText:"Load More ..."
+      },
+      turl: "https://video2.vixtream.net",
+      nomoredata: false,
+      LoadmoreText: "Load More ..."
     };
   },
 
@@ -306,8 +292,8 @@ export default {
               this.videos.push(temp);
             });
           }
-          this.LoadmoreText="No More Data";
-          this.nomoredata=true;
+          this.LoadmoreText = "No More Data";
+          this.nomoredata = true;
         });
     },
     add_to_watchlist(user_id, v_id) {
@@ -408,10 +394,12 @@ export default {
   font-size: 13px;
   color: #676a6c;
 }
-.kygo {
-  padding-left: 4px !important;
-  padding-right: 4px !important;
-}
 
+@media (min-width: 768px) {
+  .kygo {
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+  }
+}
 </style>
 
