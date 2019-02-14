@@ -132,8 +132,11 @@
         </div>
       </div>
     </div>
-     <div class="content-wrapper">
-      <span class="d-inline-block d-sm-none title" style="font-weight: bold">Latest Videos On Demand...</span>
+    <div class="content-wrapper">
+      <span
+        class="d-inline-block d-sm-none title"
+        style="font-weight: bold"
+      >Latest Videos On Demand...</span>
       <!-- <div class="bars">
       <input type="text" v-model="searchString" placeholder="Search Channels here...">
       </div>-->
@@ -207,10 +210,10 @@
   </section>
 </template>
 <script>
-
 import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
+  middleware: "red",
   head() {
     return {
       title: "EthioV - Ethiopian Videos and Live channels",
@@ -312,7 +315,7 @@ export default {
   },
 
   methods: {
-     loadmore() {
+    loadmore() {
       axios
         .post(base_url + "/loadmore", {
           page: this.page,
