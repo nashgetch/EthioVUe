@@ -1,6 +1,5 @@
 <template>
-  <section style="padding-top:6rem;">
-    <div class="container-fluid top-margin-bn-sm-md" style="padding-top: .2rem;">
+  <div class="content-wrapper" style="padding-top:6rem;">
       <div class="row fas">
         <div class="col-lg-10 offset-lg-2">
           <div class="row">
@@ -44,53 +43,27 @@
                     >Trending</span>
                   </a>
                 </li>
-                <!-- <li class="nav-item text-center ml-auto mr-auto">
-                  <a
-                    v-if="loggedIn"
-                    class="nav-link"
 
-                   href="/subscription"
-                  >
-                    <span class="d-none d-sm-block">Subscription</span>
-                    <i
-                      class="fa fa-envelope-open d-inline-block d-sm-none"
-                      style="font-size: 15px;"
-
-                    ></i>
-                    <span
-                      style="font-size: 10px; font-weight: bold;"
-                      class="d-inline-block d-sm-none"
-                    >Subscription</span>
-                  </a>
-                </li>-->
-                <!-- <li class="nav-item text-center ml-auto mr-auto">
-                  <a v-if="loggedIn" class="nav-link" data-toggle="pill" @click.prevent="setTabs(5)">
-                    <span class="d-none d-sm-block">Account</span>
-                      <i class="fa fa-user fa-2x d-inline-block d-sm-none"></i>
-                  </a>
-                </li>-->
               </ul>
-              <!-- <hr class="fas"> -->
+
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- <LatestVod :videos="videos"/> -->
-    <!-- <CatogVods  /> -->
-    <div>
-      <div class="mb-2">
+
+
+
         <span class="d-inline-block d-sm-none title">Trending Videos...</span>
         <!-- <div class="container parentDiv"> -->
         <div class="container mt-2">
           <div class="row mt-3 display-flex">
             <div
-              class="col-12 col-sm-6 col-md-3 col-lg-2 mb-4 kygo"
+              class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
               v-for="(video,$index) in videos"
               :key="$index"
             >
-              <div class="kaleb-vids m-2">
-                <div class="Vimg itemContainer" style="background-color: black;">
+              <div class="chn-image-container">
+                <div class="" style="background-color: black;">
                   <a :href="'/single-video/'+video.v_id">
                     <!-- <clazy-load :src="'//video2.vixtream.net/'+video.filename"> -->
                     <!-- The image slot renders after the image loads. -->
@@ -101,14 +74,14 @@
                     >-->
                     <!-- You can put any component you want in here. -->
                     <!-- </div> -->
-                    <img :src="'//video2.vixtream.net/'+video.filename2" :alt="video.title">
+                    <img class="imgur" :src="'//video2.vixtream.net/'+video.filename2" :alt="video.title">
                     <!-- The placeholder slot displays while the image is loading. -->
                     <!-- </clazy-load> -->
-                    <div ng-click="viewVideo(video.v_id)" class="play">
+                    <!-- <div ng-click="viewVideo(video.v_id)" class="play">
                       <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
-                    </div>
+                    </div> -->
                   </a>
-                  <div class="time">{{video.duration}}</div>
+                  <!-- <div class="time">{{video.duration}}</div> -->
                   <!-- <div
                   ng-style="hiddenPlus"
                   v-if="loggedIn"
@@ -117,7 +90,7 @@
                 >
                   <i class="fa fa-plus"></i>
                   </div>-->
-                  <div class="nashhh">{{video.type.toUpperCase()}}</div>
+                  <!-- <div class="nashhh">{{video.type.toUpperCase()}}</div> -->
                 </div>
                 <div class="descr" ng-click="viewVideo(video.v_id)">
                   <h1 style="font-size: 14px !important;">
@@ -150,7 +123,7 @@
           </div>
         </div>
         <!-- </div> -->
-      </div>
+
       <div class="text-center">
         <button
           class="btn btn--orange text-center kalusha"
@@ -160,7 +133,6 @@
       </div>
     </div>
     <!-- <Subscription /> -->
-  </section>
 </template>
 <script>
 
@@ -395,11 +367,20 @@ export default {
   color: #676a6c;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) { */
   .kygo {
     padding-left: 4px !important;
     padding-right: 4px !important;
   }
+/* } */
+.imgur {
+  display: block;
+  max-width: 232px;
+  max-height: 150px;
+  width: auto;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 </style>
 
