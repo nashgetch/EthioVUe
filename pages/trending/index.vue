@@ -407,9 +407,7 @@ export default {
   .Vimg img {
     height: 230px;
   }
-  {
-    border: 2px solid #daffee;
-  }
+
   .Vimg video {
     height: 230px;
   }
