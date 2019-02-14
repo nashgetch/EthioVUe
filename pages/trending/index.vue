@@ -1,138 +1,34 @@
 <template>
-  <div class="content-wrapper" style="padding-top:6rem;">
-      <div class="row fas">
-        <div class="col-lg-10 offset-lg-2">
-          <div class="row">
-            <div class="col-md-2 col-sm-12 mt-2 channel-name d-none d-sm-block">
-              <a href="/">Videos</a> |
-              <a href="/live-channels">Live TVs</a>
-            </div>
-
-            <div class="col-md-8 col-sm-12 text-center">
-              <ul class="nav nav-pills">
-                <li class="nav-item text-center ml-auto mr-auto">
-                  <a class="nav-link" href="/">
-                    <span class="d-none d-sm-block">Latest Videos</span>
-                    <i class="fa fa-clock-o d-inline-block d-sm-none" style="font-size: 15px;"></i>
-                    <span
-                      class="d-inline-block d-sm-none"
-                      style="font-size: 10px; font-weight: bold;"
-                    >Latest</span>
-                  </a>
-                </li>
-                <li class="nav-item text-center ml-auto mr-auto">
-                  <a class="nav-link" href="/category">
-                    <span class="d-none d-sm-block">Category</span>
-                    <i class="fa fa-video-camera d-inline-block d-sm-none" style="font-size: 15px;"></i>
-                    <span
-                      class="d-inline-block d-sm-none"
-                      style="font-size: 10px; font-weight: bold;"
-                    >Category</span>
-                  </a>
-                </li>
-                <li class="nav-item text-center ml-auto mr-auto active">
-                  <a class="nav-link active" href="/trending">
-                    <span class="d-none d-sm-block">Trending</span>
-                    <i
-                      class="active_route fa fa-fire d-inline-block d-sm-none"
-                      style="font-size: 15px;"
-                    ></i>
-                    <span
-                      style="font-size: 10px; font-weight: bold;"
-                      class="d-inline-block d-sm-none"
-                    >Trending</span>
-                  </a>
-                </li>
-
-              </ul>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-
-        <span class="d-inline-block d-sm-none title">Trending Videos...</span>
-        <!-- <div class="container parentDiv"> -->
-        <div class="container mt-2">
-          <div class="row mt-3 display-flex">
-            <div
-              class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
-              v-for="(video,$index) in videos"
-              :key="$index"
-            >
+ <div style="padding-top: 6rem;" class="content-wrapper">
+    <!-- <div class="bars">
+      <input type="text" v-model="searchString" placeholder="Search Channels here...">
+    </div>-->
+    <div class="row">
+      <div class="container mt-2">
+        <div class="row mt-3 display-flex">
+          <div
+            class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
+            v-for="(video,$index) in videos"
+            :key="$index"
+          >
+            <a :href="'/single-video/'+video.v_id">
               <div class="chn-image-container">
-                <div class="" style="background-color: black;">
-                  <a :href="'/single-video/'+video.v_id">
-                    <!-- <clazy-load :src="'//video2.vixtream.net/'+video.filename"> -->
-                    <!-- The image slot renders after the image loads. -->
-                    <!-- <div
-                      slot="placeholder"
-                      class="bg-inverse"
-                      style="background-color: black; height:102px;"
-                    >-->
-                    <!-- You can put any component you want in here. -->
-                    <!-- </div> -->
-                    <img class="imgur" :src="'//video2.vixtream.net/'+video.filename2" :alt="video.title">
-                    <!-- The placeholder slot displays while the image is loading. -->
-                    <!-- </clazy-load> -->
-                    <!-- <div ng-click="viewVideo(video.v_id)" class="play">
-                      <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
-                    </div> -->
-                  </a>
-                  <!-- <div class="time">{{video.duration}}</div> -->
-                  <!-- <div
-                  ng-style="hiddenPlus"
-                  v-if="loggedIn"
-                  class="nashh"
-                  @click="add_to_watchlist(user.id, video.v_id)"
-                >
-                  <i class="fa fa-plus"></i>
-                  </div>-->
-                  <!-- <div class="nashhh">{{video.type.toUpperCase()}}</div> -->
+                <img class="imgur" :src="'//video2.vixtream.net/' + video.filename" :alt="video.title">
+
+                <div class="text text-center mt-5">
+                  <div class="text">
+                    <strong class="chan-title">{{video.title}}</strong>
+                    <small style="font-size:10px">[{{video.title_en}}]</small>
+                    <!-- <span class="hideOverflow">{{video.description}}</span> -->
+                  </div>
                 </div>
-                <div class="descr" ng-click="viewVideo(video.v_id)">
-                  <h1 style="font-size: 14px !important;">
-                    <a class="text" :aria-label="video.title" :title="video.title">{{video.title}}</a>
-                    <a
-                      class="text smallFont"
-                      :href="'/single-video/' + video.v_id"
-                      :aria-label="video.title_en"
-                      :title="video.title_en"
-                    >{{video.title_en}}</a>
-                  </h1>
-                </div>
-                <!-- <div class="views"> -->
-                <small style="font-weight: bold; color: #7e7e7e; font-size: 12px; margin-left: 4px">
-                  <i class="fa fa-eye" style="color: #d59541;"></i>
-                  {{video.view_count}} views
-                  <i
-                    class="fa fa-dot-circle-o"
-                    style="color: #d59541;"
-                  ></i>
-                  {{video.created_at | moment("from", "now")}}
-                </small>
-                <!-- <span class="percent">
-                    <span class="circle"></span>
-                    {{video.created_at}}
-                </span>-->
-                <!-- </div> -->
               </div>
-            </div>
+            </a>
           </div>
         </div>
-        <!-- </div> -->
-
-      <div class="text-center">
-        <button
-          class="btn btn--orange text-center kalusha"
-          @click="infiniteHandler()"
-          :disabled="nomoredata"
-        >{{LoadmoreText}}</button>
       </div>
     </div>
-    <!-- <Subscription /> -->
+  </div>
 </template>
 <script>
 
@@ -147,19 +43,19 @@ export default {
           hid: "description",
           name: "description",
           content:
-            "All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
+            "All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live video channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
         },
         {
           hid: "keywords",
           name: "keywords",
           keywords:
-            "Bethel TV, Africa, Evangelical, Religion, Politics, Ethiopia, Entertainment, Sports, Social Media, travel"
+            "Bethel video, Africa, Evangelical, Religion, Politics, Ethiopia, Entertainment, Sports, Social Media, travel"
         },
         {
           hid: "og:title",
           property: "og:title",
           content:
-            "EthioV - Ethiopian Live Channels and Videos on Demand. Ethiopia's Reliable TVs and Videos Archive. All Your Favorite TV Channels"
+            "EthioV - Ethiopian Live Channels and Videos on Demand. Ethiopia's Reliable videos and Videos Archive. All Your Favorite video Channels"
         },
         {
           hid: "og:url",
@@ -175,7 +71,7 @@ export default {
           hid: "og:description",
           property: "og:description",
           content:
-            "All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
+            "All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live video channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
         },
         {
           hid: "twitter:title",
@@ -201,7 +97,7 @@ export default {
           hid: "twitter:description",
           property: "twitter:description",
           content:
-            "EthioV - All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here."
+            "EthioV - All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live video channels here."
         }
       ],
       script: [
@@ -217,7 +113,7 @@ export default {
     };
   },
   async asyncData() {
-    // let tvse = await axios.post(base_url + "/live_channel");
+    // let videose = await axios.post(base_url + "/live_channel");
     let { data } = await axios.post(base_url + "/trending", {
       page: 1,
       headers: {
