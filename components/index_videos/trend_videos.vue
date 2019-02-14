@@ -85,6 +85,11 @@ export default {
   components: {
     ViewCatogs
   },
+  props:{
+  videos:{
+    type:Array
+  }
+  },
   data() {
     return {
       page: 1,
