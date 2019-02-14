@@ -1,6 +1,6 @@
  <template>
   <section style="padding-top:6rem;">
-    <div class="content-wrapper text-center">
+    <!-- <div class="content-wrapper text-center">
       <span class="martin">Featured Live TV Channels</span>
       <hr>
       <div class="row" style="background-color:#fafafc;">
@@ -79,8 +79,8 @@
           </div>
         </div>
       </div>
-    </div>
-    <hr style="border-top: 1px solid rgba(0,0,0,0.6);" class="d-lg-block d-none">
+    </div>-->
+    <!-- <hr style="border-top: 1px solid rgba(0,0,0,0.6);" class="d-lg-block d-none"> -->
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: .2rem;">
       <div class="row fas">
         <div class="col-lg-10 offset-lg-2">
@@ -116,8 +116,7 @@
                 </li>
                 <li class="nav-item text-center ml-auto mr-auto">
                   <a class="nav-link" href="/trending">
-
-                      <span class="d-none d-sm-block">Trending</span>
+                    <span class="d-none d-sm-block">Trending</span>
 
                     <i class="fa fa-fire d-inline-block d-sm-none" style="font-size: 15px;"></i>
                     <span
@@ -126,16 +125,14 @@
                     >Trending</span>
                   </a>
                 </li>
-
               </ul>
-
             </div>
           </div>
+          <hr>
         </div>
       </div>
     </div>
     <LatestVod :videos="videos"/>
-
   </section>
 </template>
 <script>
@@ -234,12 +231,10 @@ export default {
   },
   data() {
     return {
-
       turl: "https://video2.vixtream.net"
     };
   },
   async asyncData() {
-
     let { data } = await axios.post(base_url + "/loadmore", {
       page: 1,
       headers: {
