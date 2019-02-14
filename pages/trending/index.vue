@@ -1,5 +1,5 @@
 <template>
- <div style="padding-top: 6rem;" class="content-wrapper">
+  <div style="padding-top: 6rem;" class="content-wrapper">
     <!-- <div class="bars">
       <input type="text" v-model="searchString" placeholder="Search Channels here...">
     </div>-->
@@ -7,20 +7,62 @@
       <div class="container mt-2">
         <div class="row mt-3 display-flex">
           <div
-            class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
+            class="col-12 col-sm-6 col-md-3 col-lg-2 mb-4 kygo"
             v-for="(video,$index) in videos"
             :key="$index"
           >
             <a :href="'/single-video/'+video.v_id">
               <div class="chn-image-container">
-                <img class="imgur" :src="'//video2.vixtream.net/' + video.filename" :alt="video.title">
-
-                <div class="text text-center mt-5">
-                  <div class="text">
-                    <strong class="chan-title">{{video.title}}</strong>
-                    <small style="font-size:10px">[{{video.title_en}}]</small>
-                    <!-- <span class="hideOverflow">{{video.description}}</span> -->
+                <div class="Vimg" style="background-color: black;">
+                  <img
+                    class="imgur"
+                    :src="'//video2.vixtream.net/' + video.filename"
+                    :alt="video.title"
+                  >
+                  <div ng-click="viewVideo(video.v_id)" class="play">
+                    <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                   </div>
+
+                  <div class="time">{{video.duration}}</div>
+
+                  <div class="nashhh">{{video.type.toUpperCase()}}</div>
+                </div>
+
+                <div class="mt-1">
+
+                    <div class="descr main" ng-click="viewVideo(video.v_id)">
+                      <h1 style="font-size: 14px !important;">
+                        <a
+                          class="text"
+                          :aria-label="video.title"
+                          :title="video.title"
+                        >{{video.title}}</a>
+                        <a
+                          class="text smallFont"
+                          :href="'/single-video/' + video.v_id"
+                          :aria-label="video.title_en"
+                          :title="video.title_en"
+                        >{{video.title_en}}</a>
+                      </h1>
+                      <!-- <h1 v-show="engshow(video.v_id)" style="font-size: 14px !important;"><a
+                  class="hideOverflow"
+                  :aria-label="video.title"
+                  :title="video.title_en"
+                      >{{video.title_en}}</a></h1>-->
+                    </div>
+                    <!-- <div class="views calvin"> -->
+                    <small class="text-center"
+                      style="font-weight: bold; color: #7e7e7e; font-size: 12px; margin-left: 4px"
+                    >
+                      <i class="fa fa-eye" style="color: #d59541;"></i>
+                      {{video.view_count}} views
+                      <i
+                        class="fa fa-dot-circle-o"
+                        style="color: #d59541;"
+                      ></i>
+                      {{video.created_at | moment("from", "now")}}
+                    </small>
+
                 </div>
               </div>
             </a>
@@ -31,7 +73,6 @@
   </div>
 </template>
 <script>
-
 import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
@@ -264,10 +305,10 @@ export default {
 }
 
 /* @media (min-width: 768px) { */
-  .kygo {
-    padding-left: 4px !important;
-    padding-right: 4px !important;
-  }
+.kygo {
+  padding-left: 4px !important;
+  padding-right: 4px !important;
+}
 /* } */
 .imgur {
   display: block;
@@ -277,6 +318,67 @@ export default {
   height: auto;
   margin-right: auto;
   margin-left: auto;
+}
+.Vimg {
+  /* border-radius: 2px; */
+  position: relative;
+  height: 122px;
+}
+
+.Vimg .time {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #373933;
+  border-bottom-right-radius: 2px;
+  border-top-left-radius: 2px;
+  color: #fff;
+  font-size: 14px;
+  padding: 6px 9px 1px;
+  line-height: 14px;
+  font-weight: 500;
+}
+
+.Vimg .nashh {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #fbe631;
+  border-bottom-right-radius: 2px;
+  border-top-left-radius: 2px;
+  color: #000;
+  font-size: 14px;
+  padding: 6px 9px 1px;
+  line-height: 14px;
+  font-weight: 500;
+  z-index: 100;
+}
+
+.Vimg .nashhh {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #e42b3b;
+  border-bottom-right-radius: 2px;
+  border-top-left-radius: 2px;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 6px 9px 5px;
+  line-height: 14px;
+  font-weight: 500;
+  z-index: 100;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.Vimg img {
+  width: 100%;
+  height: 122px;
+}
+
+.Vimg video {
+  width: 100%;
+  height: 122px;
 }
 </style>
 
