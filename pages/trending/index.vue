@@ -15,7 +15,7 @@
               <div class="chn-image-container">
                 <div class="Vimg" style="background-color: black;">
                   <img
-                    class="imgur"
+
                     :src="'//video2.vixtream.net/' + video.filename"
                     :alt="video.title"
                   >
@@ -379,6 +379,44 @@ export default {
 .Vimg video {
   width: 100%;
   height: 122px;
+}
+
+@media(max-width: 768px) {
+  .Vimg img {
+    height: 100px;
+  }
+
+  .Vimg video {
+    height: 100px;
+  }
+
+  .Vimg {
+    height: 102px;
+  }
+
+  .Vimg .time {
+    bottom: 0;
+  }
+
+  .descr {
+    margin-top: 0;
+  }
+}
+
+@media(max-width: 600px) {
+  .Vimg img {
+    height: 230px;
+  }
+  {
+    border: 2px solid #daffee;
+  }
+  .Vimg video {
+    height: 230px;
+  }
+
+  .Vimg {
+    height: 230px;
+  }
 }
 </style>
 
