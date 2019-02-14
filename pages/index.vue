@@ -1,6 +1,6 @@
  <template>
   <section style="padding-top:6rem;">
-    <!-- <div class="content-wrapper text-center">
+    <div class="content-wrapper text-center">
       <span class="martin">Featured Live TV Channels</span>
       <hr>
       <div class="row" style="background-color:#fafafc;">
@@ -79,8 +79,8 @@
           </div>
         </div>
       </div>
-    </div>-->
-    <!-- <hr style="border-top: 1px solid rgba(0,0,0,0.6);" class="d-lg-block d-none"> -->
+    </div>
+    <hr style="border-top: 1px solid rgba(0,0,0,0.6);" class="d-lg-block d-none">
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: .2rem;">
       <div class="row fas">
         <div class="col-lg-10 offset-lg-2">

@@ -30,6 +30,7 @@
 
 .kaleb-vids {
   margin-bottom: 15px;
+
 }
 
 .kaleb-vids .Vimg {
@@ -50,6 +51,7 @@
   padding: 6px 9px 1px;
   line-height: 14px;
   font-weight: 500;
+
 }
 
 .kaleb-vids .Vimg .nashh {
@@ -250,7 +252,9 @@
   .kaleb-vids .Vimg img {
     height: 230px;
   }
-
+  .kaleb-vids {
+    border: 2px solid #daffee;
+  }
   .kaleb-vids .Vimg video {
     height: 230px;
   }
