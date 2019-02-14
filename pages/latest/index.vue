@@ -3,7 +3,7 @@
     <div class="content-wrapper text-center">
       <span class="martin">Featured Live TV Channels</span>
       <hr>
-      <!-- <div class="row" style="background-color:#fafafc;">
+      <div class="row" style="background-color:#fafafc;">
         <div class="col-lg-2 col-sm-12 col-12"></div>
         <div class="col-lg-8 col-sm-12 col-12 text-center">
           <div class="row">
@@ -78,7 +78,7 @@
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
     </div>
     <hr style="border-top: 1px solid rgba(0,0,0,0.6);" class="d-lg-block d-none">
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: .2rem;">
@@ -132,8 +132,11 @@
         </div>
       </div>
     </div>
-     <div class="content-wrapper">
-      <span class="d-inline-block d-sm-none title" style="font-weight: bold">Latest Videos On Demand...</span>
+    <div class="content-wrapper">
+      <span
+        class="d-inline-block d-sm-none title"
+        style="font-weight: bold"
+      >Latest Videos On Demand...</span>
       <!-- <div class="bars">
       <input type="text" v-model="searchString" placeholder="Search Channels here...">
       </div>-->
@@ -207,11 +210,9 @@
   </section>
 </template>
 <script>
-
 import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
-
   head() {
     return {
       title: "EthioV - Ethiopian Videos and Live channels",
@@ -313,7 +314,7 @@ export default {
   },
 
   methods: {
-     loadmore() {
+    loadmore() {
       axios
         .post(base_url + "/loadmore", {
           page: this.page,
@@ -511,15 +512,15 @@ export default {
 }
 @media (max-width: 600px) {
   .Vimg img {
-    height: 230px;
+    height: 202px;
   }
 
   .Vimg video {
-    height: 230px;
+    height: 202px;
   }
 
   .Vimg {
-    height: 230px;
+    height: 202px;
   }
 }
 </style>

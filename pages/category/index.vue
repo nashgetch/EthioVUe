@@ -530,15 +530,15 @@ export default {
 
 @media (max-width: 600px) {
   .Vimg img {
-    height: 230px;
+    height: 202px;
   }
 
   .Vimg video {
-    height: 230px;
+    height: 202px;
   }
 
   .Vimg {
-    height: 230px;
+    height: 202px;
   }
 }
 </style>
