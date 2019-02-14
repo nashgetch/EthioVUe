@@ -95,12 +95,12 @@
       <div class="container">
         <div class="row display-flex">
           <div
-            class="col-12 col-sm-6 col-md-3 col-lg-2 videoitem kygo"
+            class="col-12 col-sm-6 col-md-3 col-lg-2 mb-4 kygo"
             v-for="(video,$index) in videos"
             :key="$index"
           >
             <div class="kaleb-vids m-2">
-              <div class="card Vimg itemContainer" style="background-color: black;">
+              <div class="Vimg itemContainer" style="background-color: black;">
                 <a :href="'/single-video/'+video.v_id">
                   <!-- <clazy-load :src="'//video2.vixtream.net/'+video.filename"> -->
                   <!-- The image slot renders after the image loads. -->
@@ -383,5 +383,35 @@ export default {
   right: 0rem;
   background-color: #fafafc;
 }
+.title {
+  /* color: #fbe631 !important; */
+  font-size: 16px;
+  vertical-align: -4px;
+  font-weight: 700;
+  display: inline-block;
+  /* text-align: center;
+  margin-left: auto;
+  margin-right: auto; */
+}
+.v-select pol {
+  margin-left: 0px !important;
+}
+.text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 12px; /* fallback */
+  max-height: 25px; /* fallback */
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: #676a6c;
+}
+.kygo {
+  padding-left: 4px !important;
+  padding-right: 4px !important;
+}
+
 </style>
 
