@@ -879,6 +879,7 @@ async function getUsername(user_id) {
     right: 0;
     margin-right: 1px;
     padding-top: 32%;
+    height: 135px !important;
   }
 }
 @media (min-width: 501px) and (max-width: 768px) {
