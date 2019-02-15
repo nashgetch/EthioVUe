@@ -183,6 +183,7 @@ export default {
     }
   },
   mounted: function() {
+      $(function() {
       var vid = $(".video-container");
 
       var top =
@@ -298,6 +299,7 @@ export default {
     z-index: 100;
     bottom: 0;
     right: 0;
+    height: 122px !important;
     margin-right: 1px;
     padding-top: 32%;
   }
