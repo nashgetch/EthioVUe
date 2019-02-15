@@ -22,249 +22,264 @@
               :href="'/single-video/' + single.v_id"
               :aria-label="single.title_en"
               :title="single.title_en"
-            >{{single.title_en}}</a>
-            <ViewCatogs
+            >{{single.title_en + " || " + single.title_am_ph}}</a>
+            <!-- <ViewCatogs
               :isSingle="true"
               :vid="single.v_id"
               :title_en="single.title_en"
               :title_am_ph="single.am_en_ph"
               :type="single.type"
-            />
+            />-->
           </h1>
           <!-- <div class="nashian">
             <adsbygoogle :ad-slot="'5950915078'"/>
           </div>-->
         </div>
-
-        <div class="content-wrapper">
-          <!-- The Author Part -->
-          <div class="author">
-            <div class="author-head">
-              <a :href="'/single-channel/'+ single.chan_name.id">
-                <img
-                  :src="'//video2.vixtream.net'+single.chan_name.poster_image"
-                  :alt="single.chan_name.tv_name"
-                  class="sv-avatar kalusha"
-                >
-              </a>
-              <div class="sv-name ml-auto mr-auto">
-                <div class="mr-2">
-                  <a></a>
-                  {{ single.chan_name.tv_name }} - Videos
-                </div>
-                <div class="c-sub" @click="subscribe()">
-                  <div class="c-f">Subscribe</div>
-                  <div class="c-s">{{single.chan_name.subs}}</div>
-                  <div class="clearfix"></div>
-                </div>
-              </div>
-              <div class="sv-views float-none d-inline-block">
-                <div class="sv-views-count">
-                  {{ single.view_count }} views
-                  <div class="d-inline-block" style="font-size:1rem;">
-                    <span class="green d-inline-block">
-                      <a @click="likeVid(single.v_id)" class="ml-2">
-                        <i class="fa fa-thumbs-up" style="color:green">
-                          {{likes}}
-                          <span class="text-gray-dark">Likes</span>
-                        </i>
-                      </a>
-                    </span>
-                    <span class="green d-inline-block">
-                      <a @click="dislikeVid( single.v_id)" class="ml-2">
-                        <i class="fa fa-thumbs-down" style="color:red">
-                          {{likes}}
-                          <span class="text-gray-dark">DisLikes</span>
-                        </i>
-                      </a>
-                    </span>
+        <div class="post">
+          <div class="content-wrapper">
+            <!-- The Author Part -->
+            <div class="author">
+              <div class="author-head">
+                <a :href="'/single-channel/'+ single.chan_name.id">
+                  <img
+                    :src="'//video2.vixtream.net'+single.chan_name.poster_image"
+                    :alt="single.chan_name.tv_name"
+                    class="sv-avatar kalusha"
+                  >
+                </a>
+                <div class="sv-name ml-auto mr-auto">
+                  <div class="mr-2">
+                    <a></a>
+                    {{ single.chan_name.tv_name }} - Videos
+                  </div>
+                  <div class="c-sub" @click="subscribe()">
+                    <div class="c-f">Subscribe</div>
+                    <div class="c-s">{{single.chan_name.subs}}</div>
+                    <div class="clearfix"></div>
                   </div>
                 </div>
+                <div class="sv-views float-none d-inline-block">
+                  <div class="sv-views-count">
+                    {{ single.view_count }} views
+                    <div class="d-inline-block" style="font-size:1rem;">
+                      <span class="green d-inline-block">
+                        <a @click="likeVid(single.v_id)" class="ml-2">
+                          <i class="fa fa-thumbs-up" style="color:green">
+                            {{likes}}
+                            <span class="text-gray-dark">Likes</span>
+                          </i>
+                        </a>
+                      </span>
+                      <span class="green d-inline-block">
+                        <a @click="dislikeVid( single.v_id)" class="ml-2">
+                          <i class="fa fa-thumbs-down" style="color:red">
+                            {{likes}}
+                            <span class="text-gray-dark">DisLikes</span>
+                          </i>
+                        </a>
+                      </span>
+                    </div>
+                  </div>
 
-                <div class="sv-views-progress">
-                  <div class="sv-views-progress-bar"></div>
-                </div>
-                <div class="sv-views-stats">
-                  <div class="dropdown">
-                    <a
-                      style="text-decoration: none; color: black;"
-                      class="dropdown-toggle"
-                      data-toggle="dropdown"
-                      role="button"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      <i
-                        class="fa fa-share-alt"
-                        style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
-                      ></i>
-                      Share
-                      <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu poll">
-                      <social-sharing
-                        :url="'https://www.ethiov.com/single-video/' + single.v_id"
-                        :title="'EthioV - ' +single.title"
-                        :description="'EthioV - ' + single.description"
-                        :quote="'EthioV - ' + single.description"
-                        :hashtags="'#EthioV, ' + single.tags"
-                        inline-template
+                  <div class="sv-views-progress">
+                    <div class="sv-views-progress-bar"></div>
+                  </div>
+                  <div class="sv-views-stats">
+                    <div class="dropdown">
+                      <a
+                        style="text-decoration: none; color: black;"
+                        class="dropdown-toggle"
+                        data-toggle="dropdown"
+                        role="button"
+                        aria-haspopup="true"
+                        aria-expanded="false"
                       >
-                        <div>
-                          <network class="dropdown-item" network="facebook">
-                            <i
-                              class="fa fa-fw fa-facebook"
-                              style="color: #3b5998; padding-left: 5px; margin-top: 10px;"
-                            ></i>- Facebook
-                          </network>
+                        <i
+                          class="fa fa-share-alt"
+                          style="color: #fbe631; padding-left: 5px; margin-top: 10px;"
+                        ></i>
+                        Share
+                        <span class="caret"></span>
+                      </a>
+                      <ul class="dropdown-menu poll">
+                        <social-sharing
+                          :url="'https://www.ethiov.com/single-video/' + single.v_id"
+                          :title="'EthioV - ' +single.title"
+                          :description="'EthioV - ' + single.description"
+                          :quote="'EthioV - ' + single.description"
+                          :hashtags="'#EthioV, ' + single.tags"
+                          inline-template
+                        >
+                          <div>
+                            <network class="dropdown-item" network="facebook">
+                              <i
+                                class="fa fa-fw fa-facebook"
+                                style="color: #3b5998; padding-left: 5px; margin-top: 10px;"
+                              ></i>- Facebook
+                            </network>
 
-                          <network network="twitter" class="dropdown-item">
-                            <i
-                              class="fa fa-fw fa-twitter"
-                              style="color: #55acee; padding-left: 5px; margin-top: 10px;"
-                            ></i>- Twitter
-                          </network>
-                          <network network="telegram" class="dropdown-item">
-                            <i
-                              class="fa fa-telegram"
-                              style="color: #00405d; padding-left: 5px; margin-top: 10px;"
-                            ></i>- Telegram
-                          </network>
-                        </div>
-                      </social-sharing>
-                    </ul>
+                            <network network="twitter" class="dropdown-item">
+                              <i
+                                class="fa fa-fw fa-twitter"
+                                style="color: #55acee; padding-left: 5px; margin-top: 10px;"
+                              ></i>- Twitter
+                            </network>
+                            <network network="telegram" class="dropdown-item">
+                              <i
+                                class="fa fa-telegram"
+                                style="color: #00405d; padding-left: 5px; margin-top: 10px;"
+                              ></i>- Telegram
+                            </network>
+                          </div>
+                        </social-sharing>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div class="clearfix"></div>
-          </div>
-          <!-- End of The Author Part -->
-          <div class="info">
-            <div>
-              <p>{{ single.cat_name }} | {{single.tags}}</p>
-              <h4>About :</h4>
-              <p>{{single.description}}</p>
+              <div class="clearfix"></div>
             </div>
-          </div>
-          <div class="fikir-vids">
-            <div class="row">
-              <div class="col-lg-3 col-sm-6 col-xs-12" v-for="(pub,$index) in owned" :key="$index">
-                <div class="nash-vids row">
-                  <div class="col-sm-12 col-xs-6">
-                    <div class="Vimg itemContainer" style="background-color: black;">
-                      <!-- <clazy-load :src="pos_url+'/'+pub.filename">
+            <!-- End of The Author Part -->
+            <div class="info">
+              <div>
+                <p>{{ single.cat_name }} | {{single.tags}}</p>
+                <h4>About :</h4>
+                <p>{{single.description}}</p>
+              </div>
+            </div>
+            <div class="fikir-vids">
+              <div class="row">
+                <div
+                  class="col-lg-3 col-sm-6 col-xs-12"
+                  v-for="(pub,$index) in owned"
+                  :key="$index"
+                >
+                  <div class="nash-vids row">
+                    <div class="col-sm-12 col-xs-6">
+                      <div class="Vimg itemContainer" style="background-color: black;">
+                        <!-- <clazy-load :src="pos_url+'/'+pub.filename">
                         <div
                           slot="placeholder"
                           class="bg-inverse"
                           style="background-color: black; height:200px;"
-                      ></div>-->
-                      <img class="imgur" :src="pos_url+'/'+pub.filename2" :alt="pub.title">
-                      <!-- </clazy-load> -->
-                      <a :href="'/single-video/'+pub.v_id">
-                        <div ng-click="viewVideo(pub.v_id)" class="play">
-                          <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
-                        </div>
+                        ></div>-->
+                        <img class="imgur" :src="pos_url+'/'+pub.filename2" :alt="pub.title">
+                        <!-- </clazy-load> -->
+                        <a :href="'/single-video/'+pub.v_id">
+                          <div ng-click="viewVideo(pub.v_id)" class="play">
+                            <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
+                          </div>
+                        </a>
+                        <div class="time">{{pub.duration}}</div>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-xs-6" ng-click="viewVideo(pub.v_id)">
+                      <div class="descr">
+                        <h1 style="font-size: 14px !important;">
+                          <a
+                            style="text-decoration: none;"
+                            class="text"
+                            :aria-label="pub.title"
+                            :title="pub.title"
+                          >{{pub.title}}</a>
+                          <a
+                            style="text-decoration: none;"
+                            class="text smallFont"
+                            :aria-label="pub.title_en"
+                            :title="pub.title_en"
+                          >{{pub.title_en}}</a>
+                        </h1>
+                      </div>
+                      <a :href="'/single-video/'+pub.v_id" style="text-decoration: none;">
+                        <small style="color: #7e7e7e; font-size: 12px; font-weight: 300">
+                          <i class="fa fa-eye" style="color: #d59541"></i>
+                          {{pub.view_count}} views
+                          <i
+                            class="fa fa-dot-circle-o"
+                            style="color: #d59541"
+                          ></i>
+                          {{pub.created_at | moment("from", "now")}}
+                        </small>
                       </a>
-                      <div class="time">{{pub.duration}}</div>
                     </div>
                   </div>
-                  <div class="col-sm-12 col-xs-6" ng-click="viewVideo(pub.v_id)">
-                    <div class="descr">
-                      <h1 style="font-size: 14px !important;">
-                        <a
-                          style="text-decoration: none;"
-                          class="text"
-                          :aria-label="pub.title"
-                          :title="pub.title"
-                        >{{pub.title}}</a>
-                        <a
-                          style="text-decoration: none;"
-                          class="text smallFont"
-                          :aria-label="pub.title_en"
-                          :title="pub.title_en"
-                        >{{pub.title_en}}</a>
-                      </h1>
-                    </div>
-                    <a :href="'/single-video/'+pub.v_id" style="text-decoration: none;">
-                      <ViewCatogs
-                        :vid="pub.v_id"
-                        :view_count="pub.view_count"
-                        :created_at="pub.created_at"
-                        :type="single.type"
-                      />
-                    </a>
-                  </div>
+                </div>
+                <button
+                  style="margin-left: auto; margin-right: auto;margin-top: 19px; width: 350px;"
+                  class="d-lg-none d-block btn btn--orange text-center"
+                  v-if="page < 4"
+                  @click="loadmore()"
+                >Show More...</button>
+                <div
+                  style="margin-top: 19px; width: 142px;"
+                  class="d-lg-none d-block btn btn--orange text-center"
+                  v-if="page > 3"
+                >
+                  <a href="/">
+                    <button
+                      class="btn btn--orange text-center"
+                      style="margin-left: auto; margin-right: auto;margin-top: 19px; width: 252px;"
+                    >Back to Home:-)</button>
+                  </a>
                 </div>
               </div>
-              <button
-                style="margin-left: auto; margin-right: auto;margin-top: 19px; width: 350px;"
-                class="d-lg-none d-block btn btn--orange text-center"
-                v-if="page < 4"
-                @click="loadmore()"
-              >Show More...</button>
-              <div
-                style="margin-top: 19px; width: 142px;"
-                class="d-lg-none d-block btn btn--orange text-center"
-                v-if="page > 3"
-              >
-                <a href="/">
-                  <button
-                    class="btn btn--orange text-center"
-                    style="margin-left: auto; margin-right: auto;margin-top: 19px; width: 252px;"
-                  >Back to Home:-)</button>
-                </a>
-              </div>
             </div>
-          </div>
-          <div class="comments" ng-controller="navController">
-            <div class="reply-comment" ng-controller="videoController">
-              <div class="rc-header">
-                <i class="cv cvicon-cv-comment"></i>
-                <span class="semibold">All</span>
-                Comments
-              </div>
-              <div class="rc-ava" v-if="loggedIn">
-                <span v-if="loggedIn" class="i-circle">{{user.name.charAt(0)}}</span>
-              </div>
-              <div class="form-group">
-                <form @submit.prevent="addComments(user.id, single.v_id)">
-                  <textarea class="form-control mt-3" name="com" v-model="com" id="grnash" rows="3"></textarea>
-                  <button type="submit" class="btn btn-warning pull-right mt-2">
-                    <i class="fa fa-comments-o" aria-hidden="true"></i>
-                  </button>
-                </form>
-              </div>
-              <div class="clearfix"></div>
-            </div>
-            <div class="fikir-vids" v-if="!loggedIn">
-              <nuxt-link class="descr" to="/login">Sign in to comment!</nuxt-link>
-            </div>
-            <div class="comments-list">
-              <div class="cl-comment" v-for="(comment, $index) in comments" :key="$index">
-                <div class="cl-avatar">
-                  <a class="i-circle">{{comment.cat_name.charAt(0)}}</a>
+            <div class="comments" ng-controller="navController">
+              <div class="reply-comment" ng-controller="videoController">
+                <div class="rc-header">
+                  <i class="cv cvicon-cv-comment"></i>
+                  <span class="semibold">All</span>
+                  Comments
                 </div>
-                <div class="cl-comment-text">
-                  <div class="cl-name-date">. {{comment.created_at}}</div>
-                  <div class="cl-text">{{comment.com}}</div>
-                  <div class="cl-meta">
-                    <span class="green">
-                      <span class="circle"></span> 121
-                    </span>
-                    <span class="grey">
-                      <span class="circle"></span>
-                      {{comment.created_at}}
-                    </span>
-                  </div>
-                  <Replies :rcomment="comment"/>
+                <div class="rc-ava" v-if="loggedIn">
+                  <span v-if="loggedIn" class="i-circle">{{user.name.charAt(0)}}</span>
+                </div>
+                <div class="form-group">
+                  <form @submit.prevent="addComments(user.id, single.v_id)">
+                    <textarea
+                      class="form-control mt-3"
+                      name="com"
+                      v-model="com"
+                      id="grnash"
+                      rows="3"
+                    ></textarea>
+                    <button type="submit" class="btn btn-warning pull-right mt-2">
+                      <i class="fa fa-comments-o" aria-hidden="true"></i>
+                    </button>
+                  </form>
                 </div>
                 <div class="clearfix"></div>
+              </div>
+              <div class="fikir-vids" v-if="!loggedIn">
+                <nuxt-link class="descr" to="/login">Sign in to comment!</nuxt-link>
+              </div>
+              <div class="comments-list">
+                <div class="cl-comment" v-for="(comment, $index) in comments" :key="$index">
+                  <div class="cl-avatar">
+                    <a class="i-circle">{{comment.cat_name.charAt(0)}}</a>
+                  </div>
+                  <div class="cl-comment-text">
+                    <div class="cl-name-date">. {{comment.created_at}}</div>
+                    <div class="cl-text">{{comment.com}}</div>
+                    <div class="cl-meta">
+                      <span class="green">
+                        <span class="circle"></span> 121
+                      </span>
+                      <span class="grey">
+                        <span class="circle"></span>
+                        {{comment.created_at}}
+                      </span>
+                    </div>
+                    <Replies :rcomment="comment"/>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
         <!-- right column -->
       </div>
       <div class="col-sm-12 col-lg-4 d-none d-lg-block">
@@ -313,12 +328,15 @@
                   </h1>
                 </div>
                 <a :href="'/single-video/'+re.v_id" style="text-decoration: none;">
-                  <ViewCatogs
-                    :vid="re.v_id"
-                    :view_count="re.view_count"
-                    :created_at="re.created_at"
-                    :type="single.type"
-                  />
+                  <small style="color: #7e7e7e; font-size: 12px; font-weight: 300">
+                    <i class="fa fa-eye" style="color: #d59541"></i>
+                    {{re.view_count}} views
+                    <i
+                      class="fa fa-dot-circle-o"
+                      style="color: #d59541"
+                    ></i>
+                    {{re.created_at | moment("from", "now")}}
+                  </small>
                 </a>
                 <!-- <small>{{single.cat_name}}</small> -->
               </div>
@@ -350,7 +368,7 @@
 </template>
 
 <script>
-import ViewCatogs from "@/components/views_catogs";
+// import ViewCatogs from "@/components/views_catogs";
 // import Wideads from "@/components/adsComponents/wide_ads";
 // import Tallads from "@/components/adsComponents/tall_ads";
 import Replies from "@/components/replies/replies";
@@ -431,7 +449,6 @@ export default {
     };
   },
   components: {
-    ViewCatogs,
     Replies
     // Wideads,
     // Tallads
@@ -619,6 +636,29 @@ export default {
         return (this.dislikes = res.data);
       });
     }
+    $(function() {
+      var vid = $(".video-container");
+
+      var top =
+        vid.offset().top - parseFloat(vid.css("margin-top").replace(/auto/, 0));
+
+      $(window).on("scroll", function(event) {
+        // what the y position of the scroll is
+        var y = $(this).scrollTop();
+
+        // whether that's below the form
+        if (y >= top) {
+          // if so, ad the fixed class
+          if (vid.is(".aside")) {
+            return;
+          }
+          vid.addClass("aside");
+        } else {
+          // otherwise remove it
+          vid.removeClass("aside");
+        }
+      });
+    });
   },
   created() {}
 };
@@ -677,18 +717,81 @@ async function getUsername(user_id) {
   /* padding-bottom: 56.25%; */
   padding-top: 56.25%;
   overflow: hidden;
+  transition: 0.5s;
+
+  /* height: 480px; */
+  background-color: hsl(0, 0%, 10%);
 }
-.video-container iframe {
+
+.video-container > iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  max-width: 854px;
+}
+.aside .video-container {
+  max-height: 100px;
+  width: auto;
+}
+.aside h1 {
+  opacity: 0;
+}
+/*
+.post {
+  top: calc(480px + 6em);
+  padding: 1em;
+  width: 60%;
+}
+.post .content-wrapper {
+  margin-top: 1em;
+}
+.post > .content-wrapper {
+  line-height: 1.5;
+  transition: background-color 0.5s;
+  padding: 1em;
+} */
+/* .video-container iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-}
+} */
 @media (min-width: 500px) {
   .video-container {
-    padding-top: 63.25% !important;
+    padding-top: 63.25%;
   }
+}
+@media (min-width: 769px) and (max-width: 1280px) {
+  .aside {
+    position: fixed;
+    width: 40%;
+    z-index: 100;
+    margin-top: 6rem;
+    top: 0;
+    margin-left: auto;
+    right: 0;
+    margin-right: 5px;
+    align-self: baseline;
+    padding-top: 23% !important;
+  }
+}
+.aside {
+  position: fixed;
+  width: 23%;
+  z-index: 100;
+  margin-top: 4.3rem;
+  top: 0;
+  margin-left: auto;
+  right: 0;
+  margin-right: 5px;
+  align-self: baseline;
+  padding-top: 13% !important;
 }
 .imgur {
   display: block;
@@ -767,6 +870,29 @@ async function getUsername(user_id) {
     height: 250px !important;
   }
 }
+@media (max-width: 500px) {
+  .aside {
+    position: fixed;
+    width: 56%;
+    z-index: 100;
+    bottom: 0;
+    right: 0;
+    margin-right: 1px;
+    padding-top: 32%;
+  }
+}
+@media (min-width: 501px) and (max-width: 768px) {
+  .aside {
+    position: fixed;
+    width: 56%;
+    z-index: 100;
+    bottom: 0;
+    right: 0;
+    margin-right: 1px;
+    padding-top: 32% !important;
+  }
+}
+
 @media (min-width: 800px) {
   .nashian {
     width: 336px !important;

@@ -88,13 +88,17 @@
                           >{{video.title_en}}</a>
                         </div>
                         <a style="text-decoration: none;">
-                          <ViewCatogs
-                            :vid="video.v_id"
-                            :cat_id="video.category_id"
-                            :view_count="video.view_count"
-                            :created_at="video.created_at"
-                            :type="video.type"
-                          />
+                          <small
+                            style="font-weight: bold; color: #7e7e7e; font-size: 12px; margin-left: 4px"
+                          >
+                            <i class="fa fa-eye" style="color: #d59541;"></i>
+                            {{video.view_count}} views
+                            <i
+                              class="fa fa-dot-circle-o"
+                              style="color: #d59541;"
+                            ></i>
+                            {{video.created_at | moment("from", "now")}}
+                          </small>
                         </a>
                       </div>
                     </div>
@@ -147,13 +151,11 @@
 
 <script>
 import axios from "axios";
-import ViewCatogs from "@/components/views_catogs";
+// import ViewCatogs from "@/components/views_catogs";
 
 const base_url = "https://ethiov.com/api";
 export default {
-  components: {
-    ViewCatogs
-  },
+
   props: {
     videos: {
       type: Array,
@@ -181,6 +183,7 @@ export default {
     }
   },
   mounted: function() {
+
     axios.post(base_url + "/live_channel").then(res => {
       return (this.tvs = [
         ...res.data.filter(res => {
@@ -210,6 +213,54 @@ export default {
   padding-top: 56.25%;
   height: 0;
   overflow: hidden;
+  transition: 0.5s;
+
+  /* height: 480px; */
+  /* background-color: hsl(0, 0%, 10%); */
+}
+.video-container > iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  max-width: 854px;
+}
+.aside .video-container {
+  max-height: 100px;
+  width: auto;
+}
+.aside h1 {
+  opacity: 0;
+}
+@media (min-width: 769px) and (max-width: 1280px) {
+  .aside {
+    position: fixed;
+    width: 40%;
+    z-index: 100;
+    margin-top: 6rem;
+    top: 0;
+    margin-left: auto;
+    right: 0;
+    margin-right: 5px;
+    align-self: baseline;
+    padding-top: 23% !important;
+  }
+}
+.aside {
+  position: fixed;
+  width: 23%;
+  z-index: 100;
+  margin-top: 4.3rem;
+  top: 0;
+  margin-left: auto;
+  right: 0;
+  margin-right: 5px;
+  align-self: baseline;
+  padding-top: 13% !important;
 }
 .video-containerf {
   position: relative;
@@ -218,13 +269,36 @@ export default {
   height: 0;
   overflow: hidden;
 }
-.video-container .iframe {
+
+@media (max-width: 500px) {
+  .aside {
+    position: fixed;
+    width: 56%;
+    z-index: 100;
+    bottom: 0;
+    right: 0;
+    margin-right: 1px;
+    padding-top: 32%;
+  }
+}
+@media (min-width: 501px) and (max-width: 768px) {
+  .aside {
+    position: fixed;
+    width: 56%;
+    z-index: 100;
+    bottom: 0;
+    right: 0;
+    margin-right: 1px;
+    padding-top: 32% !important;
+  }
+}
+/* .video-container .iframe {
   position: absolute;
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
-}
+} */
 
 .aspect-ratio {
   position: relative;

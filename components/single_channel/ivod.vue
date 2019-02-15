@@ -5,7 +5,6 @@
         <div class="col-lg-8 col-xs-12 col-sm-12">
           <div class="video-container">
             <iframe
-              class="iframe"
               width="720"
               height="405"
               :src="icUrl"
@@ -116,16 +115,18 @@
                             </h1>
                           </div>
                           <a style="text-decoration: none;" :href="'/single-video/' + video.v_id">
-                            <ViewCatogs
-                              :vid="video.v_id"
-                              :cat_id="video.category_id"
-                              :created_at="video.created_at"
-                              :view_count="video.view_count"
-                              :type="video.type"
-                            />
+                            <small
+                              style="font-weight: bold; color: #7e7e7e; font-size: 12px; margin-left: 4px"
+                            >
+                              <i class="fa fa-eye" style="color: #d59541;"></i>
+                              {{video.view_count}} views
+                              <i
+                                class="fa fa-dot-circle-o"
+                                style="color: #d59541;"
+                              ></i>
+                              {{video.created_at | moment("from", "now")}}
+                            </small>
                           </a>
-
-
                         </div>
                       </div>
                     </div>
@@ -180,10 +181,10 @@
   </div>
 </template>
 <script>
-import ViewCatogs from "@/components/views_catogs";
+// import ViewCatogs from "@/components/views_catogs";
 import axios from "axios";
 
-import Tallads from "@/components/adsComponents/tall_ads";
+// import Tallads from "@/components/adsComponents/tall_ads";
 const base_url = "https://ethiov.com/api";
 export default {
   props: {
@@ -195,9 +196,6 @@ export default {
       type: Array,
       required: true
     }
-  },
-  components: {
-    ViewCatogs
   },
   data() {
     return {
@@ -249,8 +247,9 @@ export default {
   position: relative;
   padding-bottom: 56.25%;
   padding-top: 56.25%;
-  height: 0;
+  /* height: 0; */
   overflow: hidden;
+  transition: 0.5s;
 }
 .video-containerf {
   position: relative;
@@ -259,14 +258,74 @@ export default {
   height: 0;
   overflow: hidden;
 }
-.video-container .iframe {
+
+.video-container > iframe {
   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
   width: 100%;
   height: 100%;
-  left: 0;
+  max-width: 854px;
+}
+.aside .video-container {
+  max-height: 100px;
+  width: auto;
+}
+.aside h1 {
+  opacity: 0;
+}
+@media (min-width: 769px) and (max-width: 1280px) {
+  .aside {
+    position: fixed;
+    width: 40%;
+    z-index: 100;
+    margin-top: 6rem;
+    top: 0;
+    margin-left: auto;
+    right: 0;
+    margin-right: 5px;
+    align-self: baseline;
+    /* padding-top: 23% !important; */
+  }
+}
+.aside {
+  position: fixed;
+  width: 23%;
+  z-index: 100;
+  margin-top: 4.3rem;
   top: 0;
+  margin-left: auto;
+  right: 0;
+  margin-right: 5px;
+  align-self: baseline;
+  padding-top: 13% !important;
 }
 
+@media (max-width: 500px) {
+  .aside {
+    position: fixed;
+    width: 56%;
+    z-index: 100;
+    bottom: 0;
+    right: 0;
+    margin-right: 1px;
+    padding-top: 32%;
+  }
+}
+@media (min-width: 501px) and (max-width: 768px) {
+  .aside {
+    position: fixed;
+    width: 56%;
+    z-index: 100;
+    bottom: 0;
+    right: 0;
+    margin-right: 1px;
+    padding-top: 32% !important;
+  }
+}
 .aspect-ratio {
   position: relative;
   width: 100%;
@@ -294,7 +353,7 @@ export default {
 }
 @media (max-width: 500px) {
   .video-container {
-    padding-top: 19.25% !important;
+    padding-top: 19.25%;
   }
 }
 @media (max-width: 500px) {
