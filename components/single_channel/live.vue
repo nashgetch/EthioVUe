@@ -183,7 +183,28 @@ export default {
     }
   },
   mounted: function() {
+      var vid = $(".video-container");
 
+      var top =
+        vid.offset().top - parseFloat(vid.css("margin-top").replace(/auto/, 0));
+
+      $(window).on("scroll", function(event) {
+        // what the y position of the scroll is
+        var y = $(this).scrollTop();
+
+        // whether that's below the form
+        if (y >= top) {
+          // if so, ad the fixed class
+          if (vid.is(".aside")) {
+            return;
+          }
+          vid.addClass("aside");
+        } else {
+          // otherwise remove it
+          vid.removeClass("aside");
+        }
+      });
+    });
     axios.post(base_url + "/live_channel").then(res => {
       return (this.tvs = [
         ...res.data.filter(res => {
