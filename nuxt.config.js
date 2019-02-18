@@ -125,6 +125,7 @@ module.exports = {
     {
       src: '~plugins/menu.js'
     },
+
     // {
     //   src: '~plugins/sidebar.js'
     // }

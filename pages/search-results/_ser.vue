@@ -25,6 +25,14 @@
                 </div>
               </a>
               <div class="time">{{video.duration}}</div>
+              <div
+                ng-style="hiddenPlus"
+                v-if="loggedIn"
+                class="nashh"
+                @click="add_to_watchlist(user.id, video.v_id)"
+              >
+                <i class="fa fa-plus"></i>
+              </div>
               <div class="nashhh">{{video.type.toUpperCase()}}</div>
             </div>
             <div class="descr">

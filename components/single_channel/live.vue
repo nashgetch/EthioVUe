@@ -258,7 +258,7 @@ export default {
 .aside h1 {
   opacity: 0;
 }
-@media (min-width: 769px) and (max-width: 1280px) {
+@media (min-width: 769px) and (max-width: 1281px) {
   .aside {
     position: fixed;
     width: 40%;

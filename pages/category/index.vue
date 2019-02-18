@@ -1,7 +1,7 @@
 <template>
   <section style="padding-top:6rem;">
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: .2rem;">
-      <div class="row fas">
+      <div class="row">
         <div class="col-lg-10 offset-lg-2">
           <div class="row">
             <div class="col-md-2 col-sm-12 mt-2 channel-name d-none d-sm-block">
@@ -44,25 +44,19 @@
                     >Trending</span>
                   </a>
                 </li>
-                <!-- <li class="nav-item text-center ml-auto mr-auto">
-                  <a
-                    v-if="loggedIn"
-                    class="nav-link"
-                    data-toggle="pill"
-                    href="/subscription"
-                  >
+                <li class="nav-item text-center ml-auto mr-auto">
+                  <a v-if="loggedIn" class="nav-link" href="/subscription">
                     <span class="d-none d-sm-block">Subscription</span>
                     <i
                       class="fa fa-envelope-open d-inline-block d-sm-none"
                       style="font-size: 15px;"
-
                     ></i>
                     <span
                       style="font-size: 10px; font-weight: bold;"
                       class="d-inline-block d-sm-none"
                     >Subscription</span>
                   </a>
-                </li>-->
+                </li>
                 <!-- <li class="nav-item text-center ml-auto mr-auto">
                   <a v-if="loggedIn" class="nav-link" data-toggle="pill" @click.prevent="setTabs(5)">
                     <span class="d-none d-sm-block">Account</span>
@@ -75,6 +69,7 @@
           </div>
         </div>
       </div>
+      <hr style="background-color: #19ff00;">
     </div>
     <!-- <LatestVod :videos="videos" v-if="checkTab(1)"/> -->
     <div class="content-wrapper">
@@ -107,7 +102,14 @@
                     </div>
 
                     <div class="time">{{video.duration}}</div>
-
+                    <div
+                      ng-style="hiddenPlus"
+                      v-if="loggedIn"
+                      class="nashh"
+                      @click="add_to_watchlist(user.id, video.v_id)"
+                    >
+                      <i class="fa fa-plus"></i>
+                    </div>
                     <div class="nashhh">{{video.type.toUpperCase()}}</div>
                   </div>
                 </a>
@@ -173,13 +175,13 @@ const base_url = "https://ethiov.com/api";
 export default {
   head() {
     return {
-      title: "EthioV - Ethiopian Videos and Live channels",
+      title: "EthioV - By Category - Ethiopian Videos and Live channels",
       meta: [
         {
           hid: "description",
           name: "description",
           content:
-            "All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
+            "News, Entertainment, Current Affairs and Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
         },
         {
           hid: "keywords",
@@ -191,7 +193,7 @@ export default {
           hid: "og:title",
           property: "og:title",
           content:
-            "EthioV - Ethiopian Live Channels and Videos on Demand. Ethiopia's Reliable TVs and Videos Archive. All Your Favorite TV Channels"
+            "EthioV - By Category - Ethiopian Live Channels and Videos on Demand. Ethiopia's Reliable TVs and Videos Archive. All Your Favorite TV Channels"
         },
         {
           hid: "og:url",
@@ -207,7 +209,7 @@ export default {
           hid: "og:description",
           property: "og:description",
           content:
-            "All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
+            "News, Entertainment, Current Affairs and Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
         },
         {
           hid: "twitter:title",
@@ -233,8 +235,8 @@ export default {
           hid: "twitter:description",
           property: "twitter:description",
           content:
-            "EthioV - All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here."
-        }
+            "News, Entertainment, Current Affairs and Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
+            }
       ],
       script: [
         {
@@ -540,6 +542,11 @@ export default {
   .Vimg {
     height: 202px;
   }
+}
+.kalusha {
+  color: #fbe631;
+  background-color: black;
+  width: 276px;
 }
 </style>
 

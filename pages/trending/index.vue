@@ -1,7 +1,7 @@
 <template>
   <section style="padding-top: 6rem;">
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: .2rem;">
-      <div class="row fas">
+      <div class="row">
         <div class="col-lg-10 offset-lg-2">
           <div class="row">
             <div class="col-md-2 col-sm-12 mt-2 channel-name d-none d-sm-block">
@@ -21,48 +21,42 @@
                     >Latest</span>
                   </a>
                 </li>
-                <li class="nav-item text-center ml-auto mr-auto active">
-                  <a class="nav-link active" href="/category">
+                <li class="nav-item text-center ml-auto mr-auto">
+                  <a class="nav-link" href="/category">
                     <span class="d-none d-sm-block">Category</span>
-                    <i
-                      class="active_route fa fa-video-camera d-inline-block d-sm-none"
-                      style="font-size: 15px;"
-                    ></i>
+                    <i class="fa fa-video-camera d-inline-block d-sm-none" style="font-size: 15px;"></i>
                     <span
                       class="d-inline-block d-sm-none"
                       style="font-size: 10px; font-weight: bold;"
                     >Category</span>
                   </a>
                 </li>
-                <li class="nav-item text-center ml-auto mr-auto">
-                  <a class="nav-link" href="/trending">
+                <li class="nav-item text-center ml-auto mr-auto active">
+                  <a class="nav-link active" href="/trending">
                     <span class="d-none d-sm-block">Trending</span>
-                    <i class="fa fa-fire d-inline-block d-sm-none" style="font-size: 15px;"></i>
+                    <i
+                      class="active_route fa fa-fire d-inline-block d-sm-none"
+                      style="font-size: 15px;"
+                    ></i>
                     <span
                       style="font-size: 10px; font-weight: bold;"
                       class="d-inline-block d-sm-none"
                     >Trending</span>
                   </a>
                 </li>
-                <!-- <li class="nav-item text-center ml-auto mr-auto">
-                  <a
-                    v-if="loggedIn"
-                    class="nav-link"
-                    data-toggle="pill"
-                    href="/subscription"
-                  >
+                <li class="nav-item text-center ml-auto mr-auto">
+                  <a v-if="loggedIn" class="nav-link" href="/subscription">
                     <span class="d-none d-sm-block">Subscription</span>
                     <i
                       class="fa fa-envelope-open d-inline-block d-sm-none"
                       style="font-size: 15px;"
-
                     ></i>
                     <span
                       style="font-size: 10px; font-weight: bold;"
                       class="d-inline-block d-sm-none"
                     >Subscription</span>
                   </a>
-                </li>-->
+                </li>
                 <!-- <li class="nav-item text-center ml-auto mr-auto">
                   <a v-if="loggedIn" class="nav-link" data-toggle="pill" @click.prevent="setTabs(5)">
                     <span class="d-none d-sm-block">Account</span>
@@ -75,6 +69,7 @@
           </div>
         </div>
       </div>
+      <hr style="color: black; background-color: #19ff00;">
     </div>
     <div class="content-wrapper">
       <div class="row">
@@ -94,7 +89,14 @@
                     </div>
 
                     <div class="time">{{video.duration}}</div>
-
+                    <div
+                      ng-style="hiddenPlus"
+                      v-if="loggedIn"
+                      class="nashh"
+                      @click="add_to_watchlist(user.id, video.v_id)"
+                    >
+                      <i class="fa fa-plus"></i>
+                    </div>
                     <div class="nashhh">{{video.type.toUpperCase()}}</div>
                   </div>
                 </a>
@@ -152,13 +154,13 @@ const base_url = "https://ethiov.com/api";
 export default {
   head() {
     return {
-      title: "EthioV - Ethiopian Videos and Live channels",
+      title: "EthioV - Trending Ethiopian Videos on Demand and Live channels",
       meta: [
         {
           hid: "description",
           name: "description",
           content:
-            "All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live video channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
+            "Trending Videos on Demand and Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live video channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
         },
         {
           hid: "keywords",
@@ -170,7 +172,7 @@ export default {
           hid: "og:title",
           property: "og:title",
           content:
-            "EthioV - Ethiopian Live Channels and Videos on Demand. Ethiopia's Reliable videos and Videos Archive. All Your Favorite video Channels"
+            "EthioV - Trending Videos on Demand and Ethiopian Live Channels. Ethiopia's Reliable videos and Videos Archive. All Your Favorite video Channels"
         },
         {
           hid: "og:url",
@@ -186,7 +188,7 @@ export default {
           hid: "og:description",
           property: "og:description",
           content:
-            "All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live video channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
+            "Trending Videos on Demand and Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live video channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
         },
         {
           hid: "twitter:title",
@@ -212,7 +214,7 @@ export default {
           hid: "twitter:description",
           property: "twitter:description",
           content:
-            "EthioV - All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live video channels here."
+            "EthioV - Trending Videos on Demand and Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live video channels here."
         }
       ],
       script: [
@@ -489,6 +491,11 @@ export default {
   .Vimg {
     height: 202px;
   }
+}
+.kalusha {
+  color: #fbe631;
+  background-color: black;
+  width: 276px;
 }
 </style>
 
