@@ -79,6 +79,7 @@
               class="col-12 col-sm-6 col-md-3 col-lg-2 mb-4 kygo"
               v-for="(video,$index) in videos"
               :key="$index"
+              style="padding-left: 4px !important; padding-right: 4px !important;"
             >
               <div class="chn-image-container">
                 <a :href="'/single-video/'+video.v_id">

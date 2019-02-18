@@ -166,6 +166,7 @@
               class="col-12 col-sm-6 col-md-3 col-lg-2 mb-4 kygo"
               v-for="(video,$index) in videos"
               :key="$index"
+              style="padding-left: 4px !important; padding-right: 4px !important;"
             >
               <div class="chn-image-container">
                 <a :href="'/single-video/'+video.v_id">
@@ -415,6 +416,10 @@ export default {
   border-bottom-color: #111;
   box-shadow: 0 5px 18px 0 rgba(0, 0, 0, -7.84),
     3px 11px 19px 10px rgba(0, 0, 0, 0.45);
+}
+.kygo {
+  padding-left: 4px !important;
+  padding-right: 4px !important;
 }
 .avicii {
   display: block;

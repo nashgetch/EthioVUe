@@ -92,6 +92,7 @@
               class="col-12 col-sm-6 col-md-3 col-lg-2 mb-4 kygo"
               v-for="(video,$index) in videos"
               :key="$index"
+              style="padding-left: 4px !important; padding-right: 4px !important;"
             >
               <div class="chn-image-container">
                 <a :href="'/single-video/'+video.v_id">
@@ -236,7 +237,7 @@ export default {
           property: "twitter:description",
           content:
             "News, Entertainment, Current Affairs and Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
-            }
+        }
       ],
       script: [
         {
@@ -507,7 +508,10 @@ export default {
   width: 100%;
   height: 122px;
 }
-
+.kygo {
+  padding-left: 4px !important;
+  padding-right: 4px !important;
+}
 @media (max-width: 768px) {
   .Vimg img {
     height: 100px;
