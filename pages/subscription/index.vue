@@ -99,6 +99,83 @@ import axios from "axios";
 import SubVideos from "@/components/subscriptionvideos/videos";
 const base_url = "https://ethiov.com/api";
 export default {
+   head() {
+    return {
+      title: "EthioV - Subscription - Ethiopian Videos and Live channels",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content:
+            " Your Subscriptions - News, Entertainment, Current Affairs and Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          keywords:
+            "Bethel TV, Africa, Evangelical, Religion, Politics, Ethiopia, Entertainment, Sports, Social Media, travel"
+        },
+        {
+          hid: "og:title",
+          property: "og:title",
+          content:
+            "EthioV - Subscription - Ethiopian Live Channels and Videos on Demand. Ethiopia's Reliable TVs and Videos Archive. All Your Favorite TV Channels"
+        },
+        {
+          hid: "og:url",
+          property: "og:url",
+          content: "https://ethiov.com"
+        },
+        {
+          hid: "og:image",
+          property: "og:image",
+          content: "/img/EthioV_LOGO_Black.png"
+        },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content:
+            "Your Subscription - News, Entertainment, Current Affairs and Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
+        },
+        {
+          hid: "twitter:title",
+          property: "twitter:title",
+          content: "EthioV - Ethiopian Live Channels and Videos on Demand"
+        },
+        {
+          hid: "twitter:url",
+          property: "twitter:url",
+          content: "https://ethiov.com"
+        },
+        {
+          hid: "twitter:image",
+          property: "twitter:image",
+          content: "/img/EthioV_LOGO_Black.png"
+        },
+        {
+          hid: "twitter:card",
+          property: "twitter:card",
+          content: "summary_large_image"
+        },
+        {
+          hid: "twitter:description",
+          property: "twitter:description",
+          content:
+            "Your Subscription - News, Entertainment, Current Affairs and Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
+        }
+      ],
+      script: [
+        {
+          innerHTML: `
+               (adsbygoogle = window.adsbygoogle || []).push({
+                  google_ad_client: "ca-pub-5001725934888164",
+                  enable_page_level_ads: true
+              });
+        `
+        }
+      ]
+    };
+  },
   components: {
     SubVideos
   },
