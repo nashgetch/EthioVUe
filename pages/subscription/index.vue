@@ -164,16 +164,16 @@ export default {
             "Your Subscription - News, Entertainment, Current Affairs and Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
         }
       ],
-      script: [
-        {
-          innerHTML: `
-               (adsbygoogle = window.adsbygoogle || []).push({
-                  google_ad_client: "ca-pub-5001725934888164",
-                  enable_page_level_ads: true
-              });
-        `
-        }
-      ]
+      // script: [
+      //   {
+      //     innerHTML: `
+      //          (adsbygoogle = window.adsbygoogle || []).push({
+      //             google_ad_client: "ca-pub-5001725934888164",
+      //             enable_page_level_ads: true
+      //         });
+      //   `
+      //   }
+      // ]
     };
   },
   components: {
