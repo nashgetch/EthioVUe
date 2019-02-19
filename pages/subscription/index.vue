@@ -65,11 +65,11 @@
       </div>
     </div>
     <div class="content-wrapper">
-      <span class="d-inline-block d-sm-none title" style="font-weight: bold">Your Subscripition -
+      <span class="title" style="font-weight: bold">Your Subscripition -
         <strong>{{user.name}}</strong>
       </span>
       <div class>
-        <span class="d-inline-block d-sm-none title">Subscription</span>
+
         <div v-for="(owner, $index) in tvs" :key="$index">
           <div class="content-wrapper">
             <div class="owner">
@@ -164,16 +164,16 @@ export default {
             "Your Subscription - News, Entertainment, Current Affairs and Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
         }
       ],
-      // script: [
-      //   {
-      //     innerHTML: `
-      //          (adsbygoogle = window.adsbygoogle || []).push({
-      //             google_ad_client: "ca-pub-5001725934888164",
-      //             enable_page_level_ads: true
-      //         });
-      //   `
-      //   }
-      // ]
+      script: [
+        {
+          innerHTML: `
+               (adsbygoogle = window.adsbygoogle || []).push({
+                  google_ad_client: "ca-pub-5001725934888164",
+                  enable_page_level_ads: true
+              });
+        `
+        }
+      ]
     };
   },
   components: {
