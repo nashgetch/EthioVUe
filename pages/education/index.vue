@@ -14,7 +14,7 @@
         <span style="font-size: 17px;">Search for your Favorite Channel here.</span>
       </label>
     </div>
-  
+
     <div class="row">
       <div class="container mt-2">
         <div class="row mt-3 display-flex">
@@ -165,16 +165,16 @@ export default {
           content: "/img/EthioV_LOGO_Black.png"
         }
       ],
-      script: [
-        {
-          innerHTML: `
-               (adsbygoogle = window.adsbygoogle || []).push({
-                  google_ad_client: "ca-pub-5001725934888164",
-                  enable_page_level_ads: true
-              });
-        `
-        }
-      ]
+      // script: [
+      //   {
+      //     innerHTML: `
+      //          (adsbygoogle = window.adsbygoogle || []).push({
+      //             google_ad_client: "ca-pub-5001725934888164",
+      //             enable_page_level_ads: true
+      //         });
+      //   `
+      //   }
+      // ]
     };
   },
   asyncData() {

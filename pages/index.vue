@@ -1,88 +1,94 @@
  <template>
-  <section style="padding-top:6rem;">
-    <div class="content-wrapper text-center">
-      <span class="martin">Featured Live TV Channels</span>
-      <hr>
-      <!-- <div class="row" style="background-color:#fafafc;">
-        <div class="col-lg-2 col-sm-12 col-12"></div>
-        <div class="col-lg-8 col-sm-12 col-12 text-center">
-          <div class="row">
-            <div class="col-lg-2 col-sm-3 col-3">
-              <a href="/single-channel/114">
-                <div class="chn-image-container index m-0">
-                  <img class="avicii" src="/img/fbctv_poster.jpg" alt="Fana TV">
-                </div>
-              </a>
-            </div>
+  <section style>
+    <div class="theon">
+      <div class="content-wrapper text-center">
+        <span
+          class="martin"
+          style="font-weight: 400; font-size: 17px; margin-bottom:2px;"
+        >Featured Live TV Channels</span>
+        <hr>
+        <div class="row" style>
+          <div class="col-lg-2 col-sm-12 col-12"></div>
+          <div class="col-lg-8 col-sm-12 col-12 text-center">
+            <div class="row">
+              <div class="col-lg-2 col-sm-3 col-3">
+                <a href="/single-channel/114">
+                  <div class="chn-image-container index m-0">
+                    <img class="avicii" src="/img/fbctv_poster.jpg" alt="Fana TV">
+                  </div>
+                </a>
+              </div>
 
-            <div class="col-lg-2 col-sm-3 col-3">
-              <a href="/single-channel/113">
-                <div class="chn-image-container index m-0">
-                  <img class="avicii" src="/img/amma_poster.jpg" alt="Amhara TV">
-                </div>
-              </a>
-            </div>
+              <div class="col-lg-2 col-sm-3 col-3">
+                <a href="/single-channel/113">
+                  <div class="chn-image-container index m-0">
+                    <img class="avicii" src="/img/amma_poster.jpg" alt="Amhara TV">
+                  </div>
+                </a>
+              </div>
 
-            <div class="col-lg-2 col-sm-3 col-3">
-              <a href="/single-channel/567">
-                <div class="chn-image-container index m-0">
-                  <img class="avicii" src="/img/walta_posters.jpg" alt="Walta TV">
-                </div>
-              </a>
-            </div>
+              <div class="col-lg-2 col-sm-3 col-3">
+                <a href="/single-channel/567">
+                  <div class="chn-image-container index m-0">
+                    <img class="avicii" src="/img/walta_posters.jpg" alt="Walta TV">
+                  </div>
+                </a>
+              </div>
 
-            <div class="col-lg-2 col-sm-3 col-3">
-              <a href="/single-channel/126">
-                <div class="chn-image-container index m-0">
-                  <img class="avicii" src="/img/obm_poster.jpg" alt="OBN TV">
-                </div>
-              </a>
-            </div>
-            <div class="col-lg-4 d-lg-block d-none">
-              <div class="ch-social-links walker">
-                <div class="social-icons-container mt-2 ml-4 d-flex">
-                  <span class="mt-3" style="color:black; font-size:1rem;">Social</span>
+              <div class="col-lg-2 col-sm-3 col-3">
+                <a href="/single-channel/126">
+                  <div class="chn-image-container index m-0">
+                    <img class="avicii" src="/img/obm_poster.jpg" alt="OBN TV">
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 d-lg-block d-none">
+                <div class="ch-social-links walker">
+                  <div class="social-icons-container mt-2 ml-4 d-flex">
+                    <span class="mt-3" style="color:black; font-size:1rem;">Social</span>
 
-                  <social-sharing
-                    url="https://ethiov.com"
-                    title="EthioV - Ethiopian Videos and Live channels"
-                    description="All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
-                    quote="EthioV - Ethiopian Videos and Live channels"
-                    hashtags="#EthioV, #ETHIOPIAN_LIVE_TV_CHANNELS, #FANA, #AMHARA, #WALTA, #OBN"
-                    inline-template
-                  >
-                    <div>
-                      <network network="facebook">
-                        <i
-                          class="fa fa-fw fa-facebook fa-2x"
-                          style="color: #3b5998; padding-left: 5px; margin-top: 10px;"
-                        ></i>
-                      </network>
+                    <social-sharing
+                      url="https://ethiov.com"
+                      title="EthioV - Ethiopian Videos and Live channels"
+                      description="All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
+                      quote="EthioV - Ethiopian Videos and Live channels"
+                      hashtags="#EthioV, #ETHIOPIAN_LIVE_TV_CHANNELS, #FANA, #AMHARA, #WALTA, #OBN"
+                      inline-template
+                    >
+                      <div>
+                        <network network="facebook">
+                          <i
+                            class="fa fa-fw fa-facebook fa-2x"
+                            style="color: #3b5998; padding-left: 5px; margin-top: 10px;"
+                          ></i>
+                        </network>
 
-                      <network network="twitter">
-                        <i
-                          class="fa fa-fw fa-twitter fa-2x"
-                          style="color: #55acee; padding-left: 5px; margin-top: 10px;"
-                        ></i>
-                      </network>
-                      <network network="telegram">
-                        <i
-                          class="fa fa-telegram fa-2x"
-                          style="color: #00405d; padding-left: 5px; margin-top: 10px;"
-                        ></i>
-                      </network>
-                    </div>
-                  </social-sharing>
+                        <network network="twitter">
+                          <i
+                            class="fa fa-fw fa-twitter fa-2x"
+                            style="color: #55acee; padding-left: 5px; margin-top: 10px;"
+                          ></i>
+                        </network>
+                        <network network="telegram">
+                          <i
+                            class="fa fa-telegram fa-2x"
+                            style="color: #00405d; padding-left: 5px; margin-top: 10px;"
+                          ></i>
+                        </network>
+                      </div>
+                    </social-sharing>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div> -->
+        <hr class="dany">
+      </div>
     </div>
-    <hr style="border-top: 1px solid rgba(0,0,0,0.6);" class="d-lg-block d-none">
+    <!-- <hr style="border-top: 1px solid rgba(0,0,0,0.6);" class="d-lg-block d-none"> -->
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: .2rem;">
-      <div class="row fas">
+      <div class="row">
         <div class="col-lg-10 offset-lg-2">
           <div class="row">
             <div class="col-md-2 col-sm-12 mt-2 channel-name d-none d-sm-block">
@@ -125,10 +131,23 @@
                     >Trending</span>
                   </a>
                 </li>
+                <li class="nav-item text-center ml-auto mr-auto">
+                  <a v-if="loggedIn" class="nav-link" href="/subscription">
+                    <span class="d-none d-sm-block">Subscription</span>
+                    <i
+                      class="fa fa-envelope-open d-inline-block d-sm-none"
+                      style="font-size: 15px;"
+                    ></i>
+                    <span
+                      style="font-size: 10px; font-weight: bold;"
+                      class="d-inline-block d-sm-none"
+                    >Subscription</span>
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
-          <hr>
+          <hr style="color: black; background-color: #19ff00;">
         </div>
       </div>
     </div>
@@ -147,6 +166,7 @@
               class="col-12 col-sm-6 col-md-3 col-lg-2 mb-4 kygo"
               v-for="(video,$index) in videos"
               :key="$index"
+              style="padding-left: 4px !important; padding-right: 4px !important;"
             >
               <div class="chn-image-container">
                 <a :href="'/single-video/'+video.v_id">
@@ -157,7 +177,14 @@
                     </div>
 
                     <div class="time">{{video.duration}}</div>
-
+                    <div
+                      ng-style="hiddenPlus"
+                      v-if="loggedIn"
+                      class="nashh"
+                      @click="add_to_watchlist(user.id, video.v_id)"
+                    >
+                      <i class="fa fa-plus"></i>
+                    </div>
                     <div class="nashhh">{{video.type.toUpperCase()}}</div>
                   </div>
                 </a>
@@ -213,7 +240,6 @@
 import axios from "axios";
 const base_url = "https://ethiov.com/api";
 export default {
-  middleware: "red",
   head() {
     return {
       title: "EthioV - Ethiopian Videos and Live channels",
@@ -279,16 +305,16 @@ export default {
             "EthioV - All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here."
         }
       ],
-      script: [
-        {
-          innerHTML: `
-               (adsbygoogle = window.adsbygoogle || []).push({
-                  google_ad_client: "ca-pub-5001725934888164",
-                  enable_page_level_ads: true
-              });
-        `
-        }
-      ]
+      // script: [
+      //   {
+      //     innerHTML: `
+      //          (adsbygoogle = window.adsbygoogle || []).push({
+      //             google_ad_client: "ca-pub-5001725934888164",
+      //             enable_page_level_ads: true
+      //         });
+      //   `
+      //   }
+      // ]
     };
   },
   data() {
@@ -391,6 +417,10 @@ export default {
   box-shadow: 0 5px 18px 0 rgba(0, 0, 0, -7.84),
     3px 11px 19px 10px rgba(0, 0, 0, 0.45);
 }
+.kygo {
+  padding-left: 4px !important;
+  padding-right: 4px !important;
+}
 .avicii {
   display: block;
   width: 83px;
@@ -413,7 +443,7 @@ export default {
 }
 .ch-social-links.walker {
   right: 0rem;
-  background-color: #fafafc;
+  background-color: #868471;
 }
 
 .Vimg {
@@ -513,16 +543,32 @@ export default {
 }
 @media (max-width: 600px) {
   .Vimg img {
-    height: 230px;
+    height: 202px;
   }
 
   .Vimg video {
-    height: 230px;
+    height: 202px;
   }
 
   .Vimg {
-    height: 230px;
+    height: 202px;
   }
+}
+.theon {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 6rem;
+  padding-bottom: 0px;
+  margin: 0;
+  background-color: #d3de96;
+}
+.dany {
+  border-top: 14px solid rgba(1, 1, 1, 0.2);
+}
+.kalusha {
+  color: #fbe631;
+  background-color: black;
+  width: 276px;
 }
 </style>
 

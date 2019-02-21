@@ -150,16 +150,16 @@ export default {
           content: "/img/EthioV_LOGO_Black.png"
         }
       ],
-      script: [
-        {
-          innerHTML: `
-               (adsbygoogle = window.adsbygoogle || []).push({
-                  google_ad_client: "ca-pub-5001725934888164",
-                  enable_page_level_ads: true
-              });
-        `
-        }
-      ]
+      // script: [
+      //   {
+      //     innerHTML: `
+      //          (adsbygoogle = window.adsbygoogle || []).push({
+      //             google_ad_client: "ca-pub-5001725934888164",
+      //             enable_page_level_ads: true
+      //         });
+      //   `
+      //   }
+      // ]
     };
   },
   asyncData() {

@@ -305,16 +305,16 @@ export default {
             "EthioV - All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here."
         }
       ],
-      script: [
-        {
-          innerHTML: `
-               (adsbygoogle = window.adsbygoogle || []).push({
-                  google_ad_client: "ca-pub-5001725934888164",
-                  enable_page_level_ads: true
-              });
-        `
-        }
-      ]
+      // script: [
+      //   {
+      //     innerHTML: `
+      //          (adsbygoogle = window.adsbygoogle || []).push({
+      //             google_ad_client: "ca-pub-5001725934888164",
+      //             enable_page_level_ads: true
+      //         });
+      //   `
+      //   }
+      // ]
     };
   },
   data() {
