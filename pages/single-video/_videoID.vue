@@ -764,7 +764,7 @@ async function getUsername(user_id) {
 } */
 @media (min-width: 500px) {
   .video-container {
-    padding-top: 63.25%;
+    padding-top: 65.25%;
   }
 }
 @media (min-width: 769px) and (max-width: 1280px) {
