@@ -250,10 +250,10 @@ export default {
   margin-top: -51% !important;
 }
 .nashitiwa {
-  margin-top: -53% !important;
+  margin-top: -44% !important;
 }
 .nashiwwa {
-  margin-top: -32% !important;
+  margin-top: -28% !important;
 }
 .nashitis {
   margin-top: 53% !important;
