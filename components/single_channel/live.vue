@@ -350,7 +350,7 @@ export default {
 }
 @media (max-width: 500px) {
   .video-container {
-    padding-top: 36.25% !important;
+    padding-top: 49.25% !important;
   }
 }
 @media (max-width: 500px) {
