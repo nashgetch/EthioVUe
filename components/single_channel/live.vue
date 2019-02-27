@@ -337,7 +337,7 @@ export default {
   top: 0;
 }
 .nashiti {
-  margin-top: -42% !important;
+  margin-top: -40% !important;
 }
 .nashitiwa {
   margin-top: -38% !important;
