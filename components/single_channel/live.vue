@@ -337,10 +337,10 @@ export default {
   top: 0;
 }
 .nashiti {
-  margin-top: -51% !important;
+  margin-top: -48% !important;
 }
 .nashitiwa {
-  margin-top: 44% !important;
+  margin-top: -44% !important;
 }
 .nashiwwa {
   margin-top: -28% !important;
