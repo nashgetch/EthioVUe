@@ -272,7 +272,7 @@ export default {
     padding-top: 23% !important;
   }
 }
-.aside {
+/* .aside {
   position: fixed;
   width: 23%;
   z-index: 100;
@@ -283,7 +283,7 @@ export default {
   margin-right: 5px;
   align-self: baseline;
   padding-top: 13% !important;
-}
+} */
 .video-containerf {
   position: relative;
   padding-bottom: 56.25%;
@@ -340,10 +340,10 @@ export default {
   margin-top: -51% !important;
 }
 .nashitiwa {
-  margin-top: -53% !important;
+  margin-top: 44% !important;
 }
 .nashiwwa {
-  margin-top: -32% !important;
+  margin-top: -28% !important;
 }
 .nashitis {
   margin-top: 53% !important;
