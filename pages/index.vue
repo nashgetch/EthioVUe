@@ -240,6 +240,7 @@
         <button class="btn btn--orange text-center kalusha" @click="loadmore()">Show More...</button>
       </div>
     </div>
+    <hr>
     <div
       class="container-fluid"
       style="padding-left: 0px; padding-right: 0px; background-color: black;"
@@ -252,7 +253,7 @@
           </div>
         </div>
       </div>
-
+      <hr style="background-color: #fbe631">
       <carousel
         :perPage="x"
         :autoplay="true"
@@ -295,11 +296,94 @@
                   >{{video.title}}</a>
                 </h1>
               </div>
+              <small
+                class="text-center"
+                style="font-weight: bold; color: #fbe631; font-size: 12px; margin-left: 4px"
+              >
+                <i class="fa fa-eye" style="color: #d59541;"></i>
+                {{video.view_count}} views
+                <i
+                  class="fa fa-dot-circle-o"
+                  style="color: #d59541;"
+                ></i>
+                {{video.created_at | moment("from", "now")}}
+              </small>
             </div>
           </div>
         </slide>
       </carousel>
     </div>
+    <!-- <hr> -->
+    <div
+      class="container-fluid mt-2"
+      style="padding-left: 0px; padding-right: 0px; background-color: #f7f7f7;"
+    >
+      <div class="row justify-content-md-center mr-1 ml-1">
+        <div class="col-lg-6">
+          <div class="title-section text-center">
+            <h2 class="title-line">Recent Videos from Our Featured Channels...</h2>
+            <p>Up-to-Date News, Sports, Documentary, Current Affairs, Religious, Travel and Other Topics From all Ethiopian Channels</p>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row ml-1 mr-1">
+        <div
+          class="col-lg-7 col-md-12 col-sm-12 col-12"
+          :key="$index"
+          v-for="(video, $index) in popular.slice(0,1)"
+        >
+          <div class="feature">
+            <div class="single-top">
+              <img class="img" :src="'//video2.vixtream.net/' + video.filename" alt>
+              <span class="view-counter" style="color: white">{{video.view_count}} Views</span>
+              <i class="fa fa-play-circle-o playbtn"></i>
+              <!-- <div class="content">
+                <h2 class="name">
+                  <a style="color: black;" :href="'/single-video/' + video.v_id">{{video.title}}</a>
+                </h2>
+              </div>-->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-12 col-sm-12 col-12">
+          <div class="row">
+            <div
+              class="col-lg-6 col-12 p-1"
+              :key="$index"
+              v-for="(video, $index) in popular.slice(2,6)"
+            >
+              <a :href="'/single-video/' + video.v_id">
+                <img class="img" :src="'//video2.vixtream.net/' + video.filename" alt>
+                <!-- <i class="fa fa-play-circle-o playbtn"></i> -->
+              </a>
+              <h1 class="mt-2" style="font-size: 13px !important;">
+                <a
+                  style="font-size: 13px !important; color: black"
+                  :href="'/single-video/' + video.v_id"
+                  class="text"
+                  :aria-label="video.title"
+                  :title="video.title"
+                >{{video.title}}</a>
+              </h1>
+              <small
+                class="text-center"
+                style="font-weight: bold; color: #676a6c; font-size: 12px; margin-left: 4px"
+              >
+                <i class="fa fa-eye" style="color: #676a6c;"></i>
+                {{video.view_count}} views
+                <i
+                  class="fa fa-dot-circle-o"
+                  style="color: #676a6c;"
+                ></i>
+                {{video.created_at | moment("from", "now")}}
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
   </section>
 </template>
 <script>
@@ -398,6 +482,7 @@ export default {
       turl: "https://video2.vixtream.net",
       featured: [],
       x: 3,
+      popular: [],
       scre: {}
     };
   },
@@ -459,6 +544,8 @@ export default {
   mounted: function() {
     this.active_route = this.tab;
     axios.post(base_url + "/popular").then(res => (this.featured = res.data));
+    axios.post(base_url + "/featured").then(res => (this.popular = res.data));
+    console.log(this.popular);
     if (screen.width < 500) {
       this.x = 1;
     } else if (screen.width > 500 && screen.width < 768) {
@@ -476,6 +563,28 @@ export default {
 .wrapper {
   width: 100%;
 }
+.single-top {
+  margin: 0 0 30px;
+  /* filter: contrast(1110); */
+}
+.single-top {
+  position: relative;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  z-index: 7;
+}
+.name {
+  margin: 3px 0 2px;
+  color: #000 !important;
+}
+.single-top .content .name,
+.single-top .content .name a {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
 .nashians {
   width: 320px !important;
   height: 100px !important;
@@ -486,11 +595,58 @@ export default {
     height: 60px !important;
   }
 }
+@media (max-width: 500px) {
+  .playbtn {
+    font-size: 48px;
+  }
+}
+.single-top .content {
+  bottom: 31px;
+  left: 0;
+  padding: 0 20px;
+  position: absolute;
+  right: 0;
+  text-align: left;
+  z-index: 8;
+}
+.playbtn {
+  font-size: 60px;
+}
 @media (min-width: 800px) {
   .nashians {
     width: 728px !important;
     height: 90px !important;
   }
+}
+.view-counter {
+  color: #ff9700;
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 16px;
+  position: absolute;
+  right: 18px;
+  top: 10px;
+  z-index: 8;
+}
+.popup-y {
+  opacity: 1;
+}
+.single-top .popup-y {
+  background: rgba(255, 255, 255, 0.5) none repeat scroll 0 0;
+  border-radius: 100%;
+  font-size: 48px;
+  height: 56px;
+  left: 50%;
+  line-height: 58px;
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  top: 28%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 56px;
+  z-index: 8;
 }
 @media (max-width: 990px) {
   .fas {
