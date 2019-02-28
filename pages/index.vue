@@ -1,5 +1,5 @@
  <template>
-  <section style>
+  <section>
     <div class="theon">
       <div class="content-wrapper text-center">
         <div class="row justify-content-md-center">
@@ -94,10 +94,10 @@
         <hr>
       </div>
     </div>
+
     <!-- <hr style="border-top: 1px solid rgba(0,0,0,0.6);" class="d-lg-block d-none"> -->
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: .2rem;">
       <!-- <Feature/> -->
-
       <div class="row">
         <div class="col-lg-10 offset-lg-2">
           <div class="row">
@@ -240,10 +240,74 @@
         <button class="btn btn--orange text-center kalusha" @click="loadmore()">Show More...</button>
       </div>
     </div>
+    <div
+      class="container-fluid"
+      style="padding-left: 0px; padding-right: 0px; background-color: black;"
+    >
+      <div class="row justify-content-md-center mr-2 ml-2">
+        <div class="col-lg-6">
+          <div class="title-section text-center kaeb">
+            <h2 class="title-line">Most Popular Videos Right Now...</h2>
+            <p>Recent and Most viewed Videos on demand from Fana, Walta, Amhara, OBN, Bethel and other Religious and Educational Channels. Ethiopia.</p>
+          </div>
+        </div>
+      </div>
+
+      <carousel
+        :perPage="x"
+        :autoplay="true"
+        :adjustHeight="true"
+        :mouseDrag="true"
+        :loop="true"
+        paginationColor="white"
+        paginationActiveColor="#fbe631"
+      >
+        <slide :key="$index" v-for="(video, $index) in featured" class="kygo">
+          <div class="chn-image-container">
+            <a :href="'/single-video/'+video.v_id">
+              <div class="Vimg" style="background-color: black;">
+                <img :src="'//video2.vixtream.net/' + video.filename" :alt="video.title">
+                <div ng-click="viewVideo(video.v_id)" class="play">
+                  <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
+                </div>
+
+                <div class="time" style="color: #ffef00;">{{video.duration}}</div>
+                <div
+                  ng-style="hiddenPlus"
+                  v-if="loggedIn"
+                  class="nashh"
+                  @click="add_to_watchlist(user.id, video.v_id)"
+                >
+                  <i class="fa fa-plus"></i>
+                </div>
+                <div class="nashhh" style="color: black">{{video.type.toUpperCase()}}</div>
+              </div>
+            </a>
+            <div class="mt-1">
+              <div class="descr main">
+                <h1 style="font-size: 13px !important; color: #fbe631">
+                  <a
+                    style="font-size: 13px !important; color: #fbe631"
+                    :href="'/single-video/' + video.v_id"
+                    class="text"
+                    :aria-label="video.title"
+                    :title="video.title"
+                  >{{video.title}}</a>
+                </h1>
+              </div>
+            </div>
+          </div>
+        </slide>
+      </carousel>
+    </div>
   </section>
 </template>
 <script>
 import axios from "axios";
+// import { Carousel, Slide } from "vue-carousel";
+
+// import Slick from "vue-slick";
+// import './node_modules/slick-carousel/slick/slick.css';
 // import Feature from "@/components/featureVideos/videos";
 const base_url = "https://ethiov.com/api";
 export default {
@@ -324,13 +388,17 @@ export default {
       // ]
     };
   },
+  // components: { Slick },
   // components: {
   //   Feature
   // },
+
   data() {
     return {
       turl: "https://video2.vixtream.net",
-      featured: []
+      featured: [],
+      x: 3,
+      scre: {}
     };
   },
   async asyncData() {
@@ -371,6 +439,7 @@ export default {
           }
         });
     },
+
     setTabs(tab) {
       this.tab = tab;
       this.tab1Style = {};
@@ -389,7 +458,15 @@ export default {
   },
   mounted: function() {
     this.active_route = this.tab;
-    axios.post(base_url + "featured").then(res => (this.featured = res.data));
+    axios.post(base_url + "/popular").then(res => (this.featured = res.data));
+    if (screen.width < 500) {
+      this.x = 1;
+    } else if (screen.width > 500 && screen.width < 768) {
+      this.x = 2;
+    } else if (screen.width > 768) {
+      this.x = 5;
+    }
+    this.scre = screen;
   }
 };
 </script>
@@ -615,8 +692,14 @@ p {
   margin-top: 0;
   margin-bottom: 1rem;
 }
-.bolder{
+.bolder {
   font-weight: bold !important;
+}
+.kaeb {
+  color: #fbe631 !important;
+}
+.kaeb > p {
+  color: #fbe631 !important;
 }
 </style>
 

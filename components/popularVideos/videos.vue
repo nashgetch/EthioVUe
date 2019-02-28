@@ -4,6 +4,7 @@
       Most Popular Videos Right Now...
       <small>Recent and Most viewed Videos on demand from Fana, Walta, Amhara, OBN, Bethel and other Religious and Educational Channels. Ethiopia.</small>
     </span>
+    
     <hr class="guetta">
     <div class="row display-flex" style="background-color: #F6FBFF; margin-top: 2px;">
       <div
@@ -22,7 +23,7 @@
                       >
               You can put any component you want in here.-->
               <!-- </div> -->
-              <img :src="'//video2.vixtream.net/'+video.filename" :alt="video.title"/>
+              <img :src="'//video2.vixtream.net/'+video.filename" :alt="video.title">
               <div ng-click="viewVideo(video.v_id)" class="play">
                 <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
               </div>
@@ -47,7 +48,6 @@
                 :href="'/single-video/' + video.v_id"
                 :aria-label="video.title_en"
                 :title="video.title_en"
-
               >{{video.title_en}}</a>
             </h1>
             <!-- <h1 v-show="engshow(video.v_id)" style="font-size: 14px !important;"><a
@@ -85,7 +85,11 @@ export default {
 
   data() {
     return {
-      featured: []
+      featured: [],
+      slickOptions: {
+        slidesToShow: 3
+        // Any other options that can be got from plugin documentation
+      }
     };
   },
   methods: {
@@ -95,6 +99,55 @@ export default {
         .then(res => {
           this.$toast.success("The Video is added to Watch Later");
         });
+    },
+    next() {
+      this.$refs.slick.next();
+    },
+
+    prev() {
+      this.$refs.slick.prev();
+    },
+
+    reInit() {
+      // Helpful if you have to deal with v-for to update dynamic lists
+      this.$nextTick(() => {
+        this.$refs.slick.reSlick();
+      });
+    },
+
+    // Events listeners
+    handleAfterChange(event, slick, currentSlide) {
+      console.log("handleAfterChange", event, slick, currentSlide);
+    },
+    handleBeforeChange(event, slick, currentSlide, nextSlide) {
+      console.log("handleBeforeChange", event, slick, currentSlide, nextSlide);
+    },
+    handleBreakpoint(event, slick, breakpoint) {
+      console.log("handleBreakpoint", event, slick, breakpoint);
+    },
+    handleDestroy(event, slick) {
+      console.log("handleDestroy", event, slick);
+    },
+    handleEdge(event, slick, direction) {
+      console.log("handleEdge", event, slick, direction);
+    },
+    handleInit(event, slick) {
+      console.log("handleInit", event, slick);
+    },
+    handleReInit(event, slick) {
+      console.log("handleReInit", event, slick);
+    },
+    handleSetPosition(event, slick) {
+      console.log("handleSetPosition", event, slick);
+    },
+    handleSwipe(event, slick, direction) {
+      console.log("handleSwipe", event, slick, direction);
+    },
+    handleLazyLoaded(event, slick, image, imageSource) {
+      console.log("handleLazyLoaded", event, slick, image, imageSource);
+    },
+    handleLazeLoadError(event, slick, image, imageSource) {
+      console.log("handleLazeLoadError", event, slick, image, imageSource);
     }
   },
   mounted() {
