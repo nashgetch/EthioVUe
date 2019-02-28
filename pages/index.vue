@@ -2,10 +2,18 @@
   <section style>
     <div class="theon">
       <div class="content-wrapper text-center">
-        <span
-          class="martin"
-          style="font-weight: 400; font-size: 17px; margin-bottom:2px;"
-        >Featured Live TV Channels</span>
+        <div class="row justify-content-md-center">
+          <div class="col-lg-6">
+            <div class="title-section text-center">
+              <h2 class="title-line">Featured Live TV Channels</h2>
+              <p>
+                You can catch up to your favorite shows on TV here.
+                Fana, Walta, Amhara, OBN and much more.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <hr>
         <div class="row" style>
           <div class="col-lg-2 col-sm-12 col-12"></div>
@@ -83,11 +91,13 @@
             </div>
           </div>
         </div>
-        <hr class="dany">
+        <hr>
       </div>
     </div>
     <!-- <hr style="border-top: 1px solid rgba(0,0,0,0.6);" class="d-lg-block d-none"> -->
     <div class="container-fluid top-margin-bn-sm-md" style="padding-top: .2rem;">
+      <!-- <Feature/> -->
+
       <div class="row">
         <div class="col-lg-10 offset-lg-2">
           <div class="row">
@@ -98,7 +108,7 @@
             <div class="col-md-8 col-sm-12 text-center">
               <ul class="nav nav-pills">
                 <li class="nav-item text-center ml-auto mr-auto active">
-                  <a class="nav-link active" href="/">
+                  <a class="nav-link active bolder" href="/">
                     <span class="d-none d-sm-block">Latest Videos</span>
                     <i
                       class="active_route fa fa-clock-o d-inline-block d-sm-none"
@@ -111,7 +121,7 @@
                   </a>
                 </li>
                 <li class="nav-item text-center ml-auto mr-auto">
-                  <a class="nav-link" href="/category">
+                  <a class="nav-link bolder" href="/category">
                     <span class="d-none d-sm-block">Category</span>
                     <i class="fa fa-video-camera d-inline-block d-sm-none" style="font-size: 15px;"></i>
                     <span
@@ -121,7 +131,7 @@
                   </a>
                 </li>
                 <li class="nav-item text-center ml-auto mr-auto">
-                  <a class="nav-link" href="/trending">
+                  <a class="nav-link bolder" href="/trending">
                     <span class="d-none d-sm-block">Trending</span>
 
                     <i class="fa fa-fire d-inline-block d-sm-none" style="font-size: 15px;"></i>
@@ -132,7 +142,7 @@
                   </a>
                 </li>
                 <li class="nav-item text-center ml-auto mr-auto">
-                  <a v-if="loggedIn" class="nav-link" href="/subscription">
+                  <a v-if="loggedIn" class="nav-link bolder" href="/subscription">
                     <span class="d-none d-sm-block">Subscription</span>
                     <i
                       class="fa fa-envelope-open d-inline-block d-sm-none"
@@ -152,10 +162,6 @@
       </div>
     </div>
     <div class="content-wrapper">
-      <span
-        class="d-inline-block d-sm-none title"
-        style="font-weight: bold"
-      >Latest Videos On Demand...</span>
       <!-- <div class="bars">
       <input type="text" v-model="searchString" placeholder="Search Channels here...">
       </div>-->
@@ -238,6 +244,7 @@
 </template>
 <script>
 import axios from "axios";
+// import Feature from "@/components/featureVideos/videos";
 const base_url = "https://ethiov.com/api";
 export default {
   head() {
@@ -304,7 +311,7 @@ export default {
           content:
             "EthioV - All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here."
         }
-      ],
+      ]
       // script: [
       //   {
       //     innerHTML: `
@@ -317,9 +324,13 @@ export default {
       // ]
     };
   },
+  // components: {
+  //   Feature
+  // },
   data() {
     return {
-      turl: "https://video2.vixtream.net"
+      turl: "https://video2.vixtream.net",
+      featured: []
     };
   },
   async asyncData() {
@@ -378,6 +389,7 @@ export default {
   },
   mounted: function() {
     this.active_route = this.tab;
+    axios.post(base_url + "featured").then(res => (this.featured = res.data));
   }
 };
 </script>
@@ -560,7 +572,7 @@ export default {
   padding-top: 6rem;
   padding-bottom: 0px;
   margin: 0;
-  background-color: #d3de96;
+  background-color: #f7f7f7;
 }
 .dany {
   border-top: 14px solid rgba(1, 1, 1, 0.2);
@@ -569,6 +581,42 @@ export default {
   color: #fbe631;
   background-color: black;
   width: 276px;
+}
+.title-section {
+  margin-bottom: 30px;
+  text-align: center !important;
+}
+.title-section h2 {
+  font-weight: 600;
+}
+.title-line {
+  position: relative;
+  z-index: 9;
+  display: inline-block;
+  transition: 0.5s ease-in-out;
+  text-transform: capitalize;
+}
+h2 {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 38px;
+}
+.title-section p {
+  font-size: 14px;
+}
+p {
+  font-weight: normal;
+  line-height: 1.5;
+  color: #626262;
+  letter-spacing: 1px;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.bolder{
+  font-weight: bold !important;
 }
 </style>
 

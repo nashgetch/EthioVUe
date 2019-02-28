@@ -1,11 +1,14 @@
 <template>
-  <div>
-    <span class="title">
-      Recent Videos from Our Featured Channels...
-      <small>Up-to-Date News, Sports, Documentary, Current Affairs, Religious, Travel and Other Topics From all Ethiopian Channels</small>
-    </span>
-    <hr class="guetta">
-    <div class="row display-flex" style="background-color: #fff6e8; margin-top: 2px;">
+  <div style="">
+    <div class="row justify-content-md-center">
+      <div class="col-lg-6">
+        <div class="title-section text-center">
+          <h2 class="title-line">Recent Videos from Our Featured Channels...</h2>
+          <p>Up-to-Date News, Sports, Documentary, Current Affairs, Religious, Travel and Other Topics From all Ethiopian Channels</p>
+        </div>
+      </div>
+    </div>
+    <div class="row display-flex" style="margin-top: 2px;">
       <div
         class="col-12 col-sm-6 col-md-3 col-lg-2 videoitem kygo"
         v-for="(video,$index) in featured"
@@ -22,7 +25,7 @@
                       >
               You can put any component you want in here.-->
               <!-- </div> -->
-              <img :src="'//video2.vixtream.net/'+video.filename" :alt="video.title"/>
+              <img :src="'//video2.vixtream.net/'+video.filename" :alt="video.title">
               <div ng-click="viewVideo(video.v_id)" class="play">
                 <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
               </div>
@@ -47,7 +50,6 @@
                 :href="'/single-video/' + video.v_id"
                 :aria-label="video.title_en"
                 :title="video.title_en"
-
               >{{video.title_en}}</a>
             </h1>
             <!-- <h1 v-show="engshow(video.v_id)" style="font-size: 14px !important;"><a
@@ -57,32 +59,31 @@
             >{{video.title_en}}</a></h1>-->
           </div>
           <!-- <div class="views calvin"> -->
-          <ViewCatogs
-            :vid="video.v_id"
-            :cat_id="video.category_id"
-            :isIndex="true"
-            :title_en="video.title_en"
-            :created_at="video.created_at"
-            :view_count="video.view_count"
-            :type="video.type"
-          ></ViewCatogs>
+          <small
+            class="text-center"
+            style="font-weight: bold; color: #7e7e7e; font-size: 12px; margin-left: 4px"
+          >
+            <i class="fa fa-eye" style="color: #d59541;"></i>
+            {{video.view_count}} views
+            <i
+              class="fa fa-dot-circle-o"
+              style="color: #d59541;"
+            ></i>
+            {{video.created_at | moment("from", "now")}}
+          </small>
           <!-- </div> -->
         </div>
       </div>
     </div>
-    <hr class="guetta">
+    <hr>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import ViewCatogs from "@/components/views_catogs";
+// import ViewCatogs from "@/components/views_catogs";
 const base_url = "https://ethiov.com/api/";
 export default {
-  components: {
-    ViewCatogs
-  },
-
   data() {
     return {
       featured: []

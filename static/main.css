@@ -157,10 +157,12 @@
 
 .navbar .nav-link {
   font-size: 14px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   padding-left: 1em !important;
   padding-right: 1em !important;
   color: #fbe631 !important;
+  font-weight: 300;
+  /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 }
 
 .next.btn {
