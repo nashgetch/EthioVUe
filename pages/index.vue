@@ -327,62 +327,8 @@
         </div>
       </div>
       <hr>
-      <div class="row ml-1 mr-1">
-        <div
-          class="col-lg-7 col-md-12 col-sm-12 col-12"
-          :key="$index"
-          v-for="(video, $index) in popular.slice(0,1)"
-        >
-          <div class="feature">
-            <div class="single-top">
-              <img class="img" :src="'//video2.vixtream.net/' + video.filename" alt>
-              <span class="view-counter" style="color: white">{{video.view_count}} Views</span>
-              <i class="fa fa-play-circle-o playbtn"></i>
-              <!-- <div class="content">
-                <h2 class="name">
-                  <a style="color: black;" :href="'/single-video/' + video.v_id">{{video.title}}</a>
-                </h2>
-              </div>-->
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-5 col-md-12 col-sm-12 col-12">
-          <div class="row">
-            <div
-              class="col-lg-6 col-12 p-1"
-              :key="$index"
-              v-for="(video, $index) in popular.slice(2,6)"
-            >
-              <a :href="'/single-video/' + video.v_id">
-                <img class="img" :src="'//video2.vixtream.net/' + video.filename" alt>
-                <!-- <i class="fa fa-play-circle-o playbtn"></i> -->
-              </a>
-              <h1 class="mt-2" style="font-size: 13px !important;">
-                <a
-                  style="font-size: 13px !important; color: black"
-                  :href="'/single-video/' + video.v_id"
-                  class="text"
-                  :aria-label="video.title"
-                  :title="video.title"
-                >{{video.title}}</a>
-              </h1>
-              <small
-                class="text-center"
-                style="font-weight: bold; color: #676a6c; font-size: 12px; margin-left: 4px"
-              >
-                <i class="fa fa-eye" style="color: #676a6c;"></i>
-                {{video.view_count}} views
-                <i
-                  class="fa fa-dot-circle-o"
-                  style="color: #676a6c;"
-                ></i>
-                {{video.created_at | moment("from", "now")}}
-              </small>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
+    <Feature />
     <hr>
   </section>
 </template>
@@ -392,7 +338,7 @@ import axios from "axios";
 
 // import Slick from "vue-slick";
 // import './node_modules/slick-carousel/slick/slick.css';
-// import Feature from "@/components/featureVideos/videos";
+import Feature from "@/components/catogVideos/catogs";
 const base_url = "https://ethiov.com/api";
 export default {
   head() {
@@ -473,9 +419,9 @@ export default {
     };
   },
   // components: { Slick },
-  // components: {
-  //   Feature
-  // },
+  components: {
+    Feature
+  },
 
   data() {
     return {
