@@ -93,7 +93,7 @@ export default {
     };
   },
   mounted() {
-    console.log(this.Channel.category_id);
+    // console.log(this.Channel.category_id);
     axios
       .post(base_url + "cat_videos/", {
         cat: this.Channel.category_id
