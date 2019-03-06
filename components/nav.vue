@@ -3,9 +3,9 @@
     <nav class="navbar navbar-expand-lg fixed-top p-0 p-sm-2">
       <div class="d-inline-flex">
         <div class="float-left ml-md-auto ml-lg-auto d-block d--none mt-auto ml-2">
-          <a href="/" class style="font-size: 1.4rem;" id="menu-toggler">
+          <nuxt-link to="/" class style="font-size: 1.4rem;" id="menu-toggler">
             <!-- <i class="fa fa-youtube-play fa-2x d-none d-lg-none" style="color: #fbe631;"></i> -->
-          </a>
+          </nuxt-link>
         </div>
         <div
           id="m_search_menu"
@@ -59,25 +59,25 @@
               >{{active_route==="index" ? "Home" : active_route==="live-channels"? active_route :"EthioV"}}</nuxt-link>-->
             </div>
             <div class="navbar-nav flex-row mr-auto mt-1 d-none d-lg-flex">
-              <a href="/" class="nav-item nav-link" style="font-weight: bold;">
+              <nuxt-link to="/" class="nav-item nav-link" style="font-weight: bold;">
                 Home
                 <span class="sr-only">(current)</span>
-              </a>
-              <a
+              </nuxt-link>
+              <nuxt-link
                 class="nav-item nav-link"
                 style="font-weight: bold; color: #fbe631;"
-                href="/live-channels"
-              >Live Channels</a>
-              <a
+                to="/live-channels"
+              >Live Channels</nuxt-link>
+              <nuxt-link
                 class="nav-item nav-link"
                 style="font-weight: bold; color: #fbe631;"
-                href="/religious-channels"
-              >Religious channels</a>
-              <a
+                to="/religious-channels"
+              >Religious channels</nuxt-link>
+              <nuxt-link
                 class="nav-item nav-link"
                 style="font-weight: bold; color: #fbe631;"
-                href="/education"
-              >Educational</a>
+                to="/education"
+              >Educational</nuxt-link>
             </div>
 
             <div class="col-6 col-lg-3 col-xl-4 d-none d-lg-block">

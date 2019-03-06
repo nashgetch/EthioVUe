@@ -1,9 +1,9 @@
 <template>
   <div class="quick-menu" ref="quickMenu" :style="quickMenuStyle">
     <div v-for="(n,key) in menuCount" class="sub-menu" :style="getSubMenu(n-1)" :key="key">
-      <a
+      <nuxt-link
         v-if="menuUrlList[n-1].isLink"
-        :href="menuUrlList[n-1].url"
+        :to="menuUrlList[n-1].url"
         class="a-anchor"
         :target="openNewTab"
         :style="subMenuStyle"
@@ -19,8 +19,8 @@
          <!-- </i> -->
 
       </div>
-      </a>
-      <a
+      </nuxt-link>
+      <nuxt-link
         v-else
         :style="subMenuStyle"
         @mouseover.stop="mouseEnterSubMenu"
@@ -28,7 +28,7 @@
         @click="processCallback(key)"
       >
         <i :class="iconClass[n-1]" ref="icon">nash</i>
-      </a>
+      </nuxt-link>
     </div>
 
     <div class="menu" :style="menuStyle">
