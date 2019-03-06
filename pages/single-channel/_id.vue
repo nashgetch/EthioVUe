@@ -7,11 +7,13 @@
       <div class="ch-logo-img">
         <img v-lazy="'//video2.vixtream.net'+channel.poster_image" alt>
       </div>
-      <div class="ch-social-links d-inline flex-row" style="display: flex !important;">
-        <div class="social-icons-container  d-flex" style="display: flex !important;">
+      <div class="ch-social-links d-inline flex-row">
+        <div class="social-icons-container d-flex" style="width: 100%">
           <span class="mt-3" style="color:black; font-size:1rem;">Social</span>
 
           <social-sharing
+            class="mb-2"
+            style="display: flex;"
             :url="'https://ethiov.com/single-channel/' + channel.id"
             :title="'EthioV Live Stream ' + channel.tv_name"
             :description="'EthioV - ' + channel.description"
@@ -21,20 +23,23 @@
           >
             <div>
               <network network="facebook">
-                <i id="e1"
+                <i
+                  id="e1"
                   class="fa fa-fw fa-facebook fa-2x"
                   style="color: #3b5998; padding-left: 5px; margin-top: 10px;"
                 ></i>
               </network>
 
               <network network="twitter">
-                <i id="e2"
+                <i
+                  id="e2"
                   class="fa fa-fw fa-twitter fa-2x"
                   style="color: #55acee; padding-left: 5px; margin-top: 10px;"
                 ></i>
               </network>
               <network network="telegram">
-                <i id="e3"
+                <i
+                  id="e3"
                   class="fa fa-telegram fa-2x"
                   style="color: #00405d; padding-left: 5px; margin-top: 10px;"
                 ></i>
@@ -308,7 +313,14 @@ export default {
     max-height: 160px;
   }
 }
-#e1 {display:inline-block;margin-right:10px;}
-#e2 {display:inline-block;}
-#e3 {display:inline-block;}
+#e1 {
+  display: inline-block;
+  margin-right: 10px;
+}
+#e2 {
+  display: inline-block;
+}
+#e3 {
+  display: inline-block;
+}
 </style>

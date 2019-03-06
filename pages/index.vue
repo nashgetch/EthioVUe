@@ -51,10 +51,12 @@
                 </nuxt-link>
               </div>
               <div class="col-lg-4 d-lg-block d-none" style="display: flex;">
-                <div class="ch-social-links walker">
-                  <div class="social-icons-container mt-2 ml-4 d-flex">
+                <div class="ch-social-links walker" style="width: 100%">
+                  <div class="social-icons-container d-flex">
                     <span class="mt-3" style="color:black; font-size:1rem;">Social</span>
                     <social-sharing
+                      class="mb-2"
+                      style="display: flex;"
                       url="https://ethiov.com"
                       title="EthioV - Ethiopian Videos and Live channels"
                       description="All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
