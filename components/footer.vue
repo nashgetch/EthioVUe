@@ -23,6 +23,8 @@
 </template>
 <style>
 .footer {
+  position: fixed;
+  bottom: 0;
   padding: 0;
   margin: 0;
   width: 100%;

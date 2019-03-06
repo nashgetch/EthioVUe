@@ -5,13 +5,13 @@
         <div class="col-lg-10 offset-lg-2">
           <div class="row">
             <div class="col-md-2 col-sm-12 mt-2 channel-name d-none d-sm-block">
-              <a href="/">Videos</a> |
-              <a href="/live-channels">Live TVs</a>
+              <nuxt-link to="/">Videos</nuxt-link> |
+              <nuxt-link to="/live-channels">Live TVs</nuxt-link>
             </div>
             <div class="col-md-8 col-sm-12 text-center">
               <ul class="nav nav-pills">
                 <li class="nav-item text-center ml-auto mr-auto">
-                  <a class="nav-link" href="/">
+                  <nuxt-link class="nav-link" to="/">
                     <span class="d-none d-sm-block">Latest Videos</span>
                     <i
                       class="active_route fa fa-clock-o d-inline-block d-sm-none"
@@ -21,20 +21,20 @@
                       class="d-inline-block d-sm-none"
                       style="font-size: 10px; font-weight: bold;"
                     >Latest</span>
-                  </a>
+                  </nuxt-link>
                 </li>
                 <li class="nav-item text-center ml-auto mr-auto">
-                  <a class="nav-link" href="/category">
+                  <nuxt-link class="nav-link" to="/category">
                     <span class="d-none d-sm-block">Category</span>
                     <i class="fa fa-video-camera d-inline-block d-sm-none" style="font-size: 15px;"></i>
                     <span
                       class="d-inline-block d-sm-none"
                       style="font-size: 10px; font-weight: bold;"
                     >Category</span>
-                  </a>
+                  </nuxt-link>
                 </li>
                 <li class="nav-item text-center ml-auto mr-auto">
-                  <a class="nav-link" href="/trending">
+                  <nuxt-link class="nav-link" to="/trending">
                     <span class="d-none d-sm-block">Trending</span>
 
                     <i class="fa fa-fire d-inline-block d-sm-none" style="font-size: 15px;"></i>
@@ -42,10 +42,10 @@
                       style="font-size: 10px; font-weight: bold;"
                       class="d-inline-block d-sm-none"
                     >Trending</span>
-                  </a>
+                  </nuxt-link>
                 </li>
                 <li class="nav-item text-center ml-auto mr-auto active">
-                  <a v-if="loggedIn" class="nav-link active" data-toggle="pill" href="/subscription">
+                  <nuxt-link v-if="loggedIn" class="nav-link active" data-toggle="pill" to="/subscription">
                     <span class="d-none d-sm-block">Subscription</span>
                     <i
                       class="fa fa-envelope-open d-inline-block d-sm-none"
@@ -55,7 +55,7 @@
                       style="font-size: 10px; font-weight: bold;"
                       class="d-inline-block d-sm-none"
                     >Subscription</span>
-                  </a>
+                  </nuxt-link>
                 </li>
               </ul>
             </div>
@@ -73,13 +73,13 @@
         <div v-for="(owner, $index) in tvs" :key="$index">
           <div class="content-wrapper">
             <div class="owner">
-              <a :href="'/single-channel/'+owner.id">
+              <nuxt-link :to="'/single-channel/'+owner.id">
                 <img
-                  :src="'//video2.vixtream.net' + owner.poster_image"
+                  v-lazy="'//video2.vixtream.net' + owner.poster_image"
                   :alt="owner.tv_name"
                   class="asimg"
                 >
-              </a>
+              </nuxt-link>
               <span class="title">
                 {{owner.tv_name}}
                 <small>- Latest Updates from {{owner.tv_name}}</small>

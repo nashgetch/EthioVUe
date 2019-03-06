@@ -23,12 +23,12 @@
             v-for="(tv,$index) in tvs"
             :key="$index"
           >
-            <a :href="'/single-channel/'+tv.id">
+            <nuxt-link :to="'/single-channel/'+tv.id">
               <div class="chn-image-container">
-                <img class="imgur" :src="turl + tv.poster_image" :alt="tv.tv_name">
+                <img class="imgur" v-lazy="turl + tv.poster_image" :alt="tv.tv_name">
 
                 <div class="small-logo">
-                  <img :src="turl + tv.poster_image" :alt="tv.tv_name">
+                  <img v-lazy="turl + tv.poster_image" :alt="tv.tv_name">
                 </div>
 
                 <div class="text-center mt-5">
@@ -39,7 +39,7 @@
                   </div>
                 </div>
               </div>
-            </a>
+            </nuxt-link>
           </div>
         </div>
       </div>

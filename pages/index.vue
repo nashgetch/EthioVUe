@@ -20,41 +20,40 @@
           <div class="col-lg-8 col-sm-12 col-12 text-center">
             <div class="row">
               <div class="col-lg-2 col-sm-3 col-3">
-                <a href="/single-channel/114">
+                <nuxt-link to="/single-channel/114">
                   <div class="chn-image-container index m-0">
                     <img class="avicii" src="/img/fbctv_poster.jpg" alt="Fana TV">
                   </div>
-                </a>
+                </nuxt-link>
               </div>
 
               <div class="col-lg-2 col-sm-3 col-3">
-                <a href="/single-channel/113">
+                <nuxt-link to="/single-channel/113">
                   <div class="chn-image-container index m-0">
                     <img class="avicii" src="/img/amma_poster.jpg" alt="Amhara TV">
                   </div>
-                </a>
+                </nuxt-link>
               </div>
 
               <div class="col-lg-2 col-sm-3 col-3">
-                <a href="/single-channel/567">
+                <nuxt-link to="/single-channel/567">
                   <div class="chn-image-container index m-0">
                     <img class="avicii" src="/img/walta_posters.jpg" alt="Walta TV">
                   </div>
-                </a>
+                </nuxt-link>
               </div>
 
               <div class="col-lg-2 col-sm-3 col-3">
-                <a href="/single-channel/126">
+                <nuxt-link to="/single-channel/126">
                   <div class="chn-image-container index m-0">
                     <img class="avicii" src="/img/obm_poster.jpg" alt="OBN TV">
                   </div>
-                </a>
+                </nuxt-link>
               </div>
-              <div class="col-lg-4 d-lg-block d-none">
+              <div class="col-lg-4 d-lg-block d-none" style="display: flex;">
                 <div class="ch-social-links walker">
                   <div class="social-icons-container mt-2 ml-4 d-flex">
                     <span class="mt-3" style="color:black; font-size:1rem;">Social</span>
-
                     <social-sharing
                       url="https://ethiov.com"
                       title="EthioV - Ethiopian Videos and Live channels"
@@ -102,13 +101,13 @@
         <div class="col-lg-10 offset-lg-2">
           <div class="row">
             <div class="col-md-2 col-sm-12 mt-2 channel-name d-none d-sm-block">
-              <a href="/">Videos</a> |
-              <a href="/live-channels">Live TVs</a>
+              <nuxt-link to="/">Videos</nuxt-link>|
+              <nuxt-link to="/live-channels">Live TVs</nuxt-link>
             </div>
             <div class="col-md-8 col-sm-12 text-center">
               <ul class="nav nav-pills">
                 <li class="nav-item text-center ml-auto mr-auto active">
-                  <a class="nav-link active bolder" href="/">
+                  <nuxt-link class="nav-link active bolder" to="/">
                     <span class="d-none d-sm-block">Latest Videos</span>
                     <i
                       class="active_route fa fa-clock-o d-inline-block d-sm-none"
@@ -118,20 +117,20 @@
                       class="d-inline-block d-sm-none"
                       style="font-size: 10px; font-weight: bold;"
                     >Latest</span>
-                  </a>
+                  </nuxt-link>
                 </li>
                 <li class="nav-item text-center ml-auto mr-auto">
-                  <a class="nav-link bolder" href="/category">
+                  <nuxt-link class="nav-link bolder" to="/category">
                     <span class="d-none d-sm-block">Category</span>
                     <i class="fa fa-video-camera d-inline-block d-sm-none" style="font-size: 15px;"></i>
                     <span
                       class="d-inline-block d-sm-none"
                       style="font-size: 10px; font-weight: bold;"
                     >Category</span>
-                  </a>
+                  </nuxt-link>
                 </li>
                 <li class="nav-item text-center ml-auto mr-auto">
-                  <a class="nav-link bolder" href="/trending">
+                  <nuxt-link class="nav-link bolder" to="/trending">
                     <span class="d-none d-sm-block">Trending</span>
 
                     <i class="fa fa-fire d-inline-block d-sm-none" style="font-size: 15px;"></i>
@@ -139,10 +138,10 @@
                       style="font-size: 10px; font-weight: bold;"
                       class="d-inline-block d-sm-none"
                     >Trending</span>
-                  </a>
+                  </nuxt-link>
                 </li>
                 <li class="nav-item text-center ml-auto mr-auto">
-                  <a v-if="loggedIn" class="nav-link bolder" href="/subscription">
+                  <nuxt-link v-if="loggedIn" class="nav-link bolder" to="/subscription">
                     <span class="d-none d-sm-block">Subscription</span>
                     <i
                       class="fa fa-envelope-open d-inline-block d-sm-none"
@@ -152,7 +151,7 @@
                       style="font-size: 10px; font-weight: bold;"
                       class="d-inline-block d-sm-none"
                     >Subscription</span>
-                  </a>
+                  </nuxt-link>
                 </li>
               </ul>
             </div>
@@ -175,9 +174,14 @@
               style="padding-left: 4px !important; padding-right: 4px !important;"
             >
               <div class="chn-image-container">
-                <a :href="'/single-video/'+video.v_id">
-                  <div class="Vimg" style="background-color: black;">
-                    <img :src="'//video2.vixtream.net/' + video.filename" :alt="video.title">
+                <nuxt-link :to="'/single-video/'+video.v_id">
+                  <div class="Vimg" style="background-color: #f7f7f7;">
+                    <img
+                      v-lazy="'//video2.vixtream.net/' + video.filename"
+                      :alt="video.title"
+                      :aspect-ratio="1.1"
+                    >
+
                     <div ng-click="viewVideo(video.v_id)" class="play">
                       <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                     </div>
@@ -193,23 +197,23 @@
                     </div>
                     <div class="nashhh">{{video.type.toUpperCase()}}</div>
                   </div>
-                </a>
+                </nuxt-link>
 
                 <div class="mt-1">
                   <div class="descr main" ng-click="viewVideo(video.v_id)">
                     <h1 style="font-size: 14px !important;">
-                      <a
-                        :href="'/single-video/' + video.v_id"
+                      <nuxt-link
+                        :to="'/single-video/' + video.v_id"
                         class="text"
                         :aria-label="video.title"
                         :title="video.title"
-                      >{{video.title}}</a>
-                      <a
+                      >{{video.title}}</nuxt-link>
+                      <nuxt-link
                         class="text smallFont"
-                        :href="'/single-video/' + video.v_id"
+                        :to="'/single-video/' + video.v_id"
                         :aria-label="video.title_en"
                         :title="video.title_en"
-                      >{{video.title_en}}</a>
+                      >{{video.title_en}}</nuxt-link>
                     </h1>
                     <!-- <h1 v-show="engshow(video.v_id)" style="font-size: 14px !important;"><a
                   class="hideOverflow"
@@ -265,9 +269,9 @@
       >
         <slide :key="$index" v-for="(video, $index) in featured" class="kygo">
           <div class="chn-image-container">
-            <a :href="'/single-video/'+video.v_id">
-              <div class="Vimg" style="background-color: black;">
-                <img :src="'//video2.vixtream.net/' + video.filename" :alt="video.title">
+            <nuxt-link :to="'/single-video/'+video.v_id">
+              <div class="Vimg" style="background-color: #f7f7f7;">
+                <img v-lazy="'//video2.vixtream.net/' + video.filename" :alt="video.title">
                 <div ng-click="viewVideo(video.v_id)" class="play">
                   <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                 </div>
@@ -283,17 +287,17 @@
                 </div>
                 <div class="nashhh" style="color: black">{{video.type.toUpperCase()}}</div>
               </div>
-            </a>
+            </nuxt-link>
             <div class="mt-1">
               <div class="descr main">
                 <h1 style="font-size: 13px !important; color: #fbe631">
-                  <a
+                  <nuxt-link
                     style="font-size: 13px !important; color: #fbe631"
-                    :href="'/single-video/' + video.v_id"
+                    :to="'/single-video/' + video.v_id"
                     class="text"
                     :aria-label="video.title"
                     :title="video.title"
-                  >{{video.title}}</a>
+                  >{{video.title}}</nuxt-link>
                 </h1>
               </div>
               <small
@@ -328,16 +332,13 @@
       </div>
       <hr>
     </div>
-    <Feature />
+    <Feature/>
     <hr>
   </section>
 </template>
 <script>
 import axios from "axios";
-// import { Carousel, Slide } from "vue-carousel";
 
-// import Slick from "vue-slick";
-// import './node_modules/slick-carousel/slick/slick.css';
 import Feature from "@/components/catogVideos/catogs";
 const base_url = "https://ethiov.com/api";
 export default {
@@ -449,7 +450,6 @@ export default {
       }
     };
   },
-
   methods: {
     loadmore() {
       axios
@@ -497,7 +497,7 @@ export default {
     } else if (screen.width > 500 && screen.width < 768) {
       this.x = 2;
     } else if (screen.width > 768) {
-      this.x = 5;
+      this.x = 6;
     }
     this.scre = screen;
   }
@@ -639,6 +639,7 @@ export default {
 
 .Vimg {
   /* border-radius: 2px; */
+
   position: relative;
   height: 122px;
 }

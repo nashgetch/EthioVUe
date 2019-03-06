@@ -15,19 +15,19 @@
         >
           <div class="kaleb-vids">
             <div class="Vimg itemContainer bg-inverse">
-              <a :href="'/single-video/'+video.v_id">
+              <nuxt-link :to="'/single-video/'+video.v_id">
                 <!-- <clazy-load :src="'//video2.vixtream.net/'+video.filename2">
                   <div
                     slot="placeholder"
                     class="bg-inverse"
                     style="background-color: black; height:102px;"
                 ></div>-->
-                <img :src="'https://video2.vixtream.net/'+video.filename" :alt="video.title">
+                <img v-lazy="'https://video2.vixtream.net/'+video.filename" :alt="video.title">
                 <!-- </clazy-load> -->
                 <div ng-click="viewVideo(video.v_id)" class="play">
                   <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                 </div>
-              </a>
+              </nuxt-link>
               <div class="time">{{video.duration}}</div>
               <div
                 ng-style="hiddenPlus"
@@ -42,12 +42,12 @@
             <div class="descr" ng-click="viewVideo(video.v_id)">
               <h1 style="font-size: 14px !important;">
                 <a class="text" :aria-label="video.title" :title="video.title">{{video.title}}</a>
-                <a
+                <nuxt-link
                   class="text smallFont"
-                  :href="'/single-video/' + video.v_id"
+                  :to="'/single-video/' + video.v_id"
                   :aria-label="video.title_en"
                   :title="video.title_en"
-                >{{video.title_en}}</a>
+                >{{video.title_en}}</nuxt-link>
               </h1>
             </div>
             <div class="views small">

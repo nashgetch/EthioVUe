@@ -11,19 +11,14 @@
         >
           <div class="kaleb-vids">
             <div class="Vimg itemContainer bg-inverse">
-              <a :href="'/single-video/' + video.v_id">
-                <clazy-load :src="'//video2.vixtream.net/'+video.filename">
-                  <div
-                    slot="placeholder"
-                    class="bg-inverse"
-                    style="background-color: black; height:102px;"
-                  ></div>
-                  <video :poster="'//video2.vixtream.net/'+video.filename" :alt="video.title"></video>
-                </clazy-load>
+              <nuxt-link :to="'/single-video/' + video.v_id">
+
+                  <img v-lazy="'//video2.vixtream.net/'+video.filename" :alt="video.title">
+
                 <div class="play">
                   <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                 </div>
-              </a>
+              </nuxt-link>
               <div class="time">{{video.duration}}</div>
               <div
                 ng-style="hiddenPlus"

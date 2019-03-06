@@ -5,34 +5,34 @@
         <div class="col-lg-10 offset-lg-2">
           <div class="row">
             <div class="col-md-2 col-sm-12 mt-2 channel-name d-none d-sm-block">
-              <a href="/">Videos</a> |
-              <a href="/live-channels">Live TVs</a>
+              <nuxt-link to="/">Videos</nuxt-link> |
+              <nuxt-link to="/live-channels">Live TVs</nuxt-link>
             </div>
 
             <div class="col-md-8 col-sm-12 text-center">
               <ul class="nav nav-pills">
                 <li class="tab1Style nav-item text-center ml-auto mr-auto">
-                  <a href="/" class="nav-link">
+                  <nuxt-link to="/" class="nav-link">
                     <span class="d-none d-sm-block">Latest Videos</span>
                     <i class="fa fa-clock-o d-inline-block d-sm-none" style="font-size: 15px;"></i>
                     <span
                       class="d-inline-block d-sm-none"
                       style="font-size: 10px; font-weight: bold;"
                     >Latest</span>
-                  </a>
+                  </nuxt-link>
                 </li>
                 <li class="nav-item text-center ml-auto mr-auto">
-                  <a class="nav-link" href="/category">
+                  <nuxt-link class="nav-link" to="/category">
                     <span class="d-none d-sm-block">Category</span>
                     <i class="fa fa-video-camera d-inline-block d-sm-none" style="font-size: 15px;"></i>
                     <span
                       class="d-inline-block d-sm-none"
                       style="font-size: 10px; font-weight: bold;"
                     >Category</span>
-                  </a>
+                  </nuxt-link>
                 </li>
                 <li class="nav-item text-center ml-auto mr-auto active">
-                  <a class="nav-link active" href="/trending">
+                  <nuxt-link class="nav-link active" to="/trending">
                     <span class="d-none d-sm-block">Trending</span>
                     <i
                       class="active_route fa fa-fire d-inline-block d-sm-none"
@@ -42,10 +42,10 @@
                       style="font-size: 10px; font-weight: bold;"
                       class="d-inline-block d-sm-none"
                     >Trending</span>
-                  </a>
+                  </nuxt-link>
                 </li>
                 <li class="nav-item text-center ml-auto mr-auto">
-                  <a v-if="loggedIn" class="nav-link" href="/subscription">
+                  <nuxt-link v-if="loggedIn" class="nav-link" to="/subscription">
                     <span class="d-none d-sm-block">Subscription</span>
                     <i
                       class="fa fa-envelope-open d-inline-block d-sm-none"
@@ -55,7 +55,7 @@
                       style="font-size: 10px; font-weight: bold;"
                       class="d-inline-block d-sm-none"
                     >Subscription</span>
-                  </a>
+                  </nuxt-link>
                 </li>
                 <!-- <li class="nav-item text-center ml-auto mr-auto">
                   <a v-if="loggedIn" class="nav-link" data-toggle="pill" @click.prevent="setTabs(5)">
@@ -82,9 +82,9 @@
               style="padding-left: 4px !important; padding-right: 4px !important;"
             >
               <div class="chn-image-container">
-                <a :href="'/single-video/'+video.v_id">
+                <nuxt-link :to="'/single-video/'+video.v_id">
                   <div class="Vimg" style="background-color: black;">
-                    <img :src="'//video2.vixtream.net/' + video.filename" :alt="video.title">
+                    <img v-lazy="'//video2.vixtream.net/' + video.filename" :alt="video.title">
                     <div ng-click="viewVideo(video.v_id)" class="play">
                       <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                     </div>
@@ -100,23 +100,23 @@
                     </div>
                     <div class="nashhh">{{video.type.toUpperCase()}}</div>
                   </div>
-                </a>
+                </nuxt-link>
                 <div class="mt-1">
                   <div class="descr main" ng-click="viewVideo(video.v_id)">
                     <h1 style="font-size: 14px !important;">
-                      <a
-                        :href="'/single-video/' + video.v_id"
+                      <nuxt-link
+                        :to="'/single-video/' + video.v_id"
                         style="color: #2e2e2e; text-decoration: none;"
                         class="text"
                         :aria-label="video.title"
                         :title="video.title"
-                      >{{video.title}}</a>
-                      <a
+                      >{{video.title}}</nuxt-link>
+                      <nuxt-link
                         class="text smallFont"
-                        :href="'/single-video/' + video.v_id"
+                        :to="'/single-video/' + video.v_id"
                         :aria-label="video.title_en"
                         :title="video.title_en"
-                      >{{video.title_en}}</a>
+                      >{{video.title_en}}</nuxt-link>
                     </h1>
                     <!-- <h1 v-show="engshow(video.v_id)" style="font-size: 14px !important;"><a
                   class="hideOverflow"

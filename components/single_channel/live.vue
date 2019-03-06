@@ -39,12 +39,7 @@
                 <br>
                 Latest Videos on Demand posted by {{channel.tv_name}}...
               </small>
-              <div class="card p-1 d-inline pull-right mb-2">
-                <span class="label">News</span>
-                <span class="label">Drama</span>
-                <span class="label">Entertainment</span>
-                <span class="label">Movies</span>
-              </div>
+
             </div>
             <div class="clearfix"></div>
 
@@ -59,33 +54,33 @@
                     <div class="nash-vids row">
                       <div class="col-12">
                         <div class="Vimg itemContainer" style="background-color: black;">
-                          <a :href="'/single-video/'+video.v_id">
-                            <video
+                          <nuxt-link :to="'/single-video/'+video.v_id">
+                            <img
                               class="imgur1"
-                              :poster="'//video2.vixtream.net/'+video.filename2"
-                            ></video>
+                              v-lazy="'//video2.vixtream.net/'+video.filename2"
+                            >
                             <div ng-click="viewVideo(video.v_id)" class="play">
                               <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                             </div>
                             <div class="time">{{video.duration}}</div>
-                          </a>
+                          </nuxt-link>
                         </div>
                       </div>
                       <div class="col-12 col-sm-12 ml-3">
                         <div class="descr">
-                          <a
+                          <nuxt-link
                             style="text-decoration: none;"
-                            :href="'/single-video/' + video.v_id"
+                            :to="'/single-video/' + video.v_id"
                             class="hideOverflow"
                             :aria-label="video.title"
                             :title="video.title"
-                          >{{video.title}}</a>
-                          <a
+                          >{{video.title}}</nuxt-link>
+                          <nuxt-link
                             class="text smallFont"
-                            :href="'/single-video/' + video.v_id"
+                            :to="'/single-video/' + video.v_id"
                             :aria-label="video.title_en"
                             :title="video.title_en"
-                          >{{video.title_en}}</a>
+                          >{{video.title_en}}</nuxt-link>
                         </div>
                         <a style="text-decoration: none;">
                           <small
@@ -122,19 +117,19 @@
               <div class="thumb row" v-for="(tv,$index) in tvs.slice(0,7)" :key="$index">
                 <div class="col-lg-6 col-sm-6" ng-click="viewTV(tv.id)">
                   <div class="Vimg" style="background-color: black;">
-                    <a :href="'/single-channel/'+tv.id">
+                    <nuxt-link :to="'/single-channel/'+tv.id">
                       <img
                         class="imgur"
-                        :src="'//video2.vixtream.net'+tv.poster_image"
+                        v-lazy="'//video2.vixtream.net'+tv.poster_image"
                         :alt="tv.tv_name"
                       >
-                    </a>
+                    </nuxt-link>
                   </div>
                 </div>
                 <div class="col-lg-6 col-sm-6">
                   <div class="descr" style="padding-left:4px;">
                     <h1 style="font-size: 14px !important;">
-                      <a :href="'/single-channel/'+tv.id">{{tv.tv_name}}</a>
+                      <nuxt-link :to="'/single-channel/'+tv.id">{{tv.tv_name}}</nuxt-link>
                     </h1>
                   </div>
                   <div class="views" style="padding-left:4px;">{{tv.tags}}</div>

@@ -17,12 +17,12 @@
         <div class="content-wrapper" style="margin: 0 !important;">
           <h1 style="font-size: 15px !important; padding-top: 7px;">
             {{ single.title }}
-            <a
+            <nuxt-link
               class="text smallFont"
-              :href="'/single-video/' + single.v_id"
+              :to="'/single-video/' + single.v_id"
               :aria-label="single.title_en"
               :title="single.title_en"
-            >{{single.title_en + " || " + single.title_am_ph}}</a>
+            >{{single.title_en + " || " + single.title_am_ph}}</nuxt-link>
             <!-- <ViewCatogs
               :isSingle="true"
               :vid="single.v_id"
@@ -40,13 +40,13 @@
             <!-- The Author Part -->
             <div class="author">
               <div class="author-head">
-                <a :href="'/single-channel/'+ single.chan_name.id">
+                <nuxt-link :to="'/single-channel/'+ single.chan_name.id">
                   <img
-                    :src="'//video2.vixtream.net'+single.chan_name.poster_image"
+                    v-lazy="'//video2.vixtream.net'+single.chan_name.poster_image"
                     :alt="single.chan_name.tv_name"
                     class="sv-avatar kalusha"
                   >
-                </a>
+                </nuxt-link>
                 <div class="sv-name ml-auto mr-auto">
                   <div class="mr-2">
                     <a></a>
@@ -164,13 +164,13 @@
                           class="bg-inverse"
                           style="background-color: black; height:200px;"
                         ></div>-->
-                        <img class="imgur" :src="pos_url+'/'+pub.filename2" :alt="pub.title">
+                        <img class="imgur" v-lazy="pos_url+'/'+pub.filename2" :alt="pub.title">
                         <!-- </clazy-load> -->
-                        <a :href="'/single-video/'+pub.v_id">
+                        <nuxt-link :to="'/single-video/'+pub.v_id">
                           <div ng-click="viewVideo(pub.v_id)" class="play">
                             <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                           </div>
-                        </a>
+                        </nuxt-link>
                         <div class="time">{{pub.duration}}</div>
                       </div>
                     </div>
@@ -191,7 +191,7 @@
                           >{{pub.title_en}}</a>
                         </h1>
                       </div>
-                      <a :href="'/single-video/'+pub.v_id" style="text-decoration: none;">
+                      <nuxt-link :to="'/single-video/'+pub.v_id" style="text-decoration: none;">
                         <small style="color: #7e7e7e; font-size: 12px; font-weight: 300">
                           <i class="fa fa-eye" style="color: #d59541"></i>
                           {{pub.view_count}} views
@@ -201,7 +201,7 @@
                           ></i>
                           {{pub.created_at | moment("from", "now")}}
                         </small>
-                      </a>
+                      </nuxt-link>
                     </div>
                   </div>
                 </div>
@@ -216,12 +216,12 @@
                   class="d-lg-none d-block btn btn--orange text-center"
                   v-if="page > 3"
                 >
-                  <a href="/">
+                  <nuxt-link to="/">
                     <button
                       class="btn btn--orange text-center"
                       style="margin-left: auto; margin-right: auto;margin-top: 19px; width: 252px;"
                     >Back to Home:-)</button>
-                  </a>
+                  </nuxt-link>
                 </div>
               </div>
             </div>
@@ -298,36 +298,36 @@
                     class="imgur"
                     height="400"
                     width="400"
-                    :src="pos_url + '/'+re.filename2"
+                    v-lazy="pos_url + '/'+re.filename2"
                     :alt="re.title"
                   >
-                  <a :href="'/single-video/'+re.v_id">
+                  <nuxt-link :to="'/single-video/'+re.v_id">
                     <div ng-click="viewVideo(re.v_id)" class="play">
                       <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                     </div>
-                  </a>
+                  </nuxt-link>
                   <div class="time">{{re.duration}}</div>
                 </div>
               </div>
               <div class="col-lg-6 col-sm-6" ng-click="viewVideo(re.v_id)">
                 <div class="descr" style="padding-top: 0px;">
                   <h1 style="font-size: 14px !important;">
-                    <a
+                    <nuxt-link
                       class="text"
                       style="text-decoration: none;"
-                      :href="'/single-video/'+re.v_id"
+                      :to="'/single-video/'+re.v_id"
                       :aria-label="re.title"
                       :title="re.title"
-                    >{{re.title}}</a>
-                    <a
+                    >{{re.title}}</nuxt-link>
+                    <nuxt-link
                       class="text smallFont"
-                      :href="'/single-video/' + re.v_id"
+                      :to="'/single-video/' + re.v_id"
                       :aria-label="re.title_en"
                       :title="re.title_en"
-                    >{{re.title_en}}</a>
+                    >{{re.title_en}}</nuxt-link>
                   </h1>
                 </div>
-                <a :href="'/single-video/'+re.v_id" style="text-decoration: none;">
+                <nuxt-link :to="'/single-video/'+re.v_id" style="text-decoration: none;">
                   <small style="color: #7e7e7e; font-size: 12px; font-weight: 300">
                     <i class="fa fa-eye" style="color: #d59541"></i>
                     {{re.view_count}} views
@@ -337,7 +337,7 @@
                     ></i>
                     {{re.created_at | moment("from", "now")}}
                   </small>
-                </a>
+                </nuxt-link>
                 <!-- <small>{{single.cat_name}}</small> -->
               </div>
               <div class="clearfix"></div>
@@ -353,12 +353,12 @@
               class="btn btn--orange text-center"
               v-if="page > 3"
             >
-              <a href="/">
+              <nuxt-link to="/">
                 <button
                   style="margin-left: 10px;margin-top: 19px; width: 350px;"
                   class="btn btn--orange text-center"
                 >Back to Home:-)</button>
-              </a>
+              </nuxt-link>
             </div>
           </div>
         </div>

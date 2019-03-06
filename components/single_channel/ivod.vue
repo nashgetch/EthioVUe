@@ -65,12 +65,6 @@
             <div class="content-wrapper">
               <div class="left mb-2">
                 <a>Similar Videos</a>
-                <div class="card p-1 d-inline pull-right mb-2">
-                  <span class="label">News</span>
-                  <span class="label">Drama</span>
-                  <span class="label">Entertainment</span>
-                  <span class="label">Movies</span>
-                </div>
               </div>
               <div class="clearfix"></div>
 
@@ -85,36 +79,36 @@
                       <div class="nash-vids row">
                         <div class="col-12 p-0 p-sm-2">
                           <div class="Vimg" style="background-color: black;">
-                            <a :href="'/single-video/'+video.v_id">
-                              <video
+                            <nuxt-link :to="'/single-video/'+video.v_id">
+                              <img
                                 class="imgur1"
-                                :poster="url + video.filename2"
+                                v-lazy="url + video.filename2"
                                 :alt="video.title"
-                              ></video>
+                              >
                               <div class="time">{{video.duration}}</div>
-                            </a>
+                            </nuxt-link>
                           </div>
                         </div>
                         <div class="col-12 col-sm-12">
                           <div class="descr">
                             <h1 style="font-size: 14px !important;">
-                              <a
-                                :href="'/single-video/' + video.v_id"
+                              <nuxt-link
+                                :to="'/single-video/' + video.v_id"
                                 class="hideOverflow"
                                 :aria-label="video.title"
                                 :title="video.title"
                                 tooltip
                                 data-animation="false"
-                              >{{video.title}}</a>
-                              <a
+                              >{{video.title}}</nuxt-link>
+                              <nuxt-link
                                 class="text smallFont"
-                                :href="'/single-video/' + video.v_id"
+                                :to="'/single-video/' + video.v_id"
                                 :aria-label="video.title_en"
                                 :title="video.title_en"
-                              >{{video.title_en}}</a>
+                              >{{video.title_en}}</nuxt-link>
                             </h1>
                           </div>
-                          <a style="text-decoration: none;" :href="'/single-video/' + video.v_id">
+                          <nuxt-link style="text-decoration: none;" :to="'/single-video/' + video.v_id">
                             <small
                               style="font-weight: bold; color: #7e7e7e; font-size: 12px; margin-left: 4px"
                             >
@@ -126,7 +120,7 @@
                               ></i>
                               {{video.created_at | moment("from", "now")}}
                             </small>
-                          </a>
+                          </nuxt-link>
                         </div>
                       </div>
                     </div>
@@ -160,9 +154,9 @@
               <div class="thumb row" v-for="(tv,$index) in tvs.slice(0,6)" :key="$index">
                 <div class="col-lg-6 col-sm-6" ng-click="viewTV(tv.id)">
                   <div class="Vimg" style="background-color: black;">
-                    <a :href="'/single-channel/'+tv.id">
-                      <img class="imgur" :src="'https://video2.vixtream.net'+tv.poster_image" alt>
-                    </a>
+                    <nuxt-link :to="'/single-channel/'+tv.id">
+                      <img class="imgur" v-lazy="'https://video2.vixtream.net'+tv.poster_image" alt>
+                    </nuxt-link>
                   </div>
                 </div>
                 <div class="col-lg-6 col-sm-6">
