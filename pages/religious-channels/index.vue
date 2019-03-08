@@ -4,20 +4,22 @@
       <input type="text" v-model="searchString" placeholder="Search Channels here...">
     </div>-->
     <div class="row">
-      <div class="nash">
-        <input
-          type="text"
-          v-model="searchString"
-          name="name"
-          class="question"
-          id="name"
-          required
-          autocomplete="off"
-        >
-        <label for="name">
-          <span style="font-size: 17px;">Search for your Favorite Channel here.</span>
-        </label>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-1">
+         <div class="form-group">
+      <input
+        type="text"
+        v-model="searchString"
+        name="name"
+        class="form-control"
+        id="name"
+        required
+        placeholder="Search for your Favorite Channel here."
+        autocomplete="off"
+      >
+    </div>
       </div>
+    </div>
+    <div class="row">
 
       <div class="container mt-2">
         <div class="row mt-3 display-flex">
@@ -204,112 +206,5 @@ export default {
   margin-right: auto;
   margin-left: auto;
 }
-.nash {
-}
-.nash > input,
-span,
-label {
-  font-family: "Ubuntu", sans-serif;
-  display: block;
-  margin: 10px;
-  padding: 5px;
-  border: none;
-  font-size: 12px;
-}
-.nash > input:focus {
-  outline: 0;
-}
-/* Question */
-.nash > input.question {
-  font-size: 18px;
-  font-weight: 300;
-  border-radius: 2px;
-  margin: 0;
-  border: none;
-  width: 80%;
-  background: rgba(0, 0, 0, 0);
-  transition: padding-top 0.2s ease, margin-top 0.2s ease;
-  overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
-}
-/* Underline and Placeholder */
-.nash > input.question + label {
-  display: block;
-  position: relative;
-  white-space: nowrap;
-  padding: 0;
-  margin: 0;
-  width: 10%;
-  border-top: 1px solid red;
-  -webkit-transition: width 0.4s ease;
-  transition: width 0.4s ease;
-  height: 0px;
-  text-align: left;
-}
-.nash > input.question:focus + label {
-  width: 80%;
-}
-.nash > input.question:focus,
-input.question:valid {
-  padding-top: 15px;
-}
-.nash > input.question:focus + label > span,
-input.question:valid + label > span {
-  top: -90px;
-  font-size: 22px;
-  color: #333;
-}
-.nash > input.question:valid + label {
-  border-color: green;
-}
-.nash > input.question:invalid {
-  box-shadow: none;
-}
-.nash > input.question + label > span {
-  font-weight: 300;
-  margin: 0;
-  position: absolute;
-  color: #8f8f8f;
-  font-size: 48px;
-  top: -66px;
-  left: 0px;
-  z-index: -1;
-  -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
-  transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
-}
-.nash > input[type="submit"] {
-  -webkit-transition: opacity 0.2s ease, background 0.2s ease;
-  transition: opacity 0.2s ease, background 0.2s ease;
-  display: block;
-  opacity: 0;
-  margin: 10px 0 0 0;
-  padding: 10px;
-  cursor: pointer;
-}
-.nash > input[type="submit"]:hover {
-  background: #eee;
-}
-.nash > input[type="submit"]:active {
-  background: #999;
-}
-.nash > input.question:valid ~ input[type="submit"],
-textarea.question:valid ~ input[type="submit"] {
-  -webkit-animation: appear 1s forwards;
-  animation: appear 1s forwards;
-}
-.nash > input.question:invalid ~ input[type="submit"],
-textarea.question:invalid ~ input[type="submit"] {
-  display: none;
-}
 
-@-webkit-keyframes appear {
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes appear {
-  100% {
-    opacity: 1;
-  }
-}
 </style>
