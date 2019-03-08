@@ -3,8 +3,8 @@
     <!-- <div class="bars">
       <input type="text" v-model="searchString" placeholder="Search Channels here...">
     </div>-->
-    <div class="row">
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-1">
+    <div class="row  justify-content-md-center">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-1 text-center">
          <div class="form-group">
       <input
         type="text"
