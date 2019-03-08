@@ -8,7 +8,7 @@
         <img v-lazy="'//video2.vixtream.net'+channel.poster_image" alt>
       </div>
       <div class="ch-social-links d-inline flex-row">
-        <div class="social-icons-container d-flex" style="width: 100%">
+        <div class="social-icons-container d-flex">
           <span class="mt-3" style="color:black; font-size:1rem;">Social</span>
 
           <social-sharing

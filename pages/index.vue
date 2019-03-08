@@ -179,7 +179,7 @@
                 <nuxt-link :to="'/single-video/'+video.v_id">
                   <div class="Vimg" style="background-color: #f7f7f7;">
                     <img
-                      v-lazy="'//video2.vixtream.net/' + video.filename"
+                      v-lazy="'//video2.vixtream.net/' + video.filename2"
                       :alt="video.title"
                       :aspect-ratio="1.1"
                     >
@@ -273,7 +273,7 @@
           <div class="chn-image-container">
             <nuxt-link :to="'/single-video/'+video.v_id">
               <div class="Vimg" style="background-color: #f7f7f7;">
-                <img v-lazy="'//video2.vixtream.net/' + video.filename" :alt="video.title">
+                <img v-lazy="'//video2.vixtream.net/' + video.filename2" :alt="video.title">
                 <div ng-click="viewVideo(video.v_id)" class="play">
                   <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                 </div>
