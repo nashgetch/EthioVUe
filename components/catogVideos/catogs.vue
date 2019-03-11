@@ -76,8 +76,8 @@ export default {
         .then(({ data }) => {
           // console.log(data.data);
           this.page += 1;
-          if (data.length) {
-            data.forEach(element => {
+          if (data.data.length) {
+            data.data.forEach(element => {
               let temp = {};
               temp = element;
               this.cats.push(temp);
