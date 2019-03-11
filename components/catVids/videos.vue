@@ -68,11 +68,11 @@
 
 <script>
 import axios from "axios";
-import ViewCatogs from "@/components/views_catogs";
+// import ViewCatogs from "@/components/views_catogs";
 const base_url = "https://ethiov.com/api/";
 export default {
   components: {
-    ViewCatogs
+    // ViewCatogs
   },
   props: {
     Channel: {

@@ -2,10 +2,7 @@
   <div>
     <span class="d-inline-block d-sm-none title">By Category ...</span>
     <div v-for="(owner, $index) in cats" :key="$index">
-      <div
-        class="content-wrapper"
-
-      >
+      <div class="content-wrapper">
         <div class="owner">
           <a>
             <img src="/img/catogs.png" :alt="owner.category_name" class="asimg">
@@ -23,16 +20,17 @@
         <a class="btn btn--orange text-center kalusha" href="/category">Show More...</a>
       </div>
     </div>
+    <infinite-loading @infinite="infiniteHandler"></infinite-loading>
   </div>
 </template>
 <script>
 import axios from "axios";
-import ViewCatogs from "@/components/views_catogs";
+// import ViewCatogs from "@/components/views_catogs";
 import SubVideos from "@/components/catVids/videos";
 const base_url = "https://ethiov.com/api";
 export default {
   components: {
-    ViewCatogs,
+    // ViewCatogs,
     SubVideos
   },
   data() {
@@ -45,18 +43,18 @@ export default {
     };
   },
   mounted: function() {
-    axios
-      .post(base_url + "/fetch_cats/", {
-        headers: {
-          "Content-type": "application/x-www-form-urlencoded"
-        }
-      })
-      .then(res => {
-        this.cats = [...res.data];
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    // axios
+    //   .post(base_url + "/fetch_cats/", {
+    //     headers: {
+    //       "Content-type": "application/x-www-form-urlencoded"
+    //     }
+    //   })
+    //   .then(res => {
+    //     this.cats = [...res.data];
+    //   })
+    //   .catch(err => {
+    //     console.log(err);
+    //   });
   },
   methods: {
     add_to_watchlist(user_id, v_id) {
@@ -65,7 +63,29 @@ export default {
         .then(res => {
           this.$toast.success("The Video is added to Watch Later");
         });
-    }
+    },
+    infiniteHandler($state) {
+       axios
+      .post(base_url + "/fetch_cats/", {
+        headers: {
+          "Content-type": "application/x-www-form-urlencoded"
+        }
+      })
+        .then(({ data }) => {
+          // console.log(data.data);
+          this.page += 1;
+          if (data.length) {
+            data.forEach(element => {
+              let temp = {};
+              temp = element;
+              this.cats.push(temp);
+            });
+            $state.loaded();
+          } else {
+            $state.complete();
+          }
+        });
+    },
   }
 };
 </script>
@@ -111,6 +131,5 @@ export default {
   font-weight: 700;
   display: inline-block;
 }
-
 </style>
 

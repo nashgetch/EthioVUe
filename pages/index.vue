@@ -319,6 +319,7 @@
       </carousel>
     </div>
     <!-- <hr> -->
+
     <div
       class="container-fluid mt-2"
       style="padding-left: 0px; padding-right: 0px; background-color: #f7f7f7;"
@@ -333,6 +334,7 @@
       </div>
       <hr>
     </div>
+
     <Feature/>
     <hr>
   </section>
@@ -452,6 +454,7 @@ export default {
     };
   },
   methods: {
+
     loadmore() {
       axios
         .post(base_url + "/loadmore", {
@@ -491,7 +494,7 @@ export default {
   mounted: function() {
     this.active_route = this.tab;
     axios.post(base_url + "/popular").then(res => (this.featured = res.data));
-    axios.post(base_url + "/featured").then(res => (this.popular = res.data));
+    // axios.post(base_url + "/featured").then(res => (this.popular = res.data));
     console.log(this.popular);
     if (screen.width < 500) {
       this.x = 1;
