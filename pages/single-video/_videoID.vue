@@ -289,6 +289,9 @@
               <h5 style="font-size: 19px;font-weight: 700; margin-bottom: 15px;">Other Videos</h5>
             </a>
           </div>
+          <div class="nashian mb-2" style="display:inline-block; background-color: #f7f7f7">
+            <p class="text-center">ADS GO HERE!</p>
+          </div>
           <div class="clearfix"></div>
           <div class="list">
             <div class="thumb row" v-for="(re,$index) in recommended" :key="$index">
@@ -891,7 +894,7 @@ async function getUsername(user_id) {
     right: 0;
     margin-right: 1px;
     padding-top: 32% !important;
-      height: 150px !important;
+    height: 150px !important;
   }
 }
 
