@@ -39,7 +39,8 @@ export default {
       options: [],
       cats: [],
       cat_id: 1,
-      stripes: "whites"
+      stripes: "whites",
+      page: 1
     };
   },
   mounted: function() {
@@ -67,6 +68,7 @@ export default {
     infiniteHandler($state) {
        axios
       .post(base_url + "/fetch_cats/", {
+        page: this.page,
         headers: {
           "Content-type": "application/x-www-form-urlencoded"
         }
