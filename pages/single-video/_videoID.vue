@@ -462,6 +462,7 @@ export default {
             googletag.defineSlot('/107918458/ethiov/Ethiov_Side', [[300, 250], [250, 250], [336, 280], [240, 400], [300, 600], [320, 50], [468, 60], [970, 90], [728, 90], [200, 200], [300, 100]], 'dj_khalid').addService(googletag.pubads());
             googletag.pubads().enableSingleRequest();
             googletag.enableServices();
+            });
         `
         },
         {
