@@ -465,7 +465,9 @@ export default {
         `
         },
         {
-           innerHTML: `googletag.cmd.push(function() { googletag.display('dj_khalid'); })`
+           innerHTML: `
+           googletag.cmd.push(function() { googletag.display('dj_khalid'); })
+           `
         }
 
       ]
