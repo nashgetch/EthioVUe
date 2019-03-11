@@ -289,8 +289,8 @@
               <h5 style="font-size: 19px;font-weight: 700; margin-bottom: 15px;">Other Videos</h5>
             </a>
           </div>
-          <div class="nashian mb-2" style="display:inline-block; background-color: #f7f7f7">
-            <p class="text-center">ADS GO HERE!</p>
+          <div id="dj_khalid" class="nashian mb-2" style="display:inline-block; background-color: #f7f7f7">
+
           </div>
           <div class="clearfix"></div>
           <div class="list">
@@ -448,6 +448,26 @@ export default {
           property: "twitter:description",
           content: "EthioV - " + this.single.description + ". "
         }
+      ],
+      script: [
+        {
+          innerHTML: `
+            var googletag = googletag || {};
+            googletag.cmd = googletag.cmd || [];
+        `
+        },
+        {
+          innerHTML: `
+            googletag.cmd.push(function() {
+            googletag.defineSlot('/107918458/ethiov/Ethiov_Side', [[300, 250], [250, 250], [336, 280], [240, 400], [300, 600], [320, 50], [468, 60], [970, 90], [728, 90], [200, 200], [300, 100]], 'dj_khalid').addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        `
+        },
+        {
+           innerHTML: `googletag.cmd.push(function() { googletag.display('dj_khalid'); })`
+        }
+
       ]
     };
   },
