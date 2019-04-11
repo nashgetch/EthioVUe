@@ -10,7 +10,7 @@
         <div class="kaleb-vids">
           <div class="Vimg itemContainer bg-inverse">
             <nuxt-link :to="'/single-video/'+video.v_id">
-              <img v-lazy="'https://video2.vixtream.net/'+video.filename2" :alt="video.title">
+              <img v-lazy="'https://video2.vixtream.net/'+video.filename" :alt="video.title">
               <div ng-click="viewVideo(video.v_id)" class="play">
                 <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
               </div>

@@ -22,7 +22,7 @@
               :to="'/single-video/' + single.v_id"
               :aria-label="single.title_en"
               :title="single.title_en"
-            >{{single.title_en + " || " + single.title_am_ph}}</nuxt-link>
+            >{{single.title_en + " || " + single.am_en_ph}}</nuxt-link>
             <!-- <ViewCatogs
               :isSingle="true"
               :vid="single.v_id"
@@ -391,7 +391,7 @@ export default {
           hid: "keywords",
           name: "keywords",
           keywords:
-            "Bethel TV, Evangelical TV, politics, Worldwide, live stream, sports, sales, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
+           this.single.title +", " + this.single.title_en +  ", Fana, ETV, Amhara, OBN, Walta, Bethel TV, Evangelical TV, politics, Worldwide, live stream, sports, sales, Social Media, Live Stream, Religion, Politics, Entertainment, News, Documentary"
         },
         {
           hid: "og:title",

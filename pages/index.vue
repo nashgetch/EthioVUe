@@ -1,22 +1,13 @@
  <template>
   <section>
     <div class="theon">
-      <div class="content-wrapper text-center">
-        <div class="row justify-content-md-center">
-          <div class="col-lg-6">
-            <div class="title-section text-center">
-              <h2 class="title-line">Featured Live TV Channels</h2>
-              <p>
-                You can catch up to your favorite shows on TV here.
-                Fana, Walta, Amhara, OBN and much more.
-              </p>
-            </div>
+        <div class="row justify-content-md-center mr-2 ml-2" style="color: black;">
+  <div class="col-lg-6">
+          <div class="title-section text-center">
+            <h4 style="font-weight: normal;" class="title-line">Featured TV Channels...</h4>
           </div>
         </div>
 
-        <hr>
-        <div class="row" style>
-          <div class="col-lg-2 col-sm-12 col-12"></div>
           <div class="col-lg-8 col-sm-12 col-12 text-center">
             <div class="row">
               <div class="col-lg-2 col-sm-3 col-3">
@@ -178,7 +169,7 @@
                 <nuxt-link :to="'/single-video/'+video.v_id">
                   <div class="Vimg" style="background-color: #f7f7f7;">
                     <img
-                      v-lazy="'//video2.vixtream.net/' + video.filename2"
+                      v-lazy="'//video2.vixtream.net/' + video.filename"
                       :alt="video.title"
                       :aspect-ratio="1.1"
                     >
@@ -272,7 +263,7 @@
           <div class="chn-image-container">
             <nuxt-link :to="'/single-video/'+video.v_id">
               <div class="Vimg" style="background-color: #f7f7f7;">
-                <img v-lazy="'//video2.vixtream.net/' + video.filename2" :alt="video.title">
+                <img v-lazy="'//video2.vixtream.net/' + video.filename" :alt="video.title">
                 <div ng-click="viewVideo(video.v_id)" class="play">
                   <i class="fa fa-play-circle-o playbtn" style="font-size:48px"></i>
                 </div>
