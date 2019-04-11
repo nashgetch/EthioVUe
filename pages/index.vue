@@ -1,89 +1,93 @@
  <template>
   <section>
     <div class="theon">
-        <div class="row justify-content-md-center mr-2 ml-2" style="color: black;">
-  <div class="col-lg-6">
+      <!-- <div class="row justify-content-md-center mr-2 ml-2" style="color: black;">
+        <div class="col-lg-6">
           <div class="title-section text-center">
-            <h4 style="font-weight: normal;" class="title-line">Featured TV Channels...</h4>
+          </div>
+      </div>-->
+      <div class="row justify-content-md-center mr-2 ml-2">
+        <div class="col-lg-6">
+          <div class="title-section text-center kaeb">
+            <h2 class="title-line">Featured Channels Right Now...</h2>
+            <p>Recent, Live Streams and Most viewed Videos on demand from Fana, Walta, Amhara, OBN and Others.</p>
           </div>
         </div>
 
-          <div class="col-lg-8 col-sm-12 col-12 text-center">
-            <div class="row">
-              <div class="col-lg-2 col-sm-3 col-3">
-                <nuxt-link to="/single-channel/114">
-                  <div class="chn-image-container index m-0">
-                    <img class="avicii" src="/img/fbctv_poster.jpg" alt="Fana TV">
-                  </div>
-                </nuxt-link>
-              </div>
+        <div class="col-lg-8 col-sm-12 col-12 text-center">
+          <div class="row">
+            <div class="col-lg-2 col-sm-3 col-3 kygo">
+              <nuxt-link to="/single-channel/114">
+                <!-- <div class="chn-image-container index m-0"> -->
+                <img class="avicii" src="/img/fbctv_poster.jpg" alt="Fana TV">
+                <!-- </div> -->
+              </nuxt-link>
+            </div>
 
-              <div class="col-lg-2 col-sm-3 col-3">
-                <nuxt-link to="/single-channel/113">
-                  <div class="chn-image-container index m-0">
-                    <img class="avicii" src="/img/amma_poster.jpg" alt="Amhara TV">
-                  </div>
-                </nuxt-link>
-              </div>
+            <div class="col-lg-2 col-sm-3 col-3 kygo">
+              <nuxt-link to="/single-channel/113">
+                <!-- <div class="chn-image-container index m-0"> -->
+                <img class="avicii" src="/img/amma_poster.jpg" alt="Amhara TV">
+                <!-- </div> -->
+              </nuxt-link>
+            </div>
 
-              <div class="col-lg-2 col-sm-3 col-3">
-                <nuxt-link to="/single-channel/567">
-                  <div class="chn-image-container index m-0">
-                    <img class="avicii" src="/img/walta_posters.jpg" alt="Walta TV">
-                  </div>
-                </nuxt-link>
-              </div>
+            <div class="col-lg-2 col-sm-3 col-3 kygo">
+              <nuxt-link to="/single-channel/567">
+                <!-- <div class="chn-image-container index m-0"> -->
+                <img class="avicii" src="/img/walta_posters.jpg" alt="Walta TV">
+                <!-- </div> -->
+              </nuxt-link>
+            </div>
 
-              <div class="col-lg-2 col-sm-3 col-3">
-                <nuxt-link to="/single-channel/126">
-                  <div class="chn-image-container index m-0">
-                    <img class="avicii" src="/img/obm_poster.jpg" alt="OBN TV">
-                  </div>
-                </nuxt-link>
-              </div>
-              <div class="col-lg-4 d-lg-block d-none" style="display: flex;">
-                <div class="ch-social-links walker">
-                  <div class="social-icons-container d-flex">
-                    <span class="mt-3" style="color:black; font-size:1rem;">Social</span>
-                    <social-sharing
+            <div class="col-lg-2 col-sm-3 col-3 kygo">
+              <nuxt-link to="/single-channel/126">
+                <!-- <div class="chn-image-container index m-0"> -->
+                <img class="avicii" src="/img/obm_poster.jpg" alt="OBN TV">
+                <!-- </div> -->
+              </nuxt-link>
+            </div>
+            <div class="col-lg-4 d-lg-block d-none" style="display: flex;">
+              <div class="ch-social-links walker dagi">
+                <div class="social-icons-container d-flex">
+                  <span class="mt-3" style="color:black; font-size:1rem;">Social</span>
+                  <social-sharing
+                    url="https://ethiov.com"
+                    title="EthioV - Ethiopian Videos and Live channels"
+                    description="All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
+                    quote="EthioV - Ethiopian Videos and Live channels"
+                    hashtags="#EthioV, #ETHIOPIAN_LIVE_TV_CHANNELS, #FANA, #AMHARA, #WALTA, #OBN"
+                    inline-template
+                  >
+                    <div>
+                      <network network="facebook">
+                        <i
+                          class="fa fa-fw fa-facebook fa-2x"
+                          style="color: #3b5998; padding-left: 5px; margin-top: 10px;"
+                        ></i>
+                      </network>
 
-                      url="https://ethiov.com"
-                      title="EthioV - Ethiopian Videos and Live channels"
-                      description="All Ethiopian Live Channels at one place. Ethiopia's Reliable News and Video Channel. You can find Ethiopian Videos and live TV channels here. You Can Browse Latest and Treanding Videos and catch up to your favorite shows online with our Instant Videos Feature."
-                      quote="EthioV - Ethiopian Videos and Live channels"
-                      hashtags="#EthioV, #ETHIOPIAN_LIVE_TV_CHANNELS, #FANA, #AMHARA, #WALTA, #OBN"
-                      inline-template
-                    >
-                      <div>
-                        <network network="facebook">
-                          <i
-                            class="fa fa-fw fa-facebook fa-2x"
-                            style="color: #3b5998; padding-left: 5px; margin-top: 10px;"
-                          ></i>
-                        </network>
-
-                        <network network="twitter">
-                          <i
-                            class="fa fa-fw fa-twitter fa-2x"
-                            style="color: #55acee; padding-left: 5px; margin-top: 10px;"
-                          ></i>
-                        </network>
-                        <network network="telegram">
-                          <i
-                            class="fa fa-telegram fa-2x"
-                            style="color: #00405d; padding-left: 5px; margin-top: 10px;"
-                          ></i>
-                        </network>
-                      </div>
-                    </social-sharing>
-                  </div>
+                      <network network="twitter">
+                        <i
+                          class="fa fa-fw fa-twitter fa-2x"
+                          style="color: #55acee; padding-left: 5px; margin-top: 10px;"
+                        ></i>
+                      </network>
+                      <network network="telegram">
+                        <i
+                          class="fa fa-telegram fa-2x"
+                          style="color: #00405d; padding-left: 5px; margin-top: 10px;"
+                        ></i>
+                      </network>
+                    </div>
+                  </social-sharing>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <hr>
       </div>
+      <hr>
     </div>
 
     <!-- <hr style="border-top: 1px solid rgba(0,0,0,0.6);" class="d-lg-block d-none"> -->
@@ -156,9 +160,10 @@
       <!-- <div class="bars">
       <input type="text" v-model="searchString" placeholder="Search Channels here...">
       </div>-->
-      <div class="row">
+      <div class="row" style="border: 1px solid #e5e5e5">
         <div class="container mt-2">
           <div class="row mt-3 display-flex">
+
             <div
               class="col-12 col-sm-6 col-md-3 col-lg-2 mb-4 kygo"
               v-for="(video,$index) in videos"
@@ -325,9 +330,9 @@
       </div>
       <hr>
     </div>
-
-    <Feature/>
-    <hr>
+    <!-- <div> -->
+      <Feature/>
+    <!-- </div> -->
   </section>
 </template>
 <script>
@@ -445,7 +450,6 @@ export default {
     };
   },
   methods: {
-
     loadmore() {
       axios
         .post(base_url + "/loadmore", {
@@ -514,6 +518,7 @@ export default {
   transition: all 0.3s ease 0s;
   z-index: 7;
 }
+
 .name {
   margin: 3px 0 2px;
   color: #000 !important;
@@ -525,6 +530,9 @@ export default {
   line-height: 28px;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+}
+.dagi{
+  bottom: auto;
 }
 .nashians {
   width: 320px !important;
@@ -608,13 +616,31 @@ export default {
   padding-right: 4px !important;
 }
 .avicii {
-  display: block;
-  width: 83px;
-  height: 72px;
+  /* display: block;
+  width: 63px;
+  height: 52px;
   border-radius: 50%;
-  box-shadow: 0 5px 18px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 18px 0 rgba(0, 0, 0, 0.3); */
+  background-color: #fff;
+  width: 67px;
+  height: 67px;
+  line-height: 67px;
+  text-align: center;
+  margin-bottom: 30px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
 }
-
+.grid {
+  width: 33.33%;
+  float: left;
+  padding: 0 20px 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+}
 @media (min-width: 300px) and (max-width: 768px) {
   .avicii {
     width: 63px;
@@ -726,7 +752,7 @@ export default {
   -webkit-box-orient: vertical;
   font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
-  color: #676a6c;
+  color: #1e2020;
 }
 @media (max-width: 600px) {
   .Vimg img {
@@ -748,6 +774,7 @@ export default {
   padding-bottom: 0px;
   margin: 0;
   background-color: #f7f7f7;
+  background: url(/img/back.jpg) no-repeat;
 }
 .dany {
   border-top: 14px solid rgba(1, 1, 1, 0.2);

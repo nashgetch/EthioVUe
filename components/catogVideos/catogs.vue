@@ -5,7 +5,7 @@
       <div class="content-wrapper">
         <div class="owner">
           <a>
-            <img src="/img/catogs.png" :alt="owner.category_name" class="asimg">
+            <img :src="'/img/' + owner.category_name + '.png'" :alt="owner.category_name" class="asimg">
           </a>
           <span class="title">
             {{owner.category_name}}
@@ -112,8 +112,8 @@ export default {
   padding: 12px;
 }
 .owner .asimg {
-  width: 105px;
-  height: 65px;
+  width: 70px;
+  height: 55px;
   margin-right: 28px;
   border-radius: 78px;
 }
