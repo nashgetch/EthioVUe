@@ -151,7 +151,8 @@ export default {
             ref.category === "1" &&
             ref.chn !== "ammas" &&
             ref.chn !== "fanas" &&
-            ref.chn !== "waltas"
+            ref.chn !== "waltas" &&
+            ref.chn !== "ebs"
           );
         });
       } else {

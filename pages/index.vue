@@ -16,6 +16,14 @@
 
         <div class="col-lg-8 col-sm-12 col-12 text-center">
           <div class="row">
+          <div class="col-lg-2 col-sm-3 col-3 kygo">
+              <nuxt-link to="/single-channel/629">
+                <!-- <div class="chn-image-container index m-0"> -->
+                <img class="avicii" src="//video2.vixtream.net/tvposter/ectv_poster.jpg" alt="EC TV">
+                <!-- </div> -->
+              </nuxt-link>
+            </div>
+
             <div class="col-lg-2 col-sm-3 col-3 kygo">
               <nuxt-link to="/single-channel/114">
                 <!-- <div class="chn-image-container index m-0"> -->
@@ -40,13 +48,6 @@
               </nuxt-link>
             </div>
 
-            <div class="col-lg-2 col-sm-3 col-3 kygo">
-              <nuxt-link to="/single-channel/126">
-                <!-- <div class="chn-image-container index m-0"> -->
-                <img class="avicii" src="/img/obm_poster.jpg" alt="OBN TV">
-                <!-- </div> -->
-              </nuxt-link>
-            </div>
             <div class="col-lg-4 d-lg-block d-none" style="display: flex;">
               <div class="ch-social-links walker dagi">
                 <div class="social-icons-container d-flex">
